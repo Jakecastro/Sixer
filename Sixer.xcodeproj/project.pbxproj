@@ -18,7 +18,6 @@
 		235B6E371BEBD25600557D3F /* SixerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E361BEBD25600557D3F /* SixerUITests.m */; };
 		235B6E461BEBD2CD00557D3F /* RemindersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E451BEBD2CD00557D3F /* RemindersViewController.m */; settings = {ASSET_TAGS = (); }; };
 		235B6E4C1BEBDD7500557D3F /* ExerciseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E4B1BEBDD7500557D3F /* ExerciseCell.m */; settings = {ASSET_TAGS = (); }; };
-		235B6E4F1BEBE2D900557D3F /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E4E1BEBE2D900557D3F /* SearchViewController.m */; settings = {ASSET_TAGS = (); }; };
 		235B6E521BEBE34900557D3F /* ProgressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E511BEBE34900557D3F /* ProgressCell.m */; settings = {ASSET_TAGS = (); }; };
 		235B6E551BEBE4A000557D3F /* ReminderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E541BEBE4A000557D3F /* ReminderCell.m */; settings = {ASSET_TAGS = (); }; };
 		235B6E581BEBE54400557D3F /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E571BEBE54400557D3F /* TimerViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -68,8 +67,6 @@
 		235B6E451BEBD2CD00557D3F /* RemindersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemindersViewController.m; sourceTree = "<group>"; };
 		235B6E4A1BEBDD7500557D3F /* ExerciseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciseCell.h; sourceTree = "<group>"; };
 		235B6E4B1BEBDD7500557D3F /* ExerciseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseCell.m; sourceTree = "<group>"; };
-		235B6E4D1BEBE2D900557D3F /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
-		235B6E4E1BEBE2D900557D3F /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		235B6E501BEBE34900557D3F /* ProgressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProgressCell.h; path = ../ProgressCell.h; sourceTree = "<group>"; };
 		235B6E511BEBE34900557D3F /* ProgressCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProgressCell.m; path = ../ProgressCell.m; sourceTree = "<group>"; };
 		235B6E531BEBE4A000557D3F /* ReminderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReminderCell.h; sourceTree = "<group>"; };
@@ -181,8 +178,6 @@
 				235B6E181BEBD25600557D3F /* ExerciseViewController.m */,
 				235B6E441BEBD2CD00557D3F /* RemindersViewController.h */,
 				235B6E451BEBD2CD00557D3F /* RemindersViewController.m */,
-				235B6E4D1BEBE2D900557D3F /* SearchViewController.h */,
-				235B6E4E1BEBE2D900557D3F /* SearchViewController.m */,
 				235B6E561BEBE54400557D3F /* TimerViewController.h */,
 				235B6E571BEBE54400557D3F /* TimerViewController.m */,
 				235B6E591BEBE64300557D3F /* GroupViewController.h */,
@@ -362,7 +357,6 @@
 				2383085F1BEBEC62004DA4EC /* AddExerciseViewController.m in Sources */,
 				235B6E521BEBE34900557D3F /* ProgressCell.m in Sources */,
 				235B6E5B1BEBE64300557D3F /* GroupViewController.m in Sources */,
-				235B6E4F1BEBE2D900557D3F /* SearchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

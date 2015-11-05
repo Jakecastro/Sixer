@@ -10,4 +10,11 @@
 
 @implementation AddReminderViewController
 
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+}
+
+
+
 @end
