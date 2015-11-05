@@ -1,15 +1,13 @@
 //
-//  FirstViewController.h
+//  ReminderCell.m
 //  Sixer
 //
 //  Created by Jake Castro on 11/5/15.
 //  Copyright © 2015 Jake Castro. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ReminderCell.h"
 
-@interface FirstViewController : UIViewController
-
+@implementation ReminderCell
 
 @end
-

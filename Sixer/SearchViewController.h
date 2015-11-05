@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  SearchViewController.h
 //  Sixer
 //
 //  Created by Jake Castro on 11/5/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
-
+@interface SearchViewController : UIViewController
 
 @end
-

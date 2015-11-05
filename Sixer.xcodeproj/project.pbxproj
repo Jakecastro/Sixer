@@ -9,13 +9,23 @@
 /* Begin PBXBuildFile section */
 		235B6E101BEBD25600557D3F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E0F1BEBD25600557D3F /* main.m */; };
 		235B6E131BEBD25600557D3F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E121BEBD25600557D3F /* AppDelegate.m */; };
-		235B6E161BEBD25600557D3F /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E151BEBD25600557D3F /* FirstViewController.m */; };
-		235B6E191BEBD25600557D3F /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E181BEBD25600557D3F /* SecondViewController.m */; };
+		235B6E161BEBD25600557D3F /* ProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E151BEBD25600557D3F /* ProgressViewController.m */; };
+		235B6E191BEBD25600557D3F /* ExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E181BEBD25600557D3F /* ExerciseViewController.m */; };
 		235B6E1C1BEBD25600557D3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 235B6E1A1BEBD25600557D3F /* Main.storyboard */; };
 		235B6E1E1BEBD25600557D3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 235B6E1D1BEBD25600557D3F /* Assets.xcassets */; };
 		235B6E211BEBD25600557D3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 235B6E1F1BEBD25600557D3F /* LaunchScreen.storyboard */; };
 		235B6E2C1BEBD25600557D3F /* SixerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E2B1BEBD25600557D3F /* SixerTests.m */; };
 		235B6E371BEBD25600557D3F /* SixerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E361BEBD25600557D3F /* SixerUITests.m */; };
+		235B6E461BEBD2CD00557D3F /* RemindersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E451BEBD2CD00557D3F /* RemindersViewController.m */; settings = {ASSET_TAGS = (); }; };
+		235B6E4C1BEBDD7500557D3F /* ExerciseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E4B1BEBDD7500557D3F /* ExerciseCell.m */; settings = {ASSET_TAGS = (); }; };
+		235B6E4F1BEBE2D900557D3F /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E4E1BEBE2D900557D3F /* SearchViewController.m */; settings = {ASSET_TAGS = (); }; };
+		235B6E521BEBE34900557D3F /* ProgressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E511BEBE34900557D3F /* ProgressCell.m */; settings = {ASSET_TAGS = (); }; };
+		235B6E551BEBE4A000557D3F /* ReminderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E541BEBE4A000557D3F /* ReminderCell.m */; settings = {ASSET_TAGS = (); }; };
+		235B6E581BEBE54400557D3F /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E571BEBE54400557D3F /* TimerViewController.m */; settings = {ASSET_TAGS = (); }; };
+		235B6E5B1BEBE64300557D3F /* GroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E5A1BEBE64300557D3F /* GroupViewController.m */; settings = {ASSET_TAGS = (); }; };
+		235B6E5E1BEBE6E100557D3F /* AddGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E5D1BEBE6E100557D3F /* AddGroupViewController.m */; settings = {ASSET_TAGS = (); }; };
+		235B6E611BEBE92100557D3F /* AddReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E601BEBE92100557D3F /* AddReminderViewController.m */; settings = {ASSET_TAGS = (); }; };
+		2383085F1BEBEC62004DA4EC /* AddExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2383085E1BEBEC62004DA4EC /* AddExerciseViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,10 +50,10 @@
 		235B6E0F1BEBD25600557D3F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		235B6E111BEBD25600557D3F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		235B6E121BEBD25600557D3F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		235B6E141BEBD25600557D3F /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		235B6E151BEBD25600557D3F /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		235B6E171BEBD25600557D3F /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		235B6E181BEBD25600557D3F /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		235B6E141BEBD25600557D3F /* ProgressViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressViewController.h; sourceTree = "<group>"; };
+		235B6E151BEBD25600557D3F /* ProgressViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressViewController.m; sourceTree = "<group>"; };
+		235B6E171BEBD25600557D3F /* ExerciseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExerciseViewController.h; sourceTree = "<group>"; };
+		235B6E181BEBD25600557D3F /* ExerciseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExerciseViewController.m; sourceTree = "<group>"; };
 		235B6E1B1BEBD25600557D3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		235B6E1D1BEBD25600557D3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		235B6E201BEBD25600557D3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,6 +64,26 @@
 		235B6E321BEBD25600557D3F /* SixerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SixerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		235B6E361BEBD25600557D3F /* SixerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SixerUITests.m; sourceTree = "<group>"; };
 		235B6E381BEBD25600557D3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		235B6E441BEBD2CD00557D3F /* RemindersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemindersViewController.h; sourceTree = "<group>"; };
+		235B6E451BEBD2CD00557D3F /* RemindersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemindersViewController.m; sourceTree = "<group>"; };
+		235B6E4A1BEBDD7500557D3F /* ExerciseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciseCell.h; sourceTree = "<group>"; };
+		235B6E4B1BEBDD7500557D3F /* ExerciseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseCell.m; sourceTree = "<group>"; };
+		235B6E4D1BEBE2D900557D3F /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		235B6E4E1BEBE2D900557D3F /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		235B6E501BEBE34900557D3F /* ProgressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProgressCell.h; path = ../ProgressCell.h; sourceTree = "<group>"; };
+		235B6E511BEBE34900557D3F /* ProgressCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProgressCell.m; path = ../ProgressCell.m; sourceTree = "<group>"; };
+		235B6E531BEBE4A000557D3F /* ReminderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReminderCell.h; sourceTree = "<group>"; };
+		235B6E541BEBE4A000557D3F /* ReminderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReminderCell.m; sourceTree = "<group>"; };
+		235B6E561BEBE54400557D3F /* TimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerViewController.h; sourceTree = "<group>"; };
+		235B6E571BEBE54400557D3F /* TimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerViewController.m; sourceTree = "<group>"; };
+		235B6E591BEBE64300557D3F /* GroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GroupViewController.h; path = ../GroupViewController.h; sourceTree = "<group>"; };
+		235B6E5A1BEBE64300557D3F /* GroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GroupViewController.m; path = ../GroupViewController.m; sourceTree = "<group>"; };
+		235B6E5C1BEBE6E100557D3F /* AddGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddGroupViewController.h; path = ../AddGroupViewController.h; sourceTree = "<group>"; };
+		235B6E5D1BEBE6E100557D3F /* AddGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddGroupViewController.m; path = ../AddGroupViewController.m; sourceTree = "<group>"; };
+		235B6E5F1BEBE92100557D3F /* AddReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddReminderViewController.h; sourceTree = "<group>"; };
+		235B6E601BEBE92100557D3F /* AddReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddReminderViewController.m; sourceTree = "<group>"; };
+		2383085D1BEBEC62004DA4EC /* AddExerciseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddExerciseViewController.h; sourceTree = "<group>"; };
+		2383085E1BEBEC62004DA4EC /* AddExerciseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddExerciseViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,16 +134,9 @@
 		235B6E0D1BEBD25600557D3F /* Sixer */ = {
 			isa = PBXGroup;
 			children = (
-				235B6E111BEBD25600557D3F /* AppDelegate.h */,
-				235B6E121BEBD25600557D3F /* AppDelegate.m */,
-				235B6E141BEBD25600557D3F /* FirstViewController.h */,
-				235B6E151BEBD25600557D3F /* FirstViewController.m */,
-				235B6E171BEBD25600557D3F /* SecondViewController.h */,
-				235B6E181BEBD25600557D3F /* SecondViewController.m */,
-				235B6E1A1BEBD25600557D3F /* Main.storyboard */,
-				235B6E1D1BEBD25600557D3F /* Assets.xcassets */,
-				235B6E1F1BEBD25600557D3F /* LaunchScreen.storyboard */,
-				235B6E221BEBD25600557D3F /* Info.plist */,
+				235B6E491BEBD31000557D3F /* Model */,
+				235B6E481BEBD30200557D3F /* View */,
+				235B6E471BEBD2F500557D3F /* Controller */,
 				235B6E0E1BEBD25600557D3F /* Supporting Files */,
 			);
 			path = Sixer;
@@ -122,6 +145,10 @@
 		235B6E0E1BEBD25600557D3F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				235B6E1D1BEBD25600557D3F /* Assets.xcassets */,
+				235B6E221BEBD25600557D3F /* Info.plist */,
+				235B6E111BEBD25600557D3F /* AppDelegate.h */,
+				235B6E121BEBD25600557D3F /* AppDelegate.m */,
 				235B6E0F1BEBD25600557D3F /* main.m */,
 			);
 			name = "Supporting Files";
@@ -143,6 +170,53 @@
 				235B6E381BEBD25600557D3F /* Info.plist */,
 			);
 			path = SixerUITests;
+			sourceTree = "<group>";
+		};
+		235B6E471BEBD2F500557D3F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				235B6E141BEBD25600557D3F /* ProgressViewController.h */,
+				235B6E151BEBD25600557D3F /* ProgressViewController.m */,
+				235B6E171BEBD25600557D3F /* ExerciseViewController.h */,
+				235B6E181BEBD25600557D3F /* ExerciseViewController.m */,
+				235B6E441BEBD2CD00557D3F /* RemindersViewController.h */,
+				235B6E451BEBD2CD00557D3F /* RemindersViewController.m */,
+				235B6E4D1BEBE2D900557D3F /* SearchViewController.h */,
+				235B6E4E1BEBE2D900557D3F /* SearchViewController.m */,
+				235B6E561BEBE54400557D3F /* TimerViewController.h */,
+				235B6E571BEBE54400557D3F /* TimerViewController.m */,
+				235B6E591BEBE64300557D3F /* GroupViewController.h */,
+				235B6E5A1BEBE64300557D3F /* GroupViewController.m */,
+				235B6E5C1BEBE6E100557D3F /* AddGroupViewController.h */,
+				235B6E5D1BEBE6E100557D3F /* AddGroupViewController.m */,
+				235B6E5F1BEBE92100557D3F /* AddReminderViewController.h */,
+				235B6E601BEBE92100557D3F /* AddReminderViewController.m */,
+				2383085D1BEBEC62004DA4EC /* AddExerciseViewController.h */,
+				2383085E1BEBEC62004DA4EC /* AddExerciseViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		235B6E481BEBD30200557D3F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				235B6E1A1BEBD25600557D3F /* Main.storyboard */,
+				235B6E1F1BEBD25600557D3F /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		235B6E491BEBD31000557D3F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				235B6E531BEBE4A000557D3F /* ReminderCell.h */,
+				235B6E541BEBE4A000557D3F /* ReminderCell.m */,
+				235B6E501BEBE34900557D3F /* ProgressCell.h */,
+				235B6E511BEBE34900557D3F /* ProgressCell.m */,
+				235B6E4A1BEBDD7500557D3F /* ExerciseCell.h */,
+				235B6E4B1BEBDD7500557D3F /* ExerciseCell.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,10 +349,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				235B6E191BEBD25600557D3F /* SecondViewController.m in Sources */,
+				235B6E5E1BEBE6E100557D3F /* AddGroupViewController.m in Sources */,
+				235B6E191BEBD25600557D3F /* ExerciseViewController.m in Sources */,
+				235B6E611BEBE92100557D3F /* AddReminderViewController.m in Sources */,
+				235B6E4C1BEBDD7500557D3F /* ExerciseCell.m in Sources */,
+				235B6E581BEBE54400557D3F /* TimerViewController.m in Sources */,
+				235B6E551BEBE4A000557D3F /* ReminderCell.m in Sources */,
 				235B6E131BEBD25600557D3F /* AppDelegate.m in Sources */,
-				235B6E161BEBD25600557D3F /* FirstViewController.m in Sources */,
+				235B6E161BEBD25600557D3F /* ProgressViewController.m in Sources */,
+				235B6E461BEBD2CD00557D3F /* RemindersViewController.m in Sources */,
 				235B6E101BEBD25600557D3F /* main.m in Sources */,
+				2383085F1BEBEC62004DA4EC /* AddExerciseViewController.m in Sources */,
+				235B6E521BEBE34900557D3F /* ProgressCell.m in Sources */,
+				235B6E5B1BEBE64300557D3F /* GroupViewController.m in Sources */,
+				235B6E4F1BEBE2D900557D3F /* SearchViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,6 +588,7 @@
 				235B6E3D1BEBD25600557D3F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		235B6E3E1BEBD25600557D3F /* Build configuration list for PBXNativeTarget "SixerTests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +597,7 @@
 				235B6E401BEBD25600557D3F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		235B6E411BEBD25600557D3F /* Build configuration list for PBXNativeTarget "SixerUITests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +606,7 @@
 				235B6E431BEBD25600557D3F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
