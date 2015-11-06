@@ -407,6 +407,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQ1-fa-pMs">
                                 <rect key="frame" x="558" y="33" width="22" height="22"/>
                                 <animations/>
+                                <connections>
+                                    <action selector="onAddButtonTapped:" destination="ag0-0F-frk" eventType="touchUpInside" id="Kiy-Ue-Kpi"/>
+                                </connections>
                             </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VTw-HZ-P7l">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
@@ -687,7 +690,7 @@
                                 <items>
                                     <barButtonItem title="Finish" id="T18-sG-4Kd">
                                         <connections>
-                                            <action selector="onFinishButtonTapped:" destination="4aa-7G-FHa" id="O9E-j2-QSZ"/>
+                                            <action selector="onFinishButtonTapped:" destination="4aa-7G-FHa" id="phi-v0-kTk"/>
                                             <segue destination="49e-Tb-3d3" kind="show" id="5nG-QP-dAx"/>
                                         </connections>
                                     </barButtonItem>

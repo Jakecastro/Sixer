@@ -29,6 +29,8 @@
 		235B6E5B1BEBE64300557D3F /* GroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E5A1BEBE64300557D3F /* GroupViewController.m */; };
 		235B6E5E1BEBE6E100557D3F /* AddGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E5D1BEBE6E100557D3F /* AddGroupViewController.m */; };
 		235B6E611BEBE92100557D3F /* AddReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E601BEBE92100557D3F /* AddReminderViewController.m */; };
+		236ADD4C1BEC86CE00F6FD62 /* SegmentedController.m in Sources */ = {isa = PBXBuildFile; fileRef = 236ADD4B1BEC86CE00F6FD62 /* SegmentedController.m */; settings = {ASSET_TAGS = (); }; };
+		236ADD4F1BED064A00F6FD62 /* Week.m in Sources */ = {isa = PBXBuildFile; fileRef = 236ADD4E1BED064A00F6FD62 /* Week.m */; settings = {ASSET_TAGS = (); }; };
 		2383085F1BEBEC62004DA4EC /* AddExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2383085E1BEBEC62004DA4EC /* AddExerciseViewController.m */; };
 		783F96DC1BEC1EC100CEA7FA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783F96DB1BEC1EC100CEA7FA /* AudioToolbox.framework */; };
 		783F96DE1BEC1ECC00CEA7FA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783F96DD1BEC1ECC00CEA7FA /* CFNetwork.framework */; };
@@ -108,6 +110,10 @@
 		235B6E5D1BEBE6E100557D3F /* AddGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddGroupViewController.m; path = ../AddGroupViewController.m; sourceTree = "<group>"; };
 		235B6E5F1BEBE92100557D3F /* AddReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddReminderViewController.h; sourceTree = "<group>"; };
 		235B6E601BEBE92100557D3F /* AddReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddReminderViewController.m; sourceTree = "<group>"; };
+		236ADD4A1BEC86CE00F6FD62 /* SegmentedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentedController.h; sourceTree = "<group>"; };
+		236ADD4B1BEC86CE00F6FD62 /* SegmentedController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentedController.m; sourceTree = "<group>"; };
+		236ADD4D1BED064A00F6FD62 /* Week.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Week.h; sourceTree = "<group>"; };
+		236ADD4E1BED064A00F6FD62 /* Week.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Week.m; sourceTree = "<group>"; };
 		2383085D1BEBEC62004DA4EC /* AddExerciseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddExerciseViewController.h; sourceTree = "<group>"; };
 		2383085E1BEBEC62004DA4EC /* AddExerciseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddExerciseViewController.m; sourceTree = "<group>"; };
 		783F96DB1BEC1EC100CEA7FA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -258,6 +264,8 @@
 			isa = PBXGroup;
 			children = (
 				235B6E1A1BEBD25600557D3F /* Main.storyboard */,
+				236ADD4A1BEC86CE00F6FD62 /* SegmentedController.h */,
+				236ADD4B1BEC86CE00F6FD62 /* SegmentedController.m */,
 				235B6E1F1BEBD25600557D3F /* LaunchScreen.storyboard */,
 			);
 			name = View;
@@ -278,6 +286,8 @@
 				2347DE731BEC3EBC00013FFC /* Exercise.m */,
 				2347DE6F1BEC3D2700013FFC /* User.h */,
 				2347DE701BEC3D2700013FFC /* User.m */,
+				236ADD4D1BED064A00F6FD62 /* Week.h */,
+				236ADD4E1BED064A00F6FD62 /* Week.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -433,10 +443,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				236ADD4C1BEC86CE00F6FD62 /* SegmentedController.m in Sources */,
 				235B6E5E1BEBE6E100557D3F /* AddGroupViewController.m in Sources */,
 				235B6E191BEBD25600557D3F /* ExerciseViewController.m in Sources */,
 				235B6E611BEBE92100557D3F /* AddReminderViewController.m in Sources */,
 				235B6E4C1BEBDD7500557D3F /* ExerciseCell.m in Sources */,
+				236ADD4F1BED064A00F6FD62 /* Week.m in Sources */,
 				2347DE711BEC3D2700013FFC /* User.m in Sources */,
 				235B6E581BEBE54400557D3F /* TimerViewController.m in Sources */,
 				235B6E551BEBE4A000557D3F /* ReminderCell.m in Sources */,
