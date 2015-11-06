@@ -45,10 +45,12 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GroupCell" forIndexPath:indexPath];
     Group *userGroups = [self.groupsArray objectAtIndex:indexPath.row];
     cell.textLabel.text = [userGroups objectForKey:@"name"];
+
     return cell;
 }
 - (IBAction)onAddButtonTapped:(UIButton *)sender {
     Group *groupToAdd = [Group objectWithClassName:@"Group"];
+    
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"New Group"
                                                                              message:nil
                                                                       preferredStyle:UIAlertControllerStyleAlert];

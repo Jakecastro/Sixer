@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSArray *exercisesArray;
+@property NSMutableArray *exerciseImagesArray;
 
 @end
 
@@ -28,6 +29,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.exerciseImagesArray = [[NSMutableArray alloc] init];
+
     PFQuery *exercisesQuery = [PFQuery queryWithClassName:@"Exercise"];
     [exercisesQuery whereKeyExists:@"name"];
     [exercisesQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
@@ -36,7 +39,16 @@
         }
         else {
             self.exercisesArray = objects;
-            [self.tableView reloadData];
+            for (Exercise *exercise in self.exercisesArray) {
+                PFFile *imageFile = [exercise objectForKey:@"image"];
+                [imageFile getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
+                    UIImage *image = [UIImage imageWithData:data];
+                    [self.exerciseImagesArray addObject:image];
+                    if (exercise == [self.exercisesArray lastObject]) {
+                        [self.tableView reloadData];
+                    }
+                }];
+            }
         }
     }];
 }
@@ -50,6 +62,11 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AddExerciseCell" forIndexPath:indexPath];
     Exercise *exercise = [self.exercisesArray objectAtIndex:indexPath.row];
     cell.textLabel.text = [exercise objectForKey:@"name"];
+    cell.imageView.image = [self.exerciseImagesArray objectAtIndex:indexPath.row];
+
+    
+
+
     return cell;
 }
 
