@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="IU7-a5-fsj">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -715,28 +715,9 @@
                                                 <include reference="jdo-Ds-xpk"/>
                                             </mask>
                                         </variation>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3YU-QA-mMh">
-                                        <rect key="frame" x="-25" y="-30" width="97" height="30"/>
-                                        <animations/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="MHr-IB-4Ea"/>
-                                            <constraint firstAttribute="width" constant="217" id="u5O-cc-cC3"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="MHr-IB-4Ea"/>
-                                                <exclude reference="u5O-cc-cC3"/>
-                                            </mask>
-                                        </variation>
-                                        <variation key="widthClass=compact">
-                                            <mask key="constraints">
-                                                <include reference="MHr-IB-4Ea"/>
-                                                <include reference="u5O-cc-cC3"/>
-                                            </mask>
-                                        </variation>
+                                        <connections>
+                                            <outlet property="delegate" destination="ghv-4r-spr" id="mW8-p8-Niu"/>
+                                        </connections>
                                     </textField>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mzM-tC-w8E">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -758,6 +739,31 @@
                                             </mask>
                                         </variation>
                                     </imageView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3YU-QA-mMh">
+                                        <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="MHr-IB-4Ea"/>
+                                            <constraint firstAttribute="width" constant="217" id="u5O-cc-cC3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="MHr-IB-4Ea"/>
+                                                <exclude reference="u5O-cc-cC3"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="MHr-IB-4Ea"/>
+                                                <include reference="u5O-cc-cC3"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <outlet property="delegate" destination="ghv-4r-spr" id="Ev2-dx-LtI"/>
+                                        </connections>
+                                    </textField>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="0.78429760061919507" colorSpace="calibratedWhite"/>
@@ -786,8 +792,8 @@
                                         <exclude reference="QnO-lj-kfA"/>
                                         <exclude reference="LS3-V9-PoT"/>
                                         <exclude reference="eNn-La-uoB"/>
-                                        <exclude reference="3YU-QA-mMh"/>
                                         <exclude reference="mzM-tC-w8E"/>
+                                        <exclude reference="3YU-QA-mMh"/>
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="BSU-8b-XAG"/>
@@ -815,8 +821,8 @@
                                         <include reference="QnO-lj-kfA"/>
                                         <include reference="LS3-V9-PoT"/>
                                         <include reference="eNn-La-uoB"/>
-                                        <include reference="3YU-QA-mMh"/>
                                         <include reference="mzM-tC-w8E"/>
+                                        <include reference="3YU-QA-mMh"/>
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="BSU-8b-XAG"/>
@@ -887,7 +893,9 @@
                     <connections>
                         <outlet property="loginButton" destination="QnO-lj-kfA" id="ZH5-GS-3B2"/>
                         <outlet property="passwordIconImageView" destination="LS3-V9-PoT" id="4bY-WX-S8T"/>
+                        <outlet property="passwordTextFieldOutlet" destination="3YU-QA-mMh" id="mgQ-rU-z2p"/>
                         <outlet property="usernameIconImageView" destination="mzM-tC-w8E" id="Y8r-K5-Nvg"/>
+                        <outlet property="usernameTextField" destination="eNn-La-uoB" id="au8-2O-D9C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3yI-6e-JWz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -904,6 +912,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xN7-FJ-ojw"/>
+        <segue reference="iYv-WW-D02"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -6,7 +6,10 @@
 //  Copyright © 2015 Jake Castro. All rights reserved.
 //
 
+// Imports
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
+#import "LoginViewController.h"
 
 @interface RegistrationViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;

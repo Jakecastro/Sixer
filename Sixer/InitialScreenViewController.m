@@ -6,9 +6,17 @@
 //  Copyright © 2015 Jake Castro. All rights reserved.
 //
 
+// Imports
 #import "InitialScreenViewController.h"
+#import "ExerciseViewController.h"
+#import <Parse/Parse.h>
 
 @interface InitialScreenViewController ()
+
+// Properties
+
+@property PFUser *currentUser;
+@property BOOL userLoggedIn;
 
 @end
 
@@ -16,22 +24,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.currentUser = [PFUser currentUser];
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)viewDidAppear:(BOOL)animated {
+    [self checkCurrentUser];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)checkCurrentUser {
+    
+    if (self.currentUser) {
+        [self performSegueWithIdentifier:@"MainSegue"sender:nil];
+    } else {
+        [self performSegueWithIdentifier:@"RegistrationSegue" sender:nil];
+    }
+    
 }
-*/
+
 
 @end

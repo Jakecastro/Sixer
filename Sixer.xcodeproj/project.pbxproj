@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2347DE681BEC2F0B00013FFC /* LoginVeiwController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2347DE671BEC2F0B00013FFC /* LoginVeiwController.m */; };
-		2347DE6B1BEC2F2900013FFC /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2347DE6A1BEC2F2900013FFC /* SignupViewController.m */; };
 		2347DE6E1BEC3A3F00013FFC /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 2347DE6D1BEC3A3F00013FFC /* Group.m */; };
 		2347DE711BEC3D2700013FFC /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 2347DE701BEC3D2700013FFC /* User.m */; };
 		2347DE741BEC3EBC00013FFC /* Exercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 2347DE731BEC3EBC00013FFC /* Exercise.m */; };
@@ -29,7 +27,7 @@
 		235B6E5B1BEBE64300557D3F /* GroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E5A1BEBE64300557D3F /* GroupViewController.m */; };
 		235B6E5E1BEBE6E100557D3F /* AddGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E5D1BEBE6E100557D3F /* AddGroupViewController.m */; };
 		235B6E611BEBE92100557D3F /* AddReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E601BEBE92100557D3F /* AddReminderViewController.m */; };
-		236ADD4F1BED064A00F6FD62 /* Week.m in Sources */ = {isa = PBXBuildFile; fileRef = 236ADD4E1BED064A00F6FD62 /* Week.m */; settings = {ASSET_TAGS = (); }; };
+		236ADD4F1BED064A00F6FD62 /* Week.m in Sources */ = {isa = PBXBuildFile; fileRef = 236ADD4E1BED064A00F6FD62 /* Week.m */; };
 		2383085F1BEBEC62004DA4EC /* AddExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2383085E1BEBEC62004DA4EC /* AddExerciseViewController.m */; };
 		783F96DC1BEC1EC100CEA7FA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783F96DB1BEC1EC100CEA7FA /* AudioToolbox.framework */; };
 		783F96DE1BEC1ECC00CEA7FA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783F96DD1BEC1ECC00CEA7FA /* CFNetwork.framework */; };
@@ -69,10 +67,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2347DE661BEC2F0B00013FFC /* LoginVeiwController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVeiwController.h; sourceTree = "<group>"; };
-		2347DE671BEC2F0B00013FFC /* LoginVeiwController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVeiwController.m; sourceTree = "<group>"; };
-		2347DE691BEC2F2900013FFC /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
-		2347DE6A1BEC2F2900013FFC /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
 		2347DE6C1BEC3A3F00013FFC /* Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Group.h; sourceTree = "<group>"; };
 		2347DE6D1BEC3A3F00013FFC /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Group.m; sourceTree = "<group>"; };
 		2347DE6F1BEC3D2700013FFC /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -245,6 +239,12 @@
 		235B6E471BEBD2F500557D3F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				CD0A9B2A1BED221300B6817D /* InitialScreenViewController.h */,
+				CD0A9B2B1BED221300B6817D /* InitialScreenViewController.m */,
+				CD0A9B2D1BED222000B6817D /* LoginViewController.h */,
+				CD0A9B2E1BED222000B6817D /* LoginViewController.m */,
+				CD0A9B301BED223300B6817D /* RegistrationViewController.h */,
+				CD0A9B311BED223300B6817D /* RegistrationViewController.m */,
 				235B6E141BEBD25600557D3F /* ProgressViewController.h */,
 				235B6E151BEBD25600557D3F /* ProgressViewController.m */,
 				235B6E171BEBD25600557D3F /* ExerciseViewController.h */,
@@ -261,10 +261,6 @@
 				235B6E601BEBE92100557D3F /* AddReminderViewController.m */,
 				2383085D1BEBEC62004DA4EC /* AddExerciseViewController.h */,
 				2383085E1BEBEC62004DA4EC /* AddExerciseViewController.m */,
-				2347DE661BEC2F0B00013FFC /* LoginVeiwController.h */,
-				2347DE671BEC2F0B00013FFC /* LoginVeiwController.m */,
-				2347DE691BEC2F2900013FFC /* SignupViewController.h */,
-				2347DE6A1BEC2F2900013FFC /* SignupViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -272,10 +268,10 @@
 		235B6E481BEBD30200557D3F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				235B6E1F1BEBD25600557D3F /* LaunchScreen.storyboard */,
 				CD0A9B261BED218000B6817D /* Initial.storyboard */,
 				CD0A9B281BED219500B6817D /* RegistrationAndLogin.storyboard */,
 				235B6E1A1BEBD25600557D3F /* Main.storyboard */,
-				235B6E1F1BEBD25600557D3F /* LaunchScreen.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -283,12 +279,6 @@
 		235B6E491BEBD31000557D3F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CD0A9B2A1BED221300B6817D /* InitialScreenViewController.h */,
-				CD0A9B2B1BED221300B6817D /* InitialScreenViewController.m */,
-				CD0A9B2D1BED222000B6817D /* LoginViewController.h */,
-				CD0A9B2E1BED222000B6817D /* LoginViewController.m */,
-				CD0A9B301BED223300B6817D /* RegistrationViewController.h */,
-				CD0A9B311BED223300B6817D /* RegistrationViewController.m */,
 				2347DE6C1BEC3A3F00013FFC /* Group.h */,
 				2347DE6D1BEC3A3F00013FFC /* Group.m */,
 				235B6E531BEBE4A000557D3F /* ReminderCell.h */,
@@ -475,11 +465,9 @@
 				CD0A9B2C1BED221300B6817D /* InitialScreenViewController.m in Sources */,
 				235B6E461BEBD2CD00557D3F /* RemindersViewController.m in Sources */,
 				CD0A9B321BED223300B6817D /* RegistrationViewController.m in Sources */,
-				2347DE6B1BEC2F2900013FFC /* SignupViewController.m in Sources */,
 				235B6E101BEBD25600557D3F /* main.m in Sources */,
 				2383085F1BEBEC62004DA4EC /* AddExerciseViewController.m in Sources */,
 				235B6E521BEBE34900557D3F /* ProgressCell.m in Sources */,
-				2347DE681BEC2F0B00013FFC /* LoginVeiwController.m in Sources */,
 				235B6E5B1BEBE64300557D3F /* GroupViewController.m in Sources */,
 				2347DE6E1BEC3A3F00013FFC /* Group.m in Sources */,
 			);

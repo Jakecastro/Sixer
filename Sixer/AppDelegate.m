@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 
+
+
 @interface AppDelegate ()
 
 @end
@@ -26,15 +28,12 @@
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     UITabBarController *tabBar = (UITabBarController *)self.window.rootViewController;
     tabBar.selectedIndex = 1;
-
-
-    // Handle launching from a notification
-    UILocalNotification *locationNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
-    if (locationNotification) {
-        // Set icon badge number to zero
-        application.applicationIconBadgeNumber = 0;
-    }
-
+    
+    //Presents Initial Screen
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Initial" bundle:nil];
+    UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"InitialScreen"];
+    self.window.rootViewController = viewController;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
