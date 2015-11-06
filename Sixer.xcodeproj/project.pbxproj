@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2347DE681BEC2F0B00013FFC /* LoginVeiwController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2347DE671BEC2F0B00013FFC /* LoginVeiwController.m */; settings = {ASSET_TAGS = (); }; };
-		2347DE6B1BEC2F2900013FFC /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2347DE6A1BEC2F2900013FFC /* SignupViewController.m */; settings = {ASSET_TAGS = (); }; };
-		2347DE6E1BEC3A3F00013FFC /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 2347DE6D1BEC3A3F00013FFC /* Group.m */; settings = {ASSET_TAGS = (); }; };
-		2347DE711BEC3D2700013FFC /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 2347DE701BEC3D2700013FFC /* User.m */; settings = {ASSET_TAGS = (); }; };
-		2347DE741BEC3EBC00013FFC /* Exercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 2347DE731BEC3EBC00013FFC /* Exercise.m */; settings = {ASSET_TAGS = (); }; };
+		2347DE681BEC2F0B00013FFC /* LoginVeiwController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2347DE671BEC2F0B00013FFC /* LoginVeiwController.m */; };
+		2347DE6B1BEC2F2900013FFC /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2347DE6A1BEC2F2900013FFC /* SignupViewController.m */; };
+		2347DE6E1BEC3A3F00013FFC /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 2347DE6D1BEC3A3F00013FFC /* Group.m */; };
+		2347DE711BEC3D2700013FFC /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 2347DE701BEC3D2700013FFC /* User.m */; };
+		2347DE741BEC3EBC00013FFC /* Exercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 2347DE731BEC3EBC00013FFC /* Exercise.m */; };
 		235B6E101BEBD25600557D3F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E0F1BEBD25600557D3F /* main.m */; };
 		235B6E131BEBD25600557D3F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E121BEBD25600557D3F /* AppDelegate.m */; };
 		235B6E161BEBD25600557D3F /* ProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E151BEBD25600557D3F /* ProgressViewController.m */; };
@@ -234,14 +234,14 @@
 				235B6E151BEBD25600557D3F /* ProgressViewController.m */,
 				235B6E171BEBD25600557D3F /* ExerciseViewController.h */,
 				235B6E181BEBD25600557D3F /* ExerciseViewController.m */,
-				235B6E441BEBD2CD00557D3F /* RemindersViewController.h */,
-				235B6E451BEBD2CD00557D3F /* RemindersViewController.m */,
 				235B6E561BEBE54400557D3F /* TimerViewController.h */,
 				235B6E571BEBE54400557D3F /* TimerViewController.m */,
 				235B6E591BEBE64300557D3F /* GroupViewController.h */,
 				235B6E5A1BEBE64300557D3F /* GroupViewController.m */,
 				235B6E5C1BEBE6E100557D3F /* AddGroupViewController.h */,
 				235B6E5D1BEBE6E100557D3F /* AddGroupViewController.m */,
+				235B6E441BEBD2CD00557D3F /* RemindersViewController.h */,
+				235B6E451BEBD2CD00557D3F /* RemindersViewController.m */,
 				235B6E5F1BEBE92100557D3F /* AddReminderViewController.h */,
 				235B6E601BEBE92100557D3F /* AddReminderViewController.m */,
 				2383085D1BEBEC62004DA4EC /* AddExerciseViewController.h */,
@@ -370,6 +370,7 @@
 				TargetAttributes = {
 					235B6E0A1BEBD25600557D3F = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = NK26JGQ93M;
 					};
 					235B6E261BEBD25600557D3F = {
 						CreatedOnToolsVersion = 7.0;
@@ -591,6 +592,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Sixer",
@@ -599,6 +602,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Jake.Sixer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -606,6 +610,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Sixer",
@@ -614,6 +620,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Jake.Sixer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
