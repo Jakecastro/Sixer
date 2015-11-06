@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2347DE681BEC2F0B00013FFC /* LoginVeiwController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2347DE671BEC2F0B00013FFC /* LoginVeiwController.m */; settings = {ASSET_TAGS = (); }; };
+		2347DE6B1BEC2F2900013FFC /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2347DE6A1BEC2F2900013FFC /* SignupViewController.m */; settings = {ASSET_TAGS = (); }; };
+		2347DE6E1BEC3A3F00013FFC /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 2347DE6D1BEC3A3F00013FFC /* Group.m */; settings = {ASSET_TAGS = (); }; };
+		2347DE711BEC3D2700013FFC /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 2347DE701BEC3D2700013FFC /* User.m */; settings = {ASSET_TAGS = (); }; };
+		2347DE741BEC3EBC00013FFC /* Exercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 2347DE731BEC3EBC00013FFC /* Exercise.m */; settings = {ASSET_TAGS = (); }; };
 		235B6E101BEBD25600557D3F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E0F1BEBD25600557D3F /* main.m */; };
 		235B6E131BEBD25600557D3F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E121BEBD25600557D3F /* AppDelegate.m */; };
 		235B6E161BEBD25600557D3F /* ProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E151BEBD25600557D3F /* ProgressViewController.m */; };
@@ -59,6 +64,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2347DE661BEC2F0B00013FFC /* LoginVeiwController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVeiwController.h; sourceTree = "<group>"; };
+		2347DE671BEC2F0B00013FFC /* LoginVeiwController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVeiwController.m; sourceTree = "<group>"; };
+		2347DE691BEC2F2900013FFC /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
+		2347DE6A1BEC2F2900013FFC /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
+		2347DE6C1BEC3A3F00013FFC /* Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Group.h; sourceTree = "<group>"; };
+		2347DE6D1BEC3A3F00013FFC /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Group.m; sourceTree = "<group>"; };
+		2347DE6F1BEC3D2700013FFC /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		2347DE701BEC3D2700013FFC /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		2347DE721BEC3EBC00013FFC /* Exercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exercise.h; sourceTree = "<group>"; };
+		2347DE731BEC3EBC00013FFC /* Exercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exercise.m; sourceTree = "<group>"; };
 		235B6E0B1BEBD25600557D3F /* Sixer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sixer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		235B6E0F1BEBD25600557D3F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		235B6E111BEBD25600557D3F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -231,6 +246,10 @@
 				235B6E601BEBE92100557D3F /* AddReminderViewController.m */,
 				2383085D1BEBEC62004DA4EC /* AddExerciseViewController.h */,
 				2383085E1BEBEC62004DA4EC /* AddExerciseViewController.m */,
+				2347DE661BEC2F0B00013FFC /* LoginVeiwController.h */,
+				2347DE671BEC2F0B00013FFC /* LoginVeiwController.m */,
+				2347DE691BEC2F2900013FFC /* SignupViewController.h */,
+				2347DE6A1BEC2F2900013FFC /* SignupViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -247,12 +266,18 @@
 		235B6E491BEBD31000557D3F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2347DE6C1BEC3A3F00013FFC /* Group.h */,
+				2347DE6D1BEC3A3F00013FFC /* Group.m */,
 				235B6E531BEBE4A000557D3F /* ReminderCell.h */,
 				235B6E541BEBE4A000557D3F /* ReminderCell.m */,
 				235B6E501BEBE34900557D3F /* ProgressCell.h */,
 				235B6E511BEBE34900557D3F /* ProgressCell.m */,
 				235B6E4A1BEBDD7500557D3F /* ExerciseCell.h */,
 				235B6E4B1BEBDD7500557D3F /* ExerciseCell.m */,
+				2347DE721BEC3EBC00013FFC /* Exercise.h */,
+				2347DE731BEC3EBC00013FFC /* Exercise.m */,
+				2347DE6F1BEC3D2700013FFC /* User.h */,
+				2347DE701BEC3D2700013FFC /* User.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -412,15 +437,20 @@
 				235B6E191BEBD25600557D3F /* ExerciseViewController.m in Sources */,
 				235B6E611BEBE92100557D3F /* AddReminderViewController.m in Sources */,
 				235B6E4C1BEBDD7500557D3F /* ExerciseCell.m in Sources */,
+				2347DE711BEC3D2700013FFC /* User.m in Sources */,
 				235B6E581BEBE54400557D3F /* TimerViewController.m in Sources */,
 				235B6E551BEBE4A000557D3F /* ReminderCell.m in Sources */,
+				2347DE741BEC3EBC00013FFC /* Exercise.m in Sources */,
 				235B6E131BEBD25600557D3F /* AppDelegate.m in Sources */,
 				235B6E161BEBD25600557D3F /* ProgressViewController.m in Sources */,
 				235B6E461BEBD2CD00557D3F /* RemindersViewController.m in Sources */,
+				2347DE6B1BEC2F2900013FFC /* SignupViewController.m in Sources */,
 				235B6E101BEBD25600557D3F /* main.m in Sources */,
 				2383085F1BEBEC62004DA4EC /* AddExerciseViewController.m in Sources */,
 				235B6E521BEBE34900557D3F /* ProgressCell.m in Sources */,
+				2347DE681BEC2F0B00013FFC /* LoginVeiwController.m in Sources */,
 				235B6E5B1BEBE64300557D3F /* GroupViewController.m in Sources */,
+				2347DE6E1BEC3A3F00013FFC /* Group.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

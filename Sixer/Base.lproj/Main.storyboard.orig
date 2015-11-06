@@ -4,6 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -312,7 +313,11 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o8y-EP-P36" id="QQG-Zd-hiI">
+<<<<<<< HEAD
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+=======
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+>>>>>>> 825ccd8041b20cfd32ea4967ebbaf5934cc51f5f
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                         </tableViewCellContentView>
@@ -551,16 +556,19 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="10" translatesAutoresizingMaskIntoConstraints="NO" id="dvL-pD-azw">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="10" translatesAutoresizingMaskIntoConstraints="NO" id="1KN-1N-xKG">
                                 <rect key="frame" x="0.0" y="340" width="600" height="216"/>
-                                <date key="date" timeIntervalSinceReferenceDate="468522432.995915">
-                                    <!--2015-11-06 17:07:12 +0000-->
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="600" id="2Z4-s4-NsU"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="468520209.53354102">
+                                    <!--2015-11-06 16:30:09 +0000-->
                                 </date>
                             </datePicker>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CTw-iE-HQr">
-                                <rect key="frame" x="109" y="129" width="300" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Exercise " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gxc-Y4-Riw">
+                                <rect key="frame" x="113" y="119" width="375" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="Hov-DI-VlM"/>
+                                    <constraint firstAttribute="width" secondItem="gxc-Y4-Riw" secondAttribute="height" multiplier="25:2" id="xbm-2c-sbT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -569,14 +577,14 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="CTw-iE-HQr" firstAttribute="centerX" secondItem="ARo-B4-YdE" secondAttribute="centerX" id="4hv-EA-uG5"/>
+                            <constraint firstItem="Tr5-Gz-VOV" firstAttribute="top" secondItem="1KN-1N-xKG" secondAttribute="bottom" id="3lr-Pg-Pq4"/>
                             <constraint firstItem="Tr5-Gz-VOV" firstAttribute="leading" secondItem="ARo-B4-YdE" secondAttribute="leadingMargin" constant="-20" id="7lM-wZ-5ib"/>
-                            <constraint firstItem="dvL-pD-azw" firstAttribute="centerX" secondItem="ARo-B4-YdE" secondAttribute="centerX" id="Hwf-WF-1fM"/>
-                            <constraint firstItem="Tr5-Gz-VOV" firstAttribute="top" secondItem="dvL-pD-azw" secondAttribute="bottom" id="LJY-5J-ECM"/>
-                            <constraint firstItem="dvL-pD-azw" firstAttribute="leading" secondItem="ARo-B4-YdE" secondAttribute="leadingMargin" constant="-20" id="N4s-rh-cah"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="dvL-pD-azw" secondAttribute="trailing" constant="-20" id="NND-Pv-5bM"/>
+                            <constraint firstItem="gxc-Y4-Riw" firstAttribute="centerX" secondItem="ARo-B4-YdE" secondAttribute="centerX" id="ITa-zt-RzK"/>
                             <constraint firstItem="O87-7p-Irs" firstAttribute="top" secondItem="Tr5-Gz-VOV" secondAttribute="bottom" id="Obp-7v-3OD"/>
-                            <constraint firstItem="CTw-iE-HQr" firstAttribute="centerY" secondItem="ARo-B4-YdE" secondAttribute="centerY" id="kPD-pg-DUN"/>
+                            <constraint firstItem="gxc-Y4-Riw" firstAttribute="top" secondItem="Flo-oL-mSE" secondAttribute="bottom" constant="99" id="bst-ko-NMZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1KN-1N-xKG" secondAttribute="trailing" constant="-20" id="m9U-xv-Y1w"/>
+                            <constraint firstItem="gxc-Y4-Riw" firstAttribute="leading" secondItem="ARo-B4-YdE" secondAttribute="leadingMargin" constant="93" id="pTs-Rh-OQH"/>
+                            <constraint firstItem="1KN-1N-xKG" firstAttribute="leading" secondItem="ARo-B4-YdE" secondAttribute="leadingMargin" constant="-20" id="tsB-vY-6At"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Tr5-Gz-VOV" secondAttribute="trailing" constant="-20" id="wCO-we-xEL"/>
                         </constraints>
                     </view>
