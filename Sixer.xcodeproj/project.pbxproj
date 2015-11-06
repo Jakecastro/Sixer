@@ -16,15 +16,29 @@
 		235B6E211BEBD25600557D3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 235B6E1F1BEBD25600557D3F /* LaunchScreen.storyboard */; };
 		235B6E2C1BEBD25600557D3F /* SixerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E2B1BEBD25600557D3F /* SixerTests.m */; };
 		235B6E371BEBD25600557D3F /* SixerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E361BEBD25600557D3F /* SixerUITests.m */; };
-		235B6E461BEBD2CD00557D3F /* RemindersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E451BEBD2CD00557D3F /* RemindersViewController.m */; settings = {ASSET_TAGS = (); }; };
-		235B6E4C1BEBDD7500557D3F /* ExerciseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E4B1BEBDD7500557D3F /* ExerciseCell.m */; settings = {ASSET_TAGS = (); }; };
-		235B6E521BEBE34900557D3F /* ProgressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E511BEBE34900557D3F /* ProgressCell.m */; settings = {ASSET_TAGS = (); }; };
-		235B6E551BEBE4A000557D3F /* ReminderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E541BEBE4A000557D3F /* ReminderCell.m */; settings = {ASSET_TAGS = (); }; };
-		235B6E581BEBE54400557D3F /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E571BEBE54400557D3F /* TimerViewController.m */; settings = {ASSET_TAGS = (); }; };
-		235B6E5B1BEBE64300557D3F /* GroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E5A1BEBE64300557D3F /* GroupViewController.m */; settings = {ASSET_TAGS = (); }; };
-		235B6E5E1BEBE6E100557D3F /* AddGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E5D1BEBE6E100557D3F /* AddGroupViewController.m */; settings = {ASSET_TAGS = (); }; };
-		235B6E611BEBE92100557D3F /* AddReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E601BEBE92100557D3F /* AddReminderViewController.m */; settings = {ASSET_TAGS = (); }; };
-		2383085F1BEBEC62004DA4EC /* AddExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2383085E1BEBEC62004DA4EC /* AddExerciseViewController.m */; settings = {ASSET_TAGS = (); }; };
+		235B6E461BEBD2CD00557D3F /* RemindersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E451BEBD2CD00557D3F /* RemindersViewController.m */; };
+		235B6E4C1BEBDD7500557D3F /* ExerciseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E4B1BEBDD7500557D3F /* ExerciseCell.m */; };
+		235B6E521BEBE34900557D3F /* ProgressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E511BEBE34900557D3F /* ProgressCell.m */; };
+		235B6E551BEBE4A000557D3F /* ReminderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E541BEBE4A000557D3F /* ReminderCell.m */; };
+		235B6E581BEBE54400557D3F /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E571BEBE54400557D3F /* TimerViewController.m */; };
+		235B6E5B1BEBE64300557D3F /* GroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E5A1BEBE64300557D3F /* GroupViewController.m */; };
+		235B6E5E1BEBE6E100557D3F /* AddGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E5D1BEBE6E100557D3F /* AddGroupViewController.m */; };
+		235B6E611BEBE92100557D3F /* AddReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E601BEBE92100557D3F /* AddReminderViewController.m */; };
+		2383085F1BEBEC62004DA4EC /* AddExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2383085E1BEBEC62004DA4EC /* AddExerciseViewController.m */; };
+		783F96DC1BEC1EC100CEA7FA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783F96DB1BEC1EC100CEA7FA /* AudioToolbox.framework */; };
+		783F96DE1BEC1ECC00CEA7FA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783F96DD1BEC1ECC00CEA7FA /* CFNetwork.framework */; };
+		783F96E01BEC1ED700CEA7FA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783F96DF1BEC1ED700CEA7FA /* CoreGraphics.framework */; };
+		783F96E21BEC1EE300CEA7FA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783F96E11BEC1EE300CEA7FA /* CoreLocation.framework */; };
+		783F96E41BEC1EFE00CEA7FA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783F96E31BEC1EFE00CEA7FA /* QuartzCore.framework */; };
+		783F96E61BEC1F0800CEA7FA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783F96E51BEC1F0800CEA7FA /* Security.framework */; };
+		783F96E81BEC1F1500CEA7FA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783F96E71BEC1F1500CEA7FA /* StoreKit.framework */; };
+		783F96EA1BEC1F2800CEA7FA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783F96E91BEC1F2800CEA7FA /* SystemConfiguration.framework */; };
+		783F96EC1BEC1F3900CEA7FA /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 783F96EB1BEC1F3900CEA7FA /* libz.tbd */; };
+		783F96EE1BEC1F6200CEA7FA /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 783F96ED1BEC1F6200CEA7FA /* libsqlite3.tbd */; };
+		783F96F01BEC21DC00CEA7FA /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783F96EF1BEC21DC00CEA7FA /* Accounts.framework */; };
+		783F96F21BEC21E500CEA7FA /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783F96F11BEC21E500CEA7FA /* Social.framework */; };
+		783F96F51BEC258200CEA7FA /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783F96F31BEC258200CEA7FA /* Bolts.framework */; };
+		783F96F61BEC258200CEA7FA /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783F96F41BEC258200CEA7FA /* Parse.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +95,20 @@
 		235B6E601BEBE92100557D3F /* AddReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddReminderViewController.m; sourceTree = "<group>"; };
 		2383085D1BEBEC62004DA4EC /* AddExerciseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddExerciseViewController.h; sourceTree = "<group>"; };
 		2383085E1BEBEC62004DA4EC /* AddExerciseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddExerciseViewController.m; sourceTree = "<group>"; };
+		783F96DB1BEC1EC100CEA7FA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		783F96DD1BEC1ECC00CEA7FA /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		783F96DF1BEC1ED700CEA7FA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		783F96E11BEC1EE300CEA7FA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		783F96E31BEC1EFE00CEA7FA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		783F96E51BEC1F0800CEA7FA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		783F96E71BEC1F1500CEA7FA /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		783F96E91BEC1F2800CEA7FA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		783F96EB1BEC1F3900CEA7FA /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		783F96ED1BEC1F6200CEA7FA /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		783F96EF1BEC21DC00CEA7FA /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		783F96F11BEC21E500CEA7FA /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		783F96F31BEC258200CEA7FA /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		783F96F41BEC258200CEA7FA /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +116,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				783F96F21BEC21E500CEA7FA /* Social.framework in Frameworks */,
+				783F96F01BEC21DC00CEA7FA /* Accounts.framework in Frameworks */,
+				783F96EE1BEC1F6200CEA7FA /* libsqlite3.tbd in Frameworks */,
+				783F96EC1BEC1F3900CEA7FA /* libz.tbd in Frameworks */,
+				783F96EA1BEC1F2800CEA7FA /* SystemConfiguration.framework in Frameworks */,
+				783F96E81BEC1F1500CEA7FA /* StoreKit.framework in Frameworks */,
+				783F96E61BEC1F0800CEA7FA /* Security.framework in Frameworks */,
+				783F96F51BEC258200CEA7FA /* Bolts.framework in Frameworks */,
+				783F96E41BEC1EFE00CEA7FA /* QuartzCore.framework in Frameworks */,
+				783F96E21BEC1EE300CEA7FA /* CoreLocation.framework in Frameworks */,
+				783F96F61BEC258200CEA7FA /* Parse.framework in Frameworks */,
+				783F96E01BEC1ED700CEA7FA /* CoreGraphics.framework in Frameworks */,
+				783F96DE1BEC1ECC00CEA7FA /* CFNetwork.framework in Frameworks */,
+				783F96DC1BEC1EC100CEA7FA /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +173,7 @@
 		235B6E0D1BEBD25600557D3F /* Sixer */ = {
 			isa = PBXGroup;
 			children = (
+				783F96D61BEC1E2600CEA7FA /* Frameworks */,
 				235B6E491BEBD31000557D3F /* Model */,
 				235B6E481BEBD30200557D3F /* View */,
 				235B6E471BEBD2F500557D3F /* Controller */,
@@ -212,6 +255,27 @@
 				235B6E4B1BEBDD7500557D3F /* ExerciseCell.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		783F96D61BEC1E2600CEA7FA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				783F96F31BEC258200CEA7FA /* Bolts.framework */,
+				783F96F41BEC258200CEA7FA /* Parse.framework */,
+				783F96F11BEC21E500CEA7FA /* Social.framework */,
+				783F96EF1BEC21DC00CEA7FA /* Accounts.framework */,
+				783F96ED1BEC1F6200CEA7FA /* libsqlite3.tbd */,
+				783F96EB1BEC1F3900CEA7FA /* libz.tbd */,
+				783F96E91BEC1F2800CEA7FA /* SystemConfiguration.framework */,
+				783F96E71BEC1F1500CEA7FA /* StoreKit.framework */,
+				783F96E51BEC1F0800CEA7FA /* Security.framework */,
+				783F96E31BEC1EFE00CEA7FA /* QuartzCore.framework */,
+				783F96E11BEC1EE300CEA7FA /* CoreLocation.framework */,
+				783F96DF1BEC1ED700CEA7FA /* CoreGraphics.framework */,
+				783F96DD1BEC1ECC00CEA7FA /* CFNetwork.framework */,
+				783F96DB1BEC1EC100CEA7FA /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -497,6 +561,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Sixer",
+				);
 				INFOPLIST_FILE = Sixer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Jake.Sixer;
@@ -508,6 +576,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Sixer",
+				);
 				INFOPLIST_FILE = Sixer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Jake.Sixer;
