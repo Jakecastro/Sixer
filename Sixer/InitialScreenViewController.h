@@ -10,4 +10,7 @@
 
 @interface InitialScreenViewController : UIViewController
 
+// Method Declarations
+-(void)checkCurrentUser;
+
 @end
