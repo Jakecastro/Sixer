@@ -303,8 +303,8 @@
                                     <outlet property="delegate" destination="Jti-Aj-Xaq" id="oB1-9M-XXZ"/>
                                 </connections>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YCI-Ih-VAI">
-                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YCI-Ih-VAI">
+                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -312,7 +312,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o8y-EP-P36" id="QQG-Zd-hiI">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                         </tableViewCellContentView>
@@ -327,9 +327,6 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ika-LR-kUF">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="600" id="1ZB-gr-lq4"/>
-                                </constraints>
                                 <items>
                                     <barButtonItem systemItem="done" id="RNf-20-JGg">
                                         <connections>
@@ -342,16 +339,16 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="quC-gR-i7o" firstAttribute="leading" secondItem="YCI-Ih-VAI" secondAttribute="leading" id="3Ix-bx-rKZ"/>
-                            <constraint firstItem="ika-LR-kUF" firstAttribute="bottom" secondItem="JdC-VG-mQr" secondAttribute="bottomMargin" id="8wE-xe-vuZ"/>
-                            <constraint firstItem="YCI-Ih-VAI" firstAttribute="leading" secondItem="JdC-VG-mQr" secondAttribute="leading" id="BBe-mg-5zr"/>
-                            <constraint firstItem="quC-gR-i7o" firstAttribute="top" secondItem="gIL-e2-6ZU" secondAttribute="bottom" id="VOh-5Q-OGc"/>
-                            <constraint firstItem="BYu-Vg-Yqd" firstAttribute="top" secondItem="YCI-Ih-VAI" secondAttribute="bottom" constant="5" id="ara-84-Bic"/>
-                            <constraint firstAttribute="trailing" secondItem="YCI-Ih-VAI" secondAttribute="trailing" id="aw2-JE-DSd"/>
-                            <constraint firstItem="ika-LR-kUF" firstAttribute="leading" secondItem="JdC-VG-mQr" secondAttribute="leadingMargin" constant="-20" id="cPv-Nn-GMA"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ika-LR-kUF" secondAttribute="trailing" constant="-20" id="iit-Ch-chK"/>
-                            <constraint firstItem="quC-gR-i7o" firstAttribute="trailing" secondItem="YCI-Ih-VAI" secondAttribute="trailing" id="nlT-V4-HZH"/>
-                            <constraint firstItem="YCI-Ih-VAI" firstAttribute="top" secondItem="quC-gR-i7o" secondAttribute="bottom" id="z65-1F-Bbi"/>
+                            <constraint firstItem="ika-LR-kUF" firstAttribute="top" secondItem="YCI-Ih-VAI" secondAttribute="bottom" id="3Wt-nN-XTb"/>
+                            <constraint firstItem="YCI-Ih-VAI" firstAttribute="trailing" secondItem="ika-LR-kUF" secondAttribute="trailing" id="64I-5U-Lag"/>
+                            <constraint firstItem="YCI-Ih-VAI" firstAttribute="top" secondItem="quC-gR-i7o" secondAttribute="bottom" id="8Yt-Nc-Tt4"/>
+                            <constraint firstItem="YCI-Ih-VAI" firstAttribute="leading" secondItem="JdC-VG-mQr" secondAttribute="leading" id="F8h-j7-JL9"/>
+                            <constraint firstAttribute="bottom" secondItem="ika-LR-kUF" secondAttribute="bottom" id="GkQ-oj-lyB"/>
+                            <constraint firstItem="quC-gR-i7o" firstAttribute="top" secondItem="gIL-e2-6ZU" secondAttribute="bottom" id="M6D-0R-uC6"/>
+                            <constraint firstItem="YCI-Ih-VAI" firstAttribute="leading" secondItem="ika-LR-kUF" secondAttribute="leading" id="QdP-bR-yLr"/>
+                            <constraint firstItem="quC-gR-i7o" firstAttribute="trailing" secondItem="YCI-Ih-VAI" secondAttribute="trailing" id="SB3-rp-4zx"/>
+                            <constraint firstAttribute="trailing" secondItem="YCI-Ih-VAI" secondAttribute="trailing" id="dx1-7b-jCj"/>
+                            <constraint firstItem="YCI-Ih-VAI" firstAttribute="leading" secondItem="quC-gR-i7o" secondAttribute="leading" id="xEC-Wl-t5d"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
