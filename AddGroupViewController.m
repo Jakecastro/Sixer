@@ -7,6 +7,7 @@
 //
 
 #import "AddGroupViewController.h"
+#import "Group.h"
 
 @interface AddGroupViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
