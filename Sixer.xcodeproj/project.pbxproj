@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2347DE681BEC2F0B00013FFC /* LoginVeiwController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2347DE671BEC2F0B00013FFC /* LoginVeiwController.m */; settings = {ASSET_TAGS = (); }; };
-		2347DE6B1BEC2F2900013FFC /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2347DE6A1BEC2F2900013FFC /* SignupViewController.m */; settings = {ASSET_TAGS = (); }; };
-		2347DE6E1BEC3A3F00013FFC /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 2347DE6D1BEC3A3F00013FFC /* Group.m */; settings = {ASSET_TAGS = (); }; };
-		2347DE711BEC3D2700013FFC /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 2347DE701BEC3D2700013FFC /* User.m */; settings = {ASSET_TAGS = (); }; };
-		2347DE741BEC3EBC00013FFC /* Exercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 2347DE731BEC3EBC00013FFC /* Exercise.m */; settings = {ASSET_TAGS = (); }; };
+		2347DE681BEC2F0B00013FFC /* LoginVeiwController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2347DE671BEC2F0B00013FFC /* LoginVeiwController.m */; };
+		2347DE6B1BEC2F2900013FFC /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2347DE6A1BEC2F2900013FFC /* SignupViewController.m */; };
+		2347DE6E1BEC3A3F00013FFC /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 2347DE6D1BEC3A3F00013FFC /* Group.m */; };
+		2347DE711BEC3D2700013FFC /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 2347DE701BEC3D2700013FFC /* User.m */; };
+		2347DE741BEC3EBC00013FFC /* Exercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 2347DE731BEC3EBC00013FFC /* Exercise.m */; };
 		235B6E101BEBD25600557D3F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E0F1BEBD25600557D3F /* main.m */; };
 		235B6E131BEBD25600557D3F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E121BEBD25600557D3F /* AppDelegate.m */; };
 		235B6E161BEBD25600557D3F /* ProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E151BEBD25600557D3F /* ProgressViewController.m */; };
@@ -44,6 +44,11 @@
 		783F96F21BEC21E500CEA7FA /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783F96F11BEC21E500CEA7FA /* Social.framework */; };
 		783F96F51BEC258200CEA7FA /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783F96F31BEC258200CEA7FA /* Bolts.framework */; };
 		783F96F61BEC258200CEA7FA /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783F96F41BEC258200CEA7FA /* Parse.framework */; };
+		CD0A9B271BED218000B6817D /* Initial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD0A9B261BED218000B6817D /* Initial.storyboard */; };
+		CD0A9B291BED219500B6817D /* RegistrationAndLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD0A9B281BED219500B6817D /* RegistrationAndLogin.storyboard */; };
+		CD0A9B2C1BED221300B6817D /* InitialScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0A9B2B1BED221300B6817D /* InitialScreenViewController.m */; };
+		CD0A9B2F1BED222000B6817D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0A9B2E1BED222000B6817D /* LoginViewController.m */; };
+		CD0A9B321BED223300B6817D /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0A9B311BED223300B6817D /* RegistrationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +129,14 @@
 		783F96F11BEC21E500CEA7FA /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		783F96F31BEC258200CEA7FA /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		783F96F41BEC258200CEA7FA /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		CD0A9B261BED218000B6817D /* Initial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Initial.storyboard; path = ../Initial.storyboard; sourceTree = "<group>"; };
+		CD0A9B281BED219500B6817D /* RegistrationAndLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = RegistrationAndLogin.storyboard; path = ../RegistrationAndLogin.storyboard; sourceTree = "<group>"; };
+		CD0A9B2A1BED221300B6817D /* InitialScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialScreenViewController.h; sourceTree = "<group>"; };
+		CD0A9B2B1BED221300B6817D /* InitialScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialScreenViewController.m; sourceTree = "<group>"; };
+		CD0A9B2D1BED222000B6817D /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		CD0A9B2E1BED222000B6817D /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		CD0A9B301BED223300B6817D /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
+		CD0A9B311BED223300B6817D /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,8 +270,10 @@
 		235B6E481BEBD30200557D3F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				235B6E1A1BEBD25600557D3F /* Main.storyboard */,
 				235B6E1F1BEBD25600557D3F /* LaunchScreen.storyboard */,
+				CD0A9B261BED218000B6817D /* Initial.storyboard */,
+				CD0A9B281BED219500B6817D /* RegistrationAndLogin.storyboard */,
+				235B6E1A1BEBD25600557D3F /* Main.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -266,6 +281,12 @@
 		235B6E491BEBD31000557D3F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CD0A9B2A1BED221300B6817D /* InitialScreenViewController.h */,
+				CD0A9B2B1BED221300B6817D /* InitialScreenViewController.m */,
+				CD0A9B2D1BED222000B6817D /* LoginViewController.h */,
+				CD0A9B2E1BED222000B6817D /* LoginViewController.m */,
+				CD0A9B301BED223300B6817D /* RegistrationViewController.h */,
+				CD0A9B311BED223300B6817D /* RegistrationViewController.m */,
 				2347DE6C1BEC3A3F00013FFC /* Group.h */,
 				2347DE6D1BEC3A3F00013FFC /* Group.m */,
 				235B6E531BEBE4A000557D3F /* ReminderCell.h */,
@@ -407,8 +428,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				235B6E211BEBD25600557D3F /* LaunchScreen.storyboard in Resources */,
+				CD0A9B291BED219500B6817D /* RegistrationAndLogin.storyboard in Resources */,
 				235B6E1E1BEBD25600557D3F /* Assets.xcassets in Resources */,
 				235B6E1C1BEBD25600557D3F /* Main.storyboard in Resources */,
+				CD0A9B271BED218000B6817D /* Initial.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,13 +460,16 @@
 				235B6E191BEBD25600557D3F /* ExerciseViewController.m in Sources */,
 				235B6E611BEBE92100557D3F /* AddReminderViewController.m in Sources */,
 				235B6E4C1BEBDD7500557D3F /* ExerciseCell.m in Sources */,
+				CD0A9B2F1BED222000B6817D /* LoginViewController.m in Sources */,
 				2347DE711BEC3D2700013FFC /* User.m in Sources */,
 				235B6E581BEBE54400557D3F /* TimerViewController.m in Sources */,
 				235B6E551BEBE4A000557D3F /* ReminderCell.m in Sources */,
 				2347DE741BEC3EBC00013FFC /* Exercise.m in Sources */,
 				235B6E131BEBD25600557D3F /* AppDelegate.m in Sources */,
 				235B6E161BEBD25600557D3F /* ProgressViewController.m in Sources */,
+				CD0A9B2C1BED221300B6817D /* InitialScreenViewController.m in Sources */,
 				235B6E461BEBD2CD00557D3F /* RemindersViewController.m in Sources */,
+				CD0A9B321BED223300B6817D /* RegistrationViewController.m in Sources */,
 				2347DE6B1BEC2F2900013FFC /* SignupViewController.m in Sources */,
 				235B6E101BEBD25600557D3F /* main.m in Sources */,
 				2383085F1BEBEC62004DA4EC /* AddExerciseViewController.m in Sources */,
