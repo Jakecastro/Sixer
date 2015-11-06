@@ -26,14 +26,23 @@
 }
 
 - (IBAction)onAddButtonTapped:(UIButton *)sender {
+    //segue to next page
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.remindersArray.count;
+    return [[[UIApplication sharedApplication] scheduledLocalNotifications] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RemdinderCell" forIndexPath:indexPath];
+
+    // Get list of local notifications
+    NSArray *localNotifications = [[UIApplication sharedApplication] scheduledLocalNotifications];
+    UILocalNotification *localNotification = [localNotifications objectAtIndex:indexPath.row];
+
+    //Display notification info
+    [cell.textLabel setText:localNotification.alertBody];
+    [cell.detailTextLabel setText:[localNotification.fireDate description]];
 
     return cell;
 }
