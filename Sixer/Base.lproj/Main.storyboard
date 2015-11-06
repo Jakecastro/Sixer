@@ -556,6 +556,9 @@
                                 <date key="date" timeIntervalSinceReferenceDate="468522432.995915">
                                     <!--2015-11-06 17:07:12 +0000-->
                                 </date>
+                                <connections>
+                                    <action selector="datePicker:" destination="lHb-o4-MZM" eventType="valueChanged" id="P2x-ZF-4h8"/>
+                                </connections>
                             </datePicker>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CTw-iE-HQr">
                                 <rect key="frame" x="109" y="129" width="300" height="30"/>
@@ -565,10 +568,23 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gEJ-p4-oKb">
+                                <rect key="frame" x="210" y="247" width="99" height="30"/>
+                                <color key="backgroundColor" red="0.60000002384185791" green="0.60000002384185791" blue="0.60000002384185791" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="99" id="x7F-v1-eQX"/>
+                                    <constraint firstAttribute="height" constant="30" id="y3a-Ij-KLf"/>
+                                </constraints>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="onPushSaveButton:" destination="lHb-o4-MZM" eventType="touchUpInside" id="NbV-RD-3ho"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="gEJ-p4-oKb" firstAttribute="centerY" secondItem="ARo-B4-YdE" secondAttribute="centerY" id="23Y-q2-3JK"/>
                             <constraint firstItem="CTw-iE-HQr" firstAttribute="centerX" secondItem="ARo-B4-YdE" secondAttribute="centerX" id="4hv-EA-uG5"/>
                             <constraint firstItem="Tr5-Gz-VOV" firstAttribute="leading" secondItem="ARo-B4-YdE" secondAttribute="leadingMargin" constant="-20" id="7lM-wZ-5ib"/>
                             <constraint firstItem="dvL-pD-azw" firstAttribute="centerX" secondItem="ARo-B4-YdE" secondAttribute="centerX" id="Hwf-WF-1fM"/>
@@ -577,11 +593,16 @@
                             <constraint firstAttribute="trailingMargin" secondItem="dvL-pD-azw" secondAttribute="trailing" constant="-20" id="NND-Pv-5bM"/>
                             <constraint firstItem="O87-7p-Irs" firstAttribute="top" secondItem="Tr5-Gz-VOV" secondAttribute="bottom" id="Obp-7v-3OD"/>
                             <constraint firstItem="CTw-iE-HQr" firstAttribute="centerY" secondItem="ARo-B4-YdE" secondAttribute="centerY" id="kPD-pg-DUN"/>
+                            <constraint firstItem="gEJ-p4-oKb" firstAttribute="centerX" secondItem="ARo-B4-YdE" secondAttribute="centerX" id="p0Z-b3-3cP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Tr5-Gz-VOV" secondAttribute="trailing" constant="-20" id="wCO-we-xEL"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="datePicker" destination="dvL-pD-azw" id="HTL-mH-ktc"/>
+                        <outlet property="enterExerciseTextField" destination="CTw-iE-HQr" id="v9i-tg-dU1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="og8-mV-uZ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
