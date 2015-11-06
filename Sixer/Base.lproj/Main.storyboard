@@ -213,7 +213,7 @@
                                 <rect key="frame" x="0.0" y="294" width="600" height="257"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="0.52825935030000004" blue="0.2457165479" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Begin Workout">
+                                <state key="normal" title="Begin exercise">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -678,68 +678,71 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HtY-ha-Hpo">
-                                <rect key="frame" x="175" y="175" width="250" height="250"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="4Zf-hb-ieU"/>
-                                </constraints>
-                            </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vhf-hH-Z93">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="vf1-4U-0N4"/>
+                                    <constraint firstAttribute="height" constant="44" id="x7y-eT-UtB"/>
                                 </constraints>
                                 <items>
                                     <barButtonItem title="Finish" id="T18-sG-4Kd">
                                         <connections>
+                                            <action selector="onFinishButtonTapped:" destination="4aa-7G-FHa" id="O9E-j2-QSZ"/>
                                             <segue destination="49e-Tb-3d3" kind="show" id="5nG-QP-dAx"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="count up time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WVG-Um-lTE">
-                                <rect key="frame" x="227" y="433" width="146" height="110"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ready" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WVG-Um-lTE">
+                                <rect key="frame" x="175" y="66" width="250" height="139"/>
                                 <animations/>
+                                <color key="backgroundColor" red="0.32634888000000001" green="0.4848862893" blue="0.19769931120000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="146" id="D38-eK-hkE"/>
+                                    <constraint firstAttribute="width" constant="250" id="P4W-Uq-gkW"/>
+                                    <constraint firstAttribute="height" constant="139" id="TtB-DA-WeY"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                <color key="textColor" red="0.99956133213261789" green="1" blue="0.47912685709177949" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="exercise name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ijf-EQ-OQt">
-                                <rect key="frame" x="245" y="100" width="110" height="21"/>
+                                <rect key="frame" x="220" y="28" width="160" height="30"/>
                                 <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="dBt-7f-Jpq"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Qa-Dj-aoO">
+                                <rect key="frame" x="175" y="213" width="250" height="250"/>
+                                <animations/>
+                                <state key="normal" title="your exercise image goes here">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onExerciseImageTapped:" destination="4aa-7G-FHa" eventType="touchUpInside" id="ctO-g3-J2U"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.48194441269999999" green="0.71764705880000002" blue="0.293417504" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="vhf-hH-Z93" firstAttribute="bottom" secondItem="Ezt-nG-gBF" secondAttribute="top" id="1yF-f9-kGI"/>
-                            <constraint firstItem="vhf-hH-Z93" firstAttribute="leading" secondItem="lWt-NJ-v0b" secondAttribute="leading" id="4mf-1k-6tI"/>
-                            <constraint firstItem="HtY-ha-Hpo" firstAttribute="centerY" secondItem="lWt-NJ-v0b" secondAttribute="centerY" id="6Sa-aT-hRY"/>
-                            <constraint firstItem="ijf-EQ-OQt" firstAttribute="centerX" secondItem="HtY-ha-Hpo" secondAttribute="centerX" id="7HN-U0-LrE"/>
-                            <constraint firstItem="HtY-ha-Hpo" firstAttribute="top" secondItem="ijf-EQ-OQt" secondAttribute="bottom" constant="54" id="UG4-Jw-qcF"/>
-                            <constraint firstItem="vhf-hH-Z93" firstAttribute="top" secondItem="WVG-Um-lTE" secondAttribute="bottom" constant="13" id="cDo-vX-xbP"/>
-                            <constraint firstAttribute="trailing" secondItem="vhf-hH-Z93" secondAttribute="trailing" id="chq-YB-2ov"/>
-                            <constraint firstItem="vhf-hH-Z93" firstAttribute="centerX" secondItem="WVG-Um-lTE" secondAttribute="centerX" id="dTB-fj-rBE"/>
-                            <constraint firstItem="ijf-EQ-OQt" firstAttribute="top" secondItem="iko-qH-dLv" secondAttribute="bottom" constant="80" id="gbF-hG-O1v"/>
-                            <constraint firstItem="WVG-Um-lTE" firstAttribute="centerX" secondItem="HtY-ha-Hpo" secondAttribute="centerX" id="oew-8m-K7h"/>
-                            <constraint firstItem="WVG-Um-lTE" firstAttribute="top" secondItem="HtY-ha-Hpo" secondAttribute="bottom" constant="8" symbolic="YES" id="sdO-4e-Jx6"/>
+                            <constraint firstItem="WVG-Um-lTE" firstAttribute="centerX" secondItem="ijf-EQ-OQt" secondAttribute="centerX" id="7cj-ZM-2CP"/>
+                            <constraint firstItem="ijf-EQ-OQt" firstAttribute="top" secondItem="iko-qH-dLv" secondAttribute="bottom" constant="8" symbolic="YES" id="9J3-OA-F28"/>
+                            <constraint firstItem="9Qa-Dj-aoO" firstAttribute="centerX" secondItem="vhf-hH-Z93" secondAttribute="centerX" id="CDQ-7E-O4Q"/>
+                            <constraint firstItem="vhf-hH-Z93" firstAttribute="top" secondItem="9Qa-Dj-aoO" secondAttribute="bottom" constant="93" id="DY5-y5-2wX"/>
+                            <constraint firstItem="WVG-Um-lTE" firstAttribute="trailing" secondItem="9Qa-Dj-aoO" secondAttribute="trailing" id="F9u-lg-4cJ"/>
+                            <constraint firstItem="WVG-Um-lTE" firstAttribute="leading" secondItem="9Qa-Dj-aoO" secondAttribute="leading" id="GUB-Ja-bZb"/>
+                            <constraint firstItem="9Qa-Dj-aoO" firstAttribute="top" secondItem="WVG-Um-lTE" secondAttribute="bottom" constant="8" symbolic="YES" id="Q1g-Th-rny"/>
+                            <constraint firstAttribute="trailing" secondItem="vhf-hH-Z93" secondAttribute="trailing" id="SOJ-7Q-aa8"/>
+                            <constraint firstItem="vhf-hH-Z93" firstAttribute="bottom" secondItem="Ezt-nG-gBF" secondAttribute="top" id="nzo-p1-vsM"/>
+                            <constraint firstItem="vhf-hH-Z93" firstAttribute="leading" secondItem="lWt-NJ-v0b" secondAttribute="leading" id="q9u-39-mFE"/>
+                            <constraint firstItem="WVG-Um-lTE" firstAttribute="top" secondItem="ijf-EQ-OQt" secondAttribute="bottom" constant="8" symbolic="YES" id="qPp-0A-HYg"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="exerciseImageView" destination="HtY-ha-Hpo" id="Ohp-6Q-JdG"/>
+                        <outlet property="exerciseImageButton" destination="9Qa-Dj-aoO" id="44h-j0-V76"/>
                         <outlet property="exerciseNameLabel" destination="ijf-EQ-OQt" id="6F3-Is-3ES"/>
                         <outlet property="timeCountLabel" destination="WVG-Um-lTE" id="14F-xG-09M"/>
                     </connections>

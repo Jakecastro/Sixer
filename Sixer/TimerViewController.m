@@ -11,8 +11,9 @@
 @interface TimerViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *exerciseNameLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *exerciseImageView;
+@property (weak, nonatomic) IBOutlet UIButton *exerciseImageButton;
 @property (weak, nonatomic) IBOutlet UILabel *timeCountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *totalSessionTimeLabel;
 @property BOOL isExerciseTime;
 
 @end
@@ -26,6 +27,7 @@ NSTimer *timer;
     [super viewDidLoad];
     self.isExerciseTime = true;
     [self startExerciseTimer];
+    self.totalSessionTimeLabel.text = @"0";
 }
 
 - (void)startExerciseTimer {
@@ -48,6 +50,8 @@ NSTimer *timer;
     timer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(tick) userInfo:nil repeats:YES];
 }
 
+- (IBAction)onExerciseImageTapped:(UIButton *)sender {
+}
 
 - (IBAction)onFinishButtonTapped:(UIBarButtonItem *)sender {
 }
