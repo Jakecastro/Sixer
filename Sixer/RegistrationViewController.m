@@ -157,16 +157,7 @@
          }
          
          }
-
--(BOOL)textFieldShouldReturn:(UITextField *)textField {
-    
-    // Dismiss Keyboard
-    [textField resignFirstResponder];
-    return NO;
-}
-
-
-
+         
          - (IBAction)onAlreadyAUserButtonTapped:(UIButton *)sender {
          }
          
