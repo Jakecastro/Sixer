@@ -12,6 +12,7 @@
 @interface AddExerciseViewController () <UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSArray *exercisesArray;
 @property NSMutableArray *exerciseImagesArray;

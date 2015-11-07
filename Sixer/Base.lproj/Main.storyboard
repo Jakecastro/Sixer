@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -303,27 +303,6 @@
                                     <outlet property="delegate" destination="Jti-Aj-Xaq" id="oB1-9M-XXZ"/>
                                 </connections>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YCI-Ih-VAI">
-                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
-                                <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddExerciseCell" id="o8y-EP-P36">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o8y-EP-P36" id="QQG-Zd-hiI">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <animations/>
-                                        </tableViewCellContentView>
-                                        <animations/>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="Jti-Aj-Xaq" id="Yuc-Lv-yJp"/>
-                                    <outlet property="delegate" destination="Jti-Aj-Xaq" id="Ny9-Fy-7xm"/>
-                                </connections>
-                            </tableView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ika-LR-kUF">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <animations/>
@@ -335,26 +314,70 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ldb-jn-J5s">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <animations/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AOO-h3-Kh2">
+                                    <size key="itemSize" width="175" height="175"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ParseExerciseCell" id="EdE-fM-NjD" customClass="CVExerciseCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="175" height="175"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="175" height="175"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sBG-ef-BRD">
+                                                    <rect key="frame" x="0.0" y="24" width="175" height="150"/>
+                                                    <animations/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0jS-6g-LWu">
+                                                    <rect key="frame" x="0.0" y="0.0" width="175" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <animations/>
+                                        <connections>
+                                            <outlet property="imageView" destination="sBG-ef-BRD" id="5IN-Zn-uVa"/>
+                                            <outlet property="nameLabel" destination="0jS-6g-LWu" id="iW5-al-hTR"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Jti-Aj-Xaq" id="s9i-aU-bpc"/>
+                                    <outlet property="delegate" destination="Jti-Aj-Xaq" id="OgN-YN-NNo"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ika-LR-kUF" firstAttribute="top" secondItem="YCI-Ih-VAI" secondAttribute="bottom" id="3Wt-nN-XTb"/>
-                            <constraint firstItem="YCI-Ih-VAI" firstAttribute="trailing" secondItem="ika-LR-kUF" secondAttribute="trailing" id="64I-5U-Lag"/>
-                            <constraint firstItem="YCI-Ih-VAI" firstAttribute="top" secondItem="quC-gR-i7o" secondAttribute="bottom" id="8Yt-Nc-Tt4"/>
-                            <constraint firstItem="YCI-Ih-VAI" firstAttribute="leading" secondItem="JdC-VG-mQr" secondAttribute="leading" id="F8h-j7-JL9"/>
-                            <constraint firstAttribute="bottom" secondItem="ika-LR-kUF" secondAttribute="bottom" id="GkQ-oj-lyB"/>
-                            <constraint firstItem="quC-gR-i7o" firstAttribute="top" secondItem="gIL-e2-6ZU" secondAttribute="bottom" id="M6D-0R-uC6"/>
-                            <constraint firstItem="YCI-Ih-VAI" firstAttribute="leading" secondItem="ika-LR-kUF" secondAttribute="leading" id="QdP-bR-yLr"/>
-                            <constraint firstItem="quC-gR-i7o" firstAttribute="trailing" secondItem="YCI-Ih-VAI" secondAttribute="trailing" id="SB3-rp-4zx"/>
-                            <constraint firstAttribute="trailing" secondItem="YCI-Ih-VAI" secondAttribute="trailing" id="dx1-7b-jCj"/>
-                            <constraint firstItem="YCI-Ih-VAI" firstAttribute="leading" secondItem="quC-gR-i7o" secondAttribute="leading" id="xEC-Wl-t5d"/>
+                            <constraint firstItem="ldb-jn-J5s" firstAttribute="top" secondItem="quC-gR-i7o" secondAttribute="bottom" id="24i-8w-OV6"/>
+                            <constraint firstItem="ldb-jn-J5s" firstAttribute="bottom" secondItem="BYu-Vg-Yqd" secondAttribute="top" id="SEz-5W-U4G"/>
+                            <constraint firstItem="ika-LR-kUF" firstAttribute="leading" secondItem="ldb-jn-J5s" secondAttribute="leading" id="cii-O5-aeL"/>
+                            <constraint firstItem="quC-gR-i7o" firstAttribute="top" secondItem="gIL-e2-6ZU" secondAttribute="bottom" id="k0Y-G5-avS"/>
+                            <constraint firstItem="quC-gR-i7o" firstAttribute="leading" secondItem="JdC-VG-mQr" secondAttribute="leading" id="lbK-3Y-Kxv"/>
+                            <constraint firstItem="ika-LR-kUF" firstAttribute="trailing" secondItem="ldb-jn-J5s" secondAttribute="trailing" id="p8o-Xh-jrG"/>
+                            <constraint firstItem="ldb-jn-J5s" firstAttribute="leading" secondItem="quC-gR-i7o" secondAttribute="leading" id="qK6-da-uip"/>
+                            <constraint firstAttribute="bottom" secondItem="ika-LR-kUF" secondAttribute="bottom" id="rhM-gU-QTj"/>
+                            <constraint firstItem="ldb-jn-J5s" firstAttribute="trailing" secondItem="quC-gR-i7o" secondAttribute="trailing" id="uMC-zE-Gzy"/>
+                            <constraint firstAttribute="trailing" secondItem="quC-gR-i7o" secondAttribute="trailing" id="xpB-cu-3fr"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <connections>
+                        <outlet property="collectionView" destination="ldb-jn-J5s" id="127-UO-IDl"/>
                         <outlet property="searchBar" destination="quC-gR-i7o" id="gWZ-M7-Rtd"/>
-                        <outlet property="tableView" destination="YCI-Ih-VAI" id="vIf-1B-xRd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MEc-D5-H4B" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -805,7 +828,7 @@
         <image name="reminder" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7Hx-Gg-3Uj"/>
+        <segue reference="2m3-in-CoE"/>
         <segue reference="Gvf-mf-uoJ"/>
     </inferredMetricsTieBreakers>
 </document>
