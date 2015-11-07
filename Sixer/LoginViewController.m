@@ -59,13 +59,31 @@
 
     } else {
      
-    
-    }
+    [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * _Nullable user, NSError * _Nullable error) {
+        if (user) {
+            [self performSegueWithIdentifier:@"StartSegue" sender:nil];
+            NSLog(@"successful login");
+        } else {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Alert" message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *okayButton = [UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                
+            }];
+            [alert addAction:okayButton];
+            [self presentViewController:alert animated:YES completion:nil];
+      }
+    }];
+  }
 }
 
 - (IBAction)onLoginButtonTapped:(UIButton *)sender {
+    
+    [self userlogin];
 }
-
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    [textField resignFirstResponder];
+    return NO;
+}
 
 
 

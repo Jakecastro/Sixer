@@ -583,7 +583,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hFz-wg-1Bp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="258" y="353"/>
+            <point key="canvasLocation" x="-24" y="353"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="pO7-o3-WSS">
@@ -671,7 +671,6 @@
                                         </variation>
                                         <connections>
                                             <action selector="onLoginButtonTapped:" destination="ghv-4r-spr" eventType="touchUpInside" id="Phh-hY-aSq"/>
-                                            <segue destination="xQ5-fi-7EC" kind="show" identifier="StartSegue" id="LO4-9V-wID"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LS3-V9-PoT">
@@ -896,6 +895,7 @@
                         <outlet property="passwordTextFieldOutlet" destination="3YU-QA-mMh" id="mgQ-rU-z2p"/>
                         <outlet property="usernameIconImageView" destination="mzM-tC-w8E" id="Y8r-K5-Nvg"/>
                         <outlet property="usernameTextField" destination="eNn-La-uoB" id="au8-2O-D9C"/>
+                        <segue destination="xQ5-fi-7EC" kind="show" identifier="StartSegue" id="MvV-aS-6rs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3yI-6e-JWz" userLabel="First Responder" sceneMemberID="firstResponder"/>
