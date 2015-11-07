@@ -25,7 +25,6 @@
 		235B6E551BEBE4A000557D3F /* ReminderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E541BEBE4A000557D3F /* ReminderCell.m */; };
 		235B6E581BEBE54400557D3F /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E571BEBE54400557D3F /* TimerViewController.m */; };
 		235B6E5B1BEBE64300557D3F /* GroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E5A1BEBE64300557D3F /* GroupViewController.m */; };
-		235B6E5E1BEBE6E100557D3F /* AddGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E5D1BEBE6E100557D3F /* AddGroupViewController.m */; };
 		235B6E611BEBE92100557D3F /* AddReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E601BEBE92100557D3F /* AddReminderViewController.m */; };
 		236ADD4F1BED064A00F6FD62 /* Week.m in Sources */ = {isa = PBXBuildFile; fileRef = 236ADD4E1BED064A00F6FD62 /* Week.m */; };
 		2383085F1BEBEC62004DA4EC /* AddExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2383085E1BEBEC62004DA4EC /* AddExerciseViewController.m */; };
@@ -47,6 +46,7 @@
 		CD0A9B291BED219500B6817D /* RegistrationAndLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD0A9B281BED219500B6817D /* RegistrationAndLogin.storyboard */; };
 		CD0A9B2C1BED221300B6817D /* InitialScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0A9B2B1BED221300B6817D /* InitialScreenViewController.m */; };
 		CD0A9B321BED223300B6817D /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0A9B311BED223300B6817D /* RegistrationViewController.m */; };
+		CD7C67951BED8C8000DC20E7 /* AddGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E5D1BEBE6E100557D3F /* AddGroupViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -451,7 +451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				235B6E5E1BEBE6E100557D3F /* AddGroupViewController.m in Sources */,
+				CD7C67951BED8C8000DC20E7 /* AddGroupViewController.m in Sources */,
 				235B6E191BEBD25600557D3F /* ExerciseViewController.m in Sources */,
 				235B6E611BEBE92100557D3F /* AddReminderViewController.m in Sources */,
 				235B6E4C1BEBDD7500557D3F /* ExerciseCell.m in Sources */,
