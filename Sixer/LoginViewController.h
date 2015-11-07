@@ -10,6 +10,8 @@
 
 @interface LoginViewController : UIViewController
 
+// Method Declaration
+-(void)userlogin;
 
 
 @end
