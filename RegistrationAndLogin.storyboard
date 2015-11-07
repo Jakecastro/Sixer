@@ -694,51 +694,6 @@
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eNn-La-uoB">
-                                        <rect key="frame" x="-25" y="-30" width="97" height="30"/>
-                                        <animations/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="217" id="RyC-AA-hLJ"/>
-                                            <constraint firstAttribute="height" constant="30" id="jdo-Ds-xpk"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="RyC-AA-hLJ"/>
-                                                <exclude reference="jdo-Ds-xpk"/>
-                                            </mask>
-                                        </variation>
-                                        <variation key="widthClass=compact">
-                                            <mask key="constraints">
-                                                <include reference="RyC-AA-hLJ"/>
-                                                <include reference="jdo-Ds-xpk"/>
-                                            </mask>
-                                        </variation>
-                                        <connections>
-                                            <outlet property="delegate" destination="ghv-4r-spr" id="mW8-p8-Niu"/>
-                                        </connections>
-                                    </textField>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mzM-tC-w8E">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                        <animations/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="47f-XH-BDb"/>
-                                            <constraint firstAttribute="width" constant="25" id="dmD-5y-gFB"/>
-                                        </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="47f-XH-BDb"/>
-                                                <exclude reference="dmD-5y-gFB"/>
-                                            </mask>
-                                        </variation>
-                                        <variation key="widthClass=compact">
-                                            <mask key="constraints">
-                                                <include reference="47f-XH-BDb"/>
-                                                <include reference="dmD-5y-gFB"/>
-                                            </mask>
-                                        </variation>
-                                    </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3YU-QA-mMh">
                                         <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                         <animations/>
@@ -762,6 +717,51 @@
                                         </variation>
                                         <connections>
                                             <outlet property="delegate" destination="ghv-4r-spr" id="Ev2-dx-LtI"/>
+                                        </connections>
+                                    </textField>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mzM-tC-w8E">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="47f-XH-BDb"/>
+                                            <constraint firstAttribute="width" constant="25" id="dmD-5y-gFB"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="47f-XH-BDb"/>
+                                                <exclude reference="dmD-5y-gFB"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="47f-XH-BDb"/>
+                                                <include reference="dmD-5y-gFB"/>
+                                            </mask>
+                                        </variation>
+                                    </imageView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eNn-La-uoB">
+                                        <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="217" id="RyC-AA-hLJ"/>
+                                            <constraint firstAttribute="height" constant="30" id="jdo-Ds-xpk"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="RyC-AA-hLJ"/>
+                                                <exclude reference="jdo-Ds-xpk"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="RyC-AA-hLJ"/>
+                                                <include reference="jdo-Ds-xpk"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <outlet property="delegate" destination="ghv-4r-spr" id="mW8-p8-Niu"/>
                                         </connections>
                                     </textField>
                                 </subviews>
@@ -791,9 +791,9 @@
                                         <exclude reference="3uO-ns-GUU"/>
                                         <exclude reference="QnO-lj-kfA"/>
                                         <exclude reference="LS3-V9-PoT"/>
-                                        <exclude reference="eNn-La-uoB"/>
-                                        <exclude reference="mzM-tC-w8E"/>
                                         <exclude reference="3YU-QA-mMh"/>
+                                        <exclude reference="mzM-tC-w8E"/>
+                                        <exclude reference="eNn-La-uoB"/>
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="BSU-8b-XAG"/>
@@ -820,9 +820,9 @@
                                         <include reference="3uO-ns-GUU"/>
                                         <include reference="QnO-lj-kfA"/>
                                         <include reference="LS3-V9-PoT"/>
-                                        <include reference="eNn-La-uoB"/>
-                                        <include reference="mzM-tC-w8E"/>
                                         <include reference="3YU-QA-mMh"/>
+                                        <include reference="mzM-tC-w8E"/>
+                                        <include reference="eNn-La-uoB"/>
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="BSU-8b-XAG"/>

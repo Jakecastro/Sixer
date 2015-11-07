@@ -31,13 +31,36 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-
-    
+// Delegates set in storyboard
+ 
     
     
 }
 -(void)userlogin {
     
+    NSString *username = self.usernameTextField.text;
+    NSString *password = self.passwordTextFieldOutlet.text;
+    
+    if (username.length <= 0 || password.length <= 0) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Alert" message:@"Inorder to proceed, all fields must be completed" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okayButton = [UIAlertAction actionWithTitle:@"Okay"
+                                                             style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                                                                 
+                                                                 
+                                                                 
+                                                                 
+                                                             }];
+        [alert addAction:okayButton];
+        [self presentViewController:alert
+                           animated:YES
+                         completion:nil];
+        
+        
+
+    } else {
+     
+    
+    }
 }
 
 - (IBAction)onLoginButtonTapped:(UIButton *)sender {
