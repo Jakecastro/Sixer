@@ -13,6 +13,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadTable) name:@"reloadData" object:nil];
+
+    self.enterExerciseTextField.delegate = self;
 }
 
 - (IBAction)onPushSaveButton:(UIButton *)sender {
@@ -26,7 +30,6 @@
     [self.enterExerciseTextField resignFirstResponder];
 
     NSDate *pickerDate = [self.datePicker date];
-
     UILocalNotification *localNotification = [[UILocalNotification alloc]init];
     localNotification.fireDate = pickerDate;
     localNotification.alertBody = self.enterExerciseTextField.text;
