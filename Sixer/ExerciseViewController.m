@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *groupNameButton;
 @property  NSMutableArray *exercisesArray;
 
+// add outlet for menu button
+
 @end
 
 @implementation ExerciseViewController
@@ -24,6 +26,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 }
+
+// Add IBAction for profile button
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
