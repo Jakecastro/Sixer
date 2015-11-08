@@ -27,7 +27,7 @@
 		235B6E5B1BEBE64300557D3F /* GroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E5A1BEBE64300557D3F /* GroupViewController.m */; };
 		235B6E611BEBE92100557D3F /* AddReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E601BEBE92100557D3F /* AddReminderViewController.m */; };
 		236ADD4F1BED064A00F6FD62 /* Week.m in Sources */ = {isa = PBXBuildFile; fileRef = 236ADD4E1BED064A00F6FD62 /* Week.m */; };
-		236ADD561BED92FE00F6FD62 /* CVExerciseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 236ADD551BED92FE00F6FD62 /* CVExerciseCell.m */; settings = {ASSET_TAGS = (); }; };
+		236ADD561BED92FE00F6FD62 /* CVExerciseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 236ADD551BED92FE00F6FD62 /* CVExerciseCell.m */; };
 		2383085F1BEBEC62004DA4EC /* AddExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2383085E1BEBEC62004DA4EC /* AddExerciseViewController.m */; };
 		783F96DC1BEC1EC100CEA7FA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783F96DB1BEC1EC100CEA7FA /* AudioToolbox.framework */; };
 		783F96DE1BEC1ECC00CEA7FA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783F96DD1BEC1ECC00CEA7FA /* CFNetwork.framework */; };
@@ -47,6 +47,9 @@
 		CD0A9B291BED219500B6817D /* RegistrationAndLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD0A9B281BED219500B6817D /* RegistrationAndLogin.storyboard */; };
 		CD0A9B2C1BED221300B6817D /* InitialScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0A9B2B1BED221300B6817D /* InitialScreenViewController.m */; };
 		CD0A9B321BED223300B6817D /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0A9B311BED223300B6817D /* RegistrationViewController.m */; };
+		CD7093451BEED3A700043B50 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7093441BEED3A700043B50 /* ProfileViewController.m */; };
+		CD7093481BEEDC6600043B50 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7093471BEEDC6600043B50 /* Settings.m */; };
+		CD70934B1BEEE79F00043B50 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD70934A1BEEE79F00043B50 /* ContainerViewController.m */; };
 		CD7C67951BED8C8000DC20E7 /* AddGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E5D1BEBE6E100557D3F /* AddGroupViewController.m */; };
 		CD7C67961BED8FDD00DC20E7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0A9B2E1BED222000B6817D /* LoginViewController.m */; };
 /* End PBXBuildFile section */
@@ -137,6 +140,12 @@
 		CD0A9B2E1BED222000B6817D /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		CD0A9B301BED223300B6817D /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
 		CD0A9B311BED223300B6817D /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
+		CD7093431BEED3A700043B50 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		CD7093441BEED3A700043B50 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		CD7093461BEEDC6600043B50 /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
+		CD7093471BEEDC6600043B50 /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
+		CD7093491BEEE79F00043B50 /* ContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContainerViewController.h; path = ../ContainerViewController.h; sourceTree = "<group>"; };
+		CD70934A1BEEE79F00043B50 /* ContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContainerViewController.m; path = ../ContainerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,10 +258,14 @@
 				CD0A9B2E1BED222000B6817D /* LoginViewController.m */,
 				CD0A9B301BED223300B6817D /* RegistrationViewController.h */,
 				CD0A9B311BED223300B6817D /* RegistrationViewController.m */,
-				235B6E141BEBD25600557D3F /* ProgressViewController.h */,
-				235B6E151BEBD25600557D3F /* ProgressViewController.m */,
+				CD7093491BEEE79F00043B50 /* ContainerViewController.h */,
+				CD70934A1BEEE79F00043B50 /* ContainerViewController.m */,
+				CD7093431BEED3A700043B50 /* ProfileViewController.h */,
+				CD7093441BEED3A700043B50 /* ProfileViewController.m */,
 				235B6E171BEBD25600557D3F /* ExerciseViewController.h */,
 				235B6E181BEBD25600557D3F /* ExerciseViewController.m */,
+				235B6E141BEBD25600557D3F /* ProgressViewController.h */,
+				235B6E151BEBD25600557D3F /* ProgressViewController.m */,
 				235B6E561BEBE54400557D3F /* TimerViewController.h */,
 				235B6E571BEBE54400557D3F /* TimerViewController.m */,
 				235B6E591BEBE64300557D3F /* GroupViewController.h */,
@@ -283,6 +296,8 @@
 		235B6E491BEBD31000557D3F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CD7093461BEEDC6600043B50 /* Settings.h */,
+				CD7093471BEEDC6600043B50 /* Settings.m */,
 				2347DE6C1BEC3A3F00013FFC /* Group.h */,
 				2347DE6D1BEC3A3F00013FFC /* Group.m */,
 				235B6E531BEBE4A000557D3F /* ReminderCell.h */,
@@ -459,11 +474,14 @@
 			files = (
 				CD7C67961BED8FDD00DC20E7 /* LoginViewController.m in Sources */,
 				CD7C67951BED8C8000DC20E7 /* AddGroupViewController.m in Sources */,
+				CD70934B1BEEE79F00043B50 /* ContainerViewController.m in Sources */,
 				235B6E191BEBD25600557D3F /* ExerciseViewController.m in Sources */,
 				235B6E611BEBE92100557D3F /* AddReminderViewController.m in Sources */,
+				CD7093451BEED3A700043B50 /* ProfileViewController.m in Sources */,
 				235B6E4C1BEBDD7500557D3F /* ExerciseCell.m in Sources */,
 				236ADD4F1BED064A00F6FD62 /* Week.m in Sources */,
 				2347DE711BEC3D2700013FFC /* User.m in Sources */,
+				CD7093481BEEDC6600043B50 /* Settings.m in Sources */,
 				235B6E581BEBE54400557D3F /* TimerViewController.m in Sources */,
 				235B6E551BEBE4A000557D3F /* ReminderCell.m in Sources */,
 				2347DE741BEC3EBC00013FFC /* Exercise.m in Sources */,

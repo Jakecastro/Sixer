@@ -8,8 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+// Delegate
+@protocol FrontDelegate <NSObject>
+
+// Declare Delegate Method
+-(void) frontRevealButtonTapped;
+
+@end
+
 @interface ExerciseViewController : UIViewController
 
+//Set Delegate
+@property (nonatomic, weak) id<FrontDelegate> delegate;
 
 @end
 
