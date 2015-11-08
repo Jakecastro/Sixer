@@ -11,10 +11,13 @@
 #import <Parse/Parse.h>
 
 //Add UITableViewDataSource and drag properties
-@interface ProfileViewController ()<UITableViewDelegate>
+@interface ProfileViewController ()< UITableViewDelegate, UITableViewDataSource>
 @property NSArray *settingsArray;
-//outlet for userProfileImage
-//outlet for tableview
+@property (weak, nonatomic) IBOutlet UIImageView *userImage;
+@property (weak, nonatomic) IBOutlet UITableView *settingsTableView;
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *userScoreLabel;
+
 @end
 
 @implementation ProfileViewController
@@ -23,14 +26,17 @@
     [super viewDidLoad];
 
 // Making an instance of PFUser
-// PFUser *currentuser = [PFUser currentUser];
+    PFUser *currentUser = [PFUser currentUser];
+    PFFile *profilePicture = currentUser[@"Photo"];
+    [profilePicture getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
+        UIImage *profileImage = [UIImage imageWithData:data];
+        self.userImage.image = profileImage;
+    }];
     
-// Setting user image
-//    self.userImage.image = currentUser[@"Photo"];
-//    self.userImage.layer.cornerRadius = 50;
-//    self.userImage.clipsToBounds = YES;
-//    self.userImage.layer.borderWidth = 5;
-//    self.userImage.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.userImage.layer.cornerRadius = 50;
+    self.userImage.clipsToBounds = YES;
+    self.userImage.layer.borderWidth = 5;
+    self.userImage.layer.borderColor = [UIColor whiteColor].CGColor;
     
     
     

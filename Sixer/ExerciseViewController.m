@@ -16,7 +16,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *groupNameButton;
 @property  NSMutableArray *exercisesArray;
 
-// add outlet for menu button
+// Outlet for profile button
+@property (weak, nonatomic) IBOutlet UIButton *menuButton;
 
 @end
 
@@ -27,7 +28,11 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
-// Add IBAction for profile button
+
+- (IBAction)onProfileButtonTapped:(id)sender {
+    
+    [self.delegate frontRevealButtonTapped];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -48,8 +53,7 @@
     return cell;
 }
 
-- (IBAction)onProfileButtonTapped:(UIButton *)sender {
-}
+
 
 - (IBAction)onAddExerciseButtonTapped:(UIButton *)sender {
 }

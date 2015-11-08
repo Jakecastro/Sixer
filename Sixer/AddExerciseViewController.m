@@ -65,9 +65,6 @@
     cell.textLabel.text = [exercise objectForKey:@"name"];
     cell.imageView.image = [self.exerciseImagesArray objectAtIndex:indexPath.row];
 
-    
-
-
     return cell;
 }
 

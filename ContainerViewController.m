@@ -11,13 +11,15 @@
 #import "ProfileViewController.h"
 #import "ExerciseViewController.h"
 
-// Delegates -- add exercise delegate
-@interface ContainerViewController ()<ProfileDelegate>
+// Delegates
+@interface ContainerViewController ()<ProfileDelegate, FrontDelegate>
 
 // Properties
 
 //property for frontViewLeftMargin
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *frontViewLeftMargin;
 //property for frontViewRightMargin
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *frontViewRightMargin;
 @property ProfileViewController *pvc;
 @property ExerciseViewController *evc;
 @property BOOL revealTapped;
@@ -40,37 +42,37 @@
 
 }
 
-// Delegate Method from ExerciseViewcontroller
-//-(void)frontRevealButtonTapped {
-//    if (self.revealTapped) {
-//        self.frontViewLeftMargin.constant = self.view.bounds.size.width * 0.4;
-//        self.frontViewRightMargin.constant = -self.view.bounds.size.width * 0.4;
-//        self.revealTapped = NO;
-//    }
-//    else
-//    {
-//        self.frontViewLeftMargin.constant = -20;
-//        self.frontViewRightMargin.constant = -20;
-//        self.revealTapped = YES;
-//    }
-//    [UIView animateWithDuration: 0.3 animations:^{
-//        [self.view layoutIfNeeded];
-//    }];
-//}
+ 
+-(void)frontRevealButtonTapped {
+    if (self.revealTapped) {
+        self.frontViewLeftMargin.constant = self.view.bounds.size.width * 0.4;
+        self.frontViewRightMargin.constant = -self.view.bounds.size.width * 0.4;
+        self.revealTapped = NO;
+    }
+    else
+    {
+        self.frontViewLeftMargin.constant = -20;
+        self.frontViewRightMargin.constant = -20;
+        self.revealTapped = YES;
+    }
+    [UIView animateWithDuration: 0.3 animations:^{
+        [self.view layoutIfNeeded];
+    }];
+}
 
-//-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    
-//    if([segue.identifier isEqualToString:@"FrontSegue"]) {
-//        UINavigationController *navigationVC = segue.destinationViewController;
-//        self.evc = navigationVC.childViewControllers[0];
-//        self.evc.delegate = self;
-//    }
-//    if ([segue.identifier isEqualToString:@"LeftSegue"]) {
-//        self.pvc = segue.destinationViewController;
-//        self.pvc.delegate = self;
-//        
-//        
-//        
-//    }
-//}
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if([segue.identifier isEqualToString:@"FrontSegue"]) {
+        UINavigationController *navigationVC = segue.destinationViewController;
+        self.evc = segue.destinationViewController;
+        self.evc.delegate = self;
+    }
+    if ([segue.identifier isEqualToString:@"LeftSegue"]) {
+        self.pvc = segue.destinationViewController;
+        self.pvc.delegate = self;
+        
+        
+        
+    }
+}
 @end
