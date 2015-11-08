@@ -12,6 +12,7 @@
 
 @property NSString *name;
 @property PFFile *image;
+@property BOOL isUserExercise;
 
 + (NSString *)parseClassName;
 

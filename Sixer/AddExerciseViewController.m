@@ -13,14 +13,19 @@
 @interface AddExerciseViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (nonatomic, strong) NSIndexPath *selectedItemIndexPath;
+@property NSMutableArray *userExercises;
+@property NSMutableArray *selectedExercise;
 @property NSArray *exercisesArray;
 
 @end
 
 @implementation AddExerciseViewController
 
+CVExerciseCell *cell;
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//TODO: save exercise name to users table as relationship to exercise
+//  TODO: save exercise name to users table as relationship to exercise
     
 }
 
@@ -30,7 +35,7 @@
 }
 
 - (void)queryParse {
-// this method returns all objects on the Exerise table from Parse and will nslog an error if it fails
+    //  returns all objects on the Exerise table from Parse and will nslog an error if it fails
     PFQuery *query = [PFQuery queryWithClassName:@"Exercise"];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         if (error) {
@@ -52,16 +57,17 @@
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CVExerciseCell *cell = (CVExerciseCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    cell = (CVExerciseCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
 
-//    UICollectionViewFlowLayout *flowlayout = [UICollectionViewFlowLayout new];
-//    flowlayout.itemSize = CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.width);
-//
-//    self.collectionView.collectionViewLayout = flowlayout;
+//    UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
+//    layout.itemSize = CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.width);
+//    layout.minimumLineSpacing = 0.0f;
+//    layout.minimumInteritemSpacing = 0.0f;
+//    layout.sectionInset = UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f);
 
-//make all objects returned from Parse Exercise objects
+    //  make all objects returned from Parse Exercise objects
     Exercise *exercise = [self.exercisesArray objectAtIndex:indexPath.row];
-//converts pffile to images that objective c can render, images are stored as pffiles on Parse
+    //  converts pffile to images that objective c can render, images are stored as pffiles on Parse
     PFFile *imageFile = [exercise objectForKey:@"image"];
     [imageFile getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
         if (error) {
@@ -80,9 +86,70 @@
     return cell;
 }
 
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+-(void)deleteSelectedExercises:(id)sender {
+    // get the selected indexpaths
+    NSArray* selectedIndexPaths = [self.collectionView indexPathsForSelectedItems];
+
+    // delete words from words array
+    NSMutableArray* mutableExercises = [self.userExercises mutableCopy];
+    NSMutableIndexSet* deletionIndexSet = [NSMutableIndexSet indexSet];
+    for (NSIndexPath* indexPath in selectedIndexPaths) {
+        [deletionIndexSet addIndex:indexPath.item];
+    }
+    [mutableExercises removeObjectsAtIndexes:deletionIndexSet];
+
+    self.userExercises = [NSMutableArray arrayWithArray:mutableExercises];
+
+    // tell the collection view to delete cells
+    [self.collectionView performBatchUpdates:^{
+        [self.collectionView deleteItemsAtIndexPaths:selectedIndexPaths];
+    } completion:nil];
+}
+
+#pragma mark <UICollectionViewDelegate>
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+
+    PFUser *user = [PFUser currentUser];
+    Exercise *seletedExercise = self.exercisesArray[indexPath.item];
+    PFRelation *userExerciseRelation = [user relationForKey:@"exercise"];
+
+    if ([self isExerciseForUser:seletedExercise]) {
+        cell.imageView.alpha = 1.0;
+        [userExerciseRelation removeObject:seletedExercise];
+        
+    }
+    else {
+        cell.imageView.alpha = 0.2;
+        [userExerciseRelation addObject:seletedExercise];
+    }
+    [seletedExercise saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"error with saving didSelectItemAtIndexPath %@", error);
+        }
+    }];
 
 }
+
+- (BOOL)isExerciseForUser:(Exercise *)userExercise {
+    for (Exercise *exercise in self.exercisesArray) {
+        if ([exercise.objectId isEqualToString:userExercise.objectId]) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
+//-(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
+//
+//   Exercise* deselectedExercise= self.userExercises[indexPath.item];
+//    [self.selectedExercise removeObject:deselectedExercise];
+//    cell.imageView.alpha = 1.0;
+//    cell.nameLabel.alpha = 1.0;
+//
+//    NSLog(@"Selected Exercises: %@", self.selectedExercise);
+//}
+
 
 @end
 
