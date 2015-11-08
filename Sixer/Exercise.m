@@ -12,6 +12,7 @@
 
 @dynamic name;
 @dynamic image;
+@dynamic isUserExercise;
 
 + (NSString *)parseClassName{
     return @"Exercise";

@@ -29,6 +29,7 @@
 		236ADD4F1BED064A00F6FD62 /* Week.m in Sources */ = {isa = PBXBuildFile; fileRef = 236ADD4E1BED064A00F6FD62 /* Week.m */; };
 		236ADD561BED92FE00F6FD62 /* CVExerciseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 236ADD551BED92FE00F6FD62 /* CVExerciseCell.m */; };
 		2383085F1BEBEC62004DA4EC /* AddExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2383085E1BEBEC62004DA4EC /* AddExerciseViewController.m */; };
+		23AB1EEE1BEEE04100B1BDE5 /* CVExerciseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 236ADD551BED92FE00F6FD62 /* CVExerciseCell.m */; };
 		783F96DC1BEC1EC100CEA7FA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783F96DB1BEC1EC100CEA7FA /* AudioToolbox.framework */; };
 		783F96DE1BEC1ECC00CEA7FA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783F96DD1BEC1ECC00CEA7FA /* CFNetwork.framework */; };
 		783F96E01BEC1ED700CEA7FA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783F96DF1BEC1ED700CEA7FA /* CoreGraphics.framework */; };
@@ -472,6 +473,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23AB1EEE1BEEE04100B1BDE5 /* CVExerciseCell.m in Sources */,
 				CD7C67961BED8FDD00DC20E7 /* LoginViewController.m in Sources */,
 				CD7C67951BED8C8000DC20E7 /* AddGroupViewController.m in Sources */,
 				CD70934B1BEEE79F00043B50 /* ContainerViewController.m in Sources */,
