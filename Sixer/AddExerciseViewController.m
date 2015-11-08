@@ -7,15 +7,13 @@
 //
 
 #import "AddExerciseViewController.h"
+#import "CVExerciseCell.h"
 #import "Exercise.h"
 
-@interface AddExerciseViewController () <UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface AddExerciseViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSArray *exercisesArray;
-@property NSMutableArray *exerciseImagesArray;
 
 @end
 
@@ -26,46 +24,75 @@
     
 }
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self queryParse];
+}
 
-    self.exerciseImagesArray = [[NSMutableArray alloc] init];
-
-    PFQuery *exercisesQuery = [PFQuery queryWithClassName:@"Exercise"];
-    [exercisesQuery whereKeyExists:@"name"];
-    [exercisesQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+- (void)queryParse {
+// this method returns all objects on the Exerise table from Parse and will nslog an error if it fails
+    PFQuery *query = [PFQuery queryWithClassName:@"Exercise"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         if (error) {
-            NSLog(@"You're flabby because %@", error);
+            NSLog(@"something went wrong with queryParse %@",error);
         }
         else {
-            self.exercisesArray = objects;
-            for (Exercise *exercise in self.exercisesArray) {
-                PFFile *imageFile = [exercise objectForKey:@"image"];
-                [imageFile getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
-                    UIImage *image = [UIImage imageWithData:data];
-                    [self.exerciseImagesArray addObject:image];
-                    if (exercise == [self.exercisesArray lastObject]) {
-                        [self.tableView reloadData];
-                    }
-                }];
-            }
+            self.exercisesArray = [[NSArray alloc]initWithArray:objects];
+            [self.collectionView reloadData];
         }
     }];
 }
+#pragma mark collecitonview methods
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
+}
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.exercisesArray.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AddExerciseCell" forIndexPath:indexPath];
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CVExerciseCell *cell = (CVExerciseCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+
+//    UICollectionViewFlowLayout *flowlayout = [UICollectionViewFlowLayout new];
+//    flowlayout.itemSize = CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.width);
+//
+//    self.collectionView.collectionViewLayout = flowlayout;
+
+//make all objects returned from Parse Exercise objects
     Exercise *exercise = [self.exercisesArray objectAtIndex:indexPath.row];
-    cell.textLabel.text = [exercise objectForKey:@"name"];
-    cell.imageView.image = [self.exerciseImagesArray objectAtIndex:indexPath.row];
+//converts pffile to images that objective c can render, images are stored as pffiles on Parse
+    PFFile *imageFile = [exercise objectForKey:@"image"];
+    [imageFile getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"something went wrong with cellForItemAtIndexPath %@",error);
+        }
+        else {
+            cell.imageView.image = [UIImage imageWithData:data];
+            cell.nameLabel.text = [exercise objectForKey:@"name"];
+        }
+    }];
+    [cell.layer setBorderWidth:2.0f];
+    [cell.layer setBorderColor:[UIColor lightGrayColor].CGColor];
+    [cell.layer setCornerRadius:30.0f];
+    [cell.imageView.layer setCornerRadius:30.0f];
 
     return cell;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+
+}
+
 @end
+
+
+
+
+
+
+
+
+
+
+
