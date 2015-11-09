@@ -22,12 +22,15 @@
 
 @implementation AddExerciseViewController
 
-CVExerciseCell *cell;
+CVExerciseCell *addExerciseCell;
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self queryParse];
+
+    [self.collectionView setBackgroundColor:[UIColor colorWithRed:17.0f/255.0f green:147.0f/255.0f blue:255.0f/255.0f alpha:1.0f]];
+
 }
 
 - (void)findUserExercises {
@@ -59,6 +62,7 @@ CVExerciseCell *cell;
         }
     }];
 }
+
 #pragma mark collecitonview methods
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
@@ -69,18 +73,16 @@ CVExerciseCell *cell;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    cell = (CVExerciseCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    addExerciseCell = (CVExerciseCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
 
     //  make all objects returned from Parse Exercise objects
     Exercise *exercise = [self.exercisesArray objectAtIndex:indexPath.row];
 
     if ([self.userExercises containsObject:exercise]) {
         exercise.isUserExercise = [NSNumber numberWithBool:true];
-        cell.imageView.alpha = 0.2;
     }
     else {
         exercise.isUserExercise = [NSNumber numberWithBool:false];
-        cell.imageView.alpha = 1.0;
     }
 
     //  converts pffile to images that objective c can render, images are stored as pffiles on Parse
@@ -90,16 +92,16 @@ CVExerciseCell *cell;
             NSLog(@"something went wrong with cellForItemAtIndexPath %@",error);
         }
         else {
-            cell.imageView.image = [UIImage imageWithData:data];
-            cell.nameLabel.text = [exercise objectForKey:@"name"];
+            addExerciseCell.imageView.image = [UIImage imageWithData:data];
+            addExerciseCell.nameLabel.text = [exercise objectForKey:@"name"];
         }
     }];
-    [cell.layer setBorderWidth:2.0f];
-    [cell.layer setBorderColor:[UIColor lightGrayColor].CGColor];
-    [cell.layer setCornerRadius:30.0f];
-    [cell.imageView.layer setCornerRadius:30.0f];
+    [addExerciseCell.layer setBorderWidth:2.0f];
+    [addExerciseCell.layer setBorderColor:[UIColor colorWithRed:0.0f/255.0f green:59.0f/255.0f blue:108.0f/255.0f alpha:1.0f].CGColor];
+    [addExerciseCell.layer setCornerRadius:30.0f];
+    [addExerciseCell.imageView.layer setCornerRadius:30.0f];
 
-    return cell;
+    return addExerciseCell;
 }
 
 
