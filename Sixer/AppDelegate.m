@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
-
+#import "Exercise.h"
 
 
 @interface AppDelegate ()
@@ -18,8 +18,11 @@
 @implementation AppDelegate
 
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
+    [Exercise registerSubclass];
+    
     // Initialize Parse.
     [Parse setApplicationId:@"gVFJgoezxzMORzfgiTCgwIsvfEeTrQPL6IlOoBTP"
                   clientKey:@"fj22hAaOlF15CiAEncRWNHpeXzo5v5QBUh03xYrx"];

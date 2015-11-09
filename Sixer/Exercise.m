@@ -12,10 +12,24 @@
 
 @dynamic name;
 @dynamic image;
-@dynamic isUserExercise;
+@synthesize isUserExercise = _isUserExercise;
 
 + (NSString *)parseClassName{
     return @"Exercise";
 }
+
+-(void)setIsUserExercise:(NSNumber *)isUserExercise
+{
+    _isUserExercise = isUserExercise;
+}
+
+-(NSNumber *)isUserExercise {
+    return _isUserExercise;
+}
+
++ (void)load {
+    [self registerSubclass];
+}
+
 
 @end

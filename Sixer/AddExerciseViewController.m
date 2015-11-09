@@ -24,14 +24,26 @@
 
 CVExerciseCell *cell;
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//  TODO: save exercise name to users table as relationship to exercise
-    
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self queryParse];
+}
+
+- (void)findUserExercises {
+
+    PFUser *user = [PFUser currentUser];
+    PFRelation *relation = [user relationForKey:@"exercise"];
+    PFQuery *query = [relation query];
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"something went wrong findUserExercises %@", error);
+        }
+        else {
+            self.userExercises = [[NSMutableArray alloc] initWithArray:objects];
+            [self.collectionView reloadData];
+        }
+    }];
 }
 
 - (void)queryParse {
@@ -43,7 +55,7 @@ CVExerciseCell *cell;
         }
         else {
             self.exercisesArray = [[NSArray alloc]initWithArray:objects];
-            [self.collectionView reloadData];
+            [self findUserExercises];
         }
     }];
 }
@@ -59,14 +71,18 @@ CVExerciseCell *cell;
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     cell = (CVExerciseCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
 
-//    UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
-//    layout.itemSize = CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.width);
-//    layout.minimumLineSpacing = 0.0f;
-//    layout.minimumInteritemSpacing = 0.0f;
-//    layout.sectionInset = UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f);
-
     //  make all objects returned from Parse Exercise objects
     Exercise *exercise = [self.exercisesArray objectAtIndex:indexPath.row];
+
+    if ([self.userExercises containsObject:exercise]) {
+        exercise.isUserExercise = [NSNumber numberWithBool:true];
+        cell.imageView.alpha = 0.2;
+    }
+    else {
+        exercise.isUserExercise = [NSNumber numberWithBool:false];
+        cell.imageView.alpha = 1.0;
+    }
+
     //  converts pffile to images that objective c can render, images are stored as pffiles on Parse
     PFFile *imageFile = [exercise objectForKey:@"image"];
     [imageFile getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
@@ -86,25 +102,6 @@ CVExerciseCell *cell;
     return cell;
 }
 
--(void)deleteSelectedExercises:(id)sender {
-    // get the selected indexpaths
-    NSArray* selectedIndexPaths = [self.collectionView indexPathsForSelectedItems];
-
-    // delete words from words array
-    NSMutableArray* mutableExercises = [self.userExercises mutableCopy];
-    NSMutableIndexSet* deletionIndexSet = [NSMutableIndexSet indexSet];
-    for (NSIndexPath* indexPath in selectedIndexPaths) {
-        [deletionIndexSet addIndex:indexPath.item];
-    }
-    [mutableExercises removeObjectsAtIndexes:deletionIndexSet];
-
-    self.userExercises = [NSMutableArray arrayWithArray:mutableExercises];
-
-    // tell the collection view to delete cells
-    [self.collectionView performBatchUpdates:^{
-        [self.collectionView deleteItemsAtIndexPaths:selectedIndexPaths];
-    } completion:nil];
-}
 
 #pragma mark <UICollectionViewDelegate>
 
@@ -114,16 +111,16 @@ CVExerciseCell *cell;
     Exercise *seletedExercise = self.exercisesArray[indexPath.item];
     PFRelation *userExerciseRelation = [user relationForKey:@"exercise"];
 
-    if ([self isExerciseForUser:seletedExercise]) {
-        cell.imageView.alpha = 1.0;
+    if ([seletedExercise.isUserExercise boolValue] == true) {
+        seletedExercise.isUserExercise = [NSNumber numberWithBool:false];
         [userExerciseRelation removeObject:seletedExercise];
-        
     }
-    else {
-        cell.imageView.alpha = 0.2;
+    else if ([seletedExercise.isUserExercise boolValue] == false) {
+        seletedExercise.isUserExercise = [NSNumber numberWithBool:true];
         [userExerciseRelation addObject:seletedExercise];
     }
-    [seletedExercise saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+
+    [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         if (error) {
             NSLog(@"error with saving didSelectItemAtIndexPath %@", error);
         }
@@ -150,6 +147,25 @@ CVExerciseCell *cell;
 //    NSLog(@"Selected Exercises: %@", self.selectedExercise);
 //}
 
+//-(void)deleteSelectedExercises:(id)sender {
+//    // get the selected indexpaths
+//    NSArray* selectedIndexPaths = [self.collectionView indexPathsForSelectedItems];
+//
+//    // delete words from words array
+//    NSMutableArray* mutableExercises = [self.userExercises mutableCopy];
+//    NSMutableIndexSet* deletionIndexSet = [NSMutableIndexSet indexSet];
+//    for (NSIndexPath* indexPath in selectedIndexPaths) {
+//        [deletionIndexSet addIndex:indexPath.item];
+//    }
+//    [mutableExercises removeObjectsAtIndexes:deletionIndexSet];
+//
+//    self.userExercises = [NSMutableArray arrayWithArray:mutableExercises];
+//
+//    // tell the collection view to delete cells
+//    [self.collectionView performBatchUpdates:^{
+//        [self.collectionView deleteItemsAtIndexPaths:selectedIndexPaths];
+//    } completion:nil];
+//}
 
 @end
 

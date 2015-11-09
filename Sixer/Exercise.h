@@ -8,11 +8,11 @@
 
 #import <Parse/Parse.h>
 
-@interface Exercise : PFObject
+@interface Exercise : PFObject<PFSubclassing>
 
 @property NSString *name;
 @property PFFile *image;
-@property BOOL isUserExercise;
+@property NSNumber *isUserExercise;
 
 + (NSString *)parseClassName;
 
