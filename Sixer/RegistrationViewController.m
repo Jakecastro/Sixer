@@ -37,7 +37,8 @@
     self.emailTextField.delegate = self;
     self.passwordTextField.delegate = self;
     self.confirmPasswordTextField.delegate = self;
-    
+//    
+//    [self.signupButton setBackgroundImage:[UIImage imageNamed:@"SignupButton"] forState:UIControlStateNormal];
 }
 - (IBAction)onSelectProfilePictureButtonTapped:(UIButton *)sender {
     
@@ -151,8 +152,15 @@
                                                                          // Dismiss Controller if signup was successful
                                                                          [self dismissViewControllerAnimated:YES completion:nil];
                                                                      }
+                                                                     [alert addAction:okayButton];
+                                                                     [self presentViewController:alert
+                                                                                        animated:YES
+                                                                                      completion:nil];
+                                                                     
                                                                  }];
+            
         }];
+        
         
          }
          
