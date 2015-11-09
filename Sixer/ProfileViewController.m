@@ -35,8 +35,8 @@
     
     self.userImage.layer.cornerRadius = 50;
     self.userImage.clipsToBounds = YES;
-    self.userImage.layer.borderWidth = 5;
-    self.userImage.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.userImage.layer.borderWidth = 0.5;
+    self.userImage.layer.borderColor = [UIColor grayColor].CGColor;
     
     
     
@@ -67,14 +67,14 @@
     // Changing the length and color of the separator line between tableview cells
     [tableView setSeparatorInset:UIEdgeInsetsZero];
     [tableView setSeparatorColor:[UIColor blackColor]];
+    [tableView setSeparatorInset:UIEdgeInsetsMake(0, 0, 0, 0)];
+    [tableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
+    
     self.settingsTableView.sectionIndexColor = [UIColor whiteColor];
     self.settingsTableView.sectionIndexTrackingBackgroundColor = [UIColor blackColor];
     
     
-    // Changing cell's selected background color
-    UIView *cellBackground = [[UIView alloc] initWithFrame:cell.frame];
-    cellBackground.backgroundColor = [UIColor blackColor];
-    cell.selectedBackgroundView = cellBackground;
+  
     
 
     return cell;
