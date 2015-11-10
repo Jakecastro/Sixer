@@ -61,7 +61,7 @@ ExerciseCell *cell;
     self.collectionView.backgroundColor = [Color hourBackgroundBlueColor];
 
     [self.workoutButton.layer setBorderWidth:3.0f];
-    [self.workoutButton.layer setCornerRadius:30.0f];
+    [self.workoutButton.layer setCornerRadius:10.0f];
     [self.workoutButton setBackgroundColor:[Color hourOrangeColor]];
     [self.workoutButton.layer setBorderColor:[Color hourHighlightBorderOrangeColor].CGColor];
 
@@ -75,6 +75,9 @@ ExerciseCell *cell;
     [cell.layer setBorderColor:[Color hourNormalStateBorderColor].CGColor];
     [cell.exerciseLabel.layer setBackgroundColor:[UIColor whiteColor].CGColor];
 
+    self.workoutButton.hidden = true;
+    self.groupNameButton.hidden = true;
+    self.segmentedController.hidden = true;
     self.workoutButton.titleLabel.text = @"select exercise above";
 }
 
@@ -112,6 +115,10 @@ ExerciseCell *cell;
     cell.exerciseImage.backgroundColor = [Color hourOrangeColor];
     cell.exerciseLabel.textColor = [UIColor whiteColor];
     cell.backgroundColor = [Color hourOrangeColor];
+
+    self.workoutButton.hidden = false;
+    self.segmentedController.hidden = false;
+    self.groupNameButton.hidden = false;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {

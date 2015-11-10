@@ -8,6 +8,7 @@
 
 #import "TimerViewController.h"
 #import "Exercise.h"
+#import "Color.h"
 #import "Week.h"
 
 @interface TimerViewController ()
@@ -16,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *exerciseImageButton;
 @property (weak, nonatomic) IBOutlet UILabel *timeCountLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UILabel *totalScoreNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *totalTimeScoreLabel;
 
 
 @end
