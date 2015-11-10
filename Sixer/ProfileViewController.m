@@ -107,7 +107,23 @@
     return cell;
 }
 
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath == 0) {
+        
+        
+    } else if (indexPath == 1){
+        [PFUser logOut];
+        
+        [self dismissViewControllerAnimated:YES completion:nil];
+        
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"RegistrationAndLogin" bundle:nil];
+        UIViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"LoginScreen"];
+        [self.navigationController pushViewController:loginVC animated:YES];
+        
+    }
+        
+    
+}
 
 
 @end

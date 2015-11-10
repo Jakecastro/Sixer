@@ -173,7 +173,12 @@
          
          }
          
-         - (IBAction)onAlreadyAUserButtonTapped:(UIButton *)sender {
+- (IBAction)onAlreadyAUserButtonTapped:(UIButton *)sender {
          }
-         
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    [textField resignFirstResponder];
+    return NO;
+}
          @end
