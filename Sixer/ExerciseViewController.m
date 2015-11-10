@@ -89,6 +89,29 @@
     return cell;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    ExerciseCell *selectedCell = (ExerciseCell *) [collectionView cellForItemAtIndexPath:indexPath];
+    [selectedCell.exerciseLabel.layer setBackgroundColor:[UIColor colorWithRed:255.0f/255.0f green:184.0f/255.0f blue:88.0f/255.0f alpha:1.0f].CGColor];
+    selectedCell.exerciseLabel.textColor = [UIColor whiteColor];
+    selectedCell.backgroundColor = [UIColor colorWithRed:255.0f/255.0f green:184.0f/255.0f blue:88.0f/255.0f alpha:1.0f];
+    selectedCell.exerciseImage.backgroundColor = [UIColor colorWithRed:255.0f/255.0f green:184.0f/255.0f blue:88.0f/255.0f alpha:1.0f];
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
+    ExerciseCell *selectedCell = (ExerciseCell *) [collectionView cellForItemAtIndexPath:indexPath];
+    [selectedCell.exerciseLabel.layer setBackgroundColor:[UIColor whiteColor].CGColor];
+    selectedCell.exerciseLabel.textColor = [UIColor blackColor];
+    selectedCell.backgroundColor = [UIColor whiteColor];
+    selectedCell.exerciseImage.backgroundColor = [UIColor whiteColor];
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
+
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
 
 - (IBAction)onAddExerciseButtonTapped:(UIButton *)sender {
 }
