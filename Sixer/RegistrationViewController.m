@@ -37,8 +37,15 @@
     self.emailTextField.delegate = self;
     self.passwordTextField.delegate = self;
     self.confirmPasswordTextField.delegate = self;
-//    
-//    [self.signupButton setBackgroundImage:[UIImage imageNamed:@"SignupButton"] forState:UIControlStateNormal];
+    self.userProfileImageView.image = [UIImage imageNamed:@"SelectPicture1"];
+    
+    [self.signupButton setBackgroundImage:[UIImage imageNamed:@"SignupButton"] forState:UIControlStateNormal];
+    
+    self.usernameIconImageView.image = [UIImage imageNamed:@"User11"];
+    
+    self.EmailIconImageView.image = [UIImage imageNamed:@"Email2"];
+    self.passwordIconImageView.image = [UIImage imageNamed:@"lock12"];
+    self.confirmPasswordIconImageView.image = [UIImage imageNamed:@"lock12"];
 }
 - (IBAction)onSelectProfilePictureButtonTapped:(UIButton *)sender {
     
