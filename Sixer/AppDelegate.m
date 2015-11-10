@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 #import "Exercise.h"
+#import "Color.h"
 
 
 @interface AppDelegate ()

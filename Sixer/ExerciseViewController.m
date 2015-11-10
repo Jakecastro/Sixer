@@ -7,37 +7,34 @@
 //
 
 #import "ExerciseViewController.h"
+#import "TimerViewController.h"
 #import "ExerciseCell.h"
 #import "Exercise.h"
+#import "Color.h"
 
 @interface ExerciseViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (weak, nonatomic) IBOutlet UIView *topView;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedController;
-@property (weak, nonatomic) IBOutlet UIButton *workoutButton;
-@property (weak, nonatomic) IBOutlet UIButton *groupNameButton;
-@property  NSMutableArray *userExercisesArray;
 
-// Outlet for profile button
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedController;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UIButton *groupNameButton;
+@property (weak, nonatomic) IBOutlet UIButton *workoutButton;
 @property (weak, nonatomic) IBOutlet UIButton *menuButton;
+@property (weak, nonatomic) IBOutlet UIView *topView;
+
+@property NSMutableArray *userExercisesArray;
+@property Exercise *selectedExercise;
 
 @end
 
 @implementation ExerciseViewController
 
+ExerciseCell *cell;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self findUserExercises];
-    [self.view setBackgroundColor:[UIColor colorWithRed:155.0f/255.0f green:204.0f/255.0f blue:245.0f/255.0f alpha:1.0f]];
-    self.collectionView.backgroundColor = [UIColor colorWithRed:155.0f/255.0f green:204.0f/255.0f blue:245.0f/255.0f alpha:1.0f];
-    [self.workoutButton setBackgroundColor:[UIColor colorWithRed:255.0f/255.0f green:184.0f/255.0f blue:88.0f/255.0f alpha:1.0f]];
-    [self.segmentedController setBackgroundColor:[UIColor whiteColor]];
-    [self.workoutButton.layer setCornerRadius:75.0f];
-    [self.workoutButton.layer setBorderWidth:3.0f];
-    [self.workoutButton.layer setBorderColor:[UIColor colorWithRed:167.0f/255.0f green:97.0f/255.0f blue:0.0f/255.0f alpha:1.0f].CGColor];
-    self.topView.backgroundColor = [UIColor colorWithRed:17.0f/255.0f green:147.0f/255.0f blue:255.0f/255.0f alpha:1.0f];
-
+    [self setColorsAndBordersOnLoad];
+    self.workoutButton.titleLabel.text = @"select exercise above";
 }
 
 - (void)findUserExercises {
@@ -56,16 +53,32 @@
     }];
 }
 
+#pragma mark - UI Methods
+- (void)setColorsAndBordersOnLoad {
+    self.topView.backgroundColor = [Color hourDarkBlueColor];
+    [self.view setBackgroundColor:[Color hourBackgroundBlueColor]];
 
-- (IBAction)onProfileButtonTapped:(id)sender {
-    
-    [self.delegate frontRevealButtonTapped];
+    self.collectionView.backgroundColor = [Color hourBackgroundBlueColor];
+
+    [self.workoutButton.layer setBorderWidth:3.0f];
+    [self.workoutButton.layer setCornerRadius:30.0f];
+    [self.workoutButton setBackgroundColor:[Color hourOrangeColor]];
+    [self.workoutButton.layer setBorderColor:[Color hourHighlightBorderOrangeColor].CGColor];
+
+    [self.segmentedController setBackgroundColor:[UIColor whiteColor]];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)resetUnselectedAttributes {
+    cell.backgroundColor = [UIColor whiteColor];
+    cell.exerciseLabel.textColor = [UIColor blackColor];
+    cell.exerciseImage.backgroundColor = [UIColor whiteColor];
+    [cell.layer setBorderColor:[Color hourNormalStateBorderColor].CGColor];
+    [cell.exerciseLabel.layer setBackgroundColor:[UIColor whiteColor].CGColor];
+
+    self.workoutButton.titleLabel.text = @"select exercise above";
 }
+
+#pragma mark - UICollectionView Methods
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
 }
@@ -77,11 +90,6 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
 
     ExerciseCell *cell = (ExerciseCell *) [collectionView dequeueReusableCellWithReuseIdentifier:@"ExerciseCell" forIndexPath:indexPath];
-    [cell.layer setBorderWidth:2.0f];
-    [cell.layer setBorderColor:[UIColor colorWithRed:0.0f/255.0f green:59.0f/255.0f blue:108.0f/255.0f alpha:1.0f].CGColor];
-    [cell.layer setCornerRadius:30.0f];
-    [cell.exerciseImage.layer setCornerRadius:30.0f];
-
     Exercise *exercise = [self.userExercisesArray objectAtIndex:indexPath.row];
     PFFile *imageFile = [exercise objectForKey:@"image"];
 
@@ -93,27 +101,26 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    ExerciseCell *selectedCell = (ExerciseCell *) [collectionView cellForItemAtIndexPath:indexPath];
-    [selectedCell.exerciseLabel.layer setBackgroundColor:[UIColor colorWithRed:255.0f/255.0f green:184.0f/255.0f blue:88.0f/255.0f alpha:1.0f].CGColor];
-    selectedCell.exerciseLabel.textColor = [UIColor whiteColor];
-    selectedCell.backgroundColor = [UIColor colorWithRed:255.0f/255.0f green:184.0f/255.0f blue:88.0f/255.0f alpha:1.0f];
-    selectedCell.exerciseImage.backgroundColor = [UIColor colorWithRed:255.0f/255.0f green:184.0f/255.0f blue:88.0f/255.0f alpha:1.0f];
+
+    cell = (ExerciseCell *) [collectionView cellForItemAtIndexPath:indexPath];
+    self.selectedExercise = [self.userExercisesArray objectAtIndex:indexPath.row];
+
+    self.workoutButton.titleLabel.text = [NSString stringWithFormat:@"Start %@", self.selectedExercise.name];
+
+    [cell.exerciseLabel.layer setBackgroundColor:[Color hourOrangeColor].CGColor];
+    [cell.layer setBorderColor:[Color hourHighlightBorderOrangeColor].CGColor];
+    cell.exerciseImage.backgroundColor = [Color hourOrangeColor];
+    cell.exerciseLabel.textColor = [UIColor whiteColor];
+    cell.backgroundColor = [Color hourOrangeColor];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
-    ExerciseCell *selectedCell = (ExerciseCell *) [collectionView cellForItemAtIndexPath:indexPath];
-    [selectedCell.exerciseLabel.layer setBackgroundColor:[UIColor whiteColor].CGColor];
-    selectedCell.exerciseLabel.textColor = [UIColor blackColor];
-    selectedCell.backgroundColor = [UIColor whiteColor];
-    selectedCell.exerciseImage.backgroundColor = [UIColor whiteColor];
+    [self resetUnselectedAttributes];
 }
 
-- (void)collectionView:(UICollectionView *)collectionView didHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-
-}
-
-- (void)collectionView:(UICollectionView *)collectionView didUnhighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-    
+#pragma mark - onButtonTapped Methods
+- (IBAction)onProfileButtonTapped:(id)sender {
+    [self.delegate frontRevealButtonTapped];
 }
 
 - (IBAction)onAddExerciseButtonTapped:(UIButton *)sender {
@@ -125,7 +132,15 @@
 - (IBAction)onBeginWorkoutButtonTapped:(UIButton *)sender {
 }
 
+#pragma mark - Segue
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 
+    if ([segue.identifier  isEqual:@"StartTimer"]) {
+        TimerViewController *vc = segue.destinationViewController;
+        vc.selectedExercise = self.selectedExercise;
+    }
+
+}
 
 
 

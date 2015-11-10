@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Color.h"
 
 @interface CVExerciseCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
