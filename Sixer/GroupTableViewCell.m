@@ -7,6 +7,11 @@
 //
 
 #import "GroupTableViewCell.h"
+#import "ExerciseViewController.h"
+
+
+
+
 
 @implementation GroupTableViewCell
 
@@ -18,6 +23,9 @@
 
 }
 - (IBAction)onSwitchSelectGroup:(UISwitch *)sender {
+
+
+
 }
 
 @end

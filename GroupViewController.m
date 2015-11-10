@@ -52,14 +52,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GroupCell" forIndexPath:indexPath];
-
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"GroupCell"];
-
-        UISwitch *switchView = [[UISwitch alloc] initWithFrame:CGRectZero];
-        cell.accessoryView = switchView;
-        
-    }
+//
+//    if (cell == nil) {
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"GroupCell"];
+//
+//        UISwitch *switchView = [[UISwitch alloc] initWithFrame:CGRectZero];
+//        cell.accessoryView = switchView;
+//        
+//    }
 
     Group *userGroups = [self.groupsArray objectAtIndex:indexPath.row];
     cell.textLabel.text = [userGroups objectForKey:@"name"];
