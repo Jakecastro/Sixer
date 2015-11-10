@@ -7,18 +7,19 @@
 //
 
 #import "ExerciseCell.h"
+#import "Color.h"
 
 @implementation ExerciseCell
 
 - (void)awakeFromNib {
-//    self.exerciseLabel.backgroundColor = [UIColor whiteColor];
-//    UIView *bgView = [[UIView alloc] initWithFrame:self.bounds];
-//    self.backgroundView = bgView;
-//    self.backgroundView.backgroundColor = [UIColor whiteColor];
-//
-//    UIView *selectedView = [[UIView alloc] initWithFrame:self.bounds];
-//    self.selectedBackgroundView = selectedView;
-//    self.selectedBackgroundView.backgroundColor = [UIColor colorWithRed:255.0f/255.0f green:219.0f/255.0f blue:107.0f/255.0f alpha:1.0f];
+    [self.layer setBorderWidth:2.0f];
+    [self.layer setCornerRadius:30.0f];
+    [self.exerciseImage.layer setCornerRadius:30.f];
+    self.backgroundColor = [UIColor whiteColor];
+    self.exerciseLabel.textColor = [UIColor blackColor];
+    self.exerciseImage.backgroundColor = [UIColor whiteColor];
+    [self.layer setBorderColor:[Color hourNormalStateBorderColor].CGColor];
+    [self.exerciseLabel.layer setBackgroundColor:[UIColor whiteColor].CGColor];
 }
 
 @end

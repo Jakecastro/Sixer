@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *exerciseNameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *exerciseImageButton;
 @property (weak, nonatomic) IBOutlet UILabel *timeCountLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
 
 @end
 
@@ -46,6 +48,12 @@ NSTimer *timer;
     totalSessionTime=0;
     isExerciseTime = true;
     [self startTimer];
+    self.exerciseNameLabel.text = [NSString stringWithFormat:@"%@", self.selectedExercise.name];
+
+
+//    PFFile *imageFile = self.selectedExercise.image;
+//    NSData *imageData = imageFile;
+//    self.imageView.image = [UIImage imageWithData:imageData];
 }
 
 - (void)startTimer {

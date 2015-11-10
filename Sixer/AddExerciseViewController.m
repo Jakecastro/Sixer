@@ -9,13 +9,14 @@
 #import "AddExerciseViewController.h"
 #import "CVExerciseCell.h"
 #import "Exercise.h"
+#import "Color.h"
 
 @interface AddExerciseViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) NSIndexPath *selectedItemIndexPath;
-@property NSMutableArray *userExercises;
 @property NSMutableArray *selectedExercise;
+@property NSMutableArray *userExercises;
 @property NSArray *exercisesArray;
 
 @end
@@ -24,16 +25,29 @@
 
 CVExerciseCell *addExerciseCell;
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self queryParse];
+    [self queryExercisesFromParse];
 
-    [self.collectionView setBackgroundColor:[UIColor colorWithRed:17.0f/255.0f green:147.0f/255.0f blue:255.0f/255.0f alpha:1.0f]];
-
+    [self.view setBackgroundColor:[Color hourDarkBlueColor]];
+    [self.collectionView setBackgroundColor:[Color hourDarkBlueColor]];
 }
 
-- (void)findUserExercises {
+#pragma mark - Query Parse Methods
+- (void)queryExercisesFromParse {
+    //  returns all objects on the Exerise table from Parse and will nslog an error if it fails
+    PFQuery *query = [PFQuery queryWithClassName:@"Exercise"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"something went wrong with queryParse %@",error);
+        }
+        else {
+            self.exercisesArray = [[NSArray alloc]initWithArray:objects];
+            [self findUserExercisesFromParse];
+        }
+    }];
+}
+- (void)findUserExercisesFromParse {
 
     PFUser *user = [PFUser currentUser];
     PFRelation *relation = [user relationForKey:@"exercise"];
@@ -45,20 +59,6 @@ CVExerciseCell *addExerciseCell;
         else {
             self.userExercises = [[NSMutableArray alloc] initWithArray:objects];
             [self.collectionView reloadData];
-        }
-    }];
-}
-
-- (void)queryParse {
-    //  returns all objects on the Exerise table from Parse and will nslog an error if it fails
-    PFQuery *query = [PFQuery queryWithClassName:@"Exercise"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-        if (error) {
-            NSLog(@"something went wrong with queryParse %@",error);
-        }
-        else {
-            self.exercisesArray = [[NSArray alloc]initWithArray:objects];
-            [self findUserExercises];
         }
     }];
 }
@@ -96,10 +96,7 @@ CVExerciseCell *addExerciseCell;
             addExerciseCell.nameLabel.text = [exercise objectForKey:@"name"];
         }
     }];
-    [addExerciseCell.layer setBorderWidth:2.0f];
-    [addExerciseCell.layer setBorderColor:[UIColor colorWithRed:0.0f/255.0f green:59.0f/255.0f blue:108.0f/255.0f alpha:1.0f].CGColor];
-    [addExerciseCell.layer setCornerRadius:30.0f];
-    [addExerciseCell.imageView.layer setCornerRadius:30.0f];
+
 
     return addExerciseCell;
 }
@@ -130,54 +127,4 @@ CVExerciseCell *addExerciseCell;
 
 }
 
-- (BOOL)isExerciseForUser:(Exercise *)userExercise {
-    for (Exercise *exercise in self.exercisesArray) {
-        if ([exercise.objectId isEqualToString:userExercise.objectId]) {
-            return YES;
-        }
-    }
-    return NO;
-}
-
-//-(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
-//
-//   Exercise* deselectedExercise= self.userExercises[indexPath.item];
-//    [self.selectedExercise removeObject:deselectedExercise];
-//    cell.imageView.alpha = 1.0;
-//    cell.nameLabel.alpha = 1.0;
-//
-//    NSLog(@"Selected Exercises: %@", self.selectedExercise);
-//}
-
-//-(void)deleteSelectedExercises:(id)sender {
-//    // get the selected indexpaths
-//    NSArray* selectedIndexPaths = [self.collectionView indexPathsForSelectedItems];
-//
-//    // delete words from words array
-//    NSMutableArray* mutableExercises = [self.userExercises mutableCopy];
-//    NSMutableIndexSet* deletionIndexSet = [NSMutableIndexSet indexSet];
-//    for (NSIndexPath* indexPath in selectedIndexPaths) {
-//        [deletionIndexSet addIndex:indexPath.item];
-//    }
-//    [mutableExercises removeObjectsAtIndexes:deletionIndexSet];
-//
-//    self.userExercises = [NSMutableArray arrayWithArray:mutableExercises];
-//
-//    // tell the collection view to delete cells
-//    [self.collectionView performBatchUpdates:^{
-//        [self.collectionView deleteItemsAtIndexPaths:selectedIndexPaths];
-//    } completion:nil];
-//}
-
 @end
-
-
-
-
-
-
-
-
-
-
-
