@@ -9,7 +9,7 @@
         <!--Registration View Controller-->
         <scene sceneID="JBg-V2-PIw">
             <objects>
-                <viewController id="IU7-a5-fsj" customClass="RegistrationViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegistrationScreen" id="IU7-a5-fsj" customClass="RegistrationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="C9S-cZ-ZSx"/>
                         <viewControllerLayoutGuide type="bottom" id="smC-Oh-Ltg"/>

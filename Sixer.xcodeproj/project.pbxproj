@@ -52,6 +52,7 @@
 		CD7093451BEED3A700043B50 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7093441BEED3A700043B50 /* ProfileViewController.m */; };
 		CD7093481BEEDC6600043B50 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7093471BEEDC6600043B50 /* Settings.m */; };
 		CD70934B1BEEE79F00043B50 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD70934A1BEEE79F00043B50 /* ContainerViewController.m */; };
+		CD7093511BF24E4B00043B50 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7093501BF24E4B00043B50 /* EditViewController.m */; };
 		CD7C67951BED8C8000DC20E7 /* AddGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E5D1BEBE6E100557D3F /* AddGroupViewController.m */; };
 		CD7C67961BED8FDD00DC20E7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0A9B2E1BED222000B6817D /* LoginViewController.m */; };
 /* End PBXBuildFile section */
@@ -150,6 +151,8 @@
 		CD7093471BEEDC6600043B50 /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
 		CD7093491BEEE79F00043B50 /* ContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContainerViewController.h; path = ../ContainerViewController.h; sourceTree = "<group>"; };
 		CD70934A1BEEE79F00043B50 /* ContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContainerViewController.m; path = ../ContainerViewController.m; sourceTree = "<group>"; };
+		CD70934F1BF24E4B00043B50 /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditViewController.h; path = Sixer/EditViewController.h; sourceTree = "<group>"; };
+		CD7093501BF24E4B00043B50 /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditViewController.m; path = Sixer/EditViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +269,8 @@
 				CD70934A1BEEE79F00043B50 /* ContainerViewController.m */,
 				CD7093431BEED3A700043B50 /* ProfileViewController.h */,
 				CD7093441BEED3A700043B50 /* ProfileViewController.m */,
+				CD70934F1BF24E4B00043B50 /* EditViewController.h */,
+				CD7093501BF24E4B00043B50 /* EditViewController.m */,
 				235B6E171BEBD25600557D3F /* ExerciseViewController.h */,
 				235B6E181BEBD25600557D3F /* ExerciseViewController.m */,
 				235B6E141BEBD25600557D3F /* ProgressViewController.h */,
@@ -500,6 +505,7 @@
 				CD0A9B321BED223300B6817D /* RegistrationViewController.m in Sources */,
 				235B6E101BEBD25600557D3F /* main.m in Sources */,
 				2383085F1BEBEC62004DA4EC /* AddExerciseViewController.m in Sources */,
+				CD7093511BF24E4B00043B50 /* EditViewController.m in Sources */,
 				235B6E521BEBE34900557D3F /* ProgressCell.m in Sources */,
 				235B6E5B1BEBE64300557D3F /* GroupViewController.m in Sources */,
 				2347DE6E1BEC3A3F00013FFC /* Group.m in Sources */,
