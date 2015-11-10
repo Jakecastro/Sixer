@@ -65,15 +65,15 @@ ExerciseCell *cell;
     [self.workoutButton setBackgroundColor:[Color hourOrangeColor]];
     [self.workoutButton.layer setBorderColor:[Color hourHighlightBorderOrangeColor].CGColor];
 
-    [self.segmentedController setBackgroundColor:[UIColor whiteColor]];
+    [self.segmentedController setBackgroundColor:[Color whiteColor]];
 }
 
 - (void)resetUnselectedAttributes {
-    cell.backgroundColor = [UIColor whiteColor];
-    cell.exerciseLabel.textColor = [UIColor blackColor];
-    cell.exerciseImage.backgroundColor = [UIColor whiteColor];
+    cell.backgroundColor = [Color whiteColor];
+    cell.exerciseLabel.textColor = [Color blackColor];
+    cell.exerciseImage.backgroundColor = [Color whiteColor];
     [cell.layer setBorderColor:[Color hourNormalStateBorderColor].CGColor];
-    [cell.exerciseLabel.layer setBackgroundColor:[UIColor whiteColor].CGColor];
+    [cell.exerciseLabel.layer setBackgroundColor:[Color whiteColor].CGColor];
 
     self.workoutButton.hidden = true;
     self.groupNameButton.hidden = true;
@@ -113,7 +113,7 @@ ExerciseCell *cell;
     [cell.exerciseLabel.layer setBackgroundColor:[Color hourOrangeColor].CGColor];
     [cell.layer setBorderColor:[Color hourHighlightBorderOrangeColor].CGColor];
     cell.exerciseImage.backgroundColor = [Color hourOrangeColor];
-    cell.exerciseLabel.textColor = [UIColor whiteColor];
+    cell.exerciseLabel.textColor = [Color whiteColor];
     cell.backgroundColor = [Color hourOrangeColor];
 
     self.workoutButton.hidden = false;

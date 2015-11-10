@@ -13,12 +13,12 @@
 
 @interface TimerViewController ()
 
-@property (weak, nonatomic) IBOutlet UILabel *exerciseNameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *exerciseImageButton;
-@property (weak, nonatomic) IBOutlet UILabel *timeCountLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *totalScoreNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *totalTimeScoreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *exerciseNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeCountLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
 
@@ -49,13 +49,16 @@ NSTimer *timer;
     self.view.backgroundColor = [Color hourGreenColor];
     self.timeCountLabel.backgroundColor = [Color hourDarkGreenColor];
     self.timeCountLabel.textColor = [Color hourYellowTextColor];
-
 }
 
 - (void)setUIForCountUpRest {
-    self.view.backgroundColor = [UIColor lightGrayColor];
-    self.timeCountLabel.backgroundColor = [UIColor darkGrayColor];
-    self.timeCountLabel.textColor = [UIColor blackColor];
+    self.view.backgroundColor = [Color hourTimerBlue];
+    self.timeCountLabel.backgroundColor = [Color hourTimerDarkBlue];
+    self.timeCountLabel.textColor = [Color hourOrangeColor];
+    self.totalTimeScoreLabel.backgroundColor = [Color hourDarkGreenColor];
+    self.totalTimeScoreLabel.textColor = [Color hourYellowTextColor];
+    self.totalScoreNameLabel.backgroundColor = [Color hourDarkGreenColor];
+    self.totalScoreNameLabel.textColor = [Color whiteColor];
 
     if ([self.totalTimeScoreLabel.text isEqualToString:@"0"]) {
         self.totalTimeScoreLabel.hidden = true;
@@ -91,7 +94,7 @@ NSTimer *timer;
 - (IBAction)onExerciseImageTapped:(UIButton *)sender {
     [timer invalidate];
     isExerciseTime = ! isExerciseTime;
-    timeTick =0;
+    timeTick = 0;
 
     if (isExerciseTime == true) {
         [self setUIForCountUpActive];
