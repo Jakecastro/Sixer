@@ -47,17 +47,20 @@ NSTimer *timer;
 #pragma mark - Setup IU Methods
 - (void)setUIForCountUpActive {
     self.view.backgroundColor = [Color hourGreenColor];
-    self.timeCountLabel.backgroundColor = [Color hourDarkGreenColor];
     self.timeCountLabel.textColor = [Color hourYellowTextColor];
+    self.imageView.backgroundColor = [Color hourDarkGreenColor];
+    self.timeCountLabel.backgroundColor = [Color hourDarkGreenColor];
 }
 
 - (void)setUIForCountUpRest {
     self.view.backgroundColor = [Color hourTimerBlue];
-    self.timeCountLabel.backgroundColor = [Color hourTimerDarkBlue];
     self.timeCountLabel.textColor = [Color hourOrangeColor];
+    self.imageView.backgroundColor = [Color hourTimerDarkBlue];
+    self.timeCountLabel.backgroundColor = [Color hourTimerDarkBlue];
+
     self.totalTimeScoreLabel.backgroundColor = [Color hourDarkGreenColor];
-    self.totalTimeScoreLabel.textColor = [Color hourYellowTextColor];
     self.totalScoreNameLabel.backgroundColor = [Color hourDarkGreenColor];
+    self.totalTimeScoreLabel.textColor = [Color hourYellowTextColor];
     self.totalScoreNameLabel.textColor = [Color whiteColor];
 
     if ([self.totalTimeScoreLabel.text isEqualToString:@"0"]) {

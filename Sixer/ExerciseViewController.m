@@ -108,7 +108,7 @@ ExerciseCell *cell;
     cell = (ExerciseCell *) [collectionView cellForItemAtIndexPath:indexPath];
     self.selectedExercise = [self.userExercisesArray objectAtIndex:indexPath.row];
 
-    self.workoutButton.titleLabel.text = [NSString stringWithFormat:@"Start %@", self.selectedExercise.name];
+    [self.workoutButton setTitle:[NSString stringWithFormat:@"Start %@", self.selectedExercise.name] forState:UIControlStateNormal];
 
     [cell.exerciseLabel.layer setBackgroundColor:[Color hourOrangeColor].CGColor];
     [cell.layer setBorderColor:[Color hourHighlightBorderOrangeColor].CGColor];
@@ -117,8 +117,8 @@ ExerciseCell *cell;
     cell.backgroundColor = [Color hourOrangeColor];
 
     self.workoutButton.hidden = false;
-    self.segmentedController.hidden = false;
     self.groupNameButton.hidden = false;
+    self.segmentedController.hidden = false;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
