@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Group.h"
 
 // Delegate
 @protocol FrontDelegate <NSObject>
@@ -20,6 +21,7 @@
 
 //Set Delegate
 @property (nonatomic, weak) id<FrontDelegate> delegate;
+@property Group *groupCurrentlyIn;
 
 @end
 

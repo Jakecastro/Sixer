@@ -45,6 +45,7 @@
 		783F96F51BEC258200CEA7FA /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783F96F31BEC258200CEA7FA /* Bolts.framework */; };
 		783F96F61BEC258200CEA7FA /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783F96F41BEC258200CEA7FA /* Parse.framework */; };
 		783F96F91BF1203B00CEA7FA /* SeeMembersOfGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 783F96F81BF1203B00CEA7FA /* SeeMembersOfGroupViewController.m */; };
+		783F96FC1BF1A0D100CEA7FA /* GroupTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 783F96FB1BF1A0D100CEA7FA /* GroupTableViewCell.m */; };
 		CD0A9B271BED218000B6817D /* Initial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD0A9B261BED218000B6817D /* Initial.storyboard */; };
 		CD0A9B291BED219500B6817D /* RegistrationAndLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD0A9B281BED219500B6817D /* RegistrationAndLogin.storyboard */; };
 		CD0A9B2C1BED221300B6817D /* InitialScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0A9B2B1BED221300B6817D /* InitialScreenViewController.m */; };
@@ -137,6 +138,8 @@
 		783F96F41BEC258200CEA7FA /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		783F96F71BF1203B00CEA7FA /* SeeMembersOfGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeeMembersOfGroupViewController.h; sourceTree = "<group>"; };
 		783F96F81BF1203B00CEA7FA /* SeeMembersOfGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeeMembersOfGroupViewController.m; sourceTree = "<group>"; };
+		783F96FA1BF1A0D100CEA7FA /* GroupTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupTableViewCell.h; sourceTree = "<group>"; };
+		783F96FB1BF1A0D100CEA7FA /* GroupTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupTableViewCell.m; sourceTree = "<group>"; };
 		CD0A9B261BED218000B6817D /* Initial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Initial.storyboard; path = ../Initial.storyboard; sourceTree = "<group>"; };
 		CD0A9B281BED219500B6817D /* RegistrationAndLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = RegistrationAndLogin.storyboard; path = ../RegistrationAndLogin.storyboard; sourceTree = "<group>"; };
 		CD0A9B2A1BED221300B6817D /* InitialScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialScreenViewController.h; sourceTree = "<group>"; };
@@ -279,6 +282,8 @@
 				235B6E571BEBE54400557D3F /* TimerViewController.m */,
 				235B6E591BEBE64300557D3F /* GroupViewController.h */,
 				235B6E5A1BEBE64300557D3F /* GroupViewController.m */,
+				783F96FA1BF1A0D100CEA7FA /* GroupTableViewCell.h */,
+				783F96FB1BF1A0D100CEA7FA /* GroupTableViewCell.m */,
 				783F96F71BF1203B00CEA7FA /* SeeMembersOfGroupViewController.h */,
 				783F96F81BF1203B00CEA7FA /* SeeMembersOfGroupViewController.m */,
 				235B6E5C1BEBE6E100557D3F /* AddGroupViewController.h */,
@@ -488,6 +493,7 @@
 				CD7C67951BED8C8000DC20E7 /* AddGroupViewController.m in Sources */,
 				CD70934B1BEEE79F00043B50 /* ContainerViewController.m in Sources */,
 				235B6E191BEBD25600557D3F /* ExerciseViewController.m in Sources */,
+				783F96FC1BF1A0D100CEA7FA /* GroupTableViewCell.m in Sources */,
 				235B6E611BEBE92100557D3F /* AddReminderViewController.m in Sources */,
 				CD7093451BEED3A700043B50 /* ProfileViewController.m in Sources */,
 				235B6E4C1BEBDD7500557D3F /* ExerciseCell.m in Sources */,
