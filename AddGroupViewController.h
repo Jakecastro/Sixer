@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GroupViewController.h"
+#import "Group.h"
 
 @interface AddGroupViewController : UIViewController
+
+@property Group *selectedGroupTwo;
 
 @end

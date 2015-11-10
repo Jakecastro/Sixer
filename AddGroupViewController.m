@@ -79,8 +79,8 @@
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     PFUser *user = [self.searchResultsArray objectAtIndex:indexPath.row];
-    PFUser *currentUser = [PFUser currentUser];
-    PFRelation *groupMemberRelation = [user relationForKey:@"members"];
+//    PFUser *currentUser = [PFUser currentUser];
+    PFRelation *groupMemberRelation = [self.selectedGroupTwo relationForKey:@"members"];
 
     if ([self isFriend:user]) {
         cell.accessoryType = UITableViewCellAccessoryNone;
@@ -99,8 +99,7 @@
         [self.friends addObject:user];
         [groupMemberRelation addObject:user];
     }
-//line below breaks when you use user
-    [currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+    [self.selectedGroupTwo saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (error) {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
@@ -109,7 +108,6 @@
     
 }
 
-//not sure about this method
 - (BOOL)isFriend:(PFUser *)user {
     for(PFUser *friend in self.friends) {
         if ([friend.objectId isEqualToString:user.objectId]) {

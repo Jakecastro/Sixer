@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Group.h"
+#import "GroupViewController.h"
 
 @interface SeeMembersOfGroupViewController : UIViewController
+
+@property Group *selectedGroup;
+
 
 @end
