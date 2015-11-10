@@ -8,6 +8,7 @@
 
 #import "GroupTableViewCell.h"
 #import "ExerciseViewController.h"
+#import "GroupViewController.h"
 
 
 
@@ -28,6 +29,12 @@
 //
 //    [self bringSubviewToFront:self.onButtonPressSelectGroup];
 //}
+- (IBAction)buttonGrabGroup:(UIButton *)sender {
+
+    [self.delegate groupTableViewCell:self didTapButton:sender withGroup:self.groupInCell];
+    
+    
+}
 
 
 

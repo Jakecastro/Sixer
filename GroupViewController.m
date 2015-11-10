@@ -9,15 +9,17 @@
 #import "GroupViewController.h"
 #import "Group.h"
 #import "SeeMembersOfGroupViewController.h"
-#import "ExerciseViewController.h"
 #import "GroupTableViewCell.h"
+#import "ExerciseViewController.h"
 
-@interface GroupViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface GroupViewController () <UITableViewDelegate, UITableViewDataSource, PassNameOfGroupDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSMutableArray *groupsArray;
 @property NSIndexPath *checkmarkedRow;
 @property NSInteger *selectedIndex;
+
+@property Group *passedGroup;
 
 @end
 
@@ -43,6 +45,10 @@
 
     [self.tableView setAllowsMultipleSelection:NO];
 
+    ExerciseViewController *eVC = self.tabBarController.viewControllers[1];
+    NSLog(@"viewcontrollers: %@", self.presentingViewController.tabBarController.viewControllers);
+//    eVC.groupNameButton.titleLabel.text = @"PEEENIIIS";
+
 
 }
 
@@ -53,6 +59,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     GroupTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GroupCell" forIndexPath:indexPath];
+    cell.delegate = self;
 //
 //    if (cell == nil) {
 //        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"GroupCell"];
@@ -63,11 +70,10 @@
 //    }
 
     Group *userGroups = [self.groupsArray objectAtIndex:indexPath.row];
-//    cell.textLabel.text = [userGroups objectForKey:@"name"];
     cell.groupNameLabel.text = [userGroups objectForKey:@"name"];
+    cell.groupInCell = userGroups;
+    //groupInCell is in the customCell
     
-
-
     return cell;
 }
 - (IBAction)onAddButtonTapped:(UIButton *)sender {
@@ -112,6 +118,12 @@
 //    
 //}
 
+- (IBAction)onDoneTapped:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    self.senderEVC.groupNameButton.titleLabel.text = [self.passedGroup objectForKey:@"name"];
+}
+
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"selectedRowSegue"]) {
 
@@ -122,15 +134,13 @@
         vc.selectedGroup = tempGroup;
         //selected group is the on the destination vc
 
-    } else if ([segue.identifier isEqualToString:@""]){
-
-        ExerciseViewController *vc = segue.destinationViewController;
-
     }
 
-    
 }
 
+-(void)groupTableViewCell:(id)cell didTapButton:(UIButton *)button withGroup:(Group *)group{
+    self.passedGroup = group;
+}
 
 @end
 

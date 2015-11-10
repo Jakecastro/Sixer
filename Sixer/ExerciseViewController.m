@@ -9,13 +9,15 @@
 #import "ExerciseViewController.h"
 #import "ExerciseCell.h"
 #import "Exercise.h"
+#import "GroupTableViewCell.h"
+#import "GroupViewController.h"
 
 @interface ExerciseViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UIView *topView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedController;
 @property (weak, nonatomic) IBOutlet UIButton *workoutButton;
-@property (weak, nonatomic) IBOutlet UIButton *groupNameButton;
+
 @property  NSMutableArray *userExercisesArray;
 
 // Outlet for profile button
@@ -37,6 +39,7 @@
     [self.workoutButton.layer setBorderWidth:3.0f];
     [self.workoutButton.layer setBorderColor:[UIColor colorWithRed:167.0f/255.0f green:97.0f/255.0f blue:0.0f/255.0f alpha:1.0f].CGColor];
     self.topView.backgroundColor = [UIColor colorWithRed:17.0f/255.0f green:147.0f/255.0f blue:255.0f/255.0f alpha:1.0f];
+
 
 }
 
@@ -126,7 +129,16 @@
 }
 
 
+-(void)groupTableViewCell:(id)cell didTapButton:(UIButton *)button {
+//    self.groupNameButton.titleLabel = but
+}
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"toGroupSegue"]) {
+        GroupViewController *gVC = segue.destinationViewController;
+        gVC.senderEVC = self;
+    }
+}
 
 
 @end

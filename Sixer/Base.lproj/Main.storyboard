@@ -231,7 +231,7 @@
                                 </state>
                                 <connections>
                                     <action selector="onGroupNameButtonTapped:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="eOz-Q6-1B9"/>
-                                    <segue destination="ag0-0F-frk" kind="show" id="Gvf-mf-uoJ"/>
+                                    <segue destination="ag0-0F-frk" kind="presentation" identifier="toGroupSegue" id="Gvf-mf-uoJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mB4-Lu-0kn">
@@ -453,6 +453,9 @@
                                                             <include reference="oDY-0C-csS"/>
                                                         </mask>
                                                     </variation>
+                                                    <connections>
+                                                        <action selector="buttonGrabGroup:" destination="nJ4-RO-hTF" eventType="touchUpInside" id="gqe-Dd-QSa"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7CZ-Oj-ZA7">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -533,7 +536,7 @@
                                 <items>
                                     <barButtonItem style="done" systemItem="done" id="Tyu-w1-TDf">
                                         <connections>
-                                            <segue destination="49e-Tb-3d3" kind="show" id="7l3-kI-aYh"/>
+                                            <action selector="onDoneTapped:" destination="ag0-0F-frk" id="9ni-Et-9gz"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -565,7 +568,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Y1-mr-SFg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="48" y="1870.5"/>
+            <point key="canvasLocation" x="58.5" y="1846.5"/>
         </scene>
         <!--Reminders View Controller-->
         <scene sceneID="7j9-PJ-Q9M">
@@ -755,6 +758,9 @@
                                         <animations/>
                                     </tableViewCell>
                                 </prototypes>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="44" width="400" height="512"/>
+                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="pph-Oc-sM4" id="w5V-l9-MzT"/>
                                     <outlet property="delegate" destination="pph-Oc-sM4" id="scJ-QJ-9aw"/>
@@ -778,6 +784,9 @@
                                     <constraint firstAttribute="width" secondItem="7pt-3x-QOH" secondAttribute="height" multiplier="23:15" id="hEx-pJ-0ES"/>
                                 </constraints>
                                 <state key="normal" title="Add"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="334" y="0.0" width="46" height="30"/>
+                                </variation>
                                 <connections>
                                     <segue destination="QY9-Pq-IIa" kind="show" identifier="addMemsToGroupSegue" id="Ab7-7e-34t"/>
                                 </connections>
@@ -805,7 +814,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E7n-iC-Wzb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="867" y="1871"/>
+            <point key="canvasLocation" x="888" y="1846"/>
         </scene>
         <!--Add Group View Controller-->
         <scene sceneID="aPS-4k-6sN">
@@ -880,7 +889,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JQp-g5-rsq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1618" y="1871"/>
+            <point key="canvasLocation" x="1632" y="1846"/>
         </scene>
         <!--Container View Controller-->
         <scene sceneID="nD2-ih-FfM">
@@ -1425,8 +1434,8 @@
         <image name="reminder" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7l3-kI-aYh"/>
+        <segue reference="7Hx-Gg-3Uj"/>
         <segue reference="Gvf-mf-uoJ"/>
-        <segue reference="gqn-Wv-8Yb"/>
+        <segue reference="VWd-I0-Px7"/>
     </inferredMetricsTieBreakers>
 </document>
