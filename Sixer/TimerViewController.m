@@ -20,45 +20,54 @@
 @property (weak, nonatomic) IBOutlet UILabel *totalScoreNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *totalTimeScoreLabel;
 
-
 @end
 
 @implementation TimerViewController
-
 
 bool isExerciseTime;
 int totalSessionTime;
 int timeTick;
 NSTimer *timer;
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-
-    Week *scoreToAdd = [Week objectWithClassName:@"Week"];
-
-    scoreToAdd[@"score"] = [NSNumber numberWithInt:(int)totalSessionTime];
-    scoreToAdd[@"isActive"] = @YES;
-
-    [scoreToAdd saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-        if (error) {
-            NSLog(@"no dice %@",error);
-        }
-    }];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setUIForCountUpActive];
+
     timeTick =0;
     totalSessionTime=0;
     isExerciseTime = true;
     [self startTimer];
     self.exerciseNameLabel.text = [NSString stringWithFormat:@"%@", self.selectedExercise.name];
 
-
 //    PFFile *imageFile = self.selectedExercise.image;
 //    NSData *imageData = imageFile;
 //    self.imageView.image = [UIImage imageWithData:imageData];
 }
 
+#pragma mark - Setup IU Methods
+- (void)setUIForCountUpActive {
+    self.view.backgroundColor = [Color hourGreenColor];
+    self.timeCountLabel.backgroundColor = [Color hourDarkGreenColor];
+    self.timeCountLabel.textColor = [Color hourYellowTextColor];
+
+}
+
+- (void)setUIForCountUpRest {
+    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.timeCountLabel.backgroundColor = [UIColor darkGrayColor];
+    self.timeCountLabel.textColor = [UIColor blackColor];
+
+    if ([self.totalTimeScoreLabel.text isEqualToString:@"0"]) {
+        self.totalTimeScoreLabel.hidden = true;
+        self.totalScoreNameLabel.hidden = true;
+    }
+    else {
+        self.totalTimeScoreLabel.hidden = false;
+        self.totalScoreNameLabel.hidden = false;
+    }
+}
+
+#pragma mark - Timer Methods
 - (void)startTimer {
 //TODO: "Ready, Set, Begin!"
     [timer invalidate];
@@ -68,7 +77,7 @@ NSTimer *timer;
         timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(tick) userInfo:nil repeats:YES];
     }
     else if (isExerciseTime == false) {
-        timer = [NSTimer scheduledTimerWithTimeInterval:1.2 target:self selector:@selector(tick) userInfo:nil repeats:YES];
+        timer = [NSTimer scheduledTimerWithTimeInterval:1.3 target:self selector:@selector(tick) userInfo:nil repeats:YES];
     }
 }
 
@@ -78,46 +87,45 @@ NSTimer *timer;
     self.timeCountLabel.text = time;
 }
 
-
+#pragma mark - onButtonTapped Methods
 - (IBAction)onExerciseImageTapped:(UIButton *)sender {
     [timer invalidate];
     isExerciseTime = ! isExerciseTime;
     timeTick =0;
 
     if (isExerciseTime == true) {
-        self.view.backgroundColor = [UIColor colorWithRed:123.0 / 255.0 green:183.0 / 255.0 blue:75.0 / 255.0 alpha:1.0];
-        self.timeCountLabel.backgroundColor = [UIColor colorWithRed:83.0 / 255.0 green:124.0 / 255.0 blue:50.0 / 255.0 alpha:1.0];
-        self.timeCountLabel.textColor = [UIColor colorWithRed:255.0 / 255.0 green:255.0 / 255.0 blue:122.0 / 255.0 alpha:1.0];
-        [self.exerciseImageButton setTitle:@"" forState:UIControlStateNormal];
+        [self setUIForCountUpActive];
     }
     else if (isExerciseTime == false) {
-        // converts the number from the countdown label to an int and adds it to the total session time
+
+        //converts the number from the countdown label to an int and adds it to the total session time
         int i = [self.timeCountLabel.text intValue];
         totalSessionTime += i;
-        self.view.backgroundColor = [UIColor lightGrayColor];
-        self.timeCountLabel.backgroundColor = [UIColor darkGrayColor];
-        self.timeCountLabel.textColor = [UIColor blackColor];
-        [self.exerciseImageButton setTitle:[NSString stringWithFormat:@"%d",totalSessionTime] forState:UIControlStateNormal];
-        [self.exerciseImageButton setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
-        self.exerciseImageButton.titleLabel.font = [UIFont systemFontOfSize:140];
+
+        self.timeCountLabel.text = [NSString stringWithFormat:@"0"];
+        self.totalTimeScoreLabel.text = [NSString stringWithFormat:@"%d",totalSessionTime];
+
+        [self setUIForCountUpRest];
     }
-    NSLog(@"%ld", (long)totalSessionTime);
     [self startTimer];
 }
 
-
 - (IBAction)onFinishButtonTapped:(id)sender {
-
-
-//    Week *scoreToAdd = [Week objectWithClassName:@"Week"];
-//    scoreToAdd[@"score"] = [NSNumber numberWithInt:(int)totalSessionTime];
-//    [scoreToAdd saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-//        if (error) {
-//            NSLog(@"no dice %@",error);
-//        }
-//    }];
 }
 
+#pragma mark - Segue
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 
+    Week *scoreToAdd = [Week objectWithClassName:@"Week"];
+
+    scoreToAdd[@"score"] = [NSNumber numberWithInt:(int)totalSessionTime];
+    scoreToAdd[@"isActive"] = @YES;
+
+    [scoreToAdd saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"error did not save to Parse %@",error);
+        }
+    }];
+}
 
 @end
