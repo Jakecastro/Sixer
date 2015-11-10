@@ -211,6 +211,8 @@
 				235B6E4B1BEBDD7500557D3F /* ExerciseCell.m */,
 				236ADD541BED92FE00F6FD62 /* CVExerciseCell.h */,
 				236ADD551BED92FE00F6FD62 /* CVExerciseCell.m */,
+				783F96FA1BF1A0D100CEA7FA /* GroupTableViewCell.h */,
+				783F96FB1BF1A0D100CEA7FA /* GroupTableViewCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -239,10 +241,7 @@
 			children = (
 				235B6E591BEBE64300557D3F /* GroupViewController.h */,
 				235B6E5A1BEBE64300557D3F /* GroupViewController.m */,
-				235B6E5C1BEBE6E100557D3F /* AddGroupViewController.h */,
-				235B6E5D1BEBE6E100557D3F /* AddGroupViewController.m */,
-				783F96F71BF1203B00CEA7FA /* SeeMembersOfGroupViewController.h */,
-				783F96F81BF1203B00CEA7FA /* SeeMembersOfGroupViewController.m */,
+				23055F8F1BF2940200D170F5 /* Add Teams and Members */,
 			);
 			name = Team;
 			sourceTree = "<group>";
@@ -265,13 +264,13 @@
 			name = Timer;
 			sourceTree = "<group>";
 		};
-		23055F861BF2801D00D170F5 /* Exercise */ = {
+		23055F861BF2801D00D170F5 /* Add Exercise */ = {
 			isa = PBXGroup;
 			children = (
 				2383085D1BEBEC62004DA4EC /* AddExerciseViewController.h */,
 				2383085E1BEBEC62004DA4EC /* AddExerciseViewController.m */,
 			);
-			name = Exercise;
+			name = "Add Exercise";
 			sourceTree = "<group>";
 		};
 		23055F871BF2804800D170F5 /* Team Model */ = {
@@ -324,6 +323,8 @@
 			children = (
 				235B6E171BEBD25600557D3F /* ExerciseViewController.h */,
 				235B6E181BEBD25600557D3F /* ExerciseViewController.m */,
+				23055F861BF2801D00D170F5 /* Add Exercise */,
+				23055F831BF26B4E00D170F5 /* Team */,
 			);
 			name = "index 1 Controller";
 			sourceTree = "<group>";
@@ -333,8 +334,29 @@
 			children = (
 				235B6E441BEBD2CD00557D3F /* RemindersViewController.h */,
 				235B6E451BEBD2CD00557D3F /* RemindersViewController.m */,
+				23055F8E1BF293B300D170F5 /* Add Reminder */,
 			);
 			name = "index 2 Controller";
+			sourceTree = "<group>";
+		};
+		23055F8E1BF293B300D170F5 /* Add Reminder */ = {
+			isa = PBXGroup;
+			children = (
+				235B6E5F1BEBE92100557D3F /* AddReminderViewController.h */,
+				235B6E601BEBE92100557D3F /* AddReminderViewController.m */,
+			);
+			name = "Add Reminder";
+			sourceTree = "<group>";
+		};
+		23055F8F1BF2940200D170F5 /* Add Teams and Members */ = {
+			isa = PBXGroup;
+			children = (
+				783F96F71BF1203B00CEA7FA /* SeeMembersOfGroupViewController.h */,
+				783F96F81BF1203B00CEA7FA /* SeeMembersOfGroupViewController.m */,
+				235B6E5C1BEBE6E100557D3F /* AddGroupViewController.h */,
+				235B6E5D1BEBE6E100557D3F /* AddGroupViewController.m */,
+			);
+			name = "Add Teams and Members";
 			sourceTree = "<group>";
 		};
 		235B6E021BEBD25600557D3F = {
@@ -410,32 +432,10 @@
 				CD0A9B311BED223300B6817D /* RegistrationViewController.m */,
 				CD7093491BEEE79F00043B50 /* ContainerViewController.h */,
 				CD70934A1BEEE79F00043B50 /* ContainerViewController.m */,
-				CD7093431BEED3A700043B50 /* ProfileViewController.h */,
-				CD7093441BEED3A700043B50 /* ProfileViewController.m */,
 				CD70934F1BF24E4B00043B50 /* EditViewController.h */,
 				CD7093501BF24E4B00043B50 /* EditViewController.m */,
-				235B6E171BEBD25600557D3F /* ExerciseViewController.h */,
-				235B6E181BEBD25600557D3F /* ExerciseViewController.m */,
-				235B6E141BEBD25600557D3F /* ProgressViewController.h */,
-				235B6E151BEBD25600557D3F /* ProgressViewController.m */,
-				235B6E561BEBE54400557D3F /* TimerViewController.h */,
-				235B6E571BEBE54400557D3F /* TimerViewController.m */,
-				235B6E591BEBE64300557D3F /* GroupViewController.h */,
-				235B6E5A1BEBE64300557D3F /* GroupViewController.m */,
-				783F96FA1BF1A0D100CEA7FA /* GroupTableViewCell.h */,
-				783F96FB1BF1A0D100CEA7FA /* GroupTableViewCell.m */,
-				783F96F71BF1203B00CEA7FA /* SeeMembersOfGroupViewController.h */,
-				783F96F81BF1203B00CEA7FA /* SeeMembersOfGroupViewController.m */,
-				235B6E5C1BEBE6E100557D3F /* AddGroupViewController.h */,
-				235B6E5D1BEBE6E100557D3F /* AddGroupViewController.m */,
-				235B6E441BEBD2CD00557D3F /* RemindersViewController.h */,
-				235B6E451BEBD2CD00557D3F /* RemindersViewController.m */,
-				235B6E5F1BEBE92100557D3F /* AddReminderViewController.h */,
-				235B6E601BEBE92100557D3F /* AddReminderViewController.m */,
 				23055F821BF26B1300D170F5 /* TabBar */,
-				23055F831BF26B4E00D170F5 /* Team */,
 				23055F841BF27FE300D170F5 /* Profile */,
-				23055F861BF2801D00D170F5 /* Exercise */,
 				23055F851BF2800E00D170F5 /* Timer */,
 			);
 			name = Controller;
