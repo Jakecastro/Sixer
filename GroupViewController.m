@@ -10,6 +10,7 @@
 #import "Group.h"
 #import "SeeMembersOfGroupViewController.h"
 #import "ExerciseViewController.h"
+#import "GroupTableViewCell.h"
 
 @interface GroupViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -51,7 +52,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GroupCell" forIndexPath:indexPath];
+    GroupTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GroupCell" forIndexPath:indexPath];
 //
 //    if (cell == nil) {
 //        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"GroupCell"];
@@ -62,7 +63,9 @@
 //    }
 
     Group *userGroups = [self.groupsArray objectAtIndex:indexPath.row];
-    cell.textLabel.text = [userGroups objectForKey:@"name"];
+//    cell.textLabel.text = [userGroups objectForKey:@"name"];
+    cell.groupNameLabel.text = [userGroups objectForKey:@"name"];
+    
 
 
     return cell;
@@ -101,19 +104,19 @@
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+//
+//    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+//    [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
+//
+//    
+//}
 
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
-
-    
-}
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UITableViewCell *)sender {
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"selectedRowSegue"]) {
 
         SeeMembersOfGroupViewController *vc = segue.destinationViewController;
-        UITableViewCell *cell = sender;
+        GroupTableViewCell *cell = sender;
         NSIndexPath *path = [self.tableView indexPathForCell:cell];
         Group *tempGroup = [self.groupsArray objectAtIndex:path.row];
         vc.selectedGroup = tempGroup;
@@ -125,12 +128,9 @@
 
     }
 
-
-
     
 }
-- (IBAction)onSwitchSelectGroup:(UISwitch *)sender {
-}
+
 
 @end
 

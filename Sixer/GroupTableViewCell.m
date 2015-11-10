@@ -22,10 +22,14 @@
     [super setSelected:selected animated:animated];
 
 }
-- (IBAction)onSwitchSelectGroup:(UISwitch *)sender {
+
+//- (void)layoutSubviews {
+//    [super layoutSubviews];
+//
+//    [self bringSubviewToFront:self.onButtonPressSelectGroup];
+//}
 
 
 
-}
 
 @end

@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface GroupTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIButton *onButtonPressSelectGroup;
 
+@property (weak, nonatomic) IBOutlet UILabel *groupNameLabel;
 
 @end

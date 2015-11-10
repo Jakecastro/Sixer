@@ -220,7 +220,7 @@
                                 </state>
                                 <connections>
                                     <action selector="onBeginWorkoutButtonTapped:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="p5r-Va-yFv"/>
-                                    <segue destination="4aa-7G-FHa" kind="show" id="hwl-Mq-1wh"/>
+                                    <segue destination="4aa-7G-FHa" kind="show" identifier="StartTimer" id="hwl-Mq-1wh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHN-Nw-y5r">
@@ -419,22 +419,89 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lvw-5Z-cJx">
-                                <rect key="frame" x="0.0" y="76" width="600" height="524"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lvw-5Z-cJx">
+                                <rect key="frame" x="0.0" y="56" width="600" height="495"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GroupCell" id="nJ4-RO-hTF">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" reuseIdentifier="GroupCell" id="nJ4-RO-hTF" customClass="GroupTableViewCell">
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nJ4-RO-hTF" id="91j-Th-eUX">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7a1-0w-osz">
+                                                    <rect key="frame" x="267" y="7" width="46" height="30"/>
+                                                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="46" id="cbt-7D-lMK"/>
+                                                        <constraint firstAttribute="height" constant="30" id="oDY-0C-csS"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Select">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="cbt-7D-lMK"/>
+                                                            <exclude reference="oDY-0C-csS"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="cbt-7D-lMK"/>
+                                                            <include reference="oDY-0C-csS"/>
+                                                        </mask>
+                                                    </variation>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7CZ-Oj-ZA7">
+                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="7CZ-Oj-ZA7" firstAttribute="top" secondItem="91j-Th-eUX" secondAttribute="topMargin" constant="3" id="0cD-bt-D5G"/>
+                                                <constraint firstItem="7a1-0w-osz" firstAttribute="top" secondItem="91j-Th-eUX" secondAttribute="topMargin" constant="-1" id="5c5-Kt-RzB"/>
+                                                <constraint firstItem="7a1-0w-osz" firstAttribute="leading" secondItem="7CZ-Oj-ZA7" secondAttribute="trailing" constant="8" id="A8m-nO-27f"/>
+                                                <constraint firstItem="7CZ-Oj-ZA7" firstAttribute="leading" secondItem="91j-Th-eUX" secondAttribute="leadingMargin" id="GhZ-0o-5dF"/>
+                                                <constraint firstItem="7a1-0w-osz" firstAttribute="trailing" secondItem="91j-Th-eUX" secondAttribute="trailingMargin" id="v28-w6-zXZ"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="7CZ-Oj-ZA7" secondAttribute="bottom" constant="3" id="w5z-bO-PYD"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="7CZ-Oj-ZA7"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <exclude reference="0cD-bt-D5G"/>
+                                                    <exclude reference="GhZ-0o-5dF"/>
+                                                    <exclude reference="w5z-bO-PYD"/>
+                                                    <exclude reference="5c5-Kt-RzB"/>
+                                                    <exclude reference="A8m-nO-27f"/>
+                                                    <exclude reference="v28-w6-zXZ"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="7CZ-Oj-ZA7"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <include reference="0cD-bt-D5G"/>
+                                                    <include reference="GhZ-0o-5dF"/>
+                                                    <include reference="w5z-bO-PYD"/>
+                                                    <include reference="5c5-Kt-RzB"/>
+                                                    <include reference="A8m-nO-27f"/>
+                                                    <include reference="v28-w6-zXZ"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
-                                            <segue destination="pph-Oc-sM4" kind="show" id="gqn-Wv-8Yb"/>
+                                            <outlet property="groupNameLabel" destination="7CZ-Oj-ZA7" id="sde-OX-b8R"/>
+                                            <outlet property="onButtonPressSelectGroup" destination="7a1-0w-osz" id="wef-2l-XWt"/>
+                                            <segue destination="pph-Oc-sM4" kind="show" identifier="selectedRowSegue" id="gqn-Wv-8Yb"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -498,7 +565,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Y1-mr-SFg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="48" y="1871"/>
+            <point key="canvasLocation" x="48" y="1870.5"/>
         </scene>
         <!--Reminders View Controller-->
         <scene sceneID="7j9-PJ-Q9M">
@@ -1358,7 +1425,7 @@
         <image name="reminder" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2m3-in-CoE"/>
+        <segue reference="7l3-kI-aYh"/>
         <segue reference="Gvf-mf-uoJ"/>
         <segue reference="gqn-Wv-8Yb"/>
     </inferredMetricsTieBreakers>
