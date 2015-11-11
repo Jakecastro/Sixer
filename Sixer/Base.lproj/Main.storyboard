@@ -270,6 +270,7 @@
                                 <rect key="frame" x="0.0" y="49" width="600" height="405"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FQd-du-Mrr">
                                     <size key="itemSize" width="304" height="392"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -278,18 +279,18 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ExerciseCell" id="zlW-MC-rMn" customClass="ExerciseCell">
-                                        <rect key="frame" x="20" y="13" width="297" height="379"/>
+                                        <rect key="frame" x="20" y="6.5" width="304" height="392"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="304" height="392"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gcu-xa-j2p">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gcu-xa-j2p">
                                                     <rect key="frame" x="12" y="8" width="272" height="318"/>
                                                     <animations/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="exercise name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nXj-bu-vsI">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="exercise name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nXj-bu-vsI">
                                                     <rect key="frame" x="12" y="324" width="272" height="47"/>
                                                     <animations/>
                                                     <color key="backgroundColor" red="0.92179319370000001" green="0.92179319370000001" blue="0.92179319370000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -318,6 +319,7 @@
                                         </view>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="nXj-bu-vsI" firstAttribute="leading" secondItem="gcu-xa-j2p" secondAttribute="leading" id="CWL-97-rpn"/>
                                             <constraint firstItem="nXj-bu-vsI" firstAttribute="leading" secondItem="zlW-MC-rMn" secondAttribute="leading" id="F8X-jR-r6K"/>
@@ -366,12 +368,15 @@
                                         <connections>
                                             <outlet property="exerciseImage" destination="gcu-xa-j2p" id="jPO-uD-MaC"/>
                                             <outlet property="exerciseLabel" destination="nXj-bu-vsI" id="brb-k7-dA1"/>
+                                            <outletCollection property="gestureRecognizers" destination="6Ol-9Q-AOL" appends="YES" id="Wb1-B5-Jwk"/>
+                                            <outletCollection property="gestureRecognizers" destination="ZU7-py-5DY" appends="YES" id="s2X-t6-obQ"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
                                     <outlet property="dataSource" destination="8rJ-Kc-sve" id="7E2-mq-FgC"/>
                                     <outlet property="delegate" destination="8rJ-Kc-sve" id="Jea-Yh-dr7"/>
+                                    <outletCollection property="gestureRecognizers" destination="ZU7-py-5DY" appends="YES" id="dAU-qy-hNP"/>
                                 </connections>
                             </collectionView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KdT-HG-eWO">
@@ -454,6 +459,7 @@
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.92179319370000001" green="0.92179319370000001" blue="0.92179319370000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="KdT-HG-eWO" secondAttribute="bottom" constant="20" symbolic="YES" id="0Ba-L1-Hew"/>
                             <constraint firstItem="tce-jV-Zif" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="4lB-9H-8Q1"/>
@@ -497,16 +503,16 @@
                                 <exclude reference="xuX-BU-fHB"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="TS7-zF-fCq"/>
+                                <exclude reference="XhW-ow-6rP"/>
+                                <exclude reference="ZeQ-jy-fWA"/>
+                                <exclude reference="yFt-El-mNb"/>
                                 <exclude reference="Kdm-qh-RjL"/>
                                 <exclude reference="gju-B9-9az"/>
                                 <exclude reference="sM6-Cd-i9l"/>
                                 <exclude reference="PNg-0Q-C9d"/>
                                 <exclude reference="tag-J6-GbI"/>
                                 <exclude reference="yeC-gY-moW"/>
-                                <exclude reference="TS7-zF-fCq"/>
-                                <exclude reference="XhW-ow-6rP"/>
-                                <exclude reference="ZeQ-jy-fWA"/>
-                                <exclude reference="yFt-El-mNb"/>
                                 <exclude reference="DpO-bQ-2JG"/>
                                 <exclude reference="HNE-nH-tUz"/>
                                 <exclude reference="hGl-uf-AWS"/>
@@ -524,6 +530,10 @@
                                 <include reference="xuX-BU-fHB"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="TS7-zF-fCq"/>
+                                <include reference="XhW-ow-6rP"/>
+                                <include reference="ZeQ-jy-fWA"/>
+                                <include reference="yFt-El-mNb"/>
                                 <exclude reference="5Ml-Wx-UeT"/>
                                 <include reference="Kdm-qh-RjL"/>
                                 <exclude reference="fGa-PZ-0LY"/>
@@ -536,10 +546,6 @@
                                 <exclude reference="oOB-3c-6jb"/>
                                 <include reference="tag-J6-GbI"/>
                                 <include reference="yeC-gY-moW"/>
-                                <include reference="TS7-zF-fCq"/>
-                                <include reference="XhW-ow-6rP"/>
-                                <include reference="ZeQ-jy-fWA"/>
-                                <include reference="yFt-El-mNb"/>
                                 <exclude reference="4lB-9H-8Q1"/>
                                 <include reference="DpO-bQ-2JG"/>
                                 <include reference="HNE-nH-tUz"/>
@@ -562,6 +568,9 @@
                                 <include reference="shk-qa-ueR"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="ZU7-py-5DY" appends="YES" id="d3I-nm-3Jb"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="exercise" id="cPa-gy-q4n"/>
                     <connections>
@@ -575,6 +584,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="up" id="6Ol-9Q-AOL">
+                    <connections>
+                        <segue destination="4aa-7G-FHa" kind="showDetail" identifier="SwipeUp" id="PfH-Cd-mdk"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="ZU7-py-5DY">
+                    <connections>
+                        <segue destination="Wgn-fp-muG" kind="showDetail" identifier="SwipeDown" id="nci-qr-Eke"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="0.0" y="885.5"/>
         </scene>
@@ -1235,30 +1254,33 @@
             </objects>
             <point key="canvasLocation" x="-84" y="-20"/>
         </scene>
-        <!--Timer View Controller-->
+        <!--Stopwatch Controller-->
         <scene sceneID="QUD-zJ-D2u">
             <objects>
-                <viewController id="4aa-7G-FHa" customClass="TimerViewController" sceneMemberID="viewController">
+                <viewController id="4aa-7G-FHa" customClass="StopwatchController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iko-qH-dLv"/>
                         <viewControllerLayoutGuide type="bottom" id="Ezt-nG-gBF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="lWt-NJ-v0b">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Qa-Dj-aoO">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Qa-Dj-aoO">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="507"/>
                                 <animations/>
                                 <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="507"/>
+                                </variation>
                                 <connections>
                                     <action selector="onExerciseImageTapped:" destination="4aa-7G-FHa" eventType="touchUpInside" id="ctO-g3-J2U"/>
                                 </connections>
                             </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vhf-hH-Z93">
-                                <rect key="frame" x="0.0" y="507" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="bYH-4n-0Wl"/>
@@ -1272,7 +1294,7 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="exercise name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ijf-EQ-OQt">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="exercise name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ijf-EQ-OQt">
                                 <rect key="frame" x="20" y="8" width="560" height="36"/>
                                 <animations/>
                                 <constraints>
@@ -1281,8 +1303,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="8" width="360" height="36"/>
+                                </variation>
                             </label>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="total score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="50v-eP-i8q">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="total score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="50v-eP-i8q">
                                 <rect key="frame" x="175" y="220" width="165" height="36"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1292,24 +1317,33 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="75" y="220" width="165" height="36"/>
+                                </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hDd-5b-ubf">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hDd-5b-ubf">
                                 <rect key="frame" x="175" y="48" width="250" height="168"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="168" id="xUM-C0-U5j"/>
                                     <constraint firstAttribute="width" constant="250" id="xVk-WN-uhn"/>
                                 </constraints>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="75" y="48" width="250" height="168"/>
+                                </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ready" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WVG-Um-lTE">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Ready" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WVG-Um-lTE">
                                 <rect key="frame" x="175" y="262" width="250" height="228"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.32634888000000001" green="0.4848862893" blue="0.19769931120000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="80"/>
                                 <color key="textColor" red="0.99956133213261789" green="1" blue="0.47912685709177949" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="75" y="262" width="250" height="228"/>
+                                </variation>
                             </label>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guT-fg-yxu">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guT-fg-yxu">
                                 <rect key="frame" x="348" y="220" width="77" height="36"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1319,6 +1353,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="248" y="220" width="77" height="36"/>
+                                </variation>
                             </label>
                         </subviews>
                         <animations/>
@@ -1362,6 +1399,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DnB-Qg-tHm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="704" y="-0.5"/>
+        </scene>
+        <!--Timer Controller-->
+        <scene sceneID="epf-e5-lzu">
+            <objects>
+                <viewController id="Wgn-fp-muG" customClass="TimerController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FaZ-6H-Jzb"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ecm-O1-BmV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="If2-Nt-Vgb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v2c-TY-XwY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1390.5" y="-1"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="Y8D-Hl-nxj">
@@ -1749,8 +1805,9 @@
         <image name="reminder" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gqn-Wv-8Yb"/>
-        <segue reference="Gvf-mf-uoJ"/>
         <segue reference="2m3-in-CoE"/>
+        <segue reference="Gvf-mf-uoJ"/>
+        <segue reference="gqn-Wv-8Yb"/>
+        <segue reference="PfH-Cd-mdk"/>
     </inferredMetricsTieBreakers>
 </document>

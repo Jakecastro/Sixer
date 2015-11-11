@@ -7,7 +7,7 @@
 //
 
 #import "ExerciseViewController.h"
-#import "TimerViewController.h"
+#import "StopwatchController.h"
 #import "ExerciseCell.h"
 #import "Exercise.h"
 #import "Color.h"
@@ -72,14 +72,15 @@ ExerciseCell *cell;
 }
 
 - (void)resetUnselectedAttributes {
+    [self.collectionView reloadData];
     cell.backgroundColor = [Color whiteColor];
     cell.exerciseLabel.backgroundColor = [Color flatConcreateColor];
     cell.exerciseImage.backgroundColor = [Color whiteColor];
     [cell.layer setBorderColor:[Color hourNormalStateBorderColor].CGColor];
     [cell.exerciseLabel.layer setBackgroundColor:[Color whiteColor].CGColor];
 
-    self.workoutButton.hidden = true;
-    self.workoutButton.titleLabel.text = @"select exercise above";
+//    self.workoutButton.hidden = true;
+//    self.workoutButton.titleLabel.text = @"select exercise above";
 }
 
 #pragma mark - UICollectionView Methods
@@ -109,13 +110,13 @@ ExerciseCell *cell;
     cell = (ExerciseCell *) [collectionView cellForItemAtIndexPath:indexPath];
     self.selectedExercise = [self.userExercisesArray objectAtIndex:indexPath.row];
 
-    [self.workoutButton setTitle:[NSString stringWithFormat:@"Start %@", self.selectedExercise.name] forState:UIControlStateNormal];
+//    [self.workoutButton setTitle:[NSString stringWithFormat:@"Start %@", self.selectedExercise.name] forState:UIControlStateNormal];
 
     cell.exerciseImage.backgroundColor = [Color flatEmeraldColor];
     cell.exerciseLabel.backgroundColor = [Color flatNephritisColor];
     cell.backgroundColor = [Color flatEmeraldColor];
 
-    self.workoutButton.hidden = false;
+//    self.workoutButton.hidden = false;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -140,7 +141,12 @@ ExerciseCell *cell;
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 
     if ([segue.identifier  isEqual:@"StartTimer"]) {
-        TimerViewController *vc = segue.destinationViewController;
+        StopwatchController *vc = segue.destinationViewController;
+        vc.selectedExercise = self.selectedExercise;
+    }
+
+    if ([segue.identifier isEqualToString:@"SwipeUp"]) {
+        StopwatchController *vc = segue.destinationViewController;
         vc.selectedExercise = self.selectedExercise;
     }
 
