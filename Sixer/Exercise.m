@@ -18,8 +18,7 @@
     return @"Exercise";
 }
 
--(void)setIsUserExercise:(NSNumber *)isUserExercise
-{
+-(void)setIsUserExercise:(NSNumber *)isUserExercise {
     _isUserExercise = isUserExercise;
 }
 

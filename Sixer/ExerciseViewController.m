@@ -21,7 +21,6 @@
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
 @property (weak, nonatomic) IBOutlet UIView *topView;
 
-@property (weak, nonatomic) IBOutlet UIButton *workoutButton;
 @property (weak, nonatomic) IBOutlet UIButton *menuButton;
 
 @property  NSMutableArray *userExercisesArray;
@@ -64,10 +63,6 @@ ExerciseCell *cell;
     [self.view setBackgroundColor:[Color flatCloudsColor]];
 
     self.collectionView.backgroundColor = [Color flatCloudsColor];
-
-    [self.workoutButton.layer setCornerRadius:5.0f];
-    [self.workoutButton setBackgroundColor:[Color flatNephritisColor]];
-
     [self.segmentedController setBackgroundColor:[Color whiteColor]];
 }
 
@@ -133,20 +128,21 @@ ExerciseCell *cell;
 - (IBAction)onGroupNameButtonTapped:(UIButton *)sender {
 }
 
-- (IBAction)onBeginWorkoutButtonTapped:(UIButton *)sender {
-}
 
 #pragma mark - Segue
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 
-    if ([segue.identifier  isEqual:@"StartTimer"]) {
-        StopwatchController *vc = segue.destinationViewController;
-        vc.selectedExercise = self.selectedExercise;
-    }
+    self.selectedSegmentIndex = self.segmentedController.selectedSegmentIndex;
+
+
 
     if ([segue.identifier isEqualToString:@"SwipeUp"]) {
         StopwatchController *vc = segue.destinationViewController;
         vc.selectedExercise = self.selectedExercise;
+        vc.groupActivity = self.selectedSegmentIndex;
+        vc.groupName = self.groupCurrentlyIn;
+
+
     }
 
     if ([segue.identifier isEqualToString:@"toGroupSegue"]) {

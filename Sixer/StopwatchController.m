@@ -8,6 +8,7 @@
 
 #import "StopwatchController.h"
 #import "Exercise.h"
+#import "Activity.h"
 #import "Color.h"
 #import "Week.h"
 
@@ -32,7 +33,7 @@ NSTimer *timer;
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUIForCountUpActive];
-
+    NSLog(@"%ld", (long)self.groupActivity);
     timeTick =0;
     totalSessionTime=0;
     isExerciseTime = true;
@@ -80,7 +81,7 @@ NSTimer *timer;
     self.timeCountLabel.text = @"0";
 
     if (isExerciseTime == true) {
-        timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(tick) userInfo:nil repeats:YES];
+        timer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(tick) userInfo:nil repeats:YES];
     }
     else if (isExerciseTime == false) {
         timer = [NSTimer scheduledTimerWithTimeInterval:1.3 target:self selector:@selector(tick) userInfo:nil repeats:YES];
@@ -122,16 +123,43 @@ NSTimer *timer;
 #pragma mark - Segue
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 
-    Week *scoreToAdd = [Week objectWithClassName:@"Week"];
+    PFUser *user = [PFUser currentUser];
+    Activity *activity = [Activity objectWithClassName:@"Activity"];
+    NSNumber *withGroup = [NSNumber numberWithBool:self.groupActivity];
+//    Week *scoreToAdd = [Week objectWithClassName:@"Week"];
 
-    scoreToAdd[@"score"] = [NSNumber numberWithInt:(int)totalSessionTime];
-    scoreToAdd[@"isActive"] = @YES;
+//    PFRelation *userScoreRelation = [activity relationForKey:@"user"];
+//    PFRelation *userExerciseRelation = [activity relationForKey:@"exercise"];
 
-    [scoreToAdd saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+//    [userScoreRelation addObject:user];
+//    [userExerciseRelation addObject:self.selectedExercise];
+
+    activity[@"score"] = [NSNumber numberWithInt:(int)totalSessionTime];
+    activity[@"isActive"] = @YES;
+    activity[@"user"] = user;
+    activity[@"exercise"] = self.selectedExercise;
+    activity[@"group"] = self.groupName;
+
+    if ([withGroup boolValue] == true) {
+        activity[@"isGroup"] = @YES;
+    }
+    else if ([withGroup boolValue] == false) {
+        activity[@"isGroup"] = @NO;
+    }
+
+    [activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         if (error) {
             NSLog(@"error did not save to Parse %@",error);
         }
     }];
+
+
+
+//    [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+//        if (error) {
+//            NSLog(@"did not save relation %@",error);
+//        }
+//    }];
 }
 
 @end
