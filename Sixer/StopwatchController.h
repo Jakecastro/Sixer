@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "Exercise.h"
+#import "Group.h"
 
 @interface StopwatchController : UIViewController
 @property Exercise *selectedExercise;
+@property NSInteger groupActivity;
+@property Group *groupName;
 
 @end

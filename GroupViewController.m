@@ -121,6 +121,7 @@
 - (IBAction)onDoneTapped:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
     self.senderEVC.groupNameButton.titleLabel.text = [self.passedGroup objectForKey:@"name"];
+    self.senderEVC.groupCurrentlyIn = self.passedGroup;
 }
 
 

@@ -8,7 +8,7 @@
 
 #import <Parse/Parse.h>
 
-@interface Exercise : PFObject<PFSubclassing>
+@interface Exercise : PFObject <PFSubclassing>
 
 @property NSString *name;
 @property PFFile *image;

@@ -22,6 +22,7 @@
 //Set Delegate
 @property (nonatomic, weak) id<FrontDelegate> delegate;
 @property Group *groupCurrentlyIn;
+@property NSInteger selectedSegmentIndex;
 
 @property (weak, nonatomic) IBOutlet UIButton *groupNameButton;
 
