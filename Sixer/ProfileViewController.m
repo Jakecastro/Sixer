@@ -19,6 +19,7 @@
 @property NSArray *settingsArray;
 @property NSArray *userScoreArray;
 @property NSInteger sumOfUserScores;
+@property PFUser *currentUser;
 
 // Outlets
 @property (weak, nonatomic) IBOutlet UIImageView *userImage;
@@ -34,62 +35,38 @@
     [super viewDidLoad];
     
 // Making an instance of PFUser
-    PFUser *currentUser = [PFUser currentUser];
+    self.currentUser = [PFUser currentUser];
 
 // If there's no current user present login screen
-    if (!currentUser) {
+    if (!self.currentUser) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"RegistrationAndLogin" bundle:nil];
         UIViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"LoginScreen"];
         [self presentViewController:loginVC animated:YES completion:nil];
         
     } else {
-          
-// Retrieving the user's photo data from parse and setting it to the userimageview
-    PFFile *profilePicture = currentUser[@"Photo"];
-    [profilePicture getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
-        UIImage *profileImage = [UIImage imageWithData:data];
-        self.userImage.image = profileImage;
-    }];
  
-// Making the profile picture the shape of a circle
-    self.userImage.layer.cornerRadius = 50;
-    self.userImage.clipsToBounds = YES;
-    self.userImage.layer.borderWidth = 0.5;
-    self.userImage.layer.borderColor = [UIColor grayColor].CGColor;
-
-// Setting the username label text
-    self.usernameLabel.text = currentUser.username;
-
-// Retrieving data for the user's score objects for the week
-    PFQuery *userscoreQuery = [PFQuery queryWithClassName:@"Week"];
-    [userscoreQuery whereKey:@"user" equalTo:currentUser];
-    [userscoreQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-// Setting the objectsArray to the userScoreArray
-        self.userScoreArray = objects;
-        
-// Giving the sumOfUserScores property an initial value of zero
-        self.sumOfUserScores = 0;
-
-// Iterating through the usersScore array and setting the sum of all the score objects to the sumOfUsersScore property
-        for (PFObject *userScores in self.userScoreArray) {
-            self.sumOfUserScores += [[userScores objectForKey:@"score"]intValue];
-            
-        }
-// Setting the sumofUserScores property to the userScoreLabel text
-        self.userScoreLabel.text = [NSString stringWithFormat:@"Weekly Score: %li", (long)self.sumOfUserScores];
-    }];
- 
-// Initializing the properties of the Settings class
-    Settings *edit = [[Settings alloc] initWithName:@"Edit" withImage:[UIImage imageNamed:@"Settings"]];
-    Settings *logout = [[Settings alloc] initWithName:@"Logout" withImage:[UIImage imageNamed:@"User"]];
-
-// Adding settings objects to the settings array
-    self.settingsArray = [NSArray arrayWithObjects:edit, logout
-                          , nil];
+// Call Methods
+        [self retrieveUsernameAndPhoto];
+        [self calculateUsersWeeklyScore];
 
     }
 }
 
+-(void)viewDidAppear:(BOOL)animated {
+    
+// Call Methods
+    [self retrieveUsernameAndPhoto];
+    [self calculateUsersWeeklyScore];
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    
+// Call Methods
+    [self retrieveUsernameAndPhoto];
+    [self calculateUsersWeeklyScore];
+    
+}
 #pragma mark - TableViewDelegate Methods
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -103,6 +80,7 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SettingsCell"];
     Settings *Object = [self.settingsArray objectAtIndex:indexPath.row];
+    
 // Setting the Cell labels and images
     cell.textLabel.text = Object.cellName;
     cell.textLabel.textColor = [UIColor whiteColor];
@@ -117,10 +95,7 @@
     self.settingsTableView.sectionIndexColor = [UIColor whiteColor];
     self.settingsTableView.sectionIndexTrackingBackgroundColor = [UIColor blackColor];
     
-    
-  
-    
-
+// Return cell
     return cell;
 }
 
@@ -150,5 +125,55 @@
     
 }
 
+-(void) calculateUsersWeeklyScore {
+    // Retrieving data for the user's score objects for the week
+    PFQuery *userscoreQuery = [PFQuery queryWithClassName:@"Week"];
+    [userscoreQuery whereKey:@"user" equalTo:self.currentUser];
+    [userscoreQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        // Setting the objectsArray to the userScoreArray
+        self.userScoreArray = objects;
+        
+        // Giving the sumOfUserScores property an initial value of zero
+        self.sumOfUserScores = 0;
+        
+        // Iterating through the usersScore array and setting the sum of all the score objects to the sumOfUsersScore property
+        for (PFObject *userScores in self.userScoreArray) {
+            self.sumOfUserScores += [[userScores objectForKey:@"score"]intValue];
+            
+        }
+        // Setting the sumofUserScores property to the userScoreLabel text
+        self.userScoreLabel.text = [NSString stringWithFormat:@"Weekly Score: %li", (long)self.sumOfUserScores];
+    }];
+    
+    // Initializing the properties of the Settings class
+    Settings *edit = [[Settings alloc] initWithName:@"Edit" withImage:[UIImage imageNamed:@"Settings"]];
+    Settings *logout = [[Settings alloc] initWithName:@"Logout" withImage:[UIImage imageNamed:@"User"]];
+    
+    // Adding settings objects to the settings array
+    self.settingsArray = [NSArray arrayWithObjects:edit, logout
+                          , nil];
+    
+}
+
+-(void) retrieveUsernameAndPhoto {
+    
+    // Retrieving the user's photo data from parse and setting it to the userimageview
+    PFFile *profilePicture = self.currentUser[@"Photo"];
+    [profilePicture getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
+        UIImage *profileImage = [UIImage imageWithData:data];
+        self.userImage.image = profileImage;
+    }];
+    
+    // Making the profile picture the shape of a circle
+    self.userImage.layer.cornerRadius = 50;
+    self.userImage.clipsToBounds = YES;
+    self.userImage.layer.borderWidth = 0.5;
+    self.userImage.layer.borderColor = [UIColor grayColor].CGColor;
+    
+    // Setting the username label text
+    self.usernameLabel.text = self.currentUser.username;
+
+    
+}
 
 @end

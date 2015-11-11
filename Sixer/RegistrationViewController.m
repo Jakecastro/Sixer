@@ -108,7 +108,7 @@
     if (password != confirmPassword) {
         
         // Display Alert
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Alert" message:@"In order to proceed, all fields must be completed." preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Alert" message:@"Passwords do not match. Please try again." preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *okayButton = [UIAlertAction actionWithTitle:@"Okay"
                                                              style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
                                                              }];

@@ -25,6 +25,7 @@
 
 @property PFUser *currentUser;
 @property UIImagePickerController *picker;
+@property NSData *selectedImageData;
 @end
 
 @implementation EditViewController
@@ -62,6 +63,8 @@
     [profilePicture getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
         UIImage *profileImage = [UIImage imageWithData:data];
         self.profileImageView.image = profileImage;
+        
+        [self.currentUser saveInBackground];
     }];
 
  
@@ -69,20 +72,19 @@
 - (IBAction)onCancelButtonTapped:(UIButton *)sender {
     
 // Dismiss the EditViewController
-//    UIViewController *editViewController = [ UIViewController new];
     [self dismissViewControllerAnimated:YES completion:nil];
-    
-//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//    UIViewController *menuVC = [storyboard instantiateViewControllerWithIdentifier:@"MenuScreen"];
-//    [self.navigationController pushViewController:menuVC animated:YES];
 }
 
 - (IBAction)onDoneButtonTapped:(UIButton *)sender {
+ 
+// Set and Save new values
+    [self saveNewPhoto];
+    [self saveNewPassword];
+    [self saveNewUsername]; 
+    [self saveNewEmail];
     
-    self.currentUser.username = self.usernameTextField.text;
-    self.currentUser.password = self.passwordTextfield.text;
-    self.currentUser.email =  self.emailTextField.text;
-    [self.currentUser saveEventually];
+// Dismiss ViewController
+    [self dismissViewControllerAnimated:YES completion:nil];
     
     
 }
@@ -104,9 +106,115 @@
     [self.picker dismissViewControllerAnimated:YES completion:nil];
 }
 
-// Hide textfield when it is no longer in use
+-(void)saveNewPassword {
+ 
+// initializing variables
+    NSString *newPassword = self.passwordTextfield.text;
+    NSString *confirmNewPassword = self.confirmPasswordTextField.text;
+ 
+// if password fields are blank
+    if (newPassword.length <= 0 || confirmNewPassword.length <= 0) {
+        
+        // Display Alert
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Alert" message:@"In order to proceed, all fields must be completed." preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okayButton = [UIAlertAction actionWithTitle:@"Okay"
+                                                             style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                                                             }];
+        [alert addAction:okayButton];
+        [self presentViewController:alert
+                           animated:YES
+                         completion:nil];
+        
+    }
+    
+// if password fields do not match
+    if (newPassword != confirmNewPassword) {
+
+// Display Alert
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Alert" message:@"Passwords do not match. Please try again." preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okayButton = [UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
+        }];
+        [alert addAction:okayButton];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+    
+        self.currentUser.password = self.passwordTextfield.text;
+        [self.currentUser saveInBackground];
+    
+    
+}
+-(void)saveNewPhoto {
+
+// Convert profile image into data
+    self.selectedImageData = UIImageJPEGRepresentation(self.profileImageView.image, 1);
+
+// If there is a profile image
+    if(self.selectedImageData != nil) {
+        
+// Convert the profile image data into a PFFile
+        PFFile *imageFile = [PFFile fileWithName:@"image" data:self.selectedImageData];
+
+// Set the current user's photo property in parse to the image file
+        self.currentUser[@"Photo"] = imageFile;
+        
+// Save new image to Parse
+        [self.currentUser saveInBackground];
+        
+    }
+    
+    
+}
+
+-(void) saveNewUsername {
+ 
+// Initialize variable
+    NSString *newUsername = self.usernameTextField.text;
+  
+// If nothing is entered in the new username textfield
+    if (newUsername.length <= 0) {
+        
+        // Display Alert
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Alert" message:@"In order to proceed, all fields must be completed." preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okayButton = [UIAlertAction actionWithTitle:@"Okay"
+                                                             style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                                                             }];
+        [alert addAction:okayButton];
+        [self presentViewController:alert
+                           animated:YES
+                         completion:nil];
+
+        
+    }
+    
+// Set new username to current user's username and save to parse
+     self.currentUser.username = newUsername;
+    [self.currentUser saveInBackground];
+}
+
+-(void) saveNewEmail {
+    
+// Initialize variable
+    NSString *newEmail = self.emailTextField.text;
+    
+// If nothing is entered in the new username textfield
+    if (newEmail.length <= 0) {
+        
+// Do nothing
+        
+    } else {
+    
+// Set new email to current user's email and save to parse
+    self.currentUser.email = newEmail;
+    [self.currentUser saveInBackground];
+        
+    }
+}
+
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     
+// Hide textfield when it is no longer in use
     [textField resignFirstResponder];
     
     return YES;
