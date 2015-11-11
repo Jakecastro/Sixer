@@ -11,17 +11,22 @@
 #import "ExerciseCell.h"
 #import "Exercise.h"
 #import "Color.h"
+#import "GroupTableViewCell.h"
+#import "GroupViewController.h"
 
 @interface ExerciseViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedController;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (weak, nonatomic) IBOutlet UIButton *groupNameButton;
+
 @property (weak, nonatomic) IBOutlet UIButton *workoutButton;
+
+@property  NSMutableArray *userExercisesArray;
+
+// Outlet for profile button
 @property (weak, nonatomic) IBOutlet UIButton *menuButton;
 @property (weak, nonatomic) IBOutlet UIView *topView;
 
-@property NSMutableArray *userExercisesArray;
 @property Exercise *selectedExercise;
 
 @end
@@ -34,7 +39,7 @@ ExerciseCell *cell;
     [super viewDidLoad];
     [self findUserExercises];
     [self setColorsAndBordersOnLoad];
-    self.workoutButton.titleLabel.text = @"select exercise above";
+
 }
 
 - (void)findUserExercises {
@@ -147,8 +152,13 @@ ExerciseCell *cell;
         vc.selectedExercise = self.selectedExercise;
     }
 
-}
+    if ([segue.identifier isEqualToString:@"toGroupSegue"]) {
+        GroupViewController *gVC = segue.destinationViewController;
+        gVC.senderEVC = self;
+    }
 
+
+}
 
 
 @end

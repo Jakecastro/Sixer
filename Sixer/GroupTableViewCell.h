@@ -7,10 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Group.h"
+
+@protocol PassNameOfGroupDelegate <NSObject>
+
+@optional
+
+-(void) groupTableViewCell:(id)cell didTapButton:(UIButton *)button withGroup:(Group *)group;
+
+
+@end
 
 @interface GroupTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIButton *onButtonPressSelectGroup;
 
 @property (weak, nonatomic) IBOutlet UILabel *groupNameLabel;
+@property Group *groupInCell;
+
+@property (nonatomic, assign) id<PassNameOfGroupDelegate> delegate;
 
 @end
