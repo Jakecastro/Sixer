@@ -72,7 +72,6 @@ ExerciseCell *cell;
 }
 
 - (void)resetUnselectedAttributes {
-    [self.collectionView reloadData];
     cell.backgroundColor = [Color whiteColor];
     cell.exerciseLabel.backgroundColor = [Color flatConcreateColor];
     cell.exerciseImage.backgroundColor = [Color whiteColor];
