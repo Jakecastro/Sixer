@@ -134,7 +134,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xuX-BU-fHB">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tce-jV-Zif">
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tce-jV-Zif">
                                         <rect key="frame" x="20" y="462" width="306" height="29"/>
                                         <animations/>
                                         <constraints>
@@ -164,7 +164,7 @@
                                             <constraint firstAttribute="width" constant="265" id="BcJ-wd-rIZ"/>
                                         </constraints>
                                         <state key="normal" title="GroupName">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <variation key="widthClass=compact">
                                             <mask key="constraints">
@@ -216,10 +216,10 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Poh-Ab-UX6">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Poh-Ab-UX6">
                                 <rect key="frame" x="0.0" y="0.0" width="602" height="47"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mB4-Lu-0kn">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mB4-Lu-0kn">
                                         <rect key="frame" x="470" y="13" width="124" height="34"/>
                                         <animations/>
                                         <constraints>
@@ -239,7 +239,7 @@
                                             <segue destination="Jti-Aj-Xaq" kind="show" id="M6w-SM-hpv"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AppName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmL-Hj-Ep7">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="AppName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmL-Hj-Ep7">
                                         <rect key="frame" x="243" y="13" width="117" height="34"/>
                                         <animations/>
                                         <constraints>
@@ -254,7 +254,7 @@
                                             </mask>
                                         </variation>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p35-bv-bAb">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p35-bv-bAb">
                                         <rect key="frame" x="8" y="13" width="52" height="34"/>
                                         <animations/>
                                         <constraints>
@@ -346,7 +346,7 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yOk-X1-bRO">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yOk-X1-bRO">
                                 <rect key="frame" x="0.0" y="49" width="600" height="405"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -362,7 +362,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ExerciseCell" id="zlW-MC-rMn" customClass="ExerciseCell">
-                                        <rect key="frame" x="20" y="6.5" width="304" height="392"/>
+                                        <rect key="frame" x="20" y="4.5" width="296" height="396"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="296" height="396"/>
@@ -500,6 +500,8 @@
                                 <exclude reference="xuX-BU-fHB"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="Kb4-Uf-Tlu"/>
+                                <exclude reference="YLz-4U-H7e"/>
                                 <exclude reference="IVA-O2-mRb"/>
                                 <exclude reference="Jyo-Jn-q3U"/>
                                 <exclude reference="W0y-pR-7Zh"/>
@@ -509,8 +511,6 @@
                                 <exclude reference="eRo-9r-zPK"/>
                                 <exclude reference="hih-A6-Qrr"/>
                                 <exclude reference="wEK-Du-CkZ"/>
-                                <exclude reference="Kb4-Uf-Tlu"/>
-                                <exclude reference="YLz-4U-H7e"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -518,6 +518,8 @@
                                 <include reference="xuX-BU-fHB"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="Kb4-Uf-Tlu"/>
+                                <include reference="YLz-4U-H7e"/>
                                 <exclude reference="5Ml-Wx-UeT"/>
                                 <include reference="IVA-O2-mRb"/>
                                 <include reference="Jyo-Jn-q3U"/>
@@ -533,8 +535,6 @@
                                 <include reference="hih-A6-Qrr"/>
                                 <exclude reference="oOB-3c-6jb"/>
                                 <include reference="wEK-Du-CkZ"/>
-                                <include reference="Kb4-Uf-Tlu"/>
-                                <include reference="YLz-4U-H7e"/>
                             </mask>
                         </variation>
                         <connections>
