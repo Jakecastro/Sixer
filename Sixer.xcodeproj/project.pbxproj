@@ -31,7 +31,7 @@
 		236ADD4F1BED064A00F6FD62 /* Week.m in Sources */ = {isa = PBXBuildFile; fileRef = 236ADD4E1BED064A00F6FD62 /* Week.m */; };
 		236ADD561BED92FE00F6FD62 /* CVExerciseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 236ADD551BED92FE00F6FD62 /* CVExerciseCell.m */; };
 		2383085F1BEBEC62004DA4EC /* AddExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2383085E1BEBEC62004DA4EC /* AddExerciseViewController.m */; };
-		23A6E8401BF3C80300F6E85E /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6E83F1BF3C80300F6E85E /* Activity.m */; settings = {ASSET_TAGS = (); }; };
+		23A6E8431BF3E01100F6E85E /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6E8421BF3E01100F6E85E /* Activity.m */; settings = {ASSET_TAGS = (); }; };
 		23AB1EEE1BEEE04100B1BDE5 /* CVExerciseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 236ADD551BED92FE00F6FD62 /* CVExerciseCell.m */; };
 		783F96DC1BEC1EC100CEA7FA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783F96DB1BEC1EC100CEA7FA /* AudioToolbox.framework */; };
 		783F96DE1BEC1ECC00CEA7FA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783F96DD1BEC1ECC00CEA7FA /* CFNetwork.framework */; };
@@ -129,8 +129,8 @@
 		236ADD551BED92FE00F6FD62 /* CVExerciseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CVExerciseCell.m; path = SixerTests/CVExerciseCell.m; sourceTree = SOURCE_ROOT; };
 		2383085D1BEBEC62004DA4EC /* AddExerciseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddExerciseViewController.h; sourceTree = "<group>"; };
 		2383085E1BEBEC62004DA4EC /* AddExerciseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddExerciseViewController.m; sourceTree = "<group>"; };
-		23A6E83E1BF3C80300F6E85E /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
-		23A6E83F1BF3C80300F6E85E /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
+		23A6E8411BF3E01100F6E85E /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Activity.h; path = ../Activity.h; sourceTree = "<group>"; };
+		23A6E8421BF3E01100F6E85E /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Activity.m; path = ../Activity.m; sourceTree = "<group>"; };
 		783F96DB1BEC1EC100CEA7FA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		783F96DD1BEC1ECC00CEA7FA /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		783F96DF1BEC1ED700CEA7FA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -456,8 +456,8 @@
 		235B6E491BEBD31000557D3F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				23A6E83E1BF3C80300F6E85E /* Activity.h */,
-				23A6E83F1BF3C80300F6E85E /* Activity.m */,
+				23A6E8411BF3E01100F6E85E /* Activity.h */,
+				23A6E8421BF3E01100F6E85E /* Activity.m */,
 				23A6E83D1BF3B4C100F6E85E /* Settings */,
 				23055F7A1BF25F4500D170F5 /* Cells */,
 				23055F811BF26AD500D170F5 /* UI Elements */,
@@ -651,7 +651,7 @@
 				CD7C67961BED8FDD00DC20E7 /* LoginViewController.m in Sources */,
 				CD7C67951BED8C8000DC20E7 /* AddGroupViewController.m in Sources */,
 				CD70934B1BEEE79F00043B50 /* ContainerViewController.m in Sources */,
-				23A6E8401BF3C80300F6E85E /* Activity.m in Sources */,
+				23A6E8431BF3E01100F6E85E /* Activity.m in Sources */,
 				235B6E191BEBD25600557D3F /* ExerciseViewController.m in Sources */,
 				783F96FC1BF1A0D100CEA7FA /* GroupTableViewCell.m in Sources */,
 				235B6E611BEBE92100557D3F /* AddReminderViewController.m in Sources */,
