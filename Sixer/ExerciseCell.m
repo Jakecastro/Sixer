@@ -12,14 +12,13 @@
 @implementation ExerciseCell
 
 - (void)awakeFromNib {
-    [self.layer setBorderWidth:2.0f];
-    [self.layer setCornerRadius:30.0f];
-    [self.exerciseImage.layer setCornerRadius:30.f];
-    self.backgroundColor = [UIColor whiteColor];
-    self.exerciseLabel.textColor = [UIColor blackColor];
-    self.exerciseImage.backgroundColor = [UIColor whiteColor];
-    [self.layer setBorderColor:[Color hourNormalStateBorderColor].CGColor];
-    [self.exerciseLabel.layer setBackgroundColor:[UIColor whiteColor].CGColor];
+    [self.layer setCornerRadius:10.0f];
+    self.backgroundColor = [Color whiteColor];
+    self.exerciseLabel.textColor = [Color whiteColor];
+    self.exerciseImage.backgroundColor = [Color whiteColor];
+    self.exerciseLabel.backgroundColor = [Color flatAbestosColor];
+    self.exerciseLabel.textColor = [Color whiteColor];
+    self.exerciseImage.backgroundColor = [Color whiteColor];
 }
 
 @end

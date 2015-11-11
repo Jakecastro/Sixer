@@ -26,6 +26,33 @@
 + (UIColor *)hourNormalStateBorderColor;
 
 
++ (UIColor* )flatAlizarinColor;
++ (UIColor* )flatPomegranateColor;
++ (UIColor* )flatCarrotColor;
++ (UIColor* )flatPumpkinColor;
++ (UIColor* )flatSunflowerColor;
++ (UIColor* )flatOrangeColor;
++ (UIColor *)flatTurquoiseColor;
++ (UIColor *)flatGreenSeaColor;
++ (UIColor* )flatEmeraldColor;
++ (UIColor* )flatNephritisColor;
++ (UIColor* )flatPeterRiverColor;
++ (UIColor* )flatBelizeHoleColor;
++ (UIColor* )flatAmethystColor;
++ (UIColor* )flatWisteriaColor;
++ (UIColor* )flatWetAsphalt;
++ (UIColor* )flatMidnightBlue;
++ (UIColor* )flatConcreateColor;
++ (UIColor* )flatAbestosColor;
++ (UIColor* )flatCloudsColor;
++ (UIColor* )flatSilverColor;
++ (UIColor* )flatBlackColor;
+
+
+
+
+
+
 
 
 @end
