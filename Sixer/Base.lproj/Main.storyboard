@@ -243,7 +243,7 @@
                                     <outlet property="delegate" destination="8rJ-Kc-sve" id="Jea-Yh-dr7"/>
                                 </connections>
                             </collectionView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KdT-HG-eWO">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KdT-HG-eWO">
                                 <rect key="frame" x="20" y="498" width="560" height="33"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -259,7 +259,7 @@
                                     <segue destination="4aa-7G-FHa" kind="show" identifier="StartTimer" id="hwl-Mq-1wh"/>
                                 </connections>
                             </button>
-                            <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tce-jV-Zif">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tce-jV-Zif">
                                 <rect key="frame" x="20" y="462" width="287" height="29"/>
                                 <animations/>
                                 <constraints>
@@ -270,7 +270,7 @@
                                     <segment title="Group"/>
                                 </segments>
                             </segmentedControl>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHN-Nw-y5r">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHN-Nw-y5r">
                                 <rect key="frame" x="315" y="462" width="265" height="28"/>
                                 <animations/>
                                 <constraints>
@@ -756,10 +756,10 @@
                         <viewControllerLayoutGuide type="bottom" id="n5W-zv-UjF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6At-YV-Kga">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XCu-Ts-QEs">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XCu-Ts-QEs">
                                 <rect key="frame" x="0.0" y="64" width="600" height="492"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -780,7 +780,7 @@
                                     <outlet property="delegate" destination="pph-Oc-sM4" id="scJ-QJ-9aw"/>
                                 </connections>
                             </tableView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bZl-qd-1RE">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bZl-qd-1RE">
                                 <rect key="frame" x="0.0" y="507" width="600" height="44"/>
                                 <animations/>
                                 <items>
@@ -791,7 +791,7 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7pt-3x-QOH">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7pt-3x-QOH">
                                 <rect key="frame" x="534" y="20" width="46" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -836,10 +836,10 @@
                         <viewControllerLayoutGuide type="bottom" id="hea-qq-tgu"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0bW-Ax-bEP">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2P2-g5-fIB">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2P2-g5-fIB">
                                 <rect key="frame" x="0.0" y="507" width="600" height="44"/>
                                 <animations/>
                                 <items>
@@ -850,12 +850,12 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <searchBar contentMode="redraw" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dDd-iO-IWm">
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="dDd-iO-IWm">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <animations/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b1b-0V-g4I">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b1b-0V-g4I">
                                 <rect key="frame" x="0.0" y="64" width="600" height="492"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1488,8 +1488,8 @@
         <image name="reminder" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2m3-in-CoE"/>
+        <segue reference="5nG-QP-dAx"/>
         <segue reference="Gvf-mf-uoJ"/>
-        <segue reference="gqn-Wv-8Yb"/>
+        <segue reference="VWd-I0-Px7"/>
     </inferredMetricsTieBreakers>
 </document>
