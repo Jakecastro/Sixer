@@ -11,6 +11,8 @@
 #import "ExerciseCell.h"
 #import "Exercise.h"
 #import "Color.h"
+#import "GroupTableViewCell.h"
+#import "GroupViewController.h"
 
 @interface ExerciseViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
@@ -18,6 +20,10 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UIButton *groupNameButton;
 @property (weak, nonatomic) IBOutlet UIButton *workoutButton;
+
+@property  NSMutableArray *userExercisesArray;
+
+// Outlet for profile button
 @property (weak, nonatomic) IBOutlet UIButton *menuButton;
 @property (weak, nonatomic) IBOutlet UIView *topView;
 
@@ -35,6 +41,16 @@ ExerciseCell *cell;
     [self findUserExercises];
     [self setColorsAndBordersOnLoad];
     self.workoutButton.titleLabel.text = @"select exercise above";
+    [self.view setBackgroundColor:[UIColor colorWithRed:155.0f/255.0f green:204.0f/255.0f blue:245.0f/255.0f alpha:1.0f]];
+    self.collectionView.backgroundColor = [UIColor colorWithRed:155.0f/255.0f green:204.0f/255.0f blue:245.0f/255.0f alpha:1.0f];
+    [self.workoutButton setBackgroundColor:[UIColor colorWithRed:255.0f/255.0f green:184.0f/255.0f blue:88.0f/255.0f alpha:1.0f]];
+    [self.segmentedController setBackgroundColor:[UIColor whiteColor]];
+    [self.workoutButton.layer setCornerRadius:75.0f];
+    [self.workoutButton.layer setBorderWidth:3.0f];
+    [self.workoutButton.layer setBorderColor:[UIColor colorWithRed:167.0f/255.0f green:97.0f/255.0f blue:0.0f/255.0f alpha:1.0f].CGColor];
+    self.topView.backgroundColor = [UIColor colorWithRed:17.0f/255.0f green:147.0f/255.0f blue:255.0f/255.0f alpha:1.0f];
+
+
 }
 
 - (void)findUserExercises {
@@ -146,7 +162,16 @@ ExerciseCell *cell;
         TimerViewController *vc = segue.destinationViewController;
         vc.selectedExercise = self.selectedExercise;
     }
+-(void)groupTableViewCell:(id)cell didTapButton:(UIButton *)button {
+//    self.groupNameButton.titleLabel = but
+}
 
+}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"toGroupSegue"]) {
+        GroupViewController *gVC = segue.destinationViewController;
+        gVC.senderEVC = self;
+    }
 }
 
 

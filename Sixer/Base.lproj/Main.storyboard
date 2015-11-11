@@ -117,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-718" y="896"/>
+            <point key="canvasLocation" x="-880.5" y="910"/>
         </scene>
         <!--Exercise View Controller-->
         <scene sceneID="wg7-f3-ORb">
@@ -281,7 +281,7 @@
                                 </state>
                                 <connections>
                                     <action selector="onGroupNameButtonTapped:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="eOz-Q6-1B9"/>
-                                    <segue destination="ag0-0F-frk" kind="show" id="Gvf-mf-uoJ"/>
+                                    <segue destination="ag0-0F-frk" kind="presentation" identifier="toGroupSegue" id="Gvf-mf-uoJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -434,11 +434,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Mer-hL-X9l"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0m8-j9-7qQ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lvw-5Z-cJx">
-                                <rect key="frame" x="0.0" y="56" width="600" height="495"/>
+                                <rect key="frame" x="0.0" y="56" width="600" height="544"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -472,6 +472,9 @@
                                                             <include reference="oDY-0C-csS"/>
                                                         </mask>
                                                     </variation>
+                                                    <connections>
+                                                        <action selector="buttonGrabGroup:" destination="nJ4-RO-hTF" eventType="touchUpInside" id="gqe-Dd-QSa"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7CZ-Oj-ZA7">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -545,7 +548,7 @@
                                 </connections>
                             </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VTw-HZ-P7l">
-                                <rect key="frame" x="0.0" y="507" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="9SH-PM-fjg"/>
@@ -553,7 +556,7 @@
                                 <items>
                                     <barButtonItem style="done" systemItem="done" id="Tyu-w1-TDf">
                                         <connections>
-                                            <segue destination="49e-Tb-3d3" kind="show" id="7l3-kI-aYh"/>
+                                            <action selector="onDoneTapped:" destination="ag0-0F-frk" id="9ni-Et-9gz"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -585,7 +588,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Y1-mr-SFg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="48" y="1870.5"/>
+            <point key="canvasLocation" x="58.5" y="1846.5"/>
         </scene>
         <!--Reminders View Controller-->
         <scene sceneID="7j9-PJ-Q9M">
@@ -756,10 +759,10 @@
                         <viewControllerLayoutGuide type="bottom" id="n5W-zv-UjF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6At-YV-Kga">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XCu-Ts-QEs">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XCu-Ts-QEs">
                                 <rect key="frame" x="0.0" y="64" width="600" height="492"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -775,13 +778,16 @@
                                         <animations/>
                                     </tableViewCell>
                                 </prototypes>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="44" width="400" height="512"/>
+                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="pph-Oc-sM4" id="w5V-l9-MzT"/>
                                     <outlet property="delegate" destination="pph-Oc-sM4" id="scJ-QJ-9aw"/>
                                 </connections>
                             </tableView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bZl-qd-1RE">
-                                <rect key="frame" x="0.0" y="507" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <animations/>
                                 <items>
                                     <barButtonItem style="done" systemItem="done" id="rbV-dr-oMZ">
@@ -791,13 +797,16 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7pt-3x-QOH">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7pt-3x-QOH">
                                 <rect key="frame" x="534" y="20" width="46" height="30"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="7pt-3x-QOH" secondAttribute="height" multiplier="23:15" id="hEx-pJ-0ES"/>
                                 </constraints>
                                 <state key="normal" title="Add"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="334" y="0.0" width="46" height="30"/>
+                                </variation>
                                 <connections>
                                     <segue destination="QY9-Pq-IIa" kind="show" identifier="addMemsToGroupSegue" id="Ab7-7e-34t"/>
                                 </connections>
@@ -825,7 +834,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E7n-iC-Wzb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="867" y="1871"/>
+            <point key="canvasLocation" x="888" y="1846"/>
         </scene>
         <!--Add Group View Controller-->
         <scene sceneID="aPS-4k-6sN">
@@ -836,11 +845,11 @@
                         <viewControllerLayoutGuide type="bottom" id="hea-qq-tgu"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0bW-Ax-bEP">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2P2-g5-fIB">
-                                <rect key="frame" x="0.0" y="507" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <animations/>
                                 <items>
                                     <barButtonItem systemItem="done" id="mfT-Dg-Dtr">
@@ -850,12 +859,12 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <searchBar contentMode="redraw" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dDd-iO-IWm">
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="dDd-iO-IWm">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <animations/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b1b-0V-g4I">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b1b-0V-g4I">
                                 <rect key="frame" x="0.0" y="64" width="600" height="492"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -900,7 +909,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JQp-g5-rsq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1618" y="1871"/>
+            <point key="canvasLocation" x="1632" y="1846"/>
         </scene>
         <!--Container View Controller-->
         <scene sceneID="nD2-ih-FfM">
@@ -1490,6 +1499,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="2m3-in-CoE"/>
         <segue reference="Gvf-mf-uoJ"/>
-        <segue reference="gqn-Wv-8Yb"/>
+        <segue reference="VWd-I0-Px7"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -23,5 +23,7 @@
 @property (nonatomic, weak) id<FrontDelegate> delegate;
 @property Group *groupCurrentlyIn;
 
+@property (weak, nonatomic) IBOutlet UIButton *groupNameButton;
+
 @end
 
