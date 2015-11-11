@@ -139,6 +139,7 @@
 }
 
 -(void)groupTableViewCell:(id)cell didTapButton:(UIButton *)button withGroup:(Group *)group{
+    
     self.passedGroup = group;
 }
 

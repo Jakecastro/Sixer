@@ -778,9 +778,6 @@
                                         <animations/>
                                     </tableViewCell>
                                 </prototypes>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="44" width="400" height="512"/>
-                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="pph-Oc-sM4" id="w5V-l9-MzT"/>
                                     <outlet property="delegate" destination="pph-Oc-sM4" id="scJ-QJ-9aw"/>
@@ -804,9 +801,6 @@
                                     <constraint firstAttribute="width" secondItem="7pt-3x-QOH" secondAttribute="height" multiplier="23:15" id="hEx-pJ-0ES"/>
                                 </constraints>
                                 <state key="normal" title="Add"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="334" y="0.0" width="46" height="30"/>
-                                </variation>
                                 <connections>
                                     <segue destination="QY9-Pq-IIa" kind="show" identifier="addMemsToGroupSegue" id="Ab7-7e-34t"/>
                                 </connections>
@@ -1497,8 +1491,8 @@
         <image name="reminder" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2m3-in-CoE"/>
+        <segue reference="gqn-Wv-8Yb"/>
         <segue reference="Gvf-mf-uoJ"/>
-        <segue reference="VWd-I0-Px7"/>
+        <segue reference="2m3-in-CoE"/>
     </inferredMetricsTieBreakers>
 </document>

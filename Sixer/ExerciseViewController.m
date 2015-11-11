@@ -18,7 +18,7 @@
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedController;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (weak, nonatomic) IBOutlet UIButton *groupNameButton;
+
 @property (weak, nonatomic) IBOutlet UIButton *workoutButton;
 
 @property  NSMutableArray *userExercisesArray;
@@ -27,7 +27,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *menuButton;
 @property (weak, nonatomic) IBOutlet UIView *topView;
 
-@property NSMutableArray *userExercisesArray;
 @property Exercise *selectedExercise;
 
 @end
@@ -162,18 +161,18 @@ ExerciseCell *cell;
         TimerViewController *vc = segue.destinationViewController;
         vc.selectedExercise = self.selectedExercise;
     }
--(void)groupTableViewCell:(id)cell didTapButton:(UIButton *)button {
-//    self.groupNameButton.titleLabel = but
-}
 
-}
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"toGroupSegue"]) {
         GroupViewController *gVC = segue.destinationViewController;
         gVC.senderEVC = self;
     }
+
+
 }
 
 
+-(void)groupTableViewCell:(id)cell didTapButton:(UIButton *)button {
+    //    self.groupNameButton.titleLabel = but
+}
 
 @end
