@@ -6,18 +6,21 @@
 //  Copyright © 2015 Jake Castro. All rights reserved.
 //
 
+// Imports
 #import "ProfileViewController.h"
 #import "Settings.h"
 #import <Parse/Parse.h>
 #import "LoginViewController.h"
 
-//Add UITableViewDataSource and drag properties
+// Delegates
 @interface ProfileViewController ()< UITableViewDelegate, UITableViewDataSource>
+
+// Properties
 @property NSArray *settingsArray;
 @property NSArray *userScoreArray;
 @property NSInteger sumOfUserScores;
 
-
+// Outlets
 @property (weak, nonatomic) IBOutlet UIImageView *userImage;
 @property (weak, nonatomic) IBOutlet UITableView *settingsTableView;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
@@ -38,38 +41,49 @@
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"RegistrationAndLogin" bundle:nil];
         UIViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"LoginScreen"];
         [self presentViewController:loginVC animated:YES completion:nil];
+        
     } else {
           
-// If there's a current user do the following
+// Retrieving the user's photo data from parse and setting it to the userimageview
     PFFile *profilePicture = currentUser[@"Photo"];
     [profilePicture getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
         UIImage *profileImage = [UIImage imageWithData:data];
         self.userImage.image = profileImage;
     }];
-    
+ 
+// Making the profile picture the shape of a circle
     self.userImage.layer.cornerRadius = 50;
     self.userImage.clipsToBounds = YES;
     self.userImage.layer.borderWidth = 0.5;
     self.userImage.layer.borderColor = [UIColor grayColor].CGColor;
-    
+
+// Setting the username label text
     self.usernameLabel.text = currentUser.username;
+
+// Retrieving data for the user's score objects for the week
     PFQuery *userscoreQuery = [PFQuery queryWithClassName:@"Week"];
     [userscoreQuery whereKey:@"user" equalTo:currentUser];
     [userscoreQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+// Setting the objectsArray to the userScoreArray
         self.userScoreArray = objects;
-        self.sumOfUserScores = 0;
         
+// Giving the sumOfUserScores property an initial value of zero
+        self.sumOfUserScores = 0;
+
+// Iterating through the usersScore array and setting the sum of all the score objects to the sumOfUsersScore property
         for (PFObject *userScores in self.userScoreArray) {
             self.sumOfUserScores += [[userScores objectForKey:@"score"]intValue];
             
         }
+// Setting the sumofUserScores property to the userScoreLabel text
         self.userScoreLabel.text = [NSString stringWithFormat:@"Weekly Score: %li", (long)self.sumOfUserScores];
     }];
  
-
+// Initializing the properties of the Settings class
     Settings *edit = [[Settings alloc] initWithName:@"Edit" withImage:[UIImage imageNamed:@"Settings"]];
     Settings *logout = [[Settings alloc] initWithName:@"Logout" withImage:[UIImage imageNamed:@"User"]];
-    
+
+// Adding settings objects to the settings array
     self.settingsArray = [NSArray arrayWithObjects:edit, logout
                           , nil];
 
@@ -79,6 +93,8 @@
 #pragma mark - TableViewDelegate Methods
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+
+// Setting the number of rows in the tableview to the number of indexes in the array
     return self.settingsArray.count;
 }
 
@@ -87,11 +103,12 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SettingsCell"];
     Settings *Object = [self.settingsArray objectAtIndex:indexPath.row];
+// Setting the Cell labels and images
     cell.textLabel.text = Object.cellName;
     cell.textLabel.textColor = [UIColor whiteColor];
     cell.imageView.image = Object.cellImage;
     
-    // Changing the length and color of the separator line between tableview cells
+// Changing the length and color of the separator line between tableview cells
     [tableView setSeparatorInset:UIEdgeInsetsZero];
     [tableView setSeparatorColor:[UIColor blackColor]];
     [tableView setSeparatorInset:UIEdgeInsetsMake(0, 0, 0, 0)];
@@ -108,17 +125,25 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath == 0) {
-        
-        
-    } else if (indexPath == 1){
+    
+// If user selects the Edit, do the following:
+    if (indexPath.row == 0) {
+   
+// Present Edit Screen
+         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UIViewController *editVC = [storyboard instantiateViewControllerWithIdentifier:@"EditScreen"];
+        [self presentViewController:editVC animated:YES completion:nil];
+ 
+// If user selects the logout, do the following:
+    } else if (indexPath.row == 1){
+  
+// Log user out
         [PFUser logOut];
         
-        [self dismissViewControllerAnimated:YES completion:nil];
-        
+// Present Login Screen
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"RegistrationAndLogin" bundle:nil];
         UIViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"LoginScreen"];
-        [self.navigationController pushViewController:loginVC animated:YES];
+        [self presentViewController:loginVC animated:YES completion:nil];
         
     }
         
