@@ -252,6 +252,8 @@
 		23055F841BF27FE300D170F5 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				CD70934F1BF24E4B00043B50 /* EditViewController.h */,
+				CD7093501BF24E4B00043B50 /* EditViewController.m */,
 				CD7093431BEED3A700043B50 /* ProfileViewController.h */,
 				CD7093441BEED3A700043B50 /* ProfileViewController.m */,
 			);
@@ -429,16 +431,7 @@
 		235B6E471BEBD2F500557D3F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				CD0A9B2A1BED221300B6817D /* InitialScreenViewController.h */,
-				CD0A9B2B1BED221300B6817D /* InitialScreenViewController.m */,
-				CD0A9B2D1BED222000B6817D /* LoginViewController.h */,
-				CD0A9B2E1BED222000B6817D /* LoginViewController.m */,
-				CD0A9B301BED223300B6817D /* RegistrationViewController.h */,
-				CD0A9B311BED223300B6817D /* RegistrationViewController.m */,
-				CD7093491BEEE79F00043B50 /* ContainerViewController.h */,
-				CD70934A1BEEE79F00043B50 /* ContainerViewController.m */,
-				CD70934F1BF24E4B00043B50 /* EditViewController.h */,
-				CD7093501BF24E4B00043B50 /* EditViewController.m */,
+				23A6E83C1BF3B48800F6E85E /* Login/Registration */,
 				23055F821BF26B1300D170F5 /* TabBar */,
 				23055F841BF27FE300D170F5 /* Profile */,
 				23055F851BF2800E00D170F5 /* Timer */,
@@ -460,8 +453,7 @@
 		235B6E491BEBD31000557D3F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CD7093461BEEDC6600043B50 /* Settings.h */,
-				CD7093471BEEDC6600043B50 /* Settings.m */,
+				23A6E83D1BF3B4C100F6E85E /* Settings */,
 				23055F7A1BF25F4500D170F5 /* Cells */,
 				23055F811BF26AD500D170F5 /* UI Elements */,
 				23055F871BF2804800D170F5 /* Team Model */,
@@ -470,6 +462,30 @@
 				23055F8A1BF2806C00D170F5 /* Week Model */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		23A6E83C1BF3B48800F6E85E /* Login/Registration */ = {
+			isa = PBXGroup;
+			children = (
+				CD0A9B2A1BED221300B6817D /* InitialScreenViewController.h */,
+				CD0A9B2B1BED221300B6817D /* InitialScreenViewController.m */,
+				CD0A9B2D1BED222000B6817D /* LoginViewController.h */,
+				CD0A9B2E1BED222000B6817D /* LoginViewController.m */,
+				CD0A9B301BED223300B6817D /* RegistrationViewController.h */,
+				CD0A9B311BED223300B6817D /* RegistrationViewController.m */,
+				CD7093491BEEE79F00043B50 /* ContainerViewController.h */,
+				CD70934A1BEEE79F00043B50 /* ContainerViewController.m */,
+			);
+			name = Login/Registration;
+			sourceTree = "<group>";
+		};
+		23A6E83D1BF3B4C100F6E85E /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				CD7093461BEEDC6600043B50 /* Settings.h */,
+				CD7093471BEEDC6600043B50 /* Settings.m */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		783F96D61BEC1E2600CEA7FA /* Frameworks */ = {
