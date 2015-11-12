@@ -7,27 +7,29 @@
 //
 
 #import "TimerController.h"
+#import "Color.h"
 
 @interface TimerController ()
 
-@property (weak, nonatomic) IBOutlet UILabel *exerciseNameLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *exerciseImageView;
-@property (weak, nonatomic) IBOutlet UILabel *countTimeLabel;
-
-@property (weak, nonatomic) IBOutlet UILabel *editCountDownLabel;
-@property (weak, nonatomic) IBOutlet UILabel *editSetslLabel;
-@property (weak, nonatomic) IBOutlet UILabel *editRestLabel;
-@property (weak, nonatomic) IBOutlet UIPickerView *pickerView;
-
-@property (weak, nonatomic) IBOutlet UIButton *timerButton;
+@property (weak, nonatomic) IBOutlet UIButton *hostGameButton;
+@property (weak, nonatomic) IBOutlet UIButton *joinGameButton;
+@property (weak, nonatomic) IBOutlet UIButton *quitGameButton;
 
 @end
 
 @implementation TimerController
 
-
-
-- (IBAction)onTimerButtonTapped:(UIButton *)sender {
+- (void)viewDidLoad {
+    [self.view setBackgroundColor:[Color flatWetAsphalt]];
 }
+
+
+- (IBAction)onHostButtonTapped:(UIButton *)sender {
+}
+
+- (IBAction)onJoinGameButtonTapped:(UIButton *)sender {
+}
+
+
 
 @end
