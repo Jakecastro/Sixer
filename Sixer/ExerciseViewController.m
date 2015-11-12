@@ -58,7 +58,7 @@ ExerciseCell *cell;
 
 #pragma mark - UI Methods
 - (void)setColorsAndBordersOnLoad {
-    self.topView.backgroundColor = [Color flatPeterRiverColor];
+    self.topView.backgroundColor = [Color chartreuse];
     self.bottomView.backgroundColor = [Color flatCloudsColor];
     [self.view setBackgroundColor:[Color flatCloudsColor]];
 

@@ -232,6 +232,9 @@
                            alpha:1.0];
 }
 
++(UIColor *)chartreuse {
+    return [UIColor colorWithRed:194.0/255.0 green:222.0/255.0 blue:17.0/255.0 alpha:1.0];
+}
 
 @end
 

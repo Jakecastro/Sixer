@@ -47,6 +47,7 @@
 + (UIColor* )flatCloudsColor;
 + (UIColor* )flatSilverColor;
 + (UIColor* )flatBlackColor;
++ (UIColor *)chartreuse;
 
 
 

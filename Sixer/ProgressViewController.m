@@ -9,6 +9,7 @@
 // Imported Files
 #import "ProgressViewController.h"
 #import "ProgressCell.h"
+#import "Activity.h" 
 #import <Parse/Parse.h>
 
 // Delegates
