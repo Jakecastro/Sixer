@@ -7,11 +7,17 @@
 //
 
 #import <Parse/Parse.h>
+#import "Group.h"
+#import "Exercise.h"
+
 
 @interface Activity : PFObject <PFSubclassing>
 
 @property NSString *name;
+@property NSNumber *score;
 @property NSNumber *isGroup;
+@property Group *group;
+@property Exercise *exercise;
 
 + (NSString *)parseClassName;
 

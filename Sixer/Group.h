@@ -8,12 +8,15 @@
 
 #import <Parse/Parse.h>
 
-@interface Group : PFObject
+@interface Group : PFObject <PFSubclassing>
 
 @property NSString *groupName;
 @property PFRelation *members;
 
 
 + (NSString *)parseClassName;
+
+- (instancetype)initWithGroupName:(NSString *)name;
+
 
 @end

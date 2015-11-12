@@ -10,6 +10,7 @@
 #import "StopwatchController.h"
 #import "ExerciseCell.h"
 #import "Exercise.h"
+#import "Group.h"
 #import "Color.h"
 #import "GroupTableViewCell.h"
 #import "GroupViewController.h"
@@ -37,7 +38,6 @@ ExerciseCell *cell;
     [super viewDidLoad];
     [self findUserExercises];
     [self setColorsAndBordersOnLoad];
-
 }
 
 - (void)findUserExercises {
@@ -104,13 +104,9 @@ ExerciseCell *cell;
     cell = (ExerciseCell *) [collectionView cellForItemAtIndexPath:indexPath];
     self.selectedExercise = [self.userExercisesArray objectAtIndex:indexPath.row];
 
-//    [self.workoutButton setTitle:[NSString stringWithFormat:@"Start %@", self.selectedExercise.name] forState:UIControlStateNormal];
-
     cell.exerciseImage.backgroundColor = [Color flatEmeraldColor];
     cell.exerciseLabel.backgroundColor = [Color flatNephritisColor];
     cell.backgroundColor = [Color flatEmeraldColor];
-
-//    self.workoutButton.hidden = false;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -131,18 +127,19 @@ ExerciseCell *cell;
 
 #pragma mark - Segue
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-
-    self.selectedSegmentIndex = self.segmentedController.selectedSegmentIndex;
-
-
+    NSLog(@"%ld", (long)self.segmentedController.selectedSegmentIndex);
 
     if ([segue.identifier isEqualToString:@"SwipeUp"]) {
         StopwatchController *vc = segue.destinationViewController;
         vc.selectedExercise = self.selectedExercise;
-        vc.groupActivity = self.selectedSegmentIndex;
-        vc.groupName = self.groupCurrentlyIn;
+        vc.groupActivity = self.segmentedController.selectedSegmentIndex;
 
-
+        if (self.segmentedController.selectedSegmentIndex == 0) {
+            vc.groupName = [[Group alloc] initWithGroupName:@"solo"];
+        }
+        else if (self.segmentedController.selectedSegmentIndex == 1) {
+            vc.groupName = self.groupCurrentlyIn;
+        }
     }
 
     if ([segue.identifier isEqualToString:@"toGroupSegue"]) {

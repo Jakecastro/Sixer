@@ -11,6 +11,9 @@
 @implementation Activity
 
 @dynamic name;
+@dynamic score;
+@dynamic group;
+@dynamic exercise;
 @synthesize isGroup = _isGroup;
 
 + (NSString *)parseClassName {

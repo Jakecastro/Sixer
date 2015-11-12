@@ -8,6 +8,8 @@
 
 #import "StopwatchController.h"
 #import "Exercise.h"
+#import "User.h"
+#import "Group.h"
 #import "Activity.h"
 #import "Color.h"
 #import "Week.h"
@@ -29,16 +31,21 @@ bool isExerciseTime;
 int totalSessionTime;
 int timeTick;
 NSTimer *timer;
+Group *solo;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUIForCountUpActive];
     NSLog(@"%ld", (long)self.groupActivity);
+
+    
+
     timeTick =0;
     totalSessionTime=0;
     isExerciseTime = true;
     [self startTimer];
     self.exerciseNameLabel.text = [NSString stringWithFormat:@"%@", self.selectedExercise.name];
+
 
 //    PFFile *imageFile = self.selectedExercise.image;
 //    NSData *imageData = imageFile;

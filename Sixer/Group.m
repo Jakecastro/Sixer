@@ -17,4 +17,16 @@
     return @"Group";
 }
 
+- (instancetype)initWithGroupName:(NSString *)name {
+    self = [super init];
+    if (self) {
+        self.groupName = name;
+    }
+    return self;
+}
+
++ (void)load {
+    [self registerSubclass];
+}
+
 @end
