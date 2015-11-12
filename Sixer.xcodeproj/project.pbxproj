@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		23055F801BF263AE00D170F5 /* Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 23055F7F1BF263AE00D170F5 /* Color.m */; settings = {ASSET_TAGS = (); }; };
-		23055F921BF32F7B00D170F5 /* TimerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23055F911BF32F7B00D170F5 /* TimerController.m */; settings = {ASSET_TAGS = (); }; };
+		23055F801BF263AE00D170F5 /* Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 23055F7F1BF263AE00D170F5 /* Color.m */; };
+		23055F921BF32F7B00D170F5 /* TimerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23055F911BF32F7B00D170F5 /* TimerController.m */; };
 		2347DE6E1BEC3A3F00013FFC /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 2347DE6D1BEC3A3F00013FFC /* Group.m */; };
 		2347DE711BEC3D2700013FFC /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 2347DE701BEC3D2700013FFC /* User.m */; };
 		2347DE741BEC3EBC00013FFC /* Exercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 2347DE731BEC3EBC00013FFC /* Exercise.m */; };
@@ -216,6 +216,7 @@
 				235B6E541BEBE4A000557D3F /* ReminderCell.m */,
 				235B6E501BEBE34900557D3F /* ProgressCell.h */,
 				235B6E511BEBE34900557D3F /* ProgressCell.m */,
+				23055F8A1BF2806C00D170F5 /* Week Model */,
 				235B6E4A1BEBDD7500557D3F /* ExerciseCell.h */,
 				235B6E4B1BEBDD7500557D3F /* ExerciseCell.m */,
 				236ADD541BED92FE00F6FD62 /* CVExerciseCell.h */,
@@ -238,6 +239,7 @@
 		23055F821BF26B1300D170F5 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				CD0A9B2B1BED221300B6817D /* InitialScreenViewController.m */,
 				23055F8B1BF280A000D170F5 /* index 0 Controller */,
 				23055F8C1BF280AE00D170F5 /* index 1 Controller */,
 				23055F8D1BF280BA00D170F5 /* index 2 Controller */,
@@ -467,7 +469,6 @@
 				23055F871BF2804800D170F5 /* Team Model */,
 				23055F881BF2805A00D170F5 /* Exercise Model */,
 				23055F891BF2806400D170F5 /* User Model */,
-				23055F8A1BF2806C00D170F5 /* Week Model */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -476,7 +477,6 @@
 			isa = PBXGroup;
 			children = (
 				CD0A9B2A1BED221300B6817D /* InitialScreenViewController.h */,
-				CD0A9B2B1BED221300B6817D /* InitialScreenViewController.m */,
 				CD0A9B2D1BED222000B6817D /* LoginViewController.h */,
 				CD0A9B2E1BED222000B6817D /* LoginViewController.m */,
 				CD0A9B301BED223300B6817D /* RegistrationViewController.h */,

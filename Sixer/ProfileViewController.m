@@ -39,6 +39,7 @@
 
 // If there's no current user present login screen
     if (!self.currentUser) {
+        
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"RegistrationAndLogin" bundle:nil];
         UIViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"LoginScreen"];
         [self presentViewController:loginVC animated:YES completion:nil];
