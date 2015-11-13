@@ -12,15 +12,21 @@
 #import "Activity.h" 
 #import <Parse/Parse.h>
 #import "Color.h"
+#import "LoginViewController.h"
+
 
 // Delegates
 @interface ProgressViewController () <UITableViewDataSource, UITableViewDelegate>
 
 // Outlets
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *userImageView;
 
 // Properties
 @property NSArray *progressArray;
+@property NSArray *userScoreArray;
+@property NSInteger *sumOfScores;
 @property PFUser *currentUser;
 
 
@@ -39,6 +45,7 @@
     self.progressArray = [NSArray new];
     self.currentUser = [PFUser currentUser];
     [self retrieveDataFromParse];
+    [self retrieveUsernameAndPhoto];
   
     
 }
@@ -49,6 +56,7 @@
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"RegistrationAndLogin" bundle:nil];
         UIViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"LoginScreen"];
         [self presentViewController:loginVC animated:YES completion:nil];
+        [self retrieveUsernameAndPhoto];
     }
 }
 
@@ -83,5 +91,26 @@
     }];
 
 }
+-(void) retrieveUsernameAndPhoto {
+    
+    // Retrieving the user's photo data from parse and setting it to the userimageview
+    PFFile *profilePicture = self.currentUser[@"Photo"];
+    [profilePicture getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
+        UIImage *profileImage = [UIImage imageWithData:data];
+        self.userImageView.image = profileImage;
+    }];
+    
+    // Making the profile picture the shape of a circle
+    self.userImageView.layer.cornerRadius = 40;
+    self.userImageView.clipsToBounds = YES;
+    self.userImageView.layer.borderWidth = 0.5;
+    self.userImageView.layer.borderColor = [UIColor grayColor].CGColor;
+    
+    // Setting the username label text
+    self.usernameLabel.text = self.currentUser.username;
+    
+    
+}
+
 
 @end

@@ -165,11 +165,11 @@
         self.userImage.image = profileImage;
     }];
     
-    // Making the profile picture the shape of a circle
-    self.userImage.layer.cornerRadius = 50;
-    self.userImage.clipsToBounds = YES;
-    self.userImage.layer.borderWidth = 0.5;
-    self.userImage.layer.borderColor = [UIColor grayColor].CGColor;
+//    // Making the profile picture the shape of a circle
+//    self.userImage.layer.cornerRadius = 50;
+//    self.userImage.clipsToBounds = YES;
+//    self.userImage.layer.borderWidth = 0.5;
+//    self.userImage.layer.borderColor = [UIColor grayColor].CGColor;
     
     // Setting the username label text
     self.usernameLabel.text = self.currentUser.username;
