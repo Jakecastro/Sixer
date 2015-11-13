@@ -76,6 +76,7 @@
 - (IBAction)onLoginButtonTapped:(UIButton *)sender {
     
     [self userlogin];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
