@@ -11,6 +11,7 @@
 #import "ProgressCell.h"
 #import "Activity.h" 
 #import <Parse/Parse.h>
+#import "Color.h"
 
 // Delegates
 @interface ProgressViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -29,6 +30,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIImage *titleImage = [UIImage imageNamed:@"Get Active!"];
+    self.navigationItem.titleView = [[UIImageView alloc]initWithImage:titleImage];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:194.0/255.0 green:222.0/255.0 blue:17.0/255.0 alpha:1.0f];
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    
+    
     self.progressArray = [NSArray new];
     self.currentUser = [PFUser currentUser];
     [self retrieveDataFromParse];

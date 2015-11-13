@@ -23,6 +23,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIImage *titleImage = [UIImage imageNamed:@"Get Active!"];
+    self.navigationItem.titleView = [[UIImageView alloc]initWithImage:titleImage];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:194.0/255.0 green:222.0/255.0 blue:17.0/255.0 alpha:1.0f];
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
 }
 
 - (IBAction)onAddButtonTapped:(UIButton *)sender {

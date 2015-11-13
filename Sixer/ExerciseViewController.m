@@ -38,6 +38,11 @@ ExerciseCell *cell;
     [super viewDidLoad];
     [self findUserExercises];
     [self setColorsAndBordersOnLoad];
+    
+    UIImage *titleImage = [UIImage imageNamed:@"Get Active!"];
+    self.navigationItem.titleView = [[UIImageView alloc]initWithImage:titleImage];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:194.0/255.0 green:222.0/255.0 blue:17.0/255.0 alpha:1.0f];
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
 }
 
 - (void)findUserExercises {
@@ -59,19 +64,21 @@ ExerciseCell *cell;
 #pragma mark - UI Methods
 - (void)setColorsAndBordersOnLoad {
     self.topView.backgroundColor = [Color chartreuse];
-    self.bottomView.backgroundColor = [Color flatCloudsColor];
-    [self.view setBackgroundColor:[Color flatCloudsColor]];
-
-    self.collectionView.backgroundColor = [Color flatCloudsColor];
+    self.bottomView.backgroundColor = [UIColor whiteColor];
+    [self.view setBackgroundColor:[UIColor whiteColor]];
+    cell.exerciseImage.backgroundColor = [Color flatCloudsColor];
+    self.collectionView.backgroundColor = [UIColor whiteColor];
     [self.segmentedController setBackgroundColor:[Color whiteColor]];
 }
 
 - (void)resetUnselectedAttributes {
     cell.backgroundColor = [Color whiteColor];
-    cell.exerciseLabel.backgroundColor = [Color flatConcreateColor];
-    cell.exerciseImage.backgroundColor = [Color whiteColor];
+    cell.exerciseLabel.backgroundColor = [UIColor grayColor];
+    cell.exerciseImage.backgroundColor = [Color flatCloudsColor];
     [cell.layer setBorderColor:[Color hourNormalStateBorderColor].CGColor];
+//    [cell.layer setBorderColor:[UIColor whiteColor].CGColor];
     [cell.exerciseLabel.layer setBackgroundColor:[Color whiteColor].CGColor];
+    cell.exerciseImage.backgroundColor = [Color flatCloudsColor];
 
 //    self.workoutButton.hidden = true;
 //    self.workoutButton.titleLabel.text = @"select exercise above";
@@ -95,7 +102,7 @@ ExerciseCell *cell;
     NSData *imageData = [imageFile getData];
     cell.exerciseImage.image = [UIImage imageWithData:imageData];
     cell.exerciseLabel.text = [exercise objectForKey:@"name"];
-
+    cell.exerciseImage.backgroundColor = [Color flatCloudsColor];
     return cell;
 }
 
@@ -104,9 +111,9 @@ ExerciseCell *cell;
     cell = (ExerciseCell *) [collectionView cellForItemAtIndexPath:indexPath];
     self.selectedExercise = [self.userExercisesArray objectAtIndex:indexPath.row];
 
-    cell.exerciseImage.backgroundColor = [Color flatEmeraldColor];
-    cell.exerciseLabel.backgroundColor = [Color flatNephritisColor];
-    cell.backgroundColor = [Color flatEmeraldColor];
+    cell.exerciseImage.backgroundColor = [Color chartreuse];
+    cell.exerciseLabel.backgroundColor = [UIColor grayColor];
+    cell.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -114,13 +121,6 @@ ExerciseCell *cell;
 }
 
 #pragma mark - onButtonTapped Methods
-- (IBAction)onProfileButtonTapped:(id)sender {
-    [self.delegate frontRevealButtonTapped];
-}
-
-- (IBAction)onAddExerciseButtonTapped:(UIButton *)sender {
-}
-
 - (IBAction)onGroupNameButtonTapped:(UIButton *)sender {
 }
 

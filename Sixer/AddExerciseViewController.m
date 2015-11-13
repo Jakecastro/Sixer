@@ -29,8 +29,9 @@ CVExerciseCell *addExerciseCell;
     [super viewDidLoad];
     [self queryExercisesFromParse];
 
-    [self.view setBackgroundColor:[Color hourDarkBlueColor]];
-    [self.collectionView setBackgroundColor:[Color hourDarkBlueColor]];
+    [self.view setBackgroundColor:[UIColor whiteColor]];
+    [self.collectionView setBackgroundColor:[UIColor whiteColor]];
+    
 }
 
 #pragma mark - Query Parse Methods
@@ -73,7 +74,7 @@ CVExerciseCell *addExerciseCell;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    addExerciseCell = (CVExerciseCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    CVExerciseCell *addExerciseCell = (CVExerciseCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
 
     //  make all objects returned from Parse Exercise objects
     Exercise *exercise = [self.exercisesArray objectAtIndex:indexPath.row];
@@ -94,6 +95,8 @@ CVExerciseCell *addExerciseCell;
         else {
             addExerciseCell.imageView.image = [UIImage imageWithData:data];
             addExerciseCell.nameLabel.text = [exercise objectForKey:@"name"];
+            addExerciseCell.backgroundColor = [Color flatCloudsColor];
+            addExerciseCell.imageView.backgroundColor = [Color flatCloudsColor];
         }
     }];
 
@@ -105,7 +108,7 @@ CVExerciseCell *addExerciseCell;
 #pragma mark <UICollectionViewDelegate>
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-
+    CVExerciseCell *addExerciseCell = (CVExerciseCell *)[collectionView cellForItemAtIndexPath:indexPath];
     PFUser *user = [PFUser currentUser];
     Exercise *seletedExercise = self.exercisesArray[indexPath.item];
     PFRelation *userExerciseRelation = [user relationForKey:@"exercise"];
@@ -113,10 +116,14 @@ CVExerciseCell *addExerciseCell;
     if ([seletedExercise.isUserExercise boolValue] == true) {
         seletedExercise.isUserExercise = [NSNumber numberWithBool:false];
         [userExerciseRelation removeObject:seletedExercise];
+        addExerciseCell.imageView.backgroundColor = [UIColor whiteColor];
+        addExerciseCell.backgroundColor = [UIColor whiteColor];
     }
     else if ([seletedExercise.isUserExercise boolValue] == false) {
         seletedExercise.isUserExercise = [NSNumber numberWithBool:true];
         [userExerciseRelation addObject:seletedExercise];
+        addExerciseCell.imageView.backgroundColor = [Color chartreuse];
+        addExerciseCell.backgroundColor = [Color chartreuse];
     }
 
     [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
@@ -125,6 +132,14 @@ CVExerciseCell *addExerciseCell;
         }
     }];
 
+}
+
+
+
+#pragma mark - IBActions
+
+- (IBAction)onDoneButtonTapped:(UIBarButtonItem *)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
