@@ -17,8 +17,6 @@
 //Outlets
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextFieldOutlet;
-@property (weak, nonatomic) IBOutlet UIImageView *usernameIconImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *passwordIconImageView;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 
 // Properties
@@ -32,9 +30,8 @@
     [super viewDidLoad];
 
 // Delegates set in storyboard
- 
-    
-    
+  self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    [self.loginButton setBackgroundImage:[UIImage imageNamed:@"Login button"] forState:UIControlStateNormal];
 }
 
 -(void)userlogin {

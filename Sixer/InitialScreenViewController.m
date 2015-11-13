@@ -24,7 +24,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.currentUser = [PFUser currentUser];
     
 }
 
@@ -33,7 +32,8 @@
 }
 
 - (void)checkCurrentUser {
-    
+    self.currentUser = [PFUser currentUser];
+
     if (self.currentUser) {
         [self performSegueWithIdentifier:@"MainSegue"sender:nil];
     } else {

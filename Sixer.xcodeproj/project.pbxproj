@@ -31,8 +31,8 @@
 		236ADD4F1BED064A00F6FD62 /* Week.m in Sources */ = {isa = PBXBuildFile; fileRef = 236ADD4E1BED064A00F6FD62 /* Week.m */; };
 		236ADD561BED92FE00F6FD62 /* CVExerciseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 236ADD551BED92FE00F6FD62 /* CVExerciseCell.m */; };
 		2383085F1BEBEC62004DA4EC /* AddExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2383085E1BEBEC62004DA4EC /* AddExerciseViewController.m */; };
-		23A6E8431BF3E01100F6E85E /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6E8421BF3E01100F6E85E /* Activity.m */; settings = {ASSET_TAGS = (); }; };
-		23A6E8451BF4229B00F6E85E /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A6E8441BF4229B00F6E85E /* ParseUI.framework */; settings = {ASSET_TAGS = (); }; };
+		23A6E8431BF3E01100F6E85E /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6E8421BF3E01100F6E85E /* Activity.m */; };
+		23A6E8451BF4229B00F6E85E /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A6E8441BF4229B00F6E85E /* ParseUI.framework */; };
 		23AB1EEE1BEEE04100B1BDE5 /* CVExerciseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 236ADD551BED92FE00F6FD62 /* CVExerciseCell.m */; };
 		783F96DC1BEC1EC100CEA7FA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783F96DB1BEC1EC100CEA7FA /* AudioToolbox.framework */; };
 		783F96DE1BEC1ECC00CEA7FA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783F96DD1BEC1ECC00CEA7FA /* CFNetwork.framework */; };
@@ -239,7 +239,6 @@
 		23055F821BF26B1300D170F5 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				CD0A9B2B1BED221300B6817D /* InitialScreenViewController.m */,
 				23055F8B1BF280A000D170F5 /* index 0 Controller */,
 				23055F8C1BF280AE00D170F5 /* index 1 Controller */,
 				23055F8D1BF280BA00D170F5 /* index 2 Controller */,
@@ -477,6 +476,7 @@
 			isa = PBXGroup;
 			children = (
 				CD0A9B2A1BED221300B6817D /* InitialScreenViewController.h */,
+				CD0A9B2B1BED221300B6817D /* InitialScreenViewController.m */,
 				CD0A9B2D1BED222000B6817D /* LoginViewController.h */,
 				CD0A9B2E1BED222000B6817D /* LoginViewController.m */,
 				CD0A9B301BED223300B6817D /* RegistrationViewController.h */,

@@ -16,10 +16,7 @@
 
 // Outlets
 @property (weak, nonatomic) IBOutlet UIImageView *userProfileImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *usernameIconImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *EmailIconImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *passwordIconImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *confirmPasswordIconImageView;
+
 @property (weak, nonatomic) IBOutlet UIButton *signupButton;
 
 // Properties
@@ -32,20 +29,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UIImage *titleImage = [UIImage imageNamed:@"Get Active!"];
+    self.navigationItem.titleView = [[UIImageView alloc]initWithImage:titleImage];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:194.0/255.0 green:222.0/255.0 blue:17.0/255.0 alpha:1.0f];
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    
+    
     // Set the textfield delegates
     self.usernameTextField.delegate = self;
     self.emailTextField.delegate = self;
     self.passwordTextField.delegate = self;
     self.confirmPasswordTextField.delegate = self;
-    self.userProfileImageView.image = [UIImage imageNamed:@"SelectPicture1"];
+    self.userProfileImageView.image = [UIImage imageNamed:@"AddPhotoImage"];
     
     [self.signupButton setBackgroundImage:[UIImage imageNamed:@"SignupButton"] forState:UIControlStateNormal];
     
-    self.usernameIconImageView.image = [UIImage imageNamed:@"User11"];
     
-    self.EmailIconImageView.image = [UIImage imageNamed:@"Email2"];
-    self.passwordIconImageView.image = [UIImage imageNamed:@"lock12"];
-    self.confirmPasswordIconImageView.image = [UIImage imageNamed:@"lock12"];
 }
 - (IBAction)onSelectProfilePictureButtonTapped:(UIButton *)sender {
     
@@ -155,30 +154,29 @@
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Alert" message:userMessage preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction *okayButton = [UIAlertAction actionWithTitle:@"Okay"
                                                                  style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-                                                                     if(succeeded){
-                                                                         // Dismiss Controller if signup was successful
-                                                                         [self dismissViewControllerAnimated:YES completion:nil];
-                                                                     }
-                                                                     [alert addAction:okayButton];
-                                                                     [self presentViewController:alert
-                                                                                        animated:YES
-                                                                                      completion:nil];
+                                                                     // Dismiss Controller if signup was successful
+                                                                     [self dismissViewControllerAnimated:YES completion:nil];
+                                                                     //                                                                     [self presentViewController:alert
+                                                                     //                                                                                        animated:YES
+                                                                     //                                                                                      completion:nil];
                                                                      
                                                                  }];
+            [alert addAction:okayButton];
+            [self presentViewController:alert animated:true completion:nil];
             
         }];
         
         
-         }
-         
-         }
-         
+    }
+    
+}
+
 - (IBAction)onAlreadyAUserButtonTapped:(UIButton *)sender {
-         }
+}
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
     
     [textField resignFirstResponder];
     return NO;
 }
-         @end
+@end
