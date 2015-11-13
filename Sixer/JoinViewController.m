@@ -7,6 +7,7 @@
 //
 
 #import "JoinViewController.h"
+#import "Color.h"
 
 @interface JoinViewController () 
 
@@ -49,6 +50,9 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    
+    self.quitGameButton.backgroundColor = [Color flatPeterRiverColor];
+    self.quitGameButton.titleLabel.textColor = [Color flatCloudsColor];
     
     if (_matchmakingClient == nil) {
         _quitReason = QuitReasonConnectionDropped;

@@ -7,13 +7,14 @@
 //
 
 #import "HostViewController.h"
+#import "Color.h"
 
 @interface HostViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *yourNameLabel;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UILabel *waitingForPlayersLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UIButton *QuitGameButton;
+@property (weak, nonatomic) IBOutlet UIButton *quitGameButton;
 @property (weak, nonatomic) IBOutlet UIButton *startGameButton;
 @property NSMutableArray *otherPlayersArray;
 
@@ -32,7 +33,7 @@
 @synthesize startGameButton = _startGameButton;
 
 //not sure if the following are needed
-@synthesize QuitGameButton = _QuitGameButton;
+@synthesize quitGameButton = _quitGameButton;
 @synthesize otherPlayersArray = _otherPlayersArray;
 
 
@@ -46,6 +47,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.quitGameButton.backgroundColor = [Color flatPeterRiverColor];
+    self.quitGameButton.titleLabel.textColor = [Color flatCloudsColor];
+    
+    self.startGameButton.backgroundColor = [Color flatCarrotColor];
+    self.startGameButton.titleLabel.textColor = [Color flatCloudsColor];
     
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self.nameTextField action:@selector(resignFirstResponder)];
     gestureRecognizer.cancelsTouchesInView = NO;
