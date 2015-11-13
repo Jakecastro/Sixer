@@ -253,14 +253,14 @@
                                         <exclude reference="ZHN-Nw-y5r"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <exclude reference="6lr-4E-aao"/>
-                                        <exclude reference="B2E-Go-yje"/>
-                                        <exclude reference="CB7-2A-8s7"/>
                                         <exclude reference="Eig-B2-0uL"/>
                                         <exclude reference="Ikj-95-kJj"/>
                                         <exclude reference="L7W-WP-2SM"/>
                                         <exclude reference="M8u-1E-n3n"/>
                                         <exclude reference="ih6-vq-bnl"/>
+                                        <exclude reference="6lr-4E-aao"/>
+                                        <exclude reference="B2E-Go-yje"/>
+                                        <exclude reference="CB7-2A-8s7"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
@@ -269,14 +269,14 @@
                                         <include reference="ZHN-Nw-y5r"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <include reference="6lr-4E-aao"/>
-                                        <include reference="B2E-Go-yje"/>
-                                        <include reference="CB7-2A-8s7"/>
                                         <include reference="Eig-B2-0uL"/>
                                         <include reference="Ikj-95-kJj"/>
                                         <include reference="L7W-WP-2SM"/>
                                         <include reference="M8u-1E-n3n"/>
                                         <include reference="ih6-vq-bnl"/>
+                                        <include reference="6lr-4E-aao"/>
+                                        <include reference="B2E-Go-yje"/>
+                                        <include reference="CB7-2A-8s7"/>
                                     </mask>
                                 </variation>
                             </view>
