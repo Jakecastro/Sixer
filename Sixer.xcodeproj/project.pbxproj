@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		23055F801BF263AE00D170F5 /* Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 23055F7F1BF263AE00D170F5 /* Color.m */; settings = {ASSET_TAGS = (); }; };
-		23055F921BF32F7B00D170F5 /* TimerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23055F911BF32F7B00D170F5 /* TimerController.m */; settings = {ASSET_TAGS = (); }; };
+		23055F801BF263AE00D170F5 /* Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 23055F7F1BF263AE00D170F5 /* Color.m */; };
+		23055F921BF32F7B00D170F5 /* TimerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23055F911BF32F7B00D170F5 /* TimerController.m */; };
 		2347DE6E1BEC3A3F00013FFC /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 2347DE6D1BEC3A3F00013FFC /* Group.m */; };
 		2347DE711BEC3D2700013FFC /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 2347DE701BEC3D2700013FFC /* User.m */; };
 		2347DE741BEC3EBC00013FFC /* Exercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 2347DE731BEC3EBC00013FFC /* Exercise.m */; };
@@ -31,15 +31,15 @@
 		236ADD4F1BED064A00F6FD62 /* Week.m in Sources */ = {isa = PBXBuildFile; fileRef = 236ADD4E1BED064A00F6FD62 /* Week.m */; };
 		236ADD561BED92FE00F6FD62 /* CVExerciseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 236ADD551BED92FE00F6FD62 /* CVExerciseCell.m */; };
 		2383085F1BEBEC62004DA4EC /* AddExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2383085E1BEBEC62004DA4EC /* AddExerciseViewController.m */; };
-		23A6E8431BF3E01100F6E85E /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6E8421BF3E01100F6E85E /* Activity.m */; settings = {ASSET_TAGS = (); }; };
-		23A6E8451BF4229B00F6E85E /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A6E8441BF4229B00F6E85E /* ParseUI.framework */; settings = {ASSET_TAGS = (); }; };
+		23A6E8431BF3E01100F6E85E /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6E8421BF3E01100F6E85E /* Activity.m */; };
+		23A6E8451BF4229B00F6E85E /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A6E8441BF4229B00F6E85E /* ParseUI.framework */; };
 		23A6E8481BF506CD00F6E85E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A6E8471BF506CD00F6E85E /* AVFoundation.framework */; };
-		23A6E84B1BF5094800F6E85E /* MultiplayerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6E84A1BF5094800F6E85E /* MultiplayerButton.m */; settings = {ASSET_TAGS = (); }; };
-		23A6E8501BF510B600F6E85E /* HostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6E84F1BF510B600F6E85E /* HostViewController.m */; settings = {ASSET_TAGS = (); }; };
-		23A6E8531BF510BF00F6E85E /* JoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6E8521BF510BF00F6E85E /* JoinViewController.m */; settings = {ASSET_TAGS = (); }; };
+		23A6E84B1BF5094800F6E85E /* MultiplayerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6E84A1BF5094800F6E85E /* MultiplayerButton.m */; };
+		23A6E8501BF510B600F6E85E /* HostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6E84F1BF510B600F6E85E /* HostViewController.m */; };
+		23A6E8531BF510BF00F6E85E /* JoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6E8521BF510BF00F6E85E /* JoinViewController.m */; };
 		23A6E8551BF51D4900F6E85E /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A6E8541BF51D4900F6E85E /* GameKit.framework */; };
-		23A6E8591BF51F9A00F6E85E /* MatchmakingServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6E8581BF51F9A00F6E85E /* MatchmakingServer.m */; settings = {ASSET_TAGS = (); }; };
-		23A6E85C1BF5379F00F6E85E /* MatchmakingClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6E85B1BF5379F00F6E85E /* MatchmakingClient.m */; settings = {ASSET_TAGS = (); }; };
+		23A6E8591BF51F9A00F6E85E /* MatchmakingServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6E8581BF51F9A00F6E85E /* MatchmakingServer.m */; };
+		23A6E85C1BF5379F00F6E85E /* MatchmakingClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6E85B1BF5379F00F6E85E /* MatchmakingClient.m */; };
 		23AB1EEE1BEEE04100B1BDE5 /* CVExerciseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 236ADD551BED92FE00F6FD62 /* CVExerciseCell.m */; };
 		783F96DC1BEC1EC100CEA7FA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783F96DB1BEC1EC100CEA7FA /* AudioToolbox.framework */; };
 		783F96DE1BEC1ECC00CEA7FA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783F96DD1BEC1ECC00CEA7FA /* CFNetwork.framework */; };
@@ -644,7 +644,7 @@
 				TargetAttributes = {
 					235B6E0A1BEBD25600557D3F = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = NK26JGQ93M;
+						DevelopmentTeam = 3XFZ6KBVD6;
 					};
 					235B6E261BEBD25600557D3F = {
 						CreatedOnToolsVersion = 7.0;

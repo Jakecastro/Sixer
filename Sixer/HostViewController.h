@@ -9,7 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "MatchmakingServer.h"
 
+@class HostViewController;
 
-@interface HostViewController : UIViewController
+@protocol HostViewControllerDelegate <NSObject>
+
+- (void)hostViewControllerDidCancel:(HostViewController *)controller;
+- (void)hostViewController:(HostViewController *)controller didEndSessionWithReason:(QuitReason)reason;
+
+@end
+
+@interface HostViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, MatchmakingServerDelegate>
+
+@property (nonatomic, weak) id <HostViewControllerDelegate> delegate;
 
 @end

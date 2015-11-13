@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HostViewController.h"
+#import "JoinViewController.h"
 
 @interface TimerController : UIViewController
 
