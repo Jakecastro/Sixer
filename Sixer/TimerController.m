@@ -7,6 +7,7 @@
 //
 
 #import "TimerController.h"
+#import "Game.h"
 #import "Color.h"
 
 @interface TimerController ()
@@ -17,21 +18,21 @@
 
 @end
 
-@implementation TimerController
+@implementation TimerController {
+    BOOL _performAnimations;
+}
 
 - (void)viewDidLoad {
     [self.view setBackgroundColor:[Color flatWetAsphalt]];
 }
 
 #pragma mark - HostViewControllerDelegate
-
 - (void)hostViewControllerDidCancel:(HostViewController *)controller {
     [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 - (void)hostViewController:(HostViewController *)controller didEndSessionWithReason:(QuitReason)reason {
-    if (reason == QuitReasonNoNetwork)
-    {
+    if (reason == QuitReasonNoNetwork) {
         [self showNoNetworkAlert];
     }
 }
@@ -43,7 +44,6 @@
 
 - (void)joinViewController:(JoinViewController *)controller didDisconnectWithReason:(QuitReason)reason {
     if (reason == QuitReasonConnectionDropped) {
-        
         [self dismissViewControllerAnimated:NO completion:^ {
              [self showDisconnectedAlert];
          }];
@@ -52,27 +52,88 @@
 
 
 - (void)showDisconnectedAlert {
-    UIAlertView *alertView = [[UIAlertView alloc]
-                              initWithTitle:NSLocalizedString(@"Disconnected", @"Client disconnected alert title")
-                              message:NSLocalizedString(@"You were disconnected from the game.", @"Client disconnected alert message")
-                              delegate:nil
-                              cancelButtonTitle:NSLocalizedString(@"OK", @"Button: OK")
-                              otherButtonTitles:nil];
     
-    [alertView show];
+    UIAlertController *alertDisconnected = [UIAlertController alertControllerWithTitle:@"Disconnected"
+                                                                   message:@"You were disconnected from the game"
+                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    
+    UIAlertAction *okDisconnected = [UIAlertAction actionWithTitle:@"OK"
+                                                 style:UIAlertActionStyleDefault
+                                               handler:^(UIAlertAction * _Nonnull action) {
+    }];
+    
+    
+    [alertDisconnected addAction:okDisconnected];
+    [self presentViewController:alertDisconnected
+                       animated:YES
+                     completion:nil];
+
 }
 
 - (void)showNoNetworkAlert {
-    UIAlertView *alertView = [[UIAlertView alloc]
-                              initWithTitle:NSLocalizedString(@"No Network", @"No network alert title")
-                              message:NSLocalizedString(@"To use multiplayer, please enable Bluetooth or Wi-Fi in your device's Settings.", @"No network alert message")
-                              delegate:nil
-                              cancelButtonTitle:NSLocalizedString(@"OK", @"Button: OK")
-                              otherButtonTitles:nil];
     
-    [alertView show];
+    UIAlertController *alertNoNetwork = [UIAlertController alertControllerWithTitle:@"No Network"
+                                                                   message:@"please enable Bluetooth or Wi-Fi in your device's Settings"
+                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    
+    UIAlertAction *okNoNetwork = [UIAlertAction actionWithTitle:@"OK"
+                                                 style:UIAlertActionStyleDefault
+                                               handler:^(UIAlertAction * _Nonnull action) {
+                                               }];
+    
+    
+    [alertNoNetwork addAction:okNoNetwork];
+    [self presentViewController:alertNoNetwork
+                       animated:YES
+                     completion:nil];
 }
 
+- (void)joinViewController:(JoinViewController *)controller startGameWithSession:(GKSession *)session playerName:(NSString *)name server:(NSString *)peerID {
+    _performAnimations = NO;
+//    
+//    [self dismissViewControllerAnimated:NO completion:^ {
+//         _performAnimations = YES;
+    
+         [self startGameWithBlock:^(Game *game) {
+              [game startClientGameWithSession:session playerName:name server:peerID];
+          }];
+//     }];
+}
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
+        _performAnimations = NO;
+    }
+    return self;
+}
+
+- (void)startGameWithBlock:(void (^)(Game *))block
+{
+    MultiplayerViewController *multiplayerViewController = [[MultiplayerViewController alloc] initWithNibName:@"MultiplayerViewController" bundle:nil];
+    multiplayerViewController.delegate = self;
+    
+    [self presentViewController:multiplayerViewController animated:NO completion:^
+     {
+         Game *game = [[Game alloc] init];
+         multiplayerViewController.game = game;
+         game.delegate = multiplayerViewController;
+         block(game);
+     }];
+}
+
+#pragma mark - MultiplayerViewControllerDelegate
+
+- (void)multiplayerViewController:(MultiplayerViewController *)controller didQuitWithReason:(QuitReason)reason {
+    [self dismissViewControllerAnimated:NO completion:^
+     {
+         if (reason == QuitReasonConnectionDropped)
+         {
+             [self showDisconnectedAlert];
+         }
+     }];
+}
 
 - (IBAction)onHostButtonTapped:(UIButton *)sender {
 }

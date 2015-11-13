@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "HostViewController.h"
 #import "JoinViewController.h"
+#import "MultiplayerViewController.h"
 
-@interface TimerController : UIViewController
 
+@interface TimerController : UIViewController <HostViewControllerDelegate, JoinViewControllerDelegate, MultiplayerViewControllerDelegate>
 @end
