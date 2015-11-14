@@ -159,7 +159,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-826" y="366"/>
+            <point key="canvasLocation" x="-712.5" y="366"/>
         </scene>
         <!--Exercise View Controller-->
         <scene sceneID="wg7-f3-ORb">
@@ -211,8 +211,7 @@
                                         <state key="normal" title="choose a team">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <variation key="widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="95" y="44" width="211" height="28"/>
+                                        <variation key="widthClass=compact">
                                             <mask key="constraints">
                                                 <exclude reference="BcJ-wd-rIZ"/>
                                             </mask>
@@ -417,13 +416,8 @@
                                 <exclude reference="VlE-dZ-xF3"/>
                                 <exclude reference="sG3-f2-AHf"/>
                                 <exclude reference="v36-9g-HBZ"/>
-                                <exclude reference="7Ug-eT-J8a"/>
-                                <exclude reference="YDq-Tc-feQ"/>
-                                <exclude reference="fWp-7P-Xuh"/>
-                                <exclude reference="LFP-he-gDq"/>
                                 <exclude reference="Sxc-qd-pru"/>
                                 <exclude reference="p97-GC-WQh"/>
-                                <exclude reference="pRD-k8-B9R"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -435,19 +429,8 @@
                                 <include reference="VlE-dZ-xF3"/>
                                 <include reference="sG3-f2-AHf"/>
                                 <include reference="v36-9g-HBZ"/>
-                                <exclude reference="5Ml-Wx-UeT"/>
-                                <include reference="7Ug-eT-J8a"/>
-                                <include reference="YDq-Tc-feQ"/>
-                                <exclude reference="fGa-PZ-0LY"/>
-                                <include reference="fWp-7P-Xuh"/>
-                                <exclude reference="sfc-KW-mz0"/>
-                                <include reference="LFP-he-gDq"/>
                                 <include reference="Sxc-qd-pru"/>
-                                <exclude reference="Uig-Qg-tTU"/>
-                                <exclude reference="ekn-os-cC8"/>
-                                <exclude reference="oOB-3c-6jb"/>
                                 <include reference="p97-GC-WQh"/>
-                                <include reference="pRD-k8-B9R"/>
                             </mask>
                         </variation>
                     </view>
@@ -1310,7 +1293,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I0N-m7-Xjf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="efd-F0-jj5"/>
             </objects>
-            <point key="canvasLocation" x="-1662" y="1798"/>
+            <point key="canvasLocation" x="-2553" y="1885"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -1331,7 +1314,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2552" y="1076"/>
+            <point key="canvasLocation" x="-3045" y="1006"/>
         </scene>
         <!--Stopwatch Controller-->
         <scene sceneID="QUD-zJ-D2u">
@@ -1696,46 +1679,6 @@
                                 <state key="normal" title="Quit">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="1p9-Jb-fen"/>
-                                        <exclude reference="5gO-5W-OhV"/>
-                                        <exclude reference="BcY-5K-gGA"/>
-                                        <exclude reference="Fdz-zc-ebK"/>
-                                        <exclude reference="nHO-4a-6kO"/>
-                                        <exclude reference="FFO-sb-v1I"/>
-                                        <exclude reference="mma-i0-PyQ"/>
-                                        <exclude reference="q5z-uq-xAo"/>
-                                        <exclude reference="4tQ-bU-8ZF"/>
-                                        <exclude reference="gy8-OV-Auo"/>
-                                        <exclude reference="5Pv-S6-0nb"/>
-                                        <exclude reference="GtA-Yh-Vg9"/>
-                                        <exclude reference="m7v-69-0W9"/>
-                                        <exclude reference="TXO-db-RvI"/>
-                                        <exclude reference="jQt-TD-Kwk"/>
-                                        <exclude reference="wve-cJ-54L"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="1p9-Jb-fen"/>
-                                        <include reference="5gO-5W-OhV"/>
-                                        <include reference="BcY-5K-gGA"/>
-                                        <include reference="Fdz-zc-ebK"/>
-                                        <include reference="nHO-4a-6kO"/>
-                                        <include reference="FFO-sb-v1I"/>
-                                        <include reference="mma-i0-PyQ"/>
-                                        <include reference="q5z-uq-xAo"/>
-                                        <include reference="4tQ-bU-8ZF"/>
-                                        <include reference="gy8-OV-Auo"/>
-                                        <include reference="5Pv-S6-0nb"/>
-                                        <include reference="GtA-Yh-Vg9"/>
-                                        <include reference="m7v-69-0W9"/>
-                                        <include reference="TXO-db-RvI"/>
-                                        <include reference="jQt-TD-Kwk"/>
-                                        <include reference="wve-cJ-54L"/>
-                                    </mask>
-                                </variation>
                                 <connections>
                                     <segue destination="49e-Tb-3d3" kind="showDetail" identifier="QuitGame" id="fKZ-Df-WOf"/>
                                 </connections>
@@ -1761,6 +1704,8 @@
                                 <exclude reference="NJ2-Ea-pxv"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="xVY-Ht-3Ia"/>
+                                <exclude reference="TWF-tA-KEU"/>
                                 <exclude reference="4h1-dA-uhC"/>
                                 <exclude reference="Eev-tt-9Aa"/>
                                 <exclude reference="KYo-jL-R02"/>
@@ -1768,8 +1713,6 @@
                                 <exclude reference="8Y7-38-cRD"/>
                                 <exclude reference="nvy-dC-I0E"/>
                                 <exclude reference="odY-L3-sG6"/>
-                                <exclude reference="TWF-tA-KEU"/>
-                                <exclude reference="xVY-Ht-3Ia"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -1779,6 +1722,8 @@
                                 <include reference="NJ2-Ea-pxv"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="xVY-Ht-3Ia"/>
+                                <include reference="TWF-tA-KEU"/>
                                 <include reference="4h1-dA-uhC"/>
                                 <include reference="Eev-tt-9Aa"/>
                                 <include reference="KYo-jL-R02"/>
@@ -1786,8 +1731,6 @@
                                 <include reference="8Y7-38-cRD"/>
                                 <include reference="nvy-dC-I0E"/>
                                 <include reference="odY-L3-sG6"/>
-                                <include reference="TWF-tA-KEU"/>
-                                <include reference="xVY-Ht-3Ia"/>
                             </mask>
                         </variation>
                     </view>
@@ -2079,24 +2022,6 @@
                                 <exclude reference="1Hm-xY-L4t"/>
                                 <exclude reference="z07-DC-25m"/>
                             </mask>
-                            <mask key="constraints">
-                                <exclude reference="4iG-xe-gGU"/>
-                                <exclude reference="94c-A7-uOi"/>
-                                <exclude reference="7ne-Wf-au1"/>
-                                <exclude reference="L6P-2n-LMi"/>
-                                <exclude reference="ONd-VZ-lNA"/>
-                                <exclude reference="UlS-dn-Eht"/>
-                                <exclude reference="80N-py-Vba"/>
-                                <exclude reference="O6A-6V-WN1"/>
-                                <exclude reference="VTX-4b-1Tm"/>
-                                <exclude reference="6Lp-zD-WDk"/>
-                                <exclude reference="Ok1-qj-iAN"/>
-                                <exclude reference="bkq-vs-p9m"/>
-                                <exclude reference="ywN-pA-NEH"/>
-                                <exclude reference="EnH-vr-968"/>
-                                <exclude reference="TVA-fN-prS"/>
-                                <exclude reference="gZA-i9-Qkz"/>
-                            </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
@@ -2177,7 +2102,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rXX-08-Ndf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2796" y="-1087"/>
+            <point key="canvasLocation" x="2232" y="-1087"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="Y8D-Hl-nxj">
