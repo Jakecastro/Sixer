@@ -10,6 +10,7 @@
 #import "LoginViewController.h"
 #import <Parse/Parse.h>
 #import "ExerciseViewController.h"
+#import "RegistrationViewController.h"
 
 // Delegates
 @interface LoginViewController () <UITextFieldDelegate>
@@ -33,6 +34,7 @@
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     [self.loginButton setBackgroundImage:[UIImage imageNamed:@"Login button"]
                                 forState:UIControlStateNormal];
+    
 }
 
 -(void)userlogin {
@@ -79,6 +81,8 @@
     
     [self userlogin];
     [self dismissViewControllerAnimated:YES completion:nil];
+    RegistrationViewController *registrationVC = [RegistrationViewController new];
+    [registrationVC dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {

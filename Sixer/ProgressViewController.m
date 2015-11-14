@@ -60,6 +60,9 @@
     }
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [self retrieveUsernameAndPhoto];
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
 // Setting the number of rows to the number of indexes in the array
@@ -69,9 +72,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ProgressCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ProgressCell"];
     PFObject *userScore = [self.progressArray objectAtIndex:indexPath.row];
-//    NSString *date = @"jumping jacks";
-//    cell.exerciseNameLabel.text = date;
-//    cell.timeLabel.text = [NSString stringWithFormat:@"%@",userScore[@"score"]];
+    NSString *date = @"jumping jacks";
+    cell.exerciseNameLabel.text = date;
+    cell.timeLabel.text = [NSString stringWithFormat:@"%@",userScore[@"score"]];
 
     
 //
@@ -110,6 +113,20 @@
     self.usernameLabel.text = self.currentUser.username;
     
     
+}
+- (IBAction)onLogOutButtonTapped:(UIBarButtonItem *)sender {
+    
+    
+    // Log user out
+    [PFUser logOut];
+    
+    // Present Login Screen
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"RegistrationAndLogin" bundle:nil];
+    UIViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"LoginScreen"];
+    [self presentViewController:loginVC animated:YES completion:nil];
+    
+    
+
 }
 
 

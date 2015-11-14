@@ -157,9 +157,6 @@
                                                                      // Dismiss Controller if signup was successful
                                                                      [self dismissViewControllerAnimated:YES completion:nil];
 //                                                                     [[[self presentingViewController]  presentingViewController] dismissViewControllerAnimated:true completion:nil];
-                                                                     //                                                                     [self presentViewController:alert
-                                                                     //                                                                                        animated:YES
-                                                                     //                                                                                      completion:nil];
                                                                      
                                                                  }];
             [alert addAction:okayButton];
