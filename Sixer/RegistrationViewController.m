@@ -155,8 +155,8 @@
             UIAlertAction *okayButton = [UIAlertAction actionWithTitle:@"Okay"
                                                                  style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
                                                                      // Dismiss Controller if signup was successful
-//                                                                     [self dismissViewControllerAnimated:YES completion:nil];
-                                                                     [[[self presentingViewController]  presentingViewController] dismissViewControllerAnimated:true completion:nil];
+                                                                     [self dismissViewControllerAnimated:YES completion:nil];
+//                                                                     [[[self presentingViewController]  presentingViewController] dismissViewControllerAnimated:true completion:nil];
                                                                      //                                                                     [self presentViewController:alert
                                                                      //                                                                                        animated:YES
                                                                      //                                                                                      completion:nil];
