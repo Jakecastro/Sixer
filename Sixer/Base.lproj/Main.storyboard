@@ -185,6 +185,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="WhiteSettings1" style="plain" id="K2b-Sl-k1w">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="fUd-dJ-M6N" kind="presentation" id="ROj-Rp-90d"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
