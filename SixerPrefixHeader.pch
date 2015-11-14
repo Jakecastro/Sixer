@@ -1,0 +1,33 @@
+//
+//  SixerPrefixHeader.pch
+//  Sixer
+//
+//  Created by Jake Castro on 11/12/15.
+//  Copyright © 2015 Jake Castro. All rights reserved.
+//
+
+#ifndef SixerPrefixHeader_pch
+#define SixerPrefixHeader_pch
+#import <GameKit/GameKit.h>
+
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* SixerPrefixHeader_pch */
+
+
+
+// The name of the GameKit session.
+#define SESSION_ID @"Snap!"
+
+typedef enum
+{
+    QuitReasonNoNetwork,          // no Wi-Fi or Bluetooth
+    QuitReasonConnectionDropped,  // communication failure with server
+    QuitReasonUserQuit,           // the user terminated the connection
+    QuitReasonServerQuit,         // the server quit the game (on purpose)
+}
+QuitReason;
+
+

@@ -29,8 +29,8 @@ CVExerciseCell *addExerciseCell;
     [super viewDidLoad];
     [self queryExercisesFromParse];
 
-    [self.view setBackgroundColor:[UIColor whiteColor]];
-    [self.collectionView setBackgroundColor:[UIColor whiteColor]];
+    [self.view setBackgroundColor:[Color whiteColor]];
+    [self.collectionView setBackgroundColor:[Color whiteColor]];
     
 }
 
@@ -116,8 +116,8 @@ CVExerciseCell *addExerciseCell;
     if ([seletedExercise.isUserExercise boolValue] == true) {
         seletedExercise.isUserExercise = [NSNumber numberWithBool:false];
         [userExerciseRelation removeObject:seletedExercise];
-        addExerciseCell.imageView.backgroundColor = [UIColor whiteColor];
-        addExerciseCell.backgroundColor = [UIColor whiteColor];
+        addExerciseCell.imageView.backgroundColor = [Color whiteColor];
+        addExerciseCell.backgroundColor = [Color whiteColor];
     }
     else if ([seletedExercise.isUserExercise boolValue] == false) {
         seletedExercise.isUserExercise = [NSNumber numberWithBool:true];

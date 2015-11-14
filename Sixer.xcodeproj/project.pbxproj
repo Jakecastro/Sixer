@@ -12,6 +12,9 @@
 		2347DE6E1BEC3A3F00013FFC /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 2347DE6D1BEC3A3F00013FFC /* Group.m */; };
 		2347DE711BEC3D2700013FFC /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 2347DE701BEC3D2700013FFC /* User.m */; };
 		2347DE741BEC3EBC00013FFC /* Exercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 2347DE731BEC3EBC00013FFC /* Exercise.m */; };
+		235007941BF65509009FDFE2 /* MultiplayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235007921BF65509009FDFE2 /* MultiplayerViewController.m */; };
+		235007951BF65509009FDFE2 /* MultiplayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 235007931BF65509009FDFE2 /* MultiplayerViewController.xib */; };
+		2350079B1BF657C9009FDFE2 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 2350079A1BF657C9009FDFE2 /* Game.m */; };
 		235B6E101BEBD25600557D3F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E0F1BEBD25600557D3F /* main.m */; };
 		235B6E131BEBD25600557D3F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E121BEBD25600557D3F /* AppDelegate.m */; };
 		235B6E161BEBD25600557D3F /* ProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E151BEBD25600557D3F /* ProgressViewController.m */; };
@@ -33,6 +36,13 @@
 		2383085F1BEBEC62004DA4EC /* AddExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2383085E1BEBEC62004DA4EC /* AddExerciseViewController.m */; };
 		23A6E8431BF3E01100F6E85E /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6E8421BF3E01100F6E85E /* Activity.m */; };
 		23A6E8451BF4229B00F6E85E /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A6E8441BF4229B00F6E85E /* ParseUI.framework */; };
+		23A6E8481BF506CD00F6E85E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A6E8471BF506CD00F6E85E /* AVFoundation.framework */; };
+		23A6E84B1BF5094800F6E85E /* MultiplayerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6E84A1BF5094800F6E85E /* MultiplayerButton.m */; };
+		23A6E8501BF510B600F6E85E /* HostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6E84F1BF510B600F6E85E /* HostViewController.m */; };
+		23A6E8531BF510BF00F6E85E /* JoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6E8521BF510BF00F6E85E /* JoinViewController.m */; };
+		23A6E8551BF51D4900F6E85E /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A6E8541BF51D4900F6E85E /* GameKit.framework */; };
+		23A6E8591BF51F9A00F6E85E /* MatchmakingServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6E8581BF51F9A00F6E85E /* MatchmakingServer.m */; };
+		23A6E85C1BF5379F00F6E85E /* MatchmakingClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6E85B1BF5379F00F6E85E /* MatchmakingClient.m */; };
 		23AB1EEE1BEEE04100B1BDE5 /* CVExerciseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 236ADD551BED92FE00F6FD62 /* CVExerciseCell.m */; };
 		783F96DC1BEC1EC100CEA7FA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783F96DB1BEC1EC100CEA7FA /* AudioToolbox.framework */; };
 		783F96DE1BEC1ECC00CEA7FA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783F96DD1BEC1ECC00CEA7FA /* CFNetwork.framework */; };
@@ -90,6 +100,11 @@
 		2347DE701BEC3D2700013FFC /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		2347DE721BEC3EBC00013FFC /* Exercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exercise.h; sourceTree = "<group>"; };
 		2347DE731BEC3EBC00013FFC /* Exercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exercise.m; sourceTree = "<group>"; };
+		235007911BF65509009FDFE2 /* MultiplayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiplayerViewController.h; sourceTree = "<group>"; };
+		235007921BF65509009FDFE2 /* MultiplayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiplayerViewController.m; sourceTree = "<group>"; };
+		235007931BF65509009FDFE2 /* MultiplayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MultiplayerViewController.xib; sourceTree = "<group>"; };
+		235007991BF657C9009FDFE2 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		2350079A1BF657C9009FDFE2 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		235B6E0B1BEBD25600557D3F /* Sixer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sixer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		235B6E0F1BEBD25600557D3F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		235B6E111BEBD25600557D3F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -133,6 +148,19 @@
 		23A6E8411BF3E01100F6E85E /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Activity.h; path = ../Activity.h; sourceTree = "<group>"; };
 		23A6E8421BF3E01100F6E85E /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Activity.m; path = ../Activity.m; sourceTree = "<group>"; };
 		23A6E8441BF4229B00F6E85E /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		23A6E8471BF506CD00F6E85E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		23A6E8491BF5094800F6E85E /* MultiplayerButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiplayerButton.h; sourceTree = "<group>"; };
+		23A6E84A1BF5094800F6E85E /* MultiplayerButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiplayerButton.m; sourceTree = "<group>"; };
+		23A6E84E1BF510B600F6E85E /* HostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostViewController.h; sourceTree = "<group>"; };
+		23A6E84F1BF510B600F6E85E /* HostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostViewController.m; sourceTree = "<group>"; };
+		23A6E8511BF510BF00F6E85E /* JoinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoinViewController.h; sourceTree = "<group>"; };
+		23A6E8521BF510BF00F6E85E /* JoinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoinViewController.m; sourceTree = "<group>"; };
+		23A6E8541BF51D4900F6E85E /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		23A6E8561BF51E4300F6E85E /* SixerPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SixerPrefixHeader.pch; sourceTree = SOURCE_ROOT; };
+		23A6E8571BF51F9A00F6E85E /* MatchmakingServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchmakingServer.h; sourceTree = "<group>"; };
+		23A6E8581BF51F9A00F6E85E /* MatchmakingServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchmakingServer.m; sourceTree = "<group>"; };
+		23A6E85A1BF5379F00F6E85E /* MatchmakingClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchmakingClient.h; sourceTree = "<group>"; };
+		23A6E85B1BF5379F00F6E85E /* MatchmakingClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchmakingClient.m; sourceTree = "<group>"; };
 		783F96DB1BEC1EC100CEA7FA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		783F96DD1BEC1ECC00CEA7FA /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		783F96DF1BEC1ED700CEA7FA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -174,6 +202,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23A6E8551BF51D4900F6E85E /* GameKit.framework in Frameworks */,
+				23A6E8481BF506CD00F6E85E /* AVFoundation.framework in Frameworks */,
 				783F96F21BEC21E500CEA7FA /* Social.framework in Frameworks */,
 				783F96F01BEC21DC00CEA7FA /* Accounts.framework in Frameworks */,
 				783F96EE1BEC1F6200CEA7FA /* libsqlite3.tbd in Frameworks */,
@@ -230,8 +260,8 @@
 		23055F811BF26AD500D170F5 /* UI Elements */ = {
 			isa = PBXGroup;
 			children = (
-				23055F7E1BF263AE00D170F5 /* Color.h */,
-				23055F7F1BF263AE00D170F5 /* Color.m */,
+				23A6E84C1BF5095300F6E85E /* Color Class */,
+				23A6E84D1BF5096100F6E85E /* Multiplayer Button */,
 			);
 			name = "UI Elements";
 			sourceTree = "<group>";
@@ -373,9 +403,51 @@
 			name = "Add Teams and Members";
 			sourceTree = "<group>";
 		};
+		235007961BF65526009FDFE2 /* Matchmaking Model */ = {
+			isa = PBXGroup;
+			children = (
+				23A6E85A1BF5379F00F6E85E /* MatchmakingClient.h */,
+				23A6E85B1BF5379F00F6E85E /* MatchmakingClient.m */,
+				23A6E8571BF51F9A00F6E85E /* MatchmakingServer.h */,
+				23A6E8581BF51F9A00F6E85E /* MatchmakingServer.m */,
+			);
+			name = "Matchmaking Model";
+			sourceTree = "<group>";
+		};
+		235007971BF6553E009FDFE2 /* Multiplayer Controller */ = {
+			isa = PBXGroup;
+			children = (
+				23A6E84E1BF510B600F6E85E /* HostViewController.h */,
+				23A6E84F1BF510B600F6E85E /* HostViewController.m */,
+				23A6E8511BF510BF00F6E85E /* JoinViewController.h */,
+				23A6E8521BF510BF00F6E85E /* JoinViewController.m */,
+				235007981BF6558D009FDFE2 /* Multiplayer Game Controller */,
+			);
+			name = "Multiplayer Controller";
+			sourceTree = "<group>";
+		};
+		235007981BF6558D009FDFE2 /* Multiplayer Game Controller */ = {
+			isa = PBXGroup;
+			children = (
+				235007911BF65509009FDFE2 /* MultiplayerViewController.h */,
+				235007921BF65509009FDFE2 /* MultiplayerViewController.m */,
+			);
+			name = "Multiplayer Game Controller";
+			sourceTree = "<group>";
+		};
+		2350079C1BF657CF009FDFE2 /* Game Model */ = {
+			isa = PBXGroup;
+			children = (
+				235007991BF657C9009FDFE2 /* Game.h */,
+				2350079A1BF657C9009FDFE2 /* Game.m */,
+			);
+			name = "Game Model";
+			sourceTree = "<group>";
+		};
 		235B6E021BEBD25600557D3F = {
 			isa = PBXGroup;
 			children = (
+				23A6E8541BF51D4900F6E85E /* GameKit.framework */,
 				235B6E0D1BEBD25600557D3F /* Sixer */,
 				235B6E2A1BEBD25600557D3F /* SixerTests */,
 				235B6E351BEBD25600557D3F /* SixerUITests */,
@@ -409,6 +481,7 @@
 			isa = PBXGroup;
 			children = (
 				235B6E1D1BEBD25600557D3F /* Assets.xcassets */,
+				23A6E8561BF51E4300F6E85E /* SixerPrefixHeader.pch */,
 				235B6E221BEBD25600557D3F /* Info.plist */,
 				235B6E111BEBD25600557D3F /* AppDelegate.h */,
 				235B6E121BEBD25600557D3F /* AppDelegate.m */,
@@ -438,6 +511,7 @@
 		235B6E471BEBD2F500557D3F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				235007971BF6553E009FDFE2 /* Multiplayer Controller */,
 				23A6E83C1BF3B48800F6E85E /* Login/Registration */,
 				23055F821BF26B1300D170F5 /* TabBar */,
 				23055F841BF27FE300D170F5 /* Profile */,
@@ -449,6 +523,7 @@
 		235B6E481BEBD30200557D3F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				235007931BF65509009FDFE2 /* MultiplayerViewController.xib */,
 				235B6E1F1BEBD25600557D3F /* LaunchScreen.storyboard */,
 				CD0A9B261BED218000B6817D /* Initial.storyboard */,
 				CD0A9B281BED219500B6817D /* RegistrationAndLogin.storyboard */,
@@ -460,11 +535,12 @@
 		235B6E491BEBD31000557D3F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				23A6E8411BF3E01100F6E85E /* Activity.h */,
-				23A6E8421BF3E01100F6E85E /* Activity.m */,
+				2350079C1BF657CF009FDFE2 /* Game Model */,
+				235007961BF65526009FDFE2 /* Matchmaking Model */,
 				23A6E83D1BF3B4C100F6E85E /* Settings */,
 				23055F7A1BF25F4500D170F5 /* Cells */,
 				23055F811BF26AD500D170F5 /* UI Elements */,
+				23A6E8461BF4FEA200F6E85E /* Activity Model */,
 				23055F871BF2804800D170F5 /* Team Model */,
 				23055F881BF2805A00D170F5 /* Exercise Model */,
 				23055F891BF2806400D170F5 /* User Model */,
@@ -496,9 +572,37 @@
 			name = Settings;
 			sourceTree = "<group>";
 		};
+		23A6E8461BF4FEA200F6E85E /* Activity Model */ = {
+			isa = PBXGroup;
+			children = (
+				23A6E8411BF3E01100F6E85E /* Activity.h */,
+				23A6E8421BF3E01100F6E85E /* Activity.m */,
+			);
+			name = "Activity Model";
+			sourceTree = "<group>";
+		};
+		23A6E84C1BF5095300F6E85E /* Color Class */ = {
+			isa = PBXGroup;
+			children = (
+				23055F7E1BF263AE00D170F5 /* Color.h */,
+				23055F7F1BF263AE00D170F5 /* Color.m */,
+			);
+			name = "Color Class";
+			sourceTree = "<group>";
+		};
+		23A6E84D1BF5096100F6E85E /* Multiplayer Button */ = {
+			isa = PBXGroup;
+			children = (
+				23A6E8491BF5094800F6E85E /* MultiplayerButton.h */,
+				23A6E84A1BF5094800F6E85E /* MultiplayerButton.m */,
+			);
+			name = "Multiplayer Button";
+			sourceTree = "<group>";
+		};
 		783F96D61BEC1E2600CEA7FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				23A6E8471BF506CD00F6E85E /* AVFoundation.framework */,
 				783F96F31BEC258200CEA7FA /* Bolts.framework */,
 				783F96F41BEC258200CEA7FA /* Parse.framework */,
 				783F96F11BEC21E500CEA7FA /* Social.framework */,
@@ -585,7 +689,7 @@
 				TargetAttributes = {
 					235B6E0A1BEBD25600557D3F = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = L7NTM876NL;
+						DevelopmentTeam = 3XFZ6KBVD6;
 					};
 					235B6E261BEBD25600557D3F = {
 						CreatedOnToolsVersion = 7.0;
@@ -627,6 +731,7 @@
 				235B6E1E1BEBD25600557D3F /* Assets.xcassets in Resources */,
 				235B6E1C1BEBD25600557D3F /* Main.storyboard in Resources */,
 				CD0A9B271BED218000B6817D /* Initial.storyboard in Resources */,
+				235007951BF65509009FDFE2 /* MultiplayerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -661,13 +766,19 @@
 				235B6E611BEBE92100557D3F /* AddReminderViewController.m in Sources */,
 				CD7093451BEED3A700043B50 /* ProfileViewController.m in Sources */,
 				235B6E4C1BEBDD7500557D3F /* ExerciseCell.m in Sources */,
+				23A6E8531BF510BF00F6E85E /* JoinViewController.m in Sources */,
+				2350079B1BF657C9009FDFE2 /* Game.m in Sources */,
+				23A6E8591BF51F9A00F6E85E /* MatchmakingServer.m in Sources */,
 				236ADD4F1BED064A00F6FD62 /* Week.m in Sources */,
 				23055F921BF32F7B00D170F5 /* TimerController.m in Sources */,
+				23A6E8501BF510B600F6E85E /* HostViewController.m in Sources */,
 				2347DE711BEC3D2700013FFC /* User.m in Sources */,
+				23A6E84B1BF5094800F6E85E /* MultiplayerButton.m in Sources */,
 				CD7093481BEEDC6600043B50 /* Settings.m in Sources */,
 				235B6E581BEBE54400557D3F /* StopwatchController.m in Sources */,
 				235B6E551BEBE4A000557D3F /* ReminderCell.m in Sources */,
 				2347DE741BEC3EBC00013FFC /* Exercise.m in Sources */,
+				235007941BF65509009FDFE2 /* MultiplayerViewController.m in Sources */,
 				235B6E131BEBD25600557D3F /* AppDelegate.m in Sources */,
 				235B6E161BEBD25600557D3F /* ProgressViewController.m in Sources */,
 				783F96F91BF1203B00CEA7FA /* SeeMembersOfGroupViewController.m in Sources */,
@@ -680,6 +791,7 @@
 				CD7093511BF24E4B00043B50 /* EditViewController.m in Sources */,
 				235B6E521BEBE34900557D3F /* ProgressCell.m in Sources */,
 				235B6E5B1BEBE64300557D3F /* GroupViewController.m in Sources */,
+				23A6E85C1BF5379F00F6E85E /* MatchmakingClient.m in Sources */,
 				2347DE6E1BEC3A3F00013FFC /* Group.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -762,6 +874,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = SixerPrefixHeader.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -804,6 +917,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = SixerPrefixHeader.pch;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;

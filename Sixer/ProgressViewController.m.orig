@@ -68,10 +68,17 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ProgressCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ProgressCell"];
+<<<<<<< HEAD
+//    PFObject *userScore = [self.progressArray objectAtIndex:indexPath.row];
+////    NSString *date = @"jumping jacks";
+////    cell.exerciseNameLabel.text = date;
+////    cell.timeLabel.text = [NSString stringWithFormat:@"%@",userScore[@"score"]];
+=======
     PFObject *userScore = [self.progressArray objectAtIndex:indexPath.row];
 //    NSString *date = @"jumping jacks";
 //    cell.exerciseNameLabel.text = date;
 //    cell.timeLabel.text = [NSString stringWithFormat:@"%@",userScore[@"score"]];
+>>>>>>> 17bb709baeb9b8edc62891106886e6e8bf9cc395
 
     
 //

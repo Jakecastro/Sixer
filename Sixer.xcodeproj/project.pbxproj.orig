@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		23055F801BF263AE00D170F5 /* Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 23055F7F1BF263AE00D170F5 /* Color.m */; settings = {ASSET_TAGS = (); }; };
+		23055F801BF263AE00D170F5 /* Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 23055F7F1BF263AE00D170F5 /* Color.m */; };
+		23055F921BF32F7B00D170F5 /* TimerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23055F911BF32F7B00D170F5 /* TimerController.m */; };
 		2347DE6E1BEC3A3F00013FFC /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 2347DE6D1BEC3A3F00013FFC /* Group.m */; };
 		2347DE711BEC3D2700013FFC /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 2347DE701BEC3D2700013FFC /* User.m */; };
 		2347DE741BEC3EBC00013FFC /* Exercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 2347DE731BEC3EBC00013FFC /* Exercise.m */; };
+		235007941BF65509009FDFE2 /* MultiplayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235007921BF65509009FDFE2 /* MultiplayerViewController.m */; };
+		235007951BF65509009FDFE2 /* MultiplayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 235007931BF65509009FDFE2 /* MultiplayerViewController.xib */; };
+		2350079B1BF657C9009FDFE2 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 2350079A1BF657C9009FDFE2 /* Game.m */; };
 		235B6E101BEBD25600557D3F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E0F1BEBD25600557D3F /* main.m */; };
 		235B6E131BEBD25600557D3F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E121BEBD25600557D3F /* AppDelegate.m */; };
 		235B6E161BEBD25600557D3F /* ProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E151BEBD25600557D3F /* ProgressViewController.m */; };
@@ -24,12 +28,21 @@
 		235B6E4C1BEBDD7500557D3F /* ExerciseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E4B1BEBDD7500557D3F /* ExerciseCell.m */; };
 		235B6E521BEBE34900557D3F /* ProgressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E511BEBE34900557D3F /* ProgressCell.m */; };
 		235B6E551BEBE4A000557D3F /* ReminderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E541BEBE4A000557D3F /* ReminderCell.m */; };
-		235B6E581BEBE54400557D3F /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E571BEBE54400557D3F /* TimerViewController.m */; };
+		235B6E581BEBE54400557D3F /* StopwatchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E571BEBE54400557D3F /* StopwatchController.m */; };
 		235B6E5B1BEBE64300557D3F /* GroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E5A1BEBE64300557D3F /* GroupViewController.m */; };
 		235B6E611BEBE92100557D3F /* AddReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E601BEBE92100557D3F /* AddReminderViewController.m */; };
 		236ADD4F1BED064A00F6FD62 /* Week.m in Sources */ = {isa = PBXBuildFile; fileRef = 236ADD4E1BED064A00F6FD62 /* Week.m */; };
 		236ADD561BED92FE00F6FD62 /* CVExerciseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 236ADD551BED92FE00F6FD62 /* CVExerciseCell.m */; };
 		2383085F1BEBEC62004DA4EC /* AddExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2383085E1BEBEC62004DA4EC /* AddExerciseViewController.m */; };
+		23A6E8431BF3E01100F6E85E /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6E8421BF3E01100F6E85E /* Activity.m */; };
+		23A6E8451BF4229B00F6E85E /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A6E8441BF4229B00F6E85E /* ParseUI.framework */; };
+		23A6E8481BF506CD00F6E85E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A6E8471BF506CD00F6E85E /* AVFoundation.framework */; };
+		23A6E84B1BF5094800F6E85E /* MultiplayerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6E84A1BF5094800F6E85E /* MultiplayerButton.m */; };
+		23A6E8501BF510B600F6E85E /* HostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6E84F1BF510B600F6E85E /* HostViewController.m */; };
+		23A6E8531BF510BF00F6E85E /* JoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6E8521BF510BF00F6E85E /* JoinViewController.m */; };
+		23A6E8551BF51D4900F6E85E /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A6E8541BF51D4900F6E85E /* GameKit.framework */; };
+		23A6E8591BF51F9A00F6E85E /* MatchmakingServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6E8581BF51F9A00F6E85E /* MatchmakingServer.m */; };
+		23A6E85C1BF5379F00F6E85E /* MatchmakingClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6E85B1BF5379F00F6E85E /* MatchmakingClient.m */; };
 		23AB1EEE1BEEE04100B1BDE5 /* CVExerciseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 236ADD551BED92FE00F6FD62 /* CVExerciseCell.m */; };
 		783F96DC1BEC1EC100CEA7FA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783F96DB1BEC1EC100CEA7FA /* AudioToolbox.framework */; };
 		783F96DE1BEC1ECC00CEA7FA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783F96DD1BEC1ECC00CEA7FA /* CFNetwork.framework */; };
@@ -79,12 +92,19 @@
 /* Begin PBXFileReference section */
 		23055F7E1BF263AE00D170F5 /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
 		23055F7F1BF263AE00D170F5 /* Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Color.m; sourceTree = "<group>"; };
+		23055F901BF32F7B00D170F5 /* TimerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerController.h; sourceTree = "<group>"; };
+		23055F911BF32F7B00D170F5 /* TimerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerController.m; sourceTree = "<group>"; };
 		2347DE6C1BEC3A3F00013FFC /* Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Group.h; sourceTree = "<group>"; };
 		2347DE6D1BEC3A3F00013FFC /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Group.m; sourceTree = "<group>"; };
 		2347DE6F1BEC3D2700013FFC /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		2347DE701BEC3D2700013FFC /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		2347DE721BEC3EBC00013FFC /* Exercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exercise.h; sourceTree = "<group>"; };
 		2347DE731BEC3EBC00013FFC /* Exercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exercise.m; sourceTree = "<group>"; };
+		235007911BF65509009FDFE2 /* MultiplayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiplayerViewController.h; sourceTree = "<group>"; };
+		235007921BF65509009FDFE2 /* MultiplayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiplayerViewController.m; sourceTree = "<group>"; };
+		235007931BF65509009FDFE2 /* MultiplayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MultiplayerViewController.xib; sourceTree = "<group>"; };
+		235007991BF657C9009FDFE2 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		2350079A1BF657C9009FDFE2 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		235B6E0B1BEBD25600557D3F /* Sixer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sixer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		235B6E0F1BEBD25600557D3F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		235B6E111BEBD25600557D3F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -111,8 +131,8 @@
 		235B6E511BEBE34900557D3F /* ProgressCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProgressCell.m; path = ../ProgressCell.m; sourceTree = "<group>"; };
 		235B6E531BEBE4A000557D3F /* ReminderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReminderCell.h; sourceTree = "<group>"; };
 		235B6E541BEBE4A000557D3F /* ReminderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReminderCell.m; sourceTree = "<group>"; };
-		235B6E561BEBE54400557D3F /* TimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerViewController.h; sourceTree = "<group>"; };
-		235B6E571BEBE54400557D3F /* TimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerViewController.m; sourceTree = "<group>"; };
+		235B6E561BEBE54400557D3F /* StopwatchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopwatchController.h; sourceTree = "<group>"; };
+		235B6E571BEBE54400557D3F /* StopwatchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopwatchController.m; sourceTree = "<group>"; };
 		235B6E591BEBE64300557D3F /* GroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GroupViewController.h; path = ../GroupViewController.h; sourceTree = "<group>"; };
 		235B6E5A1BEBE64300557D3F /* GroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GroupViewController.m; path = ../GroupViewController.m; sourceTree = "<group>"; };
 		235B6E5C1BEBE6E100557D3F /* AddGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddGroupViewController.h; path = ../AddGroupViewController.h; sourceTree = "<group>"; };
@@ -125,6 +145,22 @@
 		236ADD551BED92FE00F6FD62 /* CVExerciseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CVExerciseCell.m; path = SixerTests/CVExerciseCell.m; sourceTree = SOURCE_ROOT; };
 		2383085D1BEBEC62004DA4EC /* AddExerciseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddExerciseViewController.h; sourceTree = "<group>"; };
 		2383085E1BEBEC62004DA4EC /* AddExerciseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddExerciseViewController.m; sourceTree = "<group>"; };
+		23A6E8411BF3E01100F6E85E /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Activity.h; path = ../Activity.h; sourceTree = "<group>"; };
+		23A6E8421BF3E01100F6E85E /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Activity.m; path = ../Activity.m; sourceTree = "<group>"; };
+		23A6E8441BF4229B00F6E85E /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		23A6E8471BF506CD00F6E85E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		23A6E8491BF5094800F6E85E /* MultiplayerButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiplayerButton.h; sourceTree = "<group>"; };
+		23A6E84A1BF5094800F6E85E /* MultiplayerButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiplayerButton.m; sourceTree = "<group>"; };
+		23A6E84E1BF510B600F6E85E /* HostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostViewController.h; sourceTree = "<group>"; };
+		23A6E84F1BF510B600F6E85E /* HostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostViewController.m; sourceTree = "<group>"; };
+		23A6E8511BF510BF00F6E85E /* JoinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoinViewController.h; sourceTree = "<group>"; };
+		23A6E8521BF510BF00F6E85E /* JoinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoinViewController.m; sourceTree = "<group>"; };
+		23A6E8541BF51D4900F6E85E /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		23A6E8561BF51E4300F6E85E /* SixerPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SixerPrefixHeader.pch; sourceTree = SOURCE_ROOT; };
+		23A6E8571BF51F9A00F6E85E /* MatchmakingServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchmakingServer.h; sourceTree = "<group>"; };
+		23A6E8581BF51F9A00F6E85E /* MatchmakingServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchmakingServer.m; sourceTree = "<group>"; };
+		23A6E85A1BF5379F00F6E85E /* MatchmakingClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchmakingClient.h; sourceTree = "<group>"; };
+		23A6E85B1BF5379F00F6E85E /* MatchmakingClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchmakingClient.m; sourceTree = "<group>"; };
 		783F96DB1BEC1EC100CEA7FA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		783F96DD1BEC1ECC00CEA7FA /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		783F96DF1BEC1ED700CEA7FA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -166,6 +202,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23A6E8551BF51D4900F6E85E /* GameKit.framework in Frameworks */,
+				23A6E8481BF506CD00F6E85E /* AVFoundation.framework in Frameworks */,
 				783F96F21BEC21E500CEA7FA /* Social.framework in Frameworks */,
 				783F96F01BEC21DC00CEA7FA /* Accounts.framework in Frameworks */,
 				783F96EE1BEC1F6200CEA7FA /* libsqlite3.tbd in Frameworks */,
@@ -178,6 +216,7 @@
 				783F96E21BEC1EE300CEA7FA /* CoreLocation.framework in Frameworks */,
 				783F96F61BEC258200CEA7FA /* Parse.framework in Frameworks */,
 				783F96E01BEC1ED700CEA7FA /* CoreGraphics.framework in Frameworks */,
+				23A6E8451BF4229B00F6E85E /* ParseUI.framework in Frameworks */,
 				783F96DE1BEC1ECC00CEA7FA /* CFNetwork.framework in Frameworks */,
 				783F96DC1BEC1EC100CEA7FA /* AudioToolbox.framework in Frameworks */,
 			);
@@ -207,10 +246,13 @@
 				235B6E541BEBE4A000557D3F /* ReminderCell.m */,
 				235B6E501BEBE34900557D3F /* ProgressCell.h */,
 				235B6E511BEBE34900557D3F /* ProgressCell.m */,
+				23055F8A1BF2806C00D170F5 /* Week Model */,
 				235B6E4A1BEBDD7500557D3F /* ExerciseCell.h */,
 				235B6E4B1BEBDD7500557D3F /* ExerciseCell.m */,
 				236ADD541BED92FE00F6FD62 /* CVExerciseCell.h */,
 				236ADD551BED92FE00F6FD62 /* CVExerciseCell.m */,
+				783F96FA1BF1A0D100CEA7FA /* GroupTableViewCell.h */,
+				783F96FB1BF1A0D100CEA7FA /* GroupTableViewCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -218,8 +260,8 @@
 		23055F811BF26AD500D170F5 /* UI Elements */ = {
 			isa = PBXGroup;
 			children = (
-				23055F7E1BF263AE00D170F5 /* Color.h */,
-				23055F7F1BF263AE00D170F5 /* Color.m */,
+				23A6E84C1BF5095300F6E85E /* Color Class */,
+				23A6E84D1BF5096100F6E85E /* Multiplayer Button */,
 			);
 			name = "UI Elements";
 			sourceTree = "<group>";
@@ -239,10 +281,7 @@
 			children = (
 				235B6E591BEBE64300557D3F /* GroupViewController.h */,
 				235B6E5A1BEBE64300557D3F /* GroupViewController.m */,
-				235B6E5C1BEBE6E100557D3F /* AddGroupViewController.h */,
-				235B6E5D1BEBE6E100557D3F /* AddGroupViewController.m */,
-				783F96F71BF1203B00CEA7FA /* SeeMembersOfGroupViewController.h */,
-				783F96F81BF1203B00CEA7FA /* SeeMembersOfGroupViewController.m */,
+				23055F8F1BF2940200D170F5 /* Add Teams and Members */,
 			);
 			name = Team;
 			sourceTree = "<group>";
@@ -250,6 +289,8 @@
 		23055F841BF27FE300D170F5 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				CD70934F1BF24E4B00043B50 /* EditViewController.h */,
+				CD7093501BF24E4B00043B50 /* EditViewController.m */,
 				CD7093431BEED3A700043B50 /* ProfileViewController.h */,
 				CD7093441BEED3A700043B50 /* ProfileViewController.m */,
 			);
@@ -259,19 +300,21 @@
 		23055F851BF2800E00D170F5 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
-				235B6E561BEBE54400557D3F /* TimerViewController.h */,
-				235B6E571BEBE54400557D3F /* TimerViewController.m */,
+				23055F901BF32F7B00D170F5 /* TimerController.h */,
+				23055F911BF32F7B00D170F5 /* TimerController.m */,
+				235B6E561BEBE54400557D3F /* StopwatchController.h */,
+				235B6E571BEBE54400557D3F /* StopwatchController.m */,
 			);
 			name = Timer;
 			sourceTree = "<group>";
 		};
-		23055F861BF2801D00D170F5 /* Exercise */ = {
+		23055F861BF2801D00D170F5 /* Add Exercise */ = {
 			isa = PBXGroup;
 			children = (
 				2383085D1BEBEC62004DA4EC /* AddExerciseViewController.h */,
 				2383085E1BEBEC62004DA4EC /* AddExerciseViewController.m */,
 			);
-			name = Exercise;
+			name = "Add Exercise";
 			sourceTree = "<group>";
 		};
 		23055F871BF2804800D170F5 /* Team Model */ = {
@@ -324,6 +367,8 @@
 			children = (
 				235B6E171BEBD25600557D3F /* ExerciseViewController.h */,
 				235B6E181BEBD25600557D3F /* ExerciseViewController.m */,
+				23055F861BF2801D00D170F5 /* Add Exercise */,
+				23055F831BF26B4E00D170F5 /* Team */,
 			);
 			name = "index 1 Controller";
 			sourceTree = "<group>";
@@ -333,13 +378,76 @@
 			children = (
 				235B6E441BEBD2CD00557D3F /* RemindersViewController.h */,
 				235B6E451BEBD2CD00557D3F /* RemindersViewController.m */,
+				23055F8E1BF293B300D170F5 /* Add Reminder */,
 			);
 			name = "index 2 Controller";
+			sourceTree = "<group>";
+		};
+		23055F8E1BF293B300D170F5 /* Add Reminder */ = {
+			isa = PBXGroup;
+			children = (
+				235B6E5F1BEBE92100557D3F /* AddReminderViewController.h */,
+				235B6E601BEBE92100557D3F /* AddReminderViewController.m */,
+			);
+			name = "Add Reminder";
+			sourceTree = "<group>";
+		};
+		23055F8F1BF2940200D170F5 /* Add Teams and Members */ = {
+			isa = PBXGroup;
+			children = (
+				783F96F71BF1203B00CEA7FA /* SeeMembersOfGroupViewController.h */,
+				783F96F81BF1203B00CEA7FA /* SeeMembersOfGroupViewController.m */,
+				235B6E5C1BEBE6E100557D3F /* AddGroupViewController.h */,
+				235B6E5D1BEBE6E100557D3F /* AddGroupViewController.m */,
+			);
+			name = "Add Teams and Members";
+			sourceTree = "<group>";
+		};
+		235007961BF65526009FDFE2 /* Matchmaking Model */ = {
+			isa = PBXGroup;
+			children = (
+				23A6E85A1BF5379F00F6E85E /* MatchmakingClient.h */,
+				23A6E85B1BF5379F00F6E85E /* MatchmakingClient.m */,
+				23A6E8571BF51F9A00F6E85E /* MatchmakingServer.h */,
+				23A6E8581BF51F9A00F6E85E /* MatchmakingServer.m */,
+			);
+			name = "Matchmaking Model";
+			sourceTree = "<group>";
+		};
+		235007971BF6553E009FDFE2 /* Multiplayer Controller */ = {
+			isa = PBXGroup;
+			children = (
+				23A6E84E1BF510B600F6E85E /* HostViewController.h */,
+				23A6E84F1BF510B600F6E85E /* HostViewController.m */,
+				23A6E8511BF510BF00F6E85E /* JoinViewController.h */,
+				23A6E8521BF510BF00F6E85E /* JoinViewController.m */,
+				235007981BF6558D009FDFE2 /* Multiplayer Game Controller */,
+			);
+			name = "Multiplayer Controller";
+			sourceTree = "<group>";
+		};
+		235007981BF6558D009FDFE2 /* Multiplayer Game Controller */ = {
+			isa = PBXGroup;
+			children = (
+				235007911BF65509009FDFE2 /* MultiplayerViewController.h */,
+				235007921BF65509009FDFE2 /* MultiplayerViewController.m */,
+			);
+			name = "Multiplayer Game Controller";
+			sourceTree = "<group>";
+		};
+		2350079C1BF657CF009FDFE2 /* Game Model */ = {
+			isa = PBXGroup;
+			children = (
+				235007991BF657C9009FDFE2 /* Game.h */,
+				2350079A1BF657C9009FDFE2 /* Game.m */,
+			);
+			name = "Game Model";
 			sourceTree = "<group>";
 		};
 		235B6E021BEBD25600557D3F = {
 			isa = PBXGroup;
 			children = (
+				23A6E8541BF51D4900F6E85E /* GameKit.framework */,
 				235B6E0D1BEBD25600557D3F /* Sixer */,
 				235B6E2A1BEBD25600557D3F /* SixerTests */,
 				235B6E351BEBD25600557D3F /* SixerUITests */,
@@ -373,6 +481,7 @@
 			isa = PBXGroup;
 			children = (
 				235B6E1D1BEBD25600557D3F /* Assets.xcassets */,
+				23A6E8561BF51E4300F6E85E /* SixerPrefixHeader.pch */,
 				235B6E221BEBD25600557D3F /* Info.plist */,
 				235B6E111BEBD25600557D3F /* AppDelegate.h */,
 				235B6E121BEBD25600557D3F /* AppDelegate.m */,
@@ -402,43 +511,10 @@
 		235B6E471BEBD2F500557D3F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				CD0A9B2A1BED221300B6817D /* InitialScreenViewController.h */,
-				CD0A9B2B1BED221300B6817D /* InitialScreenViewController.m */,
-				CD0A9B2D1BED222000B6817D /* LoginViewController.h */,
-				CD0A9B2E1BED222000B6817D /* LoginViewController.m */,
-				CD0A9B301BED223300B6817D /* RegistrationViewController.h */,
-				CD0A9B311BED223300B6817D /* RegistrationViewController.m */,
-				CD7093491BEEE79F00043B50 /* ContainerViewController.h */,
-				CD70934A1BEEE79F00043B50 /* ContainerViewController.m */,
-<<<<<<< HEAD
-				CD7093431BEED3A700043B50 /* ProfileViewController.h */,
-				CD7093441BEED3A700043B50 /* ProfileViewController.m */,
-				CD70934F1BF24E4B00043B50 /* EditViewController.h */,
-				CD7093501BF24E4B00043B50 /* EditViewController.m */,
-				235B6E171BEBD25600557D3F /* ExerciseViewController.h */,
-				235B6E181BEBD25600557D3F /* ExerciseViewController.m */,
-				235B6E141BEBD25600557D3F /* ProgressViewController.h */,
-				235B6E151BEBD25600557D3F /* ProgressViewController.m */,
-				235B6E561BEBE54400557D3F /* TimerViewController.h */,
-				235B6E571BEBE54400557D3F /* TimerViewController.m */,
-				235B6E591BEBE64300557D3F /* GroupViewController.h */,
-				235B6E5A1BEBE64300557D3F /* GroupViewController.m */,
-				783F96FA1BF1A0D100CEA7FA /* GroupTableViewCell.h */,
-				783F96FB1BF1A0D100CEA7FA /* GroupTableViewCell.m */,
-				783F96F71BF1203B00CEA7FA /* SeeMembersOfGroupViewController.h */,
-				783F96F81BF1203B00CEA7FA /* SeeMembersOfGroupViewController.m */,
-				235B6E5C1BEBE6E100557D3F /* AddGroupViewController.h */,
-				235B6E5D1BEBE6E100557D3F /* AddGroupViewController.m */,
-				235B6E441BEBD2CD00557D3F /* RemindersViewController.h */,
-				235B6E451BEBD2CD00557D3F /* RemindersViewController.m */,
-=======
->>>>>>> mainExer
-				235B6E5F1BEBE92100557D3F /* AddReminderViewController.h */,
-				235B6E601BEBE92100557D3F /* AddReminderViewController.m */,
+				235007971BF6553E009FDFE2 /* Multiplayer Controller */,
+				23A6E83C1BF3B48800F6E85E /* Login/Registration */,
 				23055F821BF26B1300D170F5 /* TabBar */,
-				23055F831BF26B4E00D170F5 /* Team */,
 				23055F841BF27FE300D170F5 /* Profile */,
-				23055F861BF2801D00D170F5 /* Exercise */,
 				23055F851BF2800E00D170F5 /* Timer */,
 			);
 			name = Controller;
@@ -447,6 +523,7 @@
 		235B6E481BEBD30200557D3F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				235007931BF65509009FDFE2 /* MultiplayerViewController.xib */,
 				235B6E1F1BEBD25600557D3F /* LaunchScreen.storyboard */,
 				CD0A9B261BED218000B6817D /* Initial.storyboard */,
 				CD0A9B281BED219500B6817D /* RegistrationAndLogin.storyboard */,
@@ -458,24 +535,78 @@
 		235B6E491BEBD31000557D3F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CD7093461BEEDC6600043B50 /* Settings.h */,
-				CD7093471BEEDC6600043B50 /* Settings.m */,
+				2350079C1BF657CF009FDFE2 /* Game Model */,
+				235007961BF65526009FDFE2 /* Matchmaking Model */,
+				23A6E83D1BF3B4C100F6E85E /* Settings */,
 				23055F7A1BF25F4500D170F5 /* Cells */,
 				23055F811BF26AD500D170F5 /* UI Elements */,
+				23A6E8461BF4FEA200F6E85E /* Activity Model */,
 				23055F871BF2804800D170F5 /* Team Model */,
 				23055F881BF2805A00D170F5 /* Exercise Model */,
 				23055F891BF2806400D170F5 /* User Model */,
-				23055F8A1BF2806C00D170F5 /* Week Model */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		23A6E83C1BF3B48800F6E85E /* Login/Registration */ = {
+			isa = PBXGroup;
+			children = (
+				CD0A9B2A1BED221300B6817D /* InitialScreenViewController.h */,
+				CD0A9B2B1BED221300B6817D /* InitialScreenViewController.m */,
+				CD0A9B2D1BED222000B6817D /* LoginViewController.h */,
+				CD0A9B2E1BED222000B6817D /* LoginViewController.m */,
+				CD0A9B301BED223300B6817D /* RegistrationViewController.h */,
+				CD0A9B311BED223300B6817D /* RegistrationViewController.m */,
+				CD7093491BEEE79F00043B50 /* ContainerViewController.h */,
+				CD70934A1BEEE79F00043B50 /* ContainerViewController.m */,
+			);
+			name = Login/Registration;
+			sourceTree = "<group>";
+		};
+		23A6E83D1BF3B4C100F6E85E /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				CD7093461BEEDC6600043B50 /* Settings.h */,
+				CD7093471BEEDC6600043B50 /* Settings.m */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		23A6E8461BF4FEA200F6E85E /* Activity Model */ = {
+			isa = PBXGroup;
+			children = (
+				23A6E8411BF3E01100F6E85E /* Activity.h */,
+				23A6E8421BF3E01100F6E85E /* Activity.m */,
+			);
+			name = "Activity Model";
+			sourceTree = "<group>";
+		};
+		23A6E84C1BF5095300F6E85E /* Color Class */ = {
+			isa = PBXGroup;
+			children = (
+				23055F7E1BF263AE00D170F5 /* Color.h */,
+				23055F7F1BF263AE00D170F5 /* Color.m */,
+			);
+			name = "Color Class";
+			sourceTree = "<group>";
+		};
+		23A6E84D1BF5096100F6E85E /* Multiplayer Button */ = {
+			isa = PBXGroup;
+			children = (
+				23A6E8491BF5094800F6E85E /* MultiplayerButton.h */,
+				23A6E84A1BF5094800F6E85E /* MultiplayerButton.m */,
+			);
+			name = "Multiplayer Button";
 			sourceTree = "<group>";
 		};
 		783F96D61BEC1E2600CEA7FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				23A6E8471BF506CD00F6E85E /* AVFoundation.framework */,
 				783F96F31BEC258200CEA7FA /* Bolts.framework */,
 				783F96F41BEC258200CEA7FA /* Parse.framework */,
 				783F96F11BEC21E500CEA7FA /* Social.framework */,
+				23A6E8441BF4229B00F6E85E /* ParseUI.framework */,
 				783F96EF1BEC21DC00CEA7FA /* Accounts.framework */,
 				783F96ED1BEC1F6200CEA7FA /* libsqlite3.tbd */,
 				783F96EB1BEC1F3900CEA7FA /* libz.tbd */,
@@ -558,7 +689,11 @@
 				TargetAttributes = {
 					235B6E0A1BEBD25600557D3F = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = NK26JGQ93M;
+<<<<<<< HEAD
+						DevelopmentTeam = L7NTM876NL;
+=======
+						DevelopmentTeam = 3XFZ6KBVD6;
+>>>>>>> 17bb709baeb9b8edc62891106886e6e8bf9cc395
 					};
 					235B6E261BEBD25600557D3F = {
 						CreatedOnToolsVersion = 7.0;
@@ -600,6 +735,7 @@
 				235B6E1E1BEBD25600557D3F /* Assets.xcassets in Resources */,
 				235B6E1C1BEBD25600557D3F /* Main.storyboard in Resources */,
 				CD0A9B271BED218000B6817D /* Initial.storyboard in Resources */,
+				235007951BF65509009FDFE2 /* MultiplayerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -628,17 +764,25 @@
 				CD7C67961BED8FDD00DC20E7 /* LoginViewController.m in Sources */,
 				CD7C67951BED8C8000DC20E7 /* AddGroupViewController.m in Sources */,
 				CD70934B1BEEE79F00043B50 /* ContainerViewController.m in Sources */,
+				23A6E8431BF3E01100F6E85E /* Activity.m in Sources */,
 				235B6E191BEBD25600557D3F /* ExerciseViewController.m in Sources */,
 				783F96FC1BF1A0D100CEA7FA /* GroupTableViewCell.m in Sources */,
 				235B6E611BEBE92100557D3F /* AddReminderViewController.m in Sources */,
 				CD7093451BEED3A700043B50 /* ProfileViewController.m in Sources */,
 				235B6E4C1BEBDD7500557D3F /* ExerciseCell.m in Sources */,
+				23A6E8531BF510BF00F6E85E /* JoinViewController.m in Sources */,
+				2350079B1BF657C9009FDFE2 /* Game.m in Sources */,
+				23A6E8591BF51F9A00F6E85E /* MatchmakingServer.m in Sources */,
 				236ADD4F1BED064A00F6FD62 /* Week.m in Sources */,
+				23055F921BF32F7B00D170F5 /* TimerController.m in Sources */,
+				23A6E8501BF510B600F6E85E /* HostViewController.m in Sources */,
 				2347DE711BEC3D2700013FFC /* User.m in Sources */,
+				23A6E84B1BF5094800F6E85E /* MultiplayerButton.m in Sources */,
 				CD7093481BEEDC6600043B50 /* Settings.m in Sources */,
-				235B6E581BEBE54400557D3F /* TimerViewController.m in Sources */,
+				235B6E581BEBE54400557D3F /* StopwatchController.m in Sources */,
 				235B6E551BEBE4A000557D3F /* ReminderCell.m in Sources */,
 				2347DE741BEC3EBC00013FFC /* Exercise.m in Sources */,
+				235007941BF65509009FDFE2 /* MultiplayerViewController.m in Sources */,
 				235B6E131BEBD25600557D3F /* AppDelegate.m in Sources */,
 				235B6E161BEBD25600557D3F /* ProgressViewController.m in Sources */,
 				783F96F91BF1203B00CEA7FA /* SeeMembersOfGroupViewController.m in Sources */,
@@ -651,6 +795,7 @@
 				CD7093511BF24E4B00043B50 /* EditViewController.m in Sources */,
 				235B6E521BEBE34900557D3F /* ProgressCell.m in Sources */,
 				235B6E5B1BEBE64300557D3F /* GroupViewController.m in Sources */,
+				23A6E85C1BF5379F00F6E85E /* MatchmakingClient.m in Sources */,
 				2347DE6E1BEC3A3F00013FFC /* Group.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -733,6 +878,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = SixerPrefixHeader.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -775,6 +921,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = SixerPrefixHeader.pch;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;

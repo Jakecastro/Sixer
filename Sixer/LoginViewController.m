@@ -30,8 +30,9 @@
     [super viewDidLoad];
 
 // Delegates set in storyboard
-  self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
-    [self.loginButton setBackgroundImage:[UIImage imageNamed:@"Login button"] forState:UIControlStateNormal];
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    [self.loginButton setBackgroundImage:[UIImage imageNamed:@"Login button"]
+                                forState:UIControlStateNormal];
 }
 
 -(void)userlogin {
@@ -40,13 +41,12 @@
     NSString *password = self.passwordTextFieldOutlet.text;
     
     if (username.length <= 0 || password.length <= 0) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Alert" message:@"Inorder to proceed, all fields must be completed" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Alert"
+                                                                       message:@"Inorder to proceed, all fields must be completed"
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        
         UIAlertAction *okayButton = [UIAlertAction actionWithTitle:@"Okay"
                                                              style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-                                                                 
-                                                                 
-                                                                 
-                                                                 
                                                              }];
         [alert addAction:okayButton];
         [self presentViewController:alert
@@ -62,10 +62,12 @@
             [self performSegueWithIdentifier:@"StartSegue" sender:nil];
             NSLog(@"successful login");
         } else {
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Alert" message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction *okayButton = [UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                
-            }];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Alert"
+                                                                           message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction *okayButton = [UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleDefault
+                                                               handler:^(UIAlertAction * _Nonnull action) {
+                                                               }];
             [alert addAction:okayButton];
             [self presentViewController:alert animated:YES completion:nil];
       }
