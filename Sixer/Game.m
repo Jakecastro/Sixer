@@ -18,18 +18,24 @@ typedef enum {
 }
 GameState;
 
-
-
-
 @implementation Game {
     GameState _state;
     GKSession *_session;
     NSString *_serverPeerID;
     NSString *_localPlayerName;
+    NSMutableDictionary *_players;
 }
 
 @synthesize delegate = _delegate;
 @synthesize isServer = _isServer;
+
+
+- (id)init {
+    if ((self = [super init])) {
+        _players = [NSMutableDictionary dictionaryWithCapacity:4];
+    }
+    return self;
+}
 
 - (void)dealloc {
 #ifdef DEBUG
@@ -56,9 +62,51 @@ GameState;
 }
 
 - (void)quitGameWithReason:(QuitReason)reason {
+    _state = GameStateQuitting;
+    
+    [_session disconnectFromAllPeers];
+    _session.delegate = nil;
+    _session = nil;
+    
+    [self.delegate game:self didQuitWithReason:reason];
 }
 
-
+- (void)startServerGameWithSession:(GKSession *)session playerName:(NSString *)name clients:(NSArray *)clients {
+    self.isServer = YES;
+    
+    _session = session;
+    _session.available = NO;
+    _session.delegate = self;
+    [_session setDataReceiveHandler:self withContext:nil];
+    
+    _state = GameStateWaitingForSignIn;
+    
+    [self.delegate gameWaitingForClientsReady:self];
+    
+    Player *player = [[Player alloc] init];
+    player.name = name;
+    player.peerID = _session.peerID;
+    player.position = PlayerPositionBottom;
+    [_players setObject:player forKey:player.peerID];
+    
+    // Add a Player object for each client.
+    int index = 0;
+    for (NSString *peerID in clients)
+    {
+        Player *player = [[Player alloc] init];
+        player.peerID = peerID;
+        [_players setObject:player forKey:player.peerID];
+        
+        if (index == 0)
+            player.position = ([clients count] == 1) ? PlayerPositionTop : PlayerPositionLeft;
+        else if (index == 1)
+            player.position = PlayerPositionTop;
+        else
+            player.position = PlayerPositionRight;
+        
+        index++;
+    }
+}
 
 #pragma mark - GKSessionDelegate
 

@@ -15,6 +15,7 @@
 		235007941BF65509009FDFE2 /* MultiplayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235007921BF65509009FDFE2 /* MultiplayerViewController.m */; };
 		235007951BF65509009FDFE2 /* MultiplayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 235007931BF65509009FDFE2 /* MultiplayerViewController.xib */; };
 		2350079B1BF657C9009FDFE2 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 2350079A1BF657C9009FDFE2 /* Game.m */; };
+		235007A81BF87ED9009FDFE2 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 235007A71BF87ED9009FDFE2 /* Player.m */; };
 		235B6E101BEBD25600557D3F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E0F1BEBD25600557D3F /* main.m */; };
 		235B6E131BEBD25600557D3F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E121BEBD25600557D3F /* AppDelegate.m */; };
 		235B6E161BEBD25600557D3F /* ProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E151BEBD25600557D3F /* ProgressViewController.m */; };
@@ -105,6 +106,8 @@
 		235007931BF65509009FDFE2 /* MultiplayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MultiplayerViewController.xib; sourceTree = "<group>"; };
 		235007991BF657C9009FDFE2 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		2350079A1BF657C9009FDFE2 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		235007A61BF87ED9009FDFE2 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		235007A71BF87ED9009FDFE2 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		235B6E0B1BEBD25600557D3F /* Sixer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sixer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		235B6E0F1BEBD25600557D3F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		235B6E111BEBD25600557D3F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -246,7 +249,6 @@
 				235B6E541BEBE4A000557D3F /* ReminderCell.m */,
 				235B6E501BEBE34900557D3F /* ProgressCell.h */,
 				235B6E511BEBE34900557D3F /* ProgressCell.m */,
-				23055F8A1BF2806C00D170F5 /* Week Model */,
 				235B6E4A1BEBDD7500557D3F /* ExerciseCell.h */,
 				235B6E4B1BEBDD7500557D3F /* ExerciseCell.m */,
 				236ADD541BED92FE00F6FD62 /* CVExerciseCell.h */,
@@ -535,8 +537,11 @@
 		235B6E491BEBD31000557D3F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				235007A61BF87ED9009FDFE2 /* Player.h */,
+				235007A71BF87ED9009FDFE2 /* Player.m */,
 				2350079C1BF657CF009FDFE2 /* Game Model */,
 				235007961BF65526009FDFE2 /* Matchmaking Model */,
+				23055F8A1BF2806C00D170F5 /* Week Model */,
 				23A6E83D1BF3B4C100F6E85E /* Settings */,
 				23055F7A1BF25F4500D170F5 /* Cells */,
 				23055F811BF26AD500D170F5 /* UI Elements */,
@@ -784,6 +789,7 @@
 				783F96F91BF1203B00CEA7FA /* SeeMembersOfGroupViewController.m in Sources */,
 				CD0A9B2C1BED221300B6817D /* InitialScreenViewController.m in Sources */,
 				235B6E461BEBD2CD00557D3F /* RemindersViewController.m in Sources */,
+				235007A81BF87ED9009FDFE2 /* Player.m in Sources */,
 				CD0A9B321BED223300B6817D /* RegistrationViewController.m in Sources */,
 				23055F801BF263AE00D170F5 /* Color.m in Sources */,
 				235B6E101BEBD25600557D3F /* main.m in Sources */,
