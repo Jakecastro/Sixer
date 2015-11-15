@@ -446,10 +446,18 @@
 			name = "Game Model";
 			sourceTree = "<group>";
 		};
+		235007A91BF8808D009FDFE2 /* Player Model */ = {
+			isa = PBXGroup;
+			children = (
+				235007A61BF87ED9009FDFE2 /* Player.h */,
+				235007A71BF87ED9009FDFE2 /* Player.m */,
+			);
+			name = "Player Model";
+			sourceTree = "<group>";
+		};
 		235B6E021BEBD25600557D3F = {
 			isa = PBXGroup;
 			children = (
-				23A6E8541BF51D4900F6E85E /* GameKit.framework */,
 				235B6E0D1BEBD25600557D3F /* Sixer */,
 				235B6E2A1BEBD25600557D3F /* SixerTests */,
 				235B6E351BEBD25600557D3F /* SixerUITests */,
@@ -537,8 +545,7 @@
 		235B6E491BEBD31000557D3F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				235007A61BF87ED9009FDFE2 /* Player.h */,
-				235007A71BF87ED9009FDFE2 /* Player.m */,
+				235007A91BF8808D009FDFE2 /* Player Model */,
 				2350079C1BF657CF009FDFE2 /* Game Model */,
 				235007961BF65526009FDFE2 /* Matchmaking Model */,
 				23055F8A1BF2806C00D170F5 /* Week Model */,
@@ -607,6 +614,7 @@
 		783F96D61BEC1E2600CEA7FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				23A6E8541BF51D4900F6E85E /* GameKit.framework */,
 				23A6E8471BF506CD00F6E85E /* AVFoundation.framework */,
 				783F96F31BEC258200CEA7FA /* Bolts.framework */,
 				783F96F41BEC258200CEA7FA /* Parse.framework */,
