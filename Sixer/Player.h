@@ -6,7 +6,7 @@
 //  Copyright © 2015 Jake Castro. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "Player.h"
 
 typedef enum {
     PlayerPositionBottom,  // the user
