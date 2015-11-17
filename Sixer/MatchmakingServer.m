@@ -42,6 +42,13 @@ ServerState;
     }
 }
 
+- (void)stopAcceptingConnections {
+    NSAssert(_serverState == ServerStateAcceptingConnections, @"Wrong state");
+    
+    _serverState = ServerStateIgnoringNewConnections;
+    _session.available = NO;
+}
+
 - (NSArray *)connectedClients {
     return _connectedClients;
 }

@@ -87,6 +87,15 @@
 
 
 - (IBAction)onStartButtonTapped:(UIButton *)sender {
+    if (_matchmakingServer != nil && [_matchmakingServer connectedClientCount] > 0) {
+        NSString *name = [self.nameTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        if ([name length] == 0)
+            name = _matchmakingServer.session.displayName;
+        
+        [_matchmakingServer stopAcceptingConnections];
+        
+        [self.delegate hostViewController:self startGameWithSession:_matchmakingServer.session playerName:name clients:_matchmakingServer.connectedClients];
+    }
 }
 
 

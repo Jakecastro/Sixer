@@ -55,7 +55,6 @@
     self.centerLabel.text = NSLocalizedString(@"Waiting for other players...", @"Status text: waiting for clients");
 }
 
-
 @end
 
 

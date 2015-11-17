@@ -48,6 +48,7 @@ CVExerciseCell *addExerciseCell;
         }
     }];
 }
+
 - (void)findUserExercisesFromParse {
 
     PFUser *user = [PFUser currentUser];
