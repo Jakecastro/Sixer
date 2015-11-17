@@ -9,6 +9,8 @@
 #import "Packet.h"
 #import "NSData+FitAdditions.h"
 #import "PacketSignInResponse.h"
+#import "PacketServerReady.h"
+
 
 //   const size_t PACKET_HEADER_SIZE = 10;
 
@@ -39,11 +41,16 @@
     
     switch (packetType) {
         case PacketTypeSignInRequest:
+        case PacketTypeClientReady:
             packet = [Packet packetWithType:packetType];
             break;
             
         case PacketTypeSignInResponse:
             packet = [PacketSignInResponse packetWithData:data];
+            break;
+            
+        case PacketTypeServerReady:
+            packet = [PacketServerReady packetWithData:data];
             break;
             
         default:

@@ -37,6 +37,7 @@
 		235B6E611BEBE92100557D3F /* AddReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 235B6E601BEBE92100557D3F /* AddReminderViewController.m */; };
 		236ADD4F1BED064A00F6FD62 /* Week.m in Sources */ = {isa = PBXBuildFile; fileRef = 236ADD4E1BED064A00F6FD62 /* Week.m */; };
 		236ADD561BED92FE00F6FD62 /* CVExerciseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 236ADD551BED92FE00F6FD62 /* CVExerciseCell.m */; };
+		2378BB921BFAC07200FE0915 /* PacketServerReady.m in Sources */ = {isa = PBXBuildFile; fileRef = 2378BB911BFAC07200FE0915 /* PacketServerReady.m */; };
 		2383085F1BEBEC62004DA4EC /* AddExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2383085E1BEBEC62004DA4EC /* AddExerciseViewController.m */; };
 		23A6E8431BF3E01100F6E85E /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A6E8421BF3E01100F6E85E /* Activity.m */; };
 		23A6E8451BF4229B00F6E85E /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23A6E8441BF4229B00F6E85E /* ParseUI.framework */; };
@@ -155,6 +156,8 @@
 		236ADD4E1BED064A00F6FD62 /* Week.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Week.m; sourceTree = "<group>"; };
 		236ADD541BED92FE00F6FD62 /* CVExerciseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CVExerciseCell.h; path = SixerTests/CVExerciseCell.h; sourceTree = SOURCE_ROOT; };
 		236ADD551BED92FE00F6FD62 /* CVExerciseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CVExerciseCell.m; path = SixerTests/CVExerciseCell.m; sourceTree = SOURCE_ROOT; };
+		2378BB901BFAC07200FE0915 /* PacketServerReady.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PacketServerReady.h; sourceTree = "<group>"; };
+		2378BB911BFAC07200FE0915 /* PacketServerReady.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PacketServerReady.m; sourceTree = "<group>"; };
 		2383085D1BEBEC62004DA4EC /* AddExerciseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddExerciseViewController.h; sourceTree = "<group>"; };
 		2383085E1BEBEC62004DA4EC /* AddExerciseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddExerciseViewController.m; sourceTree = "<group>"; };
 		23A6E8411BF3E01100F6E85E /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Activity.h; path = ../Activity.h; sourceTree = "<group>"; };
@@ -479,6 +482,8 @@
 		235B6E021BEBD25600557D3F = {
 			isa = PBXGroup;
 			children = (
+				2378BB901BFAC07200FE0915 /* PacketServerReady.h */,
+				2378BB911BFAC07200FE0915 /* PacketServerReady.m */,
 				235007B71BFA6121009FDFE2 /* PacketSignInResponse.h */,
 				235007B81BFA6121009FDFE2 /* PacketSignInResponse.m */,
 				235B6E0D1BEBD25600557D3F /* Sixer */,
@@ -831,6 +836,7 @@
 				CD7093511BF24E4B00043B50 /* EditViewController.m in Sources */,
 				235007B61BFA5488009FDFE2 /* Packet.m in Sources */,
 				235B6E521BEBE34900557D3F /* ProgressCell.m in Sources */,
+				2378BB921BFAC07200FE0915 /* PacketServerReady.m in Sources */,
 				235B6E5B1BEBE64300557D3F /* GroupViewController.m in Sources */,
 				23A6E85C1BF5379F00F6E85E /* MatchmakingClient.m in Sources */,
 				2347DE6E1BEC3A3F00013FFC /* Group.m in Sources */,
