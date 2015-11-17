@@ -43,26 +43,29 @@
     
     
     self.progressArray = [NSArray new];
-    self.currentUser = [PFUser currentUser];
-    [self retrieveDataFromParse];
-    [self retrieveUsernameAndPhoto];
+//    self.currentUser = [PFUser currentUser];
+//    [self retrieveDataFromParse];
+//    [self retrieveUsernameAndPhoto];
   
     
 }
 
-- (void)viewDidAppear:(BOOL)animated {
+-(void)viewWillAppear:(BOOL)animated {
     
     if (![PFUser currentUser]) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"RegistrationAndLogin" bundle:nil];
         UIViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"LoginScreen"];
         [self presentViewController:loginVC animated:YES completion:nil];
-        [self retrieveUsernameAndPhoto];
+        
+        
     }
+    self.currentUser = [PFUser currentUser];
+    [self retrieveDataFromParse];
+    [self retrieveUsernameAndPhoto];
+    
 }
 
--(void)viewWillAppear:(BOOL)animated{
-    [self retrieveUsernameAndPhoto];
-}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
 // Setting the number of rows to the number of indexes in the array

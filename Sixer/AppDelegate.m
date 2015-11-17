@@ -20,7 +20,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
+    
     [Exercise registerSubclass];
     
     // Initialize Parse.
@@ -47,6 +47,28 @@
 
     return YES;
 }
+
+//- (void) loadDefaultExercises {
+//
+//    if (self.alreadyLaunchedOnce == NO) {
+//        PFUser *user = [PFUser currentUser];
+//        PFRelation *relation = [user relationForKey:@"exercise"];
+//        PFQuery *query = [relation query];
+//        [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+//            if (error) {
+//                NSLog(@"something went wrong findUserExercises %@", error);
+//            }
+//            else {
+//
+//                self.exerciseArray = [[NSMutableArray alloc] initWithArray:objects];
+//                self.defaultExercises = [NSArray new];
+//                self.defaultExercises = [self.exerciseArray subarrayWithRange:NSMakeRange(0, 5)];
+//            }
+//        }];
+//
+//
+//    }
+//}
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
@@ -75,8 +97,8 @@
 
     [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadData" object:self];
     
+    // Set icon badge number to zero
     application.applicationIconBadgeNumber = 0;
-
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
