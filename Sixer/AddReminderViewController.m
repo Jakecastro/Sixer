@@ -8,43 +8,105 @@
 
 #import "AddReminderViewController.h"
 
+#import "AddReminderViewController.h"
+#import "Exercise.h"
+
+
+@interface AddReminderViewController () <UIPickerViewDataSource, UIPickerViewDelegate>
+@property NSMutableArray *pickerArray;
+@property Exercise *selectedExercise;
+
+@end
+
 @implementation AddReminderViewController
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadTable) name:@"reloadData" object:nil];
+    self.pickerArray = [NSMutableArray new];
 
-    self.enterExerciseTextField.delegate = self;
+    [self queryExercises];
+
+    //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadTable) name:@"reloadData" object:nil];
+    self.view.backgroundColor=[UIColor yellowColor];
+    [self.pickerView reloadAllComponents];
+
 }
 
 - (IBAction)onPushSaveButton:(UIButton *)sender {
 
-// From stack
-//    NSDateFormatter *outputFormatter = [[NSDateFormatter alloc]init];
-//    [outputFormatter setDateFormat:@"HH:mm"];
-//    NSString *dateString = [outputFormatter stringFromDate:self.datePicker.date];
-//    [outputFormatter release];
+//    NSDate *pickerDate = [self.datePicker date];
 
-    [self.enterExerciseTextField resignFirstResponder];
-
-    NSDate *pickerDate = [self.datePicker date];
     UILocalNotification *localNotification = [[UILocalNotification alloc]init];
-    localNotification.fireDate = pickerDate;
-    localNotification.alertBody = self.enterExerciseTextField.text;
+    localNotification.fireDate = self.datePicker.date;
+    localNotification.alertBody = self.selectedExercise.name;
     localNotification.alertAction = @"Time to Workout";
-    localNotification.timeZone = [NSTimeZone defaultTimeZone];
+    localNotification.timeZone = [NSTimeZone localTimeZone];
     localNotification.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] +1;
+    localNotification.soundName = UILocalNotificationDefaultSoundName;
+    localNotification.repeatInterval = NSCalendarUnitDay;
 
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
 
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadData" object:self];
+//    [[UIApplication sharedApplication] presentLocalNotificationNow:localNotification];
 
+    UIUserNotificationType types = UIUserNotificationTypeAlert | UIUserNotificationTypeBadge |UIUserNotificationTypeSound;
+
+    UIUserNotificationSettings *mySettings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+
+    [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
 
     [self dismissViewControllerAnimated:YES completion:nil];
+
+
+
+}
+
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)thePickerView numberOfRowsInComponent:(NSInteger)component {
+    return self.pickerArray.count;
+}
+
+-(NSString *)pickerView:(UIPickerView *)thePickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    Exercise *excer = [self.pickerArray objectAtIndex:row];
+
+    return [excer objectForKey:@"name"];
+
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    NSLog(@"Selected Row %ld", (long)row);
+    self.selectedExercise = [self.pickerArray objectAtIndex:row];
+
+}
+
+
+
+-(void)queryExercises{
+
+    PFQuery *exerciseQuery = [PFQuery queryWithClassName:@"Exercise"];
+    [exerciseQuery whereKeyExists:@"name"];
+
+    [exerciseQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"blah");
+        }
+        else {
+            self.pickerArray = [objects mutableCopy];
+            [self.pickerView reloadAllComponents];
+        }
+    }];
+    
     
 }
+ 
+    
+
 
 
 

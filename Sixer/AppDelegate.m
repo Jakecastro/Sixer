@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 #import "Exercise.h"
+#import "Color.h"
 
 @interface AppDelegate ()
 
@@ -37,31 +38,45 @@
     UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"InitialScreen"];
     self.window.rootViewController = viewController;
     [self.window makeKeyAndVisible];
+
+    //For local notifications
+    UILocalNotification *localNotif = [launchOptions valueForKey:UIApplicationLaunchOptionsLocalNotificationKey];
+    if (localNotif) {
+        application.applicationIconBadgeNumber = 0;
+    }
+
     return YES;
 }
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
-    UIApplicationState state = [application applicationState];
-    if (state == UIApplicationStateActive) {
-//        UIAlertController *alert = [[UIAlertView alloc] initWithTitle:@"Reminder"
-//                                                        message:notification.alertBody
-//                                                       delegate:self cancelButtonTitle:@"OK"
-//                                              otherButtonTitles:nil];
-//        [alert show];
 
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Time for exercise!" message:nil preferredStyle:UIAlertControllerStyleAlert];
-        
-        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            [alert dismissViewControllerAnimated:YES completion:nil];
+    UIApplicationState state = [application applicationState];
+
+    if (state == UIApplicationStateActive) {
+
+
+        UIAlertController *alert  = [UIAlertController alertControllerWithTitle:@"Every Hour" message:@"Time to exercise!" preferredStyle:UIAlertControllerStyleActionSheet];
+
+
+        UIAlertAction *openApp = [UIAlertAction actionWithTitle:@"Open app" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            //somehow open the app
         }];
+
+        UIAlertAction *ignore = [UIAlertAction actionWithTitle:@"Ignore" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            // do nothing
+
+        }];
+
+        [alert addAction:openApp];
+        [alert addAction:ignore];
+        [alert presentViewController:alert animated:YES completion:nil];
     }
 
-    // Request to reload table view data
     [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadData" object:self];
-
-    // Set icon badge number to zero
+    
     application.applicationIconBadgeNumber = 0;
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -80,6 +95,8 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:[UIApplication sharedApplication].applicationIconBadgeNumber -1];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
