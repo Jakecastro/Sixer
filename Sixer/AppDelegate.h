@@ -12,7 +12,9 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property NSArray *defaultExercises;
+@property NSMutableArray *exerciseArray;
+@property BOOL alreadyLaunchedOnce;
 
 @end
 

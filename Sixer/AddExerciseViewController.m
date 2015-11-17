@@ -40,14 +40,14 @@ CVExerciseCell *addExerciseCell;
     PFQuery *query = [PFQuery queryWithClassName:@"Exercise"];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         if (error) {
-            NSLog(@"something went wrong with queryParse %@",error);
-        }
-        else {
-            self.exercisesArray = [[NSArray alloc]initWithArray:objects];
+            NSLog(@"something went wrong with queryParse %@", error);
+        } else {
+            self.exercisesArray = [[NSArray alloc] initWithArray:objects];
             [self findUserExercisesFromParse];
         }
     }];
 }
+
 - (void)findUserExercisesFromParse {
 
     PFUser *user = [PFUser currentUser];

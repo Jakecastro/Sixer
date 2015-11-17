@@ -14,6 +14,7 @@
 #import "Color.h"
 #import "GroupTableViewCell.h"
 #import "GroupViewController.h"
+#import "AppDelegate.h"
 
 @interface ExerciseViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
@@ -25,9 +26,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *menuButton;
 
 @property  NSMutableArray *userExercisesArray;
-
 @property Exercise *selectedExercise;
-
+@property NSMutableArray *defaultArray;    
 @end
 
 @implementation ExerciseViewController
@@ -43,6 +43,42 @@ ExerciseCell *cell;
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     self.navigationItem.titleView = [[UIImageView alloc]initWithImage:titleImage];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:194.0/255.0 green:222.0/255.0 blue:17.0/255.0 alpha:1.0f];
+    
+//    AppDelegate *appdelegate = [AppDelegate new];
+//    
+//    if (!appdelegate.defaultExercises.count) {
+//        if (self.userExercisesArray.count == 0) {
+//            for (PFObject *exercise in appdelegate.defaultExercises) {
+//                
+//                [self.userExercisesArray addObject:exercise];
+//            }
+//        }
+//       
+//    }
+    self.collectionView.delegate = self;
+    self.defaultArray = [NSMutableArray new];
+    
+//    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+//    if (appDelegate.defaultExercises != 0) {
+//        self.userExercisesArray = [appDelegate.defaultExercises mutableCopy];
+//    }
+   
+//    PFQuery *query = [PFQuery queryWithClassName:@"Exercise"];
+//    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+//        
+//            for (Exercise *exercise in objects) {
+//                [self.defaultArray addObject:exercise];
+//            }
+//
+//            
+//            if (self.userExercisesArray.count == 0) {
+//                self.userExercisesArray =[NSMutableArray new];
+//                self.userExercisesArray = [[self.defaultArray subarrayWithRange:NSMakeRange(0, 5)] mutableCopy];
+//                [self.collectionView reloadData];}
+//            
+//       
+//    }];
+
     
 }
 

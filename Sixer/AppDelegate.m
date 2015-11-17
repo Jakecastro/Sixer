@@ -19,7 +19,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
+    
     [Exercise registerSubclass];
     
     // Initialize Parse.
@@ -37,29 +37,64 @@
     UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"InitialScreen"];
     self.window.rootViewController = viewController;
     [self.window makeKeyAndVisible];
+    //    [self loadDefaultExercises];
+    
+//    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"]) {
+//        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
+//        [[NSUserDefaults standardUserDefaults] synchronize];
+//        if (self.alreadyLaunchedOnce == NO) {
+//            PFQuery *query = [PFQuery queryWithClassName:@"Exercise"];
+//            [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+//                self.defaultExercises = [NSArray new];
+//                self.defaultExercises = objects;
+//            }];
+//        }
+//    }
     return YES;
 }
+
+//- (void) loadDefaultExercises {
+//
+//    if (self.alreadyLaunchedOnce == NO) {
+//        PFUser *user = [PFUser currentUser];
+//        PFRelation *relation = [user relationForKey:@"exercise"];
+//        PFQuery *query = [relation query];
+//        [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+//            if (error) {
+//                NSLog(@"something went wrong findUserExercises %@", error);
+//            }
+//            else {
+//
+//                self.exerciseArray = [[NSMutableArray alloc] initWithArray:objects];
+//                self.defaultExercises = [NSArray new];
+//                self.defaultExercises = [self.exerciseArray subarrayWithRange:NSMakeRange(0, 5)];
+//            }
+//        }];
+//
+//
+//    }
+//}
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
     UIApplicationState state = [application applicationState];
     if (state == UIApplicationStateActive) {
-//        UIAlertController *alert = [[UIAlertView alloc] initWithTitle:@"Reminder"
-//                                                        message:notification.alertBody
-//                                                       delegate:self cancelButtonTitle:@"OK"
-//                                              otherButtonTitles:nil];
-//        [alert show];
-
+        //        UIAlertController *alert = [[UIAlertView alloc] initWithTitle:@"Reminder"
+        //                                                        message:notification.alertBody
+        //                                                       delegate:self cancelButtonTitle:@"OK"
+        //                                              otherButtonTitles:nil];
+        //        [alert show];
+        
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Time for exercise!" message:nil preferredStyle:UIAlertControllerStyleAlert];
         
         UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             [alert dismissViewControllerAnimated:YES completion:nil];
         }];
     }
-
+    
     // Request to reload table view data
     [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadData" object:self];
-
+    
     // Set icon badge number to zero
     application.applicationIconBadgeNumber = 0;
 }

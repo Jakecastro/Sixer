@@ -129,7 +129,17 @@
     user.username = username;
     user.password = password;
     user.email = email;
-    
+    //add 5 exercices to new user
+    PFQuery *query = [PFQuery queryWithClassName:@"Exercise"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        NSArray *first5Exercices = [[NSArray alloc] init];
+        first5Exercices = [objects subarrayWithRange:NSMakeRange(0, 5)];
+        PFRelation *userExerciseRelation = [user relationForKey:@"exercise"];
+        for (PFObject *exercise in first5Exercices) {
+            [userExerciseRelation addObject:exercise];
+        }
+        [user saveInBackground];
+    }];
     // Check if the user selected an image
     if (selectedImage != nil) {
         
