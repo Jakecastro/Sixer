@@ -216,7 +216,7 @@ GameState;
 
 - (void)beginGame {
     _state = GameStateDealing;
-    NSLog(@"the game should begin");
+    [self.delegate gameDidBegin:self];
 }
 
 - (void)changeRelativePositionsOfPlayers {
@@ -269,6 +269,8 @@ GameState;
     }
     return YES;
 }
+
+
 
 @end
 
