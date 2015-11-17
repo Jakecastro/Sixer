@@ -16,7 +16,7 @@
     self.backgroundColor = [Color whiteColor];
     self.exerciseLabel.textColor = [Color whiteColor];
     self.exerciseImage.backgroundColor = [Color whiteColor];
-    self.exerciseLabel.backgroundColor = [Color flatAbestosColor];
+    self.exerciseLabel.backgroundColor = [Color flatSilverColor];
     self.exerciseLabel.textColor = [Color whiteColor];
     self.exerciseImage.backgroundColor = [Color whiteColor];
 }

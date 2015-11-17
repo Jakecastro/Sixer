@@ -54,21 +54,21 @@ Group *solo;
 
 #pragma mark - Setup IU Methods
 - (void)setUIForCountUpActive {
-    self.view.backgroundColor = [Color hourGreenColor];
-    self.timeCountLabel.textColor = [Color hourYellowTextColor];
-    self.imageView.backgroundColor = [Color hourDarkGreenColor];
-    self.timeCountLabel.backgroundColor = [Color hourDarkGreenColor];
+    self.view.backgroundColor = [Color flatTurquoiseColor];
+    self.timeCountLabel.textColor = [Color orangeColor];
+    self.imageView.backgroundColor = [Color flatTurquoiseColor];
+    self.timeCountLabel.backgroundColor = [Color flatTurquoiseColor];
 }
 
 - (void)setUIForCountUpRest {
-    self.view.backgroundColor = [Color hourTimerBlue];
-    self.timeCountLabel.textColor = [Color hourOrangeColor];
-    self.imageView.backgroundColor = [Color hourTimerDarkBlue];
-    self.timeCountLabel.backgroundColor = [Color hourTimerDarkBlue];
+    self.view.backgroundColor = [Color redColor];
+    self.timeCountLabel.textColor = [Color orangeColor];
+    self.imageView.backgroundColor = [Color flatBelizeHoleColor];
+    self.timeCountLabel.backgroundColor = [Color flatWetAsphalt];
 
-    self.totalTimeScoreLabel.backgroundColor = [Color hourDarkGreenColor];
-    self.totalScoreNameLabel.backgroundColor = [Color hourDarkGreenColor];
-    self.totalTimeScoreLabel.textColor = [Color hourYellowTextColor];
+    self.totalTimeScoreLabel.backgroundColor = [Color flatPomegranateColor];
+    self.totalScoreNameLabel.backgroundColor = [Color flatPumpkinColor];
+    self.totalTimeScoreLabel.textColor = [Color flatWisteriaColor];
     self.totalScoreNameLabel.textColor = [Color whiteColor];
 
     if ([self.totalTimeScoreLabel.text isEqualToString:@"0"]) {

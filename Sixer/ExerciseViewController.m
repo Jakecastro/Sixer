@@ -42,7 +42,7 @@ ExerciseCell *cell;
     UIImage *titleImage = [UIImage imageNamed:@"Get Active!"];
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     self.navigationItem.titleView = [[UIImageView alloc]initWithImage:titleImage];
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:194.0/255.0 green:222.0/255.0 blue:17.0/255.0 alpha:1.0f];
+    self.navigationController.navigationBar.barTintColor = [Color flatTurquoiseColor];
     
 //    AppDelegate *appdelegate = [AppDelegate new];
 //    
@@ -100,7 +100,7 @@ ExerciseCell *cell;
 
 #pragma mark - UI Methods
 - (void)setColorsAndBordersOnLoad {
-    self.topView.backgroundColor = [Color chartreuse];
+    self.topView.backgroundColor = [Color flatTurquoiseColor];
     self.bottomView.backgroundColor = [UIColor whiteColor];
     [self.view setBackgroundColor:[UIColor whiteColor]];
     cell.exerciseImage.backgroundColor = [Color flatCloudsColor];
@@ -109,16 +109,9 @@ ExerciseCell *cell;
 }
 
 - (void)resetUnselectedAttributes {
-    cell.backgroundColor = [Color whiteColor];
     cell.exerciseLabel.backgroundColor = [UIColor grayColor];
-    cell.exerciseImage.backgroundColor = [Color flatCloudsColor];
-    [cell.layer setBorderColor:[Color hourNormalStateBorderColor].CGColor];
-//    [cell.layer setBorderColor:[UIColor whiteColor].CGColor];
-    [cell.exerciseLabel.layer setBackgroundColor:[Color whiteColor].CGColor];
-    cell.exerciseImage.backgroundColor = [Color flatCloudsColor];
+    cell.exerciseImage.backgroundColor = [Color flatSilverColor];
 
-//    self.workoutButton.hidden = true;
-//    self.workoutButton.titleLabel.text = @"select exercise above";
 }
 
 #pragma mark - UICollectionView Methods
@@ -148,9 +141,9 @@ ExerciseCell *cell;
     cell = (ExerciseCell *) [collectionView cellForItemAtIndexPath:indexPath];
     self.selectedExercise = [self.userExercisesArray objectAtIndex:indexPath.row];
 
-    cell.exerciseImage.backgroundColor = [Color chartreuse];
-    cell.exerciseLabel.backgroundColor = [UIColor grayColor];
-    cell.backgroundColor = [UIColor whiteColor];
+    cell.exerciseImage.backgroundColor = [Color colorWithRed:150.0f/255.0f green:239.0f/255.0f blue:210.0f/255.0f alpha:1.0f];
+    cell.exerciseLabel.backgroundColor = [Color flatTurquoiseColor];
+
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {

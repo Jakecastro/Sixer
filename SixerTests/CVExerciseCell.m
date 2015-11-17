@@ -15,7 +15,6 @@
     [self.layer setCornerRadius:30.0f];
     [self.imageView.layer setCornerRadius:30.0f];
     self.nameLabel.textColor = [UIColor blackColor];
-    [self.layer setBorderColor:[Color hourNormalStateBorderColor].CGColor];
 }
 
 @end

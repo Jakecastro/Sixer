@@ -10,30 +10,15 @@
 
 @interface Color : UIColor
 
-+ (UIColor *)hourOrangeColor;
-+ (UIColor *)hourHighlightBorderOrangeColor;
-
-+ (UIColor *)hourYellowTextColor;
-
-+ (UIColor *)hourGreenColor;
-+ (UIColor *)hourDarkGreenColor;
-
-+ (UIColor *)hourDarkBlueColor;
-+ (UIColor *)hourBackgroundBlueColor;
-+ (UIColor *)hourTimerDarkBlue;
-+ (UIColor *)hourTimerBlue;
-
-+ (UIColor *)hourNormalStateBorderColor;
-
-
++ (UIColor* )selectedExerciseColor;
 + (UIColor* )flatAlizarinColor;
 + (UIColor* )flatPomegranateColor;
 + (UIColor* )flatCarrotColor;
 + (UIColor* )flatPumpkinColor;
 + (UIColor* )flatSunflowerColor;
 + (UIColor* )flatOrangeColor;
-+ (UIColor *)flatTurquoiseColor;
-+ (UIColor *)flatGreenSeaColor;
++ (UIColor* )flatTurquoiseColor;
++ (UIColor* )flatGreenSeaColor;
 + (UIColor* )flatEmeraldColor;
 + (UIColor* )flatNephritisColor;
 + (UIColor* )flatPeterRiverColor;
@@ -47,7 +32,7 @@
 + (UIColor* )flatCloudsColor;
 + (UIColor* )flatSilverColor;
 + (UIColor* )flatBlackColor;
-+ (UIColor *)chartreuse;
++ (UIColor* )chartreuse;
 
 
 

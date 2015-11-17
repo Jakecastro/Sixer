@@ -26,7 +26,7 @@
     // Initialize Parse.
     [Parse setApplicationId:@"gVFJgoezxzMORzfgiTCgwIsvfEeTrQPL6IlOoBTP"
                   clientKey:@"fj22hAaOlF15CiAEncRWNHpeXzo5v5QBUh03xYrx"];
-    [[UITabBar appearance] setTintColor:[Color chartreuse]];
+    [[UITabBar appearance] setTintColor:[Color flatTurquoiseColor]];
     
     // [Optional] Track statistics around application opens.
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];

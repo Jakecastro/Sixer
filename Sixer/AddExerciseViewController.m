@@ -122,8 +122,8 @@ CVExerciseCell *addExerciseCell;
     else if ([seletedExercise.isUserExercise boolValue] == false) {
         seletedExercise.isUserExercise = [NSNumber numberWithBool:true];
         [userExerciseRelation addObject:seletedExercise];
-        addExerciseCell.imageView.backgroundColor = [Color chartreuse];
-        addExerciseCell.backgroundColor = [Color chartreuse];
+        addExerciseCell.imageView.backgroundColor = [Color flatTurquoiseColor];
+        addExerciseCell.backgroundColor = [Color flatTurquoiseColor];
     }
 
     [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
