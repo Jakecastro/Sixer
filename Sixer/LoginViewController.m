@@ -32,7 +32,7 @@
 
 // Delegates set in storyboard
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
-    [self.loginButton setBackgroundImage:[UIImage imageNamed:@"Login button"]
+    [self.loginButton setBackgroundImage:[UIImage imageNamed:@"Login2"]
                                 forState:UIControlStateNormal];
     
 }
