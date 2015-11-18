@@ -23,8 +23,6 @@
 
 @implementation AddExerciseViewController
 
-CVExerciseCell *addExerciseCell;
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self queryExercisesFromParse];
@@ -50,8 +48,8 @@ CVExerciseCell *addExerciseCell;
 
 - (void)findUserExercisesFromParse {
 
-    PFUser *user = [PFUser currentUser];
-    PFRelation *relation = [user relationForKey:@"exercise"];
+//    PFUser *user = [PFUser currentUser];
+    PFRelation *relation = [[PFUser currentUser] relationForKey:@"exercise"];
     PFQuery *query = [relation query];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         if (error) {
@@ -78,10 +76,10 @@ CVExerciseCell *addExerciseCell;
 
     //  make all objects returned from Parse Exercise objects
     Exercise *exercise = [self.exercisesArray objectAtIndex:indexPath.row];
-    
-    if (exercise.isUserExercise) {
+    if ([self isExerciseInUserExercise:exercise]) {
         cell.imageView.backgroundColor = [Color selectedExerciseColor];
-//        cell.backgroundColor = [Color flatTurquoiseColor];
+        cell.backgroundColor = [Color selectedExerciseColor];
+        cell.nameLabel.backgroundColor = [Color flatTurquoiseColor];
     }
 
     if ([self.userExercises containsObject:exercise]) {
@@ -91,7 +89,6 @@ CVExerciseCell *addExerciseCell;
         exercise.isUserExercise = [NSNumber numberWithBool:false];
     }
     
-
     //  converts pffile to images that objective c can render, images are stored as pffiles on Parse
     PFFile *imageFile = [exercise objectForKey:@"image"];
     [imageFile getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
@@ -99,18 +96,12 @@ CVExerciseCell *addExerciseCell;
             NSLog(@"error cellForItemAtIndexPath %@",error);
         }
         else {
+    
             cell.imageView.image = [UIImage imageWithData:data];
             cell.nameLabel.text = [exercise objectForKey:@"name"];
-//            cell.backgroundColor = [Color flatCloudsColor];
-//            cell.imageView.backgroundColor = [Color flatCloudsColor];
         }
     }];
-//    for (exercise in self.exercisesArray) {
-//        if (exercise ) {
-//            cell.imageView.backgroundColor = [Color flatTurquoiseColor];
-//            cell.backgroundColor = [Color flatTurquoiseColor];
-//        }
-//    }
+
     
     return cell;
 }
@@ -151,6 +142,16 @@ CVExerciseCell *addExerciseCell;
 #pragma mark - IBActions
 - (IBAction)onDoneButtonTapped:(UIBarButtonItem *)sender {
 //    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (BOOL)isExerciseInUserExercise:(Exercise *)userExercise {
+    BOOL found = NO;
+    for (Exercise *myExercise in self.userExercises) {
+        if ([myExercise.name isEqualToString:userExercise.name]) {
+            found = YES;
+        }
+    }
+    return found;
 }
 
 @end
