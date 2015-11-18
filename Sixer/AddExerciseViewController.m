@@ -23,8 +23,6 @@
 
 @implementation AddExerciseViewController
 
-CVExerciseCell *addExerciseCell;
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self queryExercisesFromParse];
@@ -50,12 +48,12 @@ CVExerciseCell *addExerciseCell;
 
 - (void)findUserExercisesFromParse {
 
-    PFUser *user = [PFUser currentUser];
-    PFRelation *relation = [user relationForKey:@"exercise"];
+//    PFUser *user = [PFUser currentUser];
+    PFRelation *relation = [[PFUser currentUser] relationForKey:@"exercise"];
     PFQuery *query = [relation query];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         if (error) {
-            NSLog(@"something went wrong findUserExercises %@", error);
+            NSLog(@"error findUserExercises %@", error);
         }
         else {
             self.userExercises = [[NSMutableArray alloc] initWithArray:objects];
@@ -78,6 +76,11 @@ CVExerciseCell *addExerciseCell;
 
     //  make all objects returned from Parse Exercise objects
     Exercise *exercise = [self.exercisesArray objectAtIndex:indexPath.row];
+    if ([self isExerciseInUserExercise:exercise]) {
+        cell.imageView.backgroundColor = [Color selectedExerciseColor];
+        cell.backgroundColor = [Color selectedExerciseColor];
+        cell.nameLabel.backgroundColor = [Color flatTurquoiseColor];
+    }
 
     if ([self.userExercises containsObject:exercise]) {
         exercise.isUserExercise = [NSNumber numberWithBool:true];
@@ -85,7 +88,7 @@ CVExerciseCell *addExerciseCell;
     else {
         exercise.isUserExercise = [NSNumber numberWithBool:false];
     }
-
+    
     //  converts pffile to images that objective c can render, images are stored as pffiles on Parse
     PFFile *imageFile = [exercise objectForKey:@"image"];
     [imageFile getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
@@ -93,12 +96,13 @@ CVExerciseCell *addExerciseCell;
             NSLog(@"error cellForItemAtIndexPath %@",error);
         }
         else {
+    
             cell.imageView.image = [UIImage imageWithData:data];
             cell.nameLabel.text = [exercise objectForKey:@"name"];
-            cell.backgroundColor = [Color flatCloudsColor];
-            cell.imageView.backgroundColor = [Color flatCloudsColor];
         }
     }];
+
+    
     return cell;
 }
 
@@ -114,14 +118,16 @@ CVExerciseCell *addExerciseCell;
     if ([seletedExercise.isUserExercise boolValue] == true) {
         seletedExercise.isUserExercise = [NSNumber numberWithBool:false];
         [userExerciseRelation removeObject:seletedExercise];
-        addExerciseCell.imageView.backgroundColor = [Color whiteColor];
-        addExerciseCell.backgroundColor = [Color whiteColor];
+        addExerciseCell.imageView.backgroundColor = [Color flatCloudsColor];
+        addExerciseCell.backgroundColor = [Color flatCloudsColor];
+        addExerciseCell.nameLabel.backgroundColor = [Color flatSilverColor];
     }
     else if ([seletedExercise.isUserExercise boolValue] == false) {
         seletedExercise.isUserExercise = [NSNumber numberWithBool:true];
         [userExerciseRelation addObject:seletedExercise];
-        addExerciseCell.imageView.backgroundColor = [Color flatTurquoiseColor];
-        addExerciseCell.backgroundColor = [Color flatTurquoiseColor];
+        addExerciseCell.imageView.backgroundColor = [Color selectedExerciseColor];
+        addExerciseCell.backgroundColor = [Color selectedExerciseColor];
+        addExerciseCell.nameLabel.backgroundColor = [Color flatTurquoiseColor];
     }
 
     [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
@@ -136,6 +142,16 @@ CVExerciseCell *addExerciseCell;
 #pragma mark - IBActions
 - (IBAction)onDoneButtonTapped:(UIBarButtonItem *)sender {
 //    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (BOOL)isExerciseInUserExercise:(Exercise *)userExercise {
+    BOOL found = NO;
+    for (Exercise *myExercise in self.userExercises) {
+        if ([myExercise.name isEqualToString:userExercise.name]) {
+            found = YES;
+        }
+    }
+    return found;
 }
 
 @end
