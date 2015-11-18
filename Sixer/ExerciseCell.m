@@ -14,11 +14,9 @@
 - (void)awakeFromNib {
     [self.layer setCornerRadius:10.0f];
     self.backgroundColor = [Color whiteColor];
-    self.exerciseLabel.textColor = [Color whiteColor];
-    self.exerciseImage.backgroundColor = [Color whiteColor];
+    self.exerciseImage.backgroundColor = [Color flatCloudsColor];
     self.exerciseLabel.backgroundColor = [Color flatSilverColor];
     self.exerciseLabel.textColor = [Color whiteColor];
-    self.exerciseImage.backgroundColor = [Color whiteColor];
 }
 
 @end

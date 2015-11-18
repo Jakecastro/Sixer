@@ -23,8 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
 @property (weak, nonatomic) IBOutlet UIView *topView;
 
-@property (weak, nonatomic) IBOutlet UIButton *menuButton;
-
+@property (weak, nonatomic) IBOutlet UIButton *teamButton;
 @property  NSMutableArray *userExercisesArray;
 @property Exercise *selectedExercise;
 @property NSMutableArray *defaultArray;    
@@ -44,42 +43,11 @@ ExerciseCell *cell;
     self.navigationItem.titleView = [[UIImageView alloc]initWithImage:titleImage];
     self.navigationController.navigationBar.barTintColor = [Color flatTurquoiseColor];
     
-//    AppDelegate *appdelegate = [AppDelegate new];
-//    
-//    if (!appdelegate.defaultExercises.count) {
-//        if (self.userExercisesArray.count == 0) {
-//            for (PFObject *exercise in appdelegate.defaultExercises) {
-//                
-//                [self.userExercisesArray addObject:exercise];
-//            }
-//        }
-//       
-//    }
     self.collectionView.delegate = self;
     self.defaultArray = [NSMutableArray new];
     
-//    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-//    if (appDelegate.defaultExercises != 0) {
-//        self.userExercisesArray = [appDelegate.defaultExercises mutableCopy];
-//    }
-   
-//    PFQuery *query = [PFQuery queryWithClassName:@"Exercise"];
-//    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-//        
-//            for (Exercise *exercise in objects) {
-//                [self.defaultArray addObject:exercise];
-//            }
-//
-//            
-//            if (self.userExercisesArray.count == 0) {
-//                self.userExercisesArray =[NSMutableArray new];
-//                self.userExercisesArray = [[self.defaultArray subarrayWithRange:NSMakeRange(0, 5)] mutableCopy];
-//                [self.collectionView reloadData];}
-//            
-//       
-//    }];
-
-    
+    self.teamButton.backgroundColor = [Color flatCloudsColor];
+    [self.teamButton.layer setCornerRadius:8.0f];
 }
 
 - (void)findUserExercises {
@@ -100,17 +68,17 @@ ExerciseCell *cell;
 
 #pragma mark - UI Methods
 - (void)setColorsAndBordersOnLoad {
-    self.topView.backgroundColor = [Color flatTurquoiseColor];
     self.bottomView.backgroundColor = [UIColor whiteColor];
     [self.view setBackgroundColor:[UIColor whiteColor]];
-    cell.exerciseImage.backgroundColor = [Color flatCloudsColor];
+    
     self.collectionView.backgroundColor = [UIColor whiteColor];
+    
     [self.segmentedController setBackgroundColor:[Color whiteColor]];
 }
 
 - (void)resetUnselectedAttributes {
-    cell.exerciseLabel.backgroundColor = [UIColor grayColor];
-    cell.exerciseImage.backgroundColor = [Color flatSilverColor];
+    cell.exerciseLabel.backgroundColor = [Color flatSilverColor];
+    cell.exerciseImage.backgroundColor = [Color flatCloudsColor];
 
 }
 
@@ -132,7 +100,6 @@ ExerciseCell *cell;
     NSData *imageData = [imageFile getData];
     cell.exerciseImage.image = [UIImage imageWithData:imageData];
     cell.exerciseLabel.text = [exercise objectForKey:@"name"];
-    cell.exerciseImage.backgroundColor = [Color flatCloudsColor];
     return cell;
 }
 
@@ -141,7 +108,7 @@ ExerciseCell *cell;
     cell = (ExerciseCell *) [collectionView cellForItemAtIndexPath:indexPath];
     self.selectedExercise = [self.userExercisesArray objectAtIndex:indexPath.row];
 
-    cell.exerciseImage.backgroundColor = [Color colorWithRed:150.0f/255.0f green:239.0f/255.0f blue:210.0f/255.0f alpha:1.0f];
+    cell.exerciseImage.backgroundColor = [Color selectedExerciseColor];
     cell.exerciseLabel.backgroundColor = [Color flatTurquoiseColor];
 
 }

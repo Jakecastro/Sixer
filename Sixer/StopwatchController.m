@@ -55,21 +55,25 @@ Group *solo;
 #pragma mark - Setup IU Methods
 - (void)setUIForCountUpActive {
     self.view.backgroundColor = [Color flatTurquoiseColor];
-    self.timeCountLabel.textColor = [Color orangeColor];
+    self.timeCountLabel.textColor = [Color flatPumpkinColor];
     self.imageView.backgroundColor = [Color flatTurquoiseColor];
-    self.timeCountLabel.backgroundColor = [Color flatTurquoiseColor];
+    self.timeCountLabel.backgroundColor = [Color flatNephritisColor];
+    self.totalScoreNameLabel.backgroundColor = [Color flatNephritisColor];
+    self.totalScoreNameLabel.textColor = [Color flatCloudsColor];
+    self.totalTimeScoreLabel.backgroundColor = [Color flatNephritisColor];
+    self.totalTimeScoreLabel.textColor = [Color flatCloudsColor];
 }
 
 - (void)setUIForCountUpRest {
-    self.view.backgroundColor = [Color redColor];
-    self.timeCountLabel.textColor = [Color orangeColor];
-    self.imageView.backgroundColor = [Color flatBelizeHoleColor];
-    self.timeCountLabel.backgroundColor = [Color flatWetAsphalt];
+    self.view.backgroundColor = [Color flatPeterRiverColor];
+    self.timeCountLabel.textColor = [Color flatMidnightBlue];
+    self.imageView.backgroundColor = [Color flatPeterRiverColor];
+    self.timeCountLabel.backgroundColor = [Color flatBelizeHoleColor];
 
-    self.totalTimeScoreLabel.backgroundColor = [Color flatPomegranateColor];
-    self.totalScoreNameLabel.backgroundColor = [Color flatPumpkinColor];
-    self.totalTimeScoreLabel.textColor = [Color flatWisteriaColor];
-    self.totalScoreNameLabel.textColor = [Color whiteColor];
+    self.totalTimeScoreLabel.backgroundColor = [Color flatBelizeHoleColor];
+    self.totalScoreNameLabel.backgroundColor = [Color flatBelizeHoleColor];
+    self.totalTimeScoreLabel.textColor = [Color flatCloudsColor];
+    self.totalScoreNameLabel.textColor = [Color flatCloudsColor];
 
     if ([self.totalTimeScoreLabel.text isEqualToString:@"0"]) {
         self.totalTimeScoreLabel.hidden = true;
@@ -133,13 +137,6 @@ Group *solo;
     PFUser *user = [PFUser currentUser];
     Activity *activity = [Activity objectWithClassName:@"Activity"];
     NSNumber *withGroup = [NSNumber numberWithBool:self.groupActivity];
-//    Week *scoreToAdd = [Week objectWithClassName:@"Week"];
-
-//    PFRelation *userScoreRelation = [activity relationForKey:@"user"];
-//    PFRelation *userExerciseRelation = [activity relationForKey:@"exercise"];
-
-//    [userScoreRelation addObject:user];
-//    [userExerciseRelation addObject:self.selectedExercise];
 
     activity[@"score"] = [NSNumber numberWithInt:(int)totalSessionTime];
     activity[@"isActive"] = @YES;
@@ -161,12 +158,6 @@ Group *solo;
     }];
 
 
-
-//    [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-//        if (error) {
-//            NSLog(@"did not save relation %@",error);
-//        }
-//    }];
 }
 
 @end

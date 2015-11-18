@@ -10,6 +10,7 @@
 
 #import "AddReminderViewController.h"
 #import "Exercise.h"
+#import "Color.h"
 
 
 @interface AddReminderViewController () <UIPickerViewDataSource, UIPickerViewDelegate>
@@ -29,7 +30,7 @@
     [self queryExercises];
 
     //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadTable) name:@"reloadData" object:nil];
-    self.view.backgroundColor=[UIColor yellowColor];
+    self.view.backgroundColor=[Color flatCloudsColor];
     [self.pickerView reloadAllComponents];
 
 }
