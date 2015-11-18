@@ -17,7 +17,7 @@
 @property (nonatomic, strong) NSIndexPath *selectedItemIndexPath;
 @property NSMutableArray *selectedExercise;
 @property NSMutableArray *userExercises;
-@property NSArray *exercisesArray;
+@property NSMutableArray *exercisesArray;
 
 @end
 
@@ -40,9 +40,9 @@ CVExerciseCell *addExerciseCell;
     PFQuery *query = [PFQuery queryWithClassName:@"Exercise"];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         if (error) {
-            NSLog(@"something went wrong with queryParse %@", error);
+            NSLog(@"error queryParse %@", error);
         } else {
-            self.exercisesArray = [[NSArray alloc] initWithArray:objects];
+            self.exercisesArray = [[NSMutableArray alloc] initWithArray:objects];
             [self findUserExercisesFromParse];
         }
     }];
@@ -74,7 +74,7 @@ CVExerciseCell *addExerciseCell;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CVExerciseCell *addExerciseCell = (CVExerciseCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    CVExerciseCell *cell = (CVExerciseCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
 
     //  make all objects returned from Parse Exercise objects
     Exercise *exercise = [self.exercisesArray objectAtIndex:indexPath.row];
@@ -90,18 +90,16 @@ CVExerciseCell *addExerciseCell;
     PFFile *imageFile = [exercise objectForKey:@"image"];
     [imageFile getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
         if (error) {
-            NSLog(@"something went wrong with cellForItemAtIndexPath %@",error);
+            NSLog(@"error cellForItemAtIndexPath %@",error);
         }
         else {
-            addExerciseCell.imageView.image = [UIImage imageWithData:data];
-            addExerciseCell.nameLabel.text = [exercise objectForKey:@"name"];
-            addExerciseCell.backgroundColor = [Color flatCloudsColor];
-            addExerciseCell.imageView.backgroundColor = [Color flatCloudsColor];
+            cell.imageView.image = [UIImage imageWithData:data];
+            cell.nameLabel.text = [exercise objectForKey:@"name"];
+            cell.backgroundColor = [Color flatCloudsColor];
+            cell.imageView.backgroundColor = [Color flatCloudsColor];
         }
     }];
-
-
-    return addExerciseCell;
+    return cell;
 }
 
 
@@ -128,18 +126,16 @@ CVExerciseCell *addExerciseCell;
 
     [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         if (error) {
-            NSLog(@"error with saving didSelectItemAtIndexPath %@", error);
+            NSLog(@"error didSelectItemAtIndexPath %@", error);
         }
     }];
 
 }
 
 
-
 #pragma mark - IBActions
-
 - (IBAction)onDoneButtonTapped:(UIBarButtonItem *)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+//    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

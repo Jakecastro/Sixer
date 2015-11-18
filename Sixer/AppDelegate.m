@@ -30,8 +30,6 @@
     
     // [Optional] Track statistics around application opens.
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-    UITabBarController *tabBar = (UITabBarController *)self.window.rootViewController;
-    tabBar.selectedIndex = 1;
     
     //Presents Initial Screen
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Initial" bundle:nil];

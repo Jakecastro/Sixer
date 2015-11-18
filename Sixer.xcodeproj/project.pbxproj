@@ -283,9 +283,9 @@
 		23055F821BF26B1300D170F5 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				23055F8B1BF280A000D170F5 /* index 0 Controller */,
-				23055F8C1BF280AE00D170F5 /* index 1 Controller */,
-				23055F8D1BF280BA00D170F5 /* index 2 Controller */,
+				23055F8B1BF280A000D170F5 /* Activity Tab */,
+				23055F8C1BF280AE00D170F5 /* Workout Tab */,
+				23055F8D1BF280BA00D170F5 /* Reminders Tab */,
 			);
 			name = TabBar;
 			sourceTree = "<group>";
@@ -367,16 +367,16 @@
 			name = "Week Model";
 			sourceTree = "<group>";
 		};
-		23055F8B1BF280A000D170F5 /* index 0 Controller */ = {
+		23055F8B1BF280A000D170F5 /* Activity Tab */ = {
 			isa = PBXGroup;
 			children = (
 				235B6E141BEBD25600557D3F /* ProgressViewController.h */,
 				235B6E151BEBD25600557D3F /* ProgressViewController.m */,
 			);
-			name = "index 0 Controller";
+			name = "Activity Tab";
 			sourceTree = "<group>";
 		};
-		23055F8C1BF280AE00D170F5 /* index 1 Controller */ = {
+		23055F8C1BF280AE00D170F5 /* Workout Tab */ = {
 			isa = PBXGroup;
 			children = (
 				235B6E171BEBD25600557D3F /* ExerciseViewController.h */,
@@ -384,17 +384,17 @@
 				23055F861BF2801D00D170F5 /* Add Exercise */,
 				23055F831BF26B4E00D170F5 /* Team */,
 			);
-			name = "index 1 Controller";
+			name = "Workout Tab";
 			sourceTree = "<group>";
 		};
-		23055F8D1BF280BA00D170F5 /* index 2 Controller */ = {
+		23055F8D1BF280BA00D170F5 /* Reminders Tab */ = {
 			isa = PBXGroup;
 			children = (
 				235B6E441BEBD2CD00557D3F /* RemindersViewController.h */,
 				235B6E451BEBD2CD00557D3F /* RemindersViewController.m */,
 				23055F8E1BF293B300D170F5 /* Add Reminder */,
 			);
-			name = "index 2 Controller";
+			name = "Reminders Tab";
 			sourceTree = "<group>";
 		};
 		23055F8E1BF293B300D170F5 /* Add Reminder */ = {

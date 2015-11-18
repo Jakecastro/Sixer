@@ -57,7 +57,7 @@ ExerciseCell *cell;
     PFQuery *query = [relation query];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         if (error) {
-            NSLog(@"something went wrong findUserExercises %@", error);
+            NSLog(@"error findUserExercises %@", error);
         }
         else {
             self.userExercisesArray = [[NSMutableArray alloc] initWithArray:objects];
