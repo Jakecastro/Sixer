@@ -120,8 +120,8 @@
 
 - (IBAction)onDoneTapped:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
-    self.senderEVC.groupNameButton.titleLabel.text = [self.passedGroup objectForKey:@"name"];
-    self.senderEVC.groupCurrentlyIn = self.passedGroup;
+//    self.senderEVC.groupNameButton.titleLabel.text = [self.passedGroup objectForKey:@"name"];
+//    self.senderEVC.groupCurrentlyIn = self.passedGroup;
 }
 
 
@@ -139,9 +139,9 @@
 
 }
 
--(void)groupTableViewCell:(id)cell didTapButton:(UIButton *)button withGroup:(Group *)group{
+-(void)groupTableViewCell:(id)cell didTapButton:(UIButton *)button withGroup:(NSString *)group{
     
-    self.passedGroup = group;
+    self.passedButton.titleLabel.text = group;
 }
 
 @end

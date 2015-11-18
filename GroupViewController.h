@@ -12,5 +12,6 @@
 @interface GroupViewController : UIViewController
 
 @property ExerciseViewController *senderEVC;
+@property UIButton *passedButton;
 
 @end
