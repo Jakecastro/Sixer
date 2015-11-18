@@ -151,6 +151,8 @@ ExerciseCell *cell;
         GroupViewController *gVC = (GroupViewController *)[navCol topViewController];
         gVC.passedButton = self.teamButton;
 
+        //cool casting above
+
 
     }
 
