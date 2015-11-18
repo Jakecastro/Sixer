@@ -12,6 +12,7 @@
 
 @dynamic name;
 @dynamic image;
+@dynamic updatedAt;
 @synthesize isUserExercise = _isUserExercise;
 
 + (NSString *)parseClassName{

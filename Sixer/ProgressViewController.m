@@ -13,6 +13,8 @@
 #import <Parse/Parse.h>
 #import "Color.h"
 #import "LoginViewController.h"
+#import "Exercise.h"
+#import "ActivityHistory.h"
 
 
 // Delegates
@@ -28,6 +30,7 @@
 @property NSArray *userScoreArray;
 @property NSInteger *sumOfScores;
 @property PFUser *currentUser;
+@property NSMutableArray *userExercisesArray;
 
 
 @end
@@ -62,6 +65,8 @@
     self.currentUser = [PFUser currentUser];
     [self retrieveDataFromParse];
     [self retrieveUsernameAndPhoto];
+    [self retrieveUserExercises];
+    
     
 }
 
@@ -69,19 +74,21 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
 // Setting the number of rows to the number of indexes in the array
-    return self.progressArray.count;
+    return self.userExercisesArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ProgressCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ProgressCell"];
-    PFObject *userScore = [self.progressArray objectAtIndex:indexPath.row];
-    NSString *date = @"jumping jacks";
-    cell.exerciseNameLabel.text = date;
-    cell.timeLabel.text = [NSString stringWithFormat:@"%@",userScore[@"score"]];
+//    PFObject *userScore = [self.progressArray objectAtIndex:indexPath.row];
+    ActivityHistory *activity = [self.userExercisesArray objectAtIndex:indexPath.row];
+     cell.exerciseNameLabel.text = activity.exerciseName;
+   cell.dateLabel.text = [NSString stringWithFormat:@"%@",activity.date];
+  cell.timeLabel.text = [NSString stringWithFormat:@"%@",activity.score];
 
     
 //
     return cell;
+    
 }
 
 -(void) retrieveDataFromParse {
@@ -130,6 +137,35 @@
     
     
 
+}
+
+-(void) retrieveUserExercises {
+    
+//    PFQuery *exerciseQuery = [PFQuery queryWithClassName:@"Activity"];
+//    [exerciseQuery whereKey:@"exercise" containedIn:[PFUser currentUser][@"Exercise"]];
+//   [exerciseQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+//       self.userExercisesArray = objects;
+//   }];
+    if (!self.currentUser) {
+        
+    }
+    self.userExercisesArray = [NSMutableArray new];
+    PFQuery *query = [PFQuery queryWithClassName:@"Activity"];
+    [query whereKey:@"user" equalTo:self.currentUser];
+    [query includeKey:@"exercise"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        for (PFObject *activity in objects) {
+            ActivityHistory *aH = [ActivityHistory new];
+            Exercise *exercise = activity[@"exercise"];
+            aH.exerciseName = exercise.name;
+            aH.score = activity[@"score"];
+            aH.date = exercise.updatedAt;
+            [self.userExercisesArray addObject:aH];
+            [self.tableView reloadData];
+        }
+    }];
+    
+    
 }
 
 
