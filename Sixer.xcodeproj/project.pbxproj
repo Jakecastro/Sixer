@@ -69,6 +69,7 @@
 		CD0A9B291BED219500B6817D /* RegistrationAndLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD0A9B281BED219500B6817D /* RegistrationAndLogin.storyboard */; };
 		CD0A9B2C1BED221300B6817D /* InitialScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0A9B2B1BED221300B6817D /* InitialScreenViewController.m */; };
 		CD0A9B321BED223300B6817D /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0A9B311BED223300B6817D /* RegistrationViewController.m */; };
+		CD66B8F11BFD27CF004D008F /* ActivityHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = CD66B8F01BFD27CF004D008F /* ActivityHistory.m */; };
 		CD7093451BEED3A700043B50 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7093441BEED3A700043B50 /* ProfileViewController.m */; };
 		CD7093481BEEDC6600043B50 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7093471BEEDC6600043B50 /* Settings.m */; };
 		CD70934B1BEEE79F00043B50 /* ContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD70934A1BEEE79F00043B50 /* ContainerViewController.m */; };
@@ -202,6 +203,8 @@
 		CD0A9B2E1BED222000B6817D /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		CD0A9B301BED223300B6817D /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
 		CD0A9B311BED223300B6817D /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
+		CD66B8EF1BFD27CF004D008F /* ActivityHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityHistory.h; sourceTree = "<group>"; };
+		CD66B8F01BFD27CF004D008F /* ActivityHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityHistory.m; sourceTree = "<group>"; };
 		CD7093431BEED3A700043B50 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		CD7093441BEED3A700043B50 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		CD7093461BEEDC6600043B50 /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
@@ -372,6 +375,8 @@
 			children = (
 				235B6E141BEBD25600557D3F /* ProgressViewController.h */,
 				235B6E151BEBD25600557D3F /* ProgressViewController.m */,
+				CD66B8EF1BFD27CF004D008F /* ActivityHistory.h */,
+				CD66B8F01BFD27CF004D008F /* ActivityHistory.m */,
 			);
 			name = "index 0 Controller";
 			sourceTree = "<group>";
@@ -801,6 +806,7 @@
 				23AB1EEE1BEEE04100B1BDE5 /* CVExerciseCell.m in Sources */,
 				CD7C67961BED8FDD00DC20E7 /* LoginViewController.m in Sources */,
 				CD7C67951BED8C8000DC20E7 /* AddGroupViewController.m in Sources */,
+				CD66B8F11BFD27CF004D008F /* ActivityHistory.m in Sources */,
 				CD70934B1BEEE79F00043B50 /* ContainerViewController.m in Sources */,
 				23A6E8431BF3E01100F6E85E /* Activity.m in Sources */,
 				235B6E191BEBD25600557D3F /* ExerciseViewController.m in Sources */,
