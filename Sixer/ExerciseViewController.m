@@ -16,7 +16,7 @@
 #import "GroupViewController.h"
 #import "AppDelegate.h"
 
-@interface ExerciseViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+@interface ExerciseViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, PassNameOfGroupDelegate>
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedController;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -26,7 +26,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *teamButton;
 @property  NSMutableArray *userExercisesArray;
 @property Exercise *selectedExercise;
-@property NSMutableArray *defaultArray;    
+@property NSMutableArray *defaultArray;
+@property NSString *teamName;
 @end
 
 @implementation ExerciseViewController
@@ -45,7 +46,11 @@ ExerciseCell *cell;
     
     self.collectionView.delegate = self;
     self.defaultArray = [NSMutableArray new];
+
+   
+
     
+
     self.teamButton.backgroundColor = [Color flatCloudsColor];
     [self.teamButton.layer setCornerRadius:8.0f];
 }
@@ -139,11 +144,23 @@ ExerciseCell *cell;
         }
     }
 
-    if ([segue.identifier isEqualToString:@"toGroupSegue"]) {
-        GroupViewController *gVC = segue.destinationViewController;
-        gVC.senderEVC = self;
+    if ([segue.identifier isEqualToString:@"toGroupVC"]) {
+//        GroupViewController *gVC = segue.destinationViewController;
+//        gVC.passedButton = self.teamButton;
+        UINavigationController *navCol = segue.destinationViewController;
+        GroupViewController *gVC = (GroupViewController *)[navCol topViewController];
+        gVC.passedButton = self.teamButton;
+
+
     }
 
+
+}
+
+-(void)groupTableViewCell:(id)cell didTapButton:(UIButton *)button withGroup:(NSString *)group {
+
+
+    self.teamButton.titleLabel.text = group;
 
 }
 

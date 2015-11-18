@@ -12,8 +12,6 @@
 
 
 
-
-
 @implementation GroupTableViewCell
 
 - (void)awakeFromNib {
@@ -31,8 +29,7 @@
 //}
 - (IBAction)buttonGrabGroup:(UIButton *)sender {
 
-    [self.delegate groupTableViewCell:self didTapButton:sender withGroup:self.groupInCell];
-    
+    [self.delegate groupTableViewCell:self didTapButton:sender withGroup:self.groupNameLabel.text];
     
 }
 

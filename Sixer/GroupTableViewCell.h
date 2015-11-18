@@ -13,7 +13,7 @@
 
 @optional
 
--(void) groupTableViewCell:(id)cell didTapButton:(UIButton *)button withGroup:(Group *)group;
+-(void) groupTableViewCell:(id)cell didTapButton:(UIButton *)button withGroup:(NSString *)groupName;
 
 
 @end
