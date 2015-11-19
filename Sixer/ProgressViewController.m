@@ -82,7 +82,11 @@
 //    PFObject *userScore = [self.progressArray objectAtIndex:indexPath.row];
     ActivityHistory *activity = [self.userExercisesArray objectAtIndex:indexPath.row];
      cell.exerciseNameLabel.text = activity.exerciseName;
-   cell.dateLabel.text = [NSString stringWithFormat:@"%@",activity.date];
+   
+    
+    
+    cell.dateLabel.text = [NSString stringWithFormat:@"%@",activity.date];
+    
   cell.timeLabel.text = [NSString stringWithFormat:@"%@",activity.score];
 
     

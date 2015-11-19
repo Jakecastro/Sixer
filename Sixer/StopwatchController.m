@@ -48,9 +48,11 @@ Group *solo;
 
 
 //    PFFile *imageFile = self.selectedExercise.image;
-//    NSData *imageData = imageFile;
-//    self.imageView.image = [UIImage imageWithData:imageData];
+
+    
 }
+                            
+
 
 #pragma mark - Setup IU Methods
 - (void)setUIForCountUpActive {
@@ -92,7 +94,7 @@ Group *solo;
     self.timeCountLabel.text = @"0";
 
     if (isExerciseTime == true) {
-        timer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(tick) userInfo:nil repeats:YES];
+        timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(tick) userInfo:nil repeats:YES];
     }
     else if (isExerciseTime == false) {
         timer = [NSTimer scheduledTimerWithTimeInterval:1.3 target:self selector:@selector(tick) userInfo:nil repeats:YES];
@@ -128,7 +130,9 @@ Group *solo;
     [self startTimer];
 }
 
-- (IBAction)onFinishButtonTapped:(id)sender {
+- (IBAction)onFinishButtonTapped:(UIBarButtonItem *)sender {
+    [timer invalidate];
+    self.timeCountLabel.text = @"";
 }
 
 #pragma mark - Segue
@@ -159,5 +163,6 @@ Group *solo;
 
 
 }
+
 
 @end
