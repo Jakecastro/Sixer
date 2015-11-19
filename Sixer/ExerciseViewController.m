@@ -47,10 +47,6 @@ ExerciseCell *cell;
     self.collectionView.delegate = self;
     self.defaultArray = [NSMutableArray new];
 
-   
-
-    
-
     self.teamButton.backgroundColor = [Color flatCloudsColor];
     [self.teamButton.layer setCornerRadius:8.0f];
 }
@@ -145,14 +141,10 @@ ExerciseCell *cell;
     }
 
     if ([segue.identifier isEqualToString:@"toGroupVC"]) {
-//        GroupViewController *gVC = segue.destinationViewController;
-//        gVC.passedButton = self.teamButton;
+
         UINavigationController *navCol = segue.destinationViewController;
         GroupViewController *gVC = (GroupViewController *)[navCol topViewController];
         gVC.passedButton = self.teamButton;
-
-        //cool casting above
-
 
     }
 
@@ -160,8 +152,6 @@ ExerciseCell *cell;
 }
 
 -(void)groupTableViewCell:(id)cell didTapButton:(UIButton *)button withGroup:(NSString *)group {
-
-
     self.teamButton.titleLabel.text = group;
 
 }
