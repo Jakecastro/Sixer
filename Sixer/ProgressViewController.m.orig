@@ -1,4 +1,4 @@
-//
+   //
 //  ProgressViewController.m
 //  Sixer
 //
@@ -13,6 +13,8 @@
 #import <Parse/Parse.h>
 #import "Color.h"
 #import "LoginViewController.h"
+#import "Exercise.h"
+#import "ActivityHistory.h"
 
 
 // Delegates
@@ -28,6 +30,7 @@
 @property NSArray *userScoreArray;
 @property NSInteger *sumOfScores;
 @property PFUser *currentUser;
+@property NSMutableArray *userExercisesArray;
 
 
 @end
@@ -38,51 +41,66 @@
     [super viewDidLoad];
     UIImage *titleImage = [UIImage imageNamed:@"Get Active!"];
     self.navigationItem.titleView = [[UIImageView alloc]initWithImage:titleImage];
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:194.0/255.0 green:222.0/255.0 blue:17.0/255.0 alpha:1.0f];
+    self.navigationController.navigationBar.barTintColor = [Color flatTurquoiseColor];
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     
     
     self.progressArray = [NSArray new];
-    self.currentUser = [PFUser currentUser];
-    [self retrieveDataFromParse];
-    [self retrieveUsernameAndPhoto];
+//    self.currentUser = [PFUser currentUser];
+//    [self retrieveDataFromParse];
+//    [self retrieveUsernameAndPhoto];
   
     
 }
 
-- (void)viewDidAppear:(BOOL)animated {
+-(void)viewWillAppear:(BOOL)animated {
     
     if (![PFUser currentUser]) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"RegistrationAndLogin" bundle:nil];
         UIViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"LoginScreen"];
         [self presentViewController:loginVC animated:YES completion:nil];
-        [self retrieveUsernameAndPhoto];
+        
+        
     }
+    self.currentUser = [PFUser currentUser];
+    [self retrieveDataFromParse];
+    [self retrieveUsernameAndPhoto];
+    [self retrieveUserExercises];
+    
+    
 }
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
 // Setting the number of rows to the number of indexes in the array
-    return self.progressArray.count;
+    return self.userExercisesArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ProgressCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ProgressCell"];
-<<<<<<< HEAD
 //    PFObject *userScore = [self.progressArray objectAtIndex:indexPath.row];
-////    NSString *date = @"jumping jacks";
-////    cell.exerciseNameLabel.text = date;
-////    cell.timeLabel.text = [NSString stringWithFormat:@"%@",userScore[@"score"]];
+    ActivityHistory *activity = [self.userExercisesArray objectAtIndex:indexPath.row];
+     cell.exerciseNameLabel.text = activity.exerciseName;
+<<<<<<< HEAD
+   
+    
+    
+    cell.dateLabel.text = [NSString stringWithFormat:@"%@",activity.date];
+    
 =======
-    PFObject *userScore = [self.progressArray objectAtIndex:indexPath.row];
-//    NSString *date = @"jumping jacks";
-//    cell.exerciseNameLabel.text = date;
-//    cell.timeLabel.text = [NSString stringWithFormat:@"%@",userScore[@"score"]];
->>>>>>> 17bb709baeb9b8edc62891106886e6e8bf9cc395
-
+>>>>>>> updatetime
+  cell.timeLabel.text = [NSString stringWithFormat:@"%@",activity.score];
+    
+    NSDateFormatter *dateFormatter = [NSDateFormatter new];
+    [dateFormatter setDateFormat:@"MMM dd"];
+//    [dateFormatter setTimeStyle:NSDateIntervalFormatterNoStyle];
+    NSString *formattedDateString = [dateFormatter stringFromDate:activity.date];
+ cell.dateLabel.text = [NSString stringWithFormat:@"%@",formattedDateString];
     
 //
     return cell;
+    
 }
 
 -(void) retrieveDataFromParse {
@@ -115,6 +133,49 @@
     
     // Setting the username label text
     self.usernameLabel.text = self.currentUser.username;
+    
+    
+}
+- (IBAction)onLogOutButtonTapped:(UIBarButtonItem *)sender {
+    
+    
+    // Log user out
+    [PFUser logOut];
+    
+    // Present Login Screen
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"RegistrationAndLogin" bundle:nil];
+    UIViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"LoginScreen"];
+    [self presentViewController:loginVC animated:YES completion:nil];
+    
+    
+
+}
+
+-(void) retrieveUserExercises {
+    
+//    PFQuery *exerciseQuery = [PFQuery queryWithClassName:@"Activity"];
+//    [exerciseQuery whereKey:@"exercise" containedIn:[PFUser currentUser][@"Exercise"]];
+//   [exerciseQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+//       self.userExercisesArray = objects;
+//   }];
+    if (!self.currentUser) {
+        
+    }
+    self.userExercisesArray = [NSMutableArray new];
+    PFQuery *query = [PFQuery queryWithClassName:@"Activity"];
+    [query whereKey:@"user" equalTo:self.currentUser];
+    [query includeKey:@"exercise"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        for (PFObject *activity in objects) {
+            ActivityHistory *aH = [ActivityHistory new];
+            Exercise *exercise = activity[@"exercise"];
+            aH.exerciseName = exercise.name;
+            aH.score = activity[@"score"];
+            aH.date = exercise.updatedAt;
+            [self.userExercisesArray addObject:aH];
+            [self.tableView reloadData];
+        }
+    }];
     
     
 }
